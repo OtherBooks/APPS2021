@@ -1,0 +1,1461 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.0 (9/2/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass[11pt,fleqn,dvipsnames]{book} % Default font size and left-justified equations
+\documentclass[11pt,dvipsnames]{book}
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+%%agregué
+
+%%%My stuff
+
+%\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+%\usepackage{due-dates}
+\usepackage[small]{eulervm}
+\usepackage{amsmath,amssymb,amstext,amsthm,amscd,mathrsfs,eucal,bm,xcolor}
+\usepackage{multicol}
+\usepackage{array,color,graphicx}
+%\usepackage{enumerate}
+
+\usepackage{epigraph}
+%\usepackage[colorlinks,citecolor=red,linkcolor=blue,pagebackref,hypertexnames=false]{hyperref}
+
+%\theoremstyle{remark} 
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{\bf Example}
+%\newtheorem*{solution}{Solution:}
+
+\usepackage{centernot}
+\usepackage{filecontents}
+\usepackage{tcolorbox} 
+
+%\begin{filecontents*}{MyPackage.sty}
+%\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{MyPackage}
+%\RequirePackage{environ}
+%\newif\if@hidden% \@hiddenfalse
+%\DeclareOption{hide}{\global\@hiddentrue}
+%\DeclareOption{unhide}{\global\@hiddenfalse}
+%\ProcessOptions\relax
+%\NewEnviron{solution}
+%  {\if@hidden\else \begin{tcolorbox}{\bf Solution: }\BODY \end{tcolorbox}\fi}
+%\end{filecontents*}
+
+%\usepackage[unhide,all]{hide-soln} %show all solutions
+\usepackage[unhide,odd]{hide-soln} %hide even number solutions
+%\usepackage[hide]{hide-soln} %hide all solutions
+
+\def\putgrid{\put(0,0){0}
+\put(0,25){25}
+\put(0,50){50}
+\put(0,75){75}
+\put(0,100){100}
+\put(0,125){125}
+\put(0,150){150}
+\put(0,175){175}
+\put(0,200){200}
+\put(25,0){25}
+\put(50,0){50}
+\put(75,0){75}
+\put(100,0){100}
+\put(125,0){125}
+\put(150,0){150}
+\put(175,0){175}
+\put(200,0){200}
+\put(225,0){225}
+\put(250,0){250}
+\put(275,0){275}
+\put(300,0){300}
+\put(325,0){325}
+\put(350,0){350}
+\put(375,0){375}
+\put(400,0){400}
+{\color{gray}\multiput(0,0)(25,0){16}{\line(0,1){200}}}
+{\color{gray}\multiput(0,0)(0,25){8}{\line(1,0){400}}}
+}
+
+
+
+%\usepackage{tikz}
+
+%\pagestyle{headandfoot}
+%\firstpageheader{\textbf{Proofs \& Problem Solving}}{\textbf{Homework 1}}{\textbf{\PSYear}}
+%\runningheader{}{}{}
+%\firstpagefooter{}{}{}
+%\runningfooter{}{}{}
+
+%\marksnotpoints
+%\pointsinrightmargin
+%\pointsdroppedatright
+%\bracketedpoints
+%\marginpointname{ \points}
+%\totalformat{[\totalpoints~\points]}
+
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\N{{\mathbb{N}}}
+\def\Q{{\mathbb{Q}}}
+\def\C{{\mathbb{C}}}
+\def\hcf{{\rm hcf}}
+
+
+%%end of my stuff
+
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+\usepackage{graphicx} % paquete que permite introducir imágenes
+
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%%hasta aquí
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=12cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{Figures/blank.png}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Proofs and Problem Solving \\[15pt] % Book title
+{\huge Week 2: Inequalities and Induction}\\[20pt] % Subtitle
+{\Large Notes  based on Martin Liebeck's \\ \textit{A Concise Introduction to Pure Mathematics}}}}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+%\newpage
+%~\vfill
+%\thispagestyle{empty}
+
+%\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+
+%\noindent \textsc{Published by Publisher}\\ % Publisher
+
+%\noindent \textsc{book-website.com}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+%\noindent \textit{First printing, March 2013} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{Figures/blank.png} % Table of contents heading image
+
+%\chapterimage{chapter_head_1.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+ \tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+\setcounter{part}{1}
+\part{Week 2: Inequalities and Induction}
+
+\setcounter{chapter}{2}
+
+\chapterimage{Figures/blank.png} 
+\chapter{Inequalities}
+
+
+\setcounter{page}{1}
+
+This week we will examine inequalities more closely, and describe them formally in terms of just a few rules or {\it axioms}. 
+
+\section{The axioms for "<"}
+
+An inequality is a relation on pairs of real numbers.
+We use the symbols $\leq,\geq,<,>$ to denote these relationships.
+E.g.~we write $x < y$, spoken as "$x$ is less than $y$".
+The informal idea is that $x<y$ exactly when "$x$ is strictly to the left of $y$ on the number line".  
+$x < y$ means exactly the same thing as $y > x$ (spoken as "$y$ is greater than $x$"). 
+When we write $x \leq y$ we mean that either $x < y$ or $x=y$. 
+Hence it is true that $2 \leq 3$. 
+We prefer to list the formal properties that $<$ possesses which, together with the rules of addition and rules of multiplication from Section 2, make $\mathbb{R}$ into what is called an {\em ordered field}.
+These properties of the relation $<$ on the real numbers should be very familiar!
+
+\medskip
+\begin{definition} An {\em ordered field} is a field $F$, together with a relation $<$, so that the following hold: %Given $x,y\in \mathbb{R}$, we may write $x<y$, which we pronounce ``$x$ is less than $y$".  The symbol ``$<$" satisfies the following axioms:
+\begin{enumerate}
+\item[(R1)] (Positive/negative) If $x\in F$, then exactly one of the following is true: $0<x$, $x=0$, or $x<0$.
+\item[(R2)] (Negations reverse) If $y<x$, then $-x<-y$.
+\item[(R3)] (Can add constants) If $x<y$, and $c\in F$, then $x+c<y+c$.
+\item[(R4)] (Positives multiply) If $0<x$ and $0<y$ then $0<xy$.
+\item[(R5)] (Transitive property) If $x<y$ and $y<z$ then $x<z$.
+\end{enumerate}
+\end{definition}
+
+This definition gives a minimal set of {\it axioms}, that is, rules that we will take for granted, which are minimal in the sense that no axiom can be deduced from the others. Just like we demonstrated last week with the axioms of addition and multiplication, in this section we'll show how many standard facts about inequalities that we are used to can be deduced from these axioms. %(Any other fact about inequalities that we haven't proved here but you want to use in your homework, you will have to prove it!)
+
+We can now define \(x>y\) if and only if \(y<x\).
+
+\begin{proposition}
+If $x>0$, then $-x<0$. 
+\end{proposition}
+
+\begin{proof}
+This follows immediately from (R2) with $0$ in place of $y$. 
+\end{proof}
+
+\begin{proposition}
+If $x\neq 0$, then $x^2>0$. 
+\end{proposition}
+
+\begin{proof}
+If $x>0$ this follows from (R4).  If $x<0$ then $-x>0$, so 
+\[
+0<(-x)^2= (-1)^2x^2=x^2. 
+\]
+(Recall from Exercise 2.1 that $(-1)^2=1$.)
+\end{proof}
+
+\begin{exercise}
+Prove that $1>0$. 
+\begin{solution}
+This follows from the last proposition with $x=1$, since $0<1^2=1\cdot 1=1$. 
+\end{solution}
+\end{exercise}
+
+Pause for thought: why are we "wasting our time" proving things like $1 > 0$, which we have all known and understood since the early years of primary school? 
+Mathematics is not just to establish what is true and what is false, but also to understand, in a critical way, the relationships between statements.
+What we learn from this exercise is that the statement $1 > 0$ can be logically derived from the basic axioms (A0-A4), (M0-M5) and (R1-R5).
+The same applies to most other true statements of elementary arithmetic.
+
+\begin{proposition}
+\label{p:1/x>0}
+If $x>0$, then $\frac{1}{x}>0$. 
+\end{proposition}
+
+\begin{proof}
+Suppose $\frac{1}{x}\leq 0$. Then $-\frac{1}{x}\geq 0$, and so (R4) implies
+\[
+0\leq -\frac{1}{x}\cdot x = -1 < 0,\]
+which is a contradiction, thus $\frac{1}{x}> 0$.
+\end{proof}
+
+
+\begin{proposition}
+\label{p:xu>xv}
+If $x>0$, then $u>v$ if and only if $xu>xv$. 
+\end{proposition}
+
+\begin{proof}
+First assume $u>v$. If $x>0$, then 
+\begin{align*}
+u>v & \stackrel{[R3]}{\Longrightarrow} u-v>v-v=0\\
+&  \stackrel{[R4]}{\Longrightarrow} (u-v)x>0\\
+& \Longrightarrow ux-vx>0 \\
+& \stackrel{[R3]}{\Longrightarrow} ux>vx 
+\end{align*}
+Now assume $xu>xv$. Then we can use the same proof as above, but replacing $u$ with $ux$, $v$ with $vx$, and $x$ with $\frac{1}{x}$ (since $\frac{1}{x}>0$ by Proposition \ref{p:1/x>0}).
+\end{proof}
+
+
+\begin{proposition}
+\label{p:u^2>v^2}
+If $0<u,v$, then $u^2>v^2$ if and only if $u>v$. 
+\end{proposition}
+
+\begin{proof}
+First, notice that if $0<v,u$, then
+\[
+u^2>v^2 \;\;\;   \stackrel{[R3]}{ \Longleftrightarrow} \;\;\;  u^2-v^2>v^2-v^2=0 \;\;\;  \Longleftrightarrow \;\;\;  (u-v)(u+v)>0
+\]
+and by (R4), this last inequality is true if and only if $u-v>0$ (since $u+v>0$ by assumption), which by (R3) is true if and only if $0+v<u-v+v$, that is, if and only if $v<u$.
+\end{proof}
+
+\section{Separating products}
+
+In this section we cover some very useful inequalities that allow us to essentially separate terms in a product. They all stem from the following lemma:
+
+\begin{lemma}
+\label{l:little-amgm}
+For $u,v\in\mathbb{R}$,
+\[uv \leq \frac{u^2+v^2}{2}.\]
+\end{lemma}
+Notice that on one side of the above inequality, the terms $u$ and $v$ are multiplied together, and on the other side, they are separate (but now squared). 
+
+\begin{proof}
+Since$(u-v)^2\geq 0$, we get
+\[
+0\leq (u-v)^2 =u^2-2uv + v^2.\]
+So by (R3), we can add $2uv$ to both sides to get
+\[
+2uv \leq u^2+v^2\]
+and then by (R4), we can multiply both sides by $\frac{1}{2}$ to get $uv \leq \frac{u^2+v^2}{2}$ as desired. 
+\end{proof}
+
+
+\begin{exercise}
+\label{ex:uv=u^2+v^2/2}
+When does equality hold in the previous lemma? That is, when do we have $uv = \frac{u^2+v^2}{2}$?
+\end{exercise}
+
+\begin{solution}
+Let's retrace the proof of  Lemma \ref{l:little-amgm} backwards trying to use only equalities:
+\[
+uv = \frac{u^2+v^2}{2} \;\;\; \Longleftrightarrow \;\;\; 2uv = u^2+v^2
+ \;\;\; \Longleftrightarrow \;\;\; 0=u^2+v^2-2uv = (u-v)^{2}
+ \]
+ and this last equality holds if and only if $u=v$. 
+ \end{solution}
+ 
+From this, we get the famous {Arithmetic Mean-Geometric Mean (AM-GM) inequality}:
+
+\begin{theorem}[AM-GM Inequality]
+\label{t:AM-GM}
+Let $n\in\mathbb{N}$ and $x_{1},...,x_{n}\geq 0$. Then
+\[
+(x_{1}\cdot x_{2}\cdots x_{n})^{\frac{1}{n}}\leq \frac{x_{1}+\cdots + x_{n}}{n}.
+\]
+\end{theorem}
+That is, the {\it geometric mean} on the left is at most the {\it arithmetic mean} on the right. 
+
+\begin{proof}
+The $n=2$ case follows from Lemma \ref{l:little-amgm}: if we set $u=\sqrt{x_{1}}$ and $v=\sqrt{x_{2}}$, then
+\begin{equation}
+\label{e:x1x2^1/2<x1+x2/2}
+(x_{1}x_{2})^{\frac{1}{2}}=uv\leq \frac{u^2+v^2}{2} = \frac{x_{1}+x_{2}}{2}.
+\end{equation}
+For the $n>2$ case, see Exercise \ref{ex:AMGM}.
+\end{proof}
+
+\begin{exercise}
+For $x_{1},x_{2}\geq 0$, when do we have $(x_{1}x_{2})^{\frac{1}{2}}= \frac{x_{1}+x_{2}}{2}$?
+\end{exercise}
+
+\begin{solution}
+If there is equality, that means there is equality in \eqref{e:x1x2^1/2<x1+x2/2}, and by Exercise \ref{ex:uv=u^2+v^2/2}, this holds if and only if $u=v$, that is, if $\sqrt{x_{1}}=\sqrt{x_{2}}$, which holds if and only if $x_{1}=x_{2}$.
+\end{solution}
+
+The next useful inequality is the {\it Cauchy-Schwarz} inequality:
+
+\begin{theorem}[Cauchy-Schwarz Inequality]
+Let $n\in\mathbb{N}$,  $x_{1},...,x_{n},y_{1},...,y_{n}\in\mathbb{R}$. Then
+\[
+x_{1}y_{1}+\cdots + x_{n}y_{n}
+\leq \sqrt{x_{1}^2+\cdots + x_{n}^{2}} \sqrt{y_{1}^2+\cdots + y_{n}^{2}} .
+\]
+
+\end{theorem}
+
+Why is this useful? On the left we have a {\it mixed} product of $x$-terms and $y$-terms, and we are able to relate it to a product of two terms where now the $x$'s and $y$'s are {\it separated}.
+
+We'll just prove the $n=2$ case for now and return to the general case later. Note that
+\[
+(x_{1}y_{1}+x_{2}y_{2})^2
+=x_{1}^2y_{1}^2+x_{2}^2y_{2}^2+2x_{1}y_{1}x_{2}y_{2}
+\]
+and using Lemma \ref{l:little-amgm} on the second term with $u=x_{1}y_{2}$ and $v=x_{2}y_{1}$, this above is at most 
+\[
+\leq x_{1}^2y_{1}^2+x_{2}^2y_{2}^2+2\frac{(x_{1}y_{2})^2+(x_{2}y_{1})^2}{2}
+=x_{1}^2y_{1}^2+x_{2}^2y_{2}^2+x_{1}^2y_{2}^2+x_{2}^2y_{1}^2
+=(x_{1}^2+x_{2}^2)(y_{1}^2+y_{2}^2)
+\]
+Thus we have shown 
+\[
+(x_{1}y_{1}+x_{2}y_{2})^2\leq (x_{1}^2+x_{2}^2)(y_{1}^2+y_{2}^2)
+=\left(\sqrt{x_{1}^2+x_{2}^2}\sqrt{y_{1}^2+y_{2}^2}\right)^{2}
+\]
+and now by Proposition \ref{p:u^2>v^2}, we get 
+\[
+x_{1}y_{1}+x_{2}y_{2}\leq\sqrt{x_{1}^2+x_{2}^2}\sqrt{y_{1}^2+y_{2}^2}.
+\]
+
+
+\begin{example} Show that 
+\[
+\frac{a+b}{2} \leq \left(\frac{a^2+b^2}{2}\right)^{\frac{1}{2}}.
+\]
+Which of our above inequalities should we try using? Lemma \ref{l:little-amgm} and AM-GM don't seem relevant since we don't have something like $ab$ on the left, so let's see if we can use the Cauchy-Schwarz inequality: Rewrite $\frac{a+b}{2}=a\cdot \frac{1}{2} +b\cdot\frac{1}{2}$, then the Cauchy Schwarz inequality implies:
+\[
+\frac{a+b}{2} = a\cdot\frac{1}{2} + b\cdot\frac{1}{2} \leq \sqrt{a^2+b^2}\sqrt{\frac{1}{2^{2}}+\frac{1}{2^{2}}}
+=\left(\frac{a^2+b^2}{2}\right)^{\frac{1}{2}}.
+\]
+\end{example}
+\section{Absolute Values}
+
+\begin{definition}
+For $x\in \mathbb{R}$, we define the {\it absolute value} or {\it modulus} of $x$ to be
+\[
+|x| = \left\{\begin{array}{ll} x & \mbox{ if } x\geq 0 \\ -x & \mbox{ if } x\leq 0 \end{array}\right.
+\]
+\end{definition}
+
+Geometrically, $|x|$ measures the distance from $x$ to $0$ along the real line, e.g. $|-3|=3$. 
+
+\begin{lemma}
+For $x\in\mathbb{R}$,
+\[
+-|x|\leq x\leq |x|.
+\]
+\end{lemma}
+\begin{proof}
+If $x\geq 0$, then since $|x|\geq 0$,
+\[
+-|x|\leq 0\leq x=|x|
+\]
+and if $x\leq 0$, then $-x=|x|$, so $x=-|x|$, hence
+\[
+-|x|=x\leq 0\leq |x|.
+\]
+\end{proof}
+
+\begin{protip}
+{\bf Proofs with $|\cdot|$:} Since the definition of $|x|$ is defined in terms of cases, a proof involving absolute values may need to be split into cases depending on what sign $x$ has. 
+\end{protip}
+
+\begin{example}
+\label{ex:|x|^2=x^2}
+For $x\in \mathbb{R}$, $|x|^2=x^2$. 
+
+
+\begin{proof}
+We split the proof into two cases. \\
+
+{\bf Case 1:} If $x\geq 0$. Then $|x|=x$ and so $|x|^2=x^2$, which proves the claim in this case. 
+
+{\bf Case 2:} If $x<0$, then $|x|=-x$, so $|x|^2=(-x)^2=(-1)^2x^2=1$.
+
+ Thus, the claim is true in all cases. 
+
+\end{proof}
+\end{example}
+
+\begin{example}
+For which $x\in\mathbb{R}$ do we have $|x-1|<|x+2|$?\\
+
+Notice that the signs of the absolute value change as $x$ crosses $1$ and $-2$, so we split into cases depending on where $x$ lies in relation to these numbers:\\
+
+{\bf Case 1:} If $x\leq -2$, then $x-1<0$, so $|x-1|=1-x$ and $x+2\leq 0$ so $|x+2|=-2-x$, so $|x-1|<|x+2|$ holds if and only if $1-x<-2-x$, or equivalently, $2<-1$, which never holds.
+
+{\bf Case 2:} If $-2\leq x\leq 1$, then $|x-1|=1-x$ again but $|x+2|=x+2$, so $|x-1|<|x+2|$  if and only if $1-x<x+2$ , i.e. if $-1<2x$, so the only $x$'s between $-2$ and $1$ where the inequality holds is for $x>-\frac{1}{2}$. 
+
+{\bf Case 3:} If $x\geq 1$, then $|x-1|=x-1$ and $|x+2|=x+2$, so $|x-1|<|x+2|$ if and only if $x-1<x+2$, i.e. if $-1<2$, which always holds. \\
+
+Bringing it all together, we see that our inequality holds if and only if $-\frac{1}{2}< x$.
+
+\end{example}
+\begin{lemma}
+\label{l:|xy|=|x||y|}
+For $x,y\in \mathbb{R}$, $|xy|=|x|\cdot |y|$. 
+\end{lemma}
+
+We leave the proof as an exercise. 
+
+\begin{theorem}[The Triangle Inequality]
+For $x,y\in\mathbb{R}$, 
+\[
+|x+y|\leq |x|+|y|.
+\]
+\end{theorem}
+
+\begin{proof}
+We split into cases, and will use the fact that $\pm x\leq |x|$ by definition.
+
+{\bf Case 1:}  If $x+y\geq 0$, then
+\[
+|x+y|=x+y\leq |x|+|y|.
+\]
+
+{\bf Case 2:}  If $x+y\leq 0$, then
+\[
+|x+y|=-(x+y)=-x+(-y)\leq |x|+|y|.
+\]
+Thus, the claim is true in all cases. 
+
+\end{proof}
+
+We leave the following corollary as an exercise.
+
+\begin{corollary}[The Reverse Triangle Inequality]
+For $x,y\in\mathbb{R}$, 
+\[
+\bigl||x|-|y|\bigr|\leq |x+y|.
+\]
+In particular, 
+\[
+|x|-|y|\leq |x+y|.
+\]
+
+\end{corollary}
+
+%
+%\section{Homogeneity and inequalities}
+%
+%Here we discuss a technique for proving a certain class of inequalities. Let's consider first the Cauchy-Schwartz inequality: 
+%\[
+%ax+by \leq \sqrt{a^2+b^2}\sqrt{x^2+y^2}.
+%\]
+%Notice what happens if I replace $(x,y)$ with $(tx,ty)$ where $t>0$. On the left, I get 
+%\[
+%a(tx)+a(ty)=t(ax+by)
+%\]
+%and on the right,
+%\[
+%\sqrt{a^2+b^2}\sqrt{(tx)^2+(ty)^2}
+%=\sqrt{a^2+b^2}\sqrt{t^2(x^2+y^2)}
+%=t \sqrt{a^2+b^2}\sqrt{x^2+y^2}.
+%\]
+%That is, when I replace $(x,y)$ with $(tx,ty)$, then a $t$ can be factored out from both ends, or in other words, the ratio of both sides of the inequality is unchanged if I replace $(x,y)$ with $(tx,ty)$. The same holds if I replace $(a,b)$ with $(sa,sb)$ for some $s>0$. 
+%
+%Thus, if I can prove the inequality for some $(tx,ty)$ and $(sa,sb)$ in place of $(x,y)$ and $(a,b)$, then it will also hold for $(x,y)$ and $(a,b)$. 
+%
+%How do I pick such an $s$ and $t$? Let's pick them so that they eliminate one side of our inequality. That is, let's pick them so that 
+%\begin{equation}
+%\label{e:txty}
+%\sqrt{(tx)^2+(ty)^2}=\sqrt{(sa)^2+(sb)^2}=1.
+%\end{equation}
+%That is, we pick
+%\[
+%t=\frac{1}{\sqrt{x^2+y^{2}}}, \;\; s= \frac{1}{\sqrt{a^2+b^2}}.
+%\]
+%Let $(a',b')=(sa,sb)$ and $(x',y')=(tx,ty)$. We are now left to show
+%\[
+%a'x'+b'y'\leq 1.
+%\]
+%But notice that by Lemma \ref{l:little-cs},
+%\[
+%a'x'+b'y'\leq \frac{(a')^2 +(x')^2 + (b')^2 + (y')^2 }{2}
+%=\frac{(sa)^2+(sb)^2 + (tx)^2+(ty)^2}{2} \stackrel{\eqref{e:txty}}{=}\frac{1+1}{2}=1.
+%\]
+%
+%Thus, 
+%\[
+%ax+by =s^{-1}t^{-1} (a'x'+b'y')\leq s^{-1} t^{-1}=\sqrt{a^2+b^2}\sqrt{x^2+y^2}.
+%\]
+
+
+
+\section{Exercises}
+
+See Liebeck Chapter 5 and also Exercises 15, 16 and 17 in Chapter 8. 
+%Many of the exercises below are from Beckenbach and Bellman's {\it Introduction to inequalities}.\\
+
+%{\bf Note:} On exams and homeworks we won't expect you to cite each axiom when proving an inequality. However, for the exercises below, try and keep track of what axioms and results from this section to make sure you are not taking for granted an inequality 
+
+
+
+
+
+\begin{exercise}
+Show that 
+\[
+-\max\{a^2,b^2\}\leq ab\leq \max\{a^2,b^2\}.
+\]
+
+\begin{solution}
+Suppose $|a|\leq |b|$ (the proof for the case that $|b|\leq |a|$ is the same). 
+By Exercise \ref{ex:|x|^2=x^2} and Lemma \ref{l:|xy|=|x||y|},
+\[
+ab\leq |ab|=|a|\cdot|b|\leq |b|\cdot |b|=|b|^2=b^2= \max\{a^2,b^2\}.
+\]
+Similarly, 
+\[
+ab\geq -|ab|=-|a|\cdot |b| \geq -|b|^2=-b^2=- \max\{a^2,b^2\}.
+\]
+
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise}
+Show that for all $a,b,c\in\mathbb{R}$ we have  $|a-c|\leq |a-b|+|b-c|$.
+\begin{solution}
+We add and subtract $b$ from $a-c$ and use the triangle inequality:
+\[
+|a-c|=|a-b+b-c|\leq |a-b|+|b-c|.
+\]
+\end{solution}
+\end{exercise}
+
+\begin{exercise} Show that $|a+b|\geq |a|-|b|$. In fact, show that $|a+b|\geq \left||a|-|b|\right|$. 
+\end{exercise}
+
+\begin{solution}
+By applying the triangle inequality $|x+y|\leq |x|+|y|$ with $x=a+b$ and $y=-b$,
+\[
+|a|=|a+b-b|\leq |a+b|+|b|
+\]
+and subtracting $|b|$ from both sides gives $|a+b|\geq |a|-|b|$. A similar proof shows that $|a+b|\geq |b|-|a|=-(|a|-|b|)$. Since $||a|-|b||$ is either $\pm (|a|-|b|)$ (depending on whether $|a|-|b|$ is negative or not), this means $|a+b|\geq \left||a|-|b|\right|$.
+\end{solution}
+
+
+\begin{exercise} For $a,b>0$, show that
+\[
+\sqrt{ab}\geq \frac{2ab}{a+b}.
+\]
+
+\begin{solution}
+Using Proposition \ref{p:xu>xv} first with $x=1/\sqrt{ab}$ (which is $\geq 0$ by Proposition \ref{p:1/x>0}) and then with $x=a+b$, we get 
+\[
+\sqrt{ab}\geq \frac{2ab}{a+b} \;\; \; \Longleftrightarrow \;\;\; 
+1\geq \frac{2\sqrt{ab}}{a+b}
+\;\; \; \Longleftrightarrow \;\;\; a+b\geq 2\sqrt{ab}
+\;\; \; \Longleftrightarrow \;\;\; 
+a-2\sqrt{ab}+b=(\sqrt{a}-\sqrt{b})^{2}\geq 0
+\]
+and since this last inequality is always true, the original inequality is always true. 
+
+\end{solution}
+
+
+\end{exercise}
+
+
+\begin{exercise} Show that if $0<a\leq b$, then
+\[
+a\leq \frac{a+b}{2}\leq b.
+\]
+Show that either of these inequalities is an equality if and only if $a=b$.
+
+\begin{solution}
+Since $a\leq b$, we have $a+b\leq b+b=2b$, and so $\frac{a+b}{2} \leq b$. The other inequality has a similar proof. If either of the inequalities is an equality, we can just solve it to get $a=b$. 
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} Show that if $a,b,c,d>0$ and $0<\frac{a}{b}<\frac{c}{d}$, then 
+\[
+\frac{a}{b} < \frac{a+c}{b+d}<\frac{c}{d}.
+\]
+\begin{solution}
+Multiplying all sides by $b+d$, by Proposition \ref{p:xu>xv}, this string of inequalities is equivalent to 
+\[
+\frac{a}{b}(b+d) < a+c <\frac{c}{d}(b+d) 
+\;\; \; \Longleftrightarrow \;\;\; 
+a+\frac{a}{b}d< a+c <\frac{d}{d}b+c.
+\]
+Since, $\frac{a}{b}<\frac{c}{d}$, we know $\frac{a}{b}d <\frac{c}{d}d=c$, and adding $a$ to both sides gives the first of the inequalities above. A similar argument gives the second inequality above.
+\end{solution}
+
+\end{exercise}
+
+
+\begin{exercise} Show the following for $a,b,c,d\in\mathbb{R}$:
+\begin{enumerate}[label=(\alph*)]
+\item $(a^{2}-b^{2})(c^2-d^2)\leq (ac-bd)^2 $
+\item $(a^2+b^2)(c^2+d^2)\geq (ac+bd)^2$.
+\item $(a^2-b^2)^2\geq 4ab(a-b)^2$.
+\end{enumerate}
+
+
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item This inequality holds if and only if (after distributing the products)
+\[
+a^2c^2-a^2d^2-b^2c^2+b^2d^2\leq a^2c^2-2acbd+b^2d^2\]
+and, after cancelling common terms, this is equivalent to 
+\[
+-a^2d^2-b^2c^2\leq -2acbd \;\;\; \Longleftrightarrow a^2d^2+b^2c^2\geq 2acbd.
+\]
+Now we have a product of terms at most a sum, so this suggests using something like the AM-GM inequality. Indeed, the above inequality is true by the AM-GM inequality $\sqrt{xy}\leq \frac{x+y}{2}$ with $x=ad$ and $y=bc$:
+\[
+\frac{a^{2}d^{2}+b^2c^2}{2}
+\geq abcd
+\]
+\item Again, by the AM-GM inequality 
+\begin{align*}
+(ac+bd)^2
+& = a^{2}c^{2}+2abcd+b^{2}d^{2}\\
+& \leq a^{2}c^{2}+2\frac{a^2d^2+b^2c^2}{2}+b^{2}d^{2}\\
+& =a^{2}c^{2}+a^{2}d^{2}+b^{2}c^{2}+b^{2}d^{2}\\
+&= (ac+bd)^2.
+\end{align*}
+
+\item By the AM-GM inequality, 
+\[
+(ab)^{\frac{1}{2}} \leq \frac{a+b}{2}
+\]
+ 
+
+ and so 
+\[
+4ab(a-b)^2
+\leq 4 \left(\frac{a+b}{2}\right)^2(a-b)^2=(a+b)^2(a-b)^2=((a+b)(a-b))^2=(a^2-b^2)^2.
+\]
+\end{enumerate}
+\end{solution}
+
+
+\end{exercise}
+
+
+
+\begin{exercise} Show that for $a,b\in\R$ and $d>0$, 
+
+\[
+ab \leq \frac{a^2}{d} + 2db^2.
+\]
+{\it Hint: First $ab=\frac{a}{c}(bc)$.}
+\begin{solution}
+Notice that by Lemma \ref{l:little-amgm} or the AM-GM inequality,
+\[
+ab = \left(\frac{a}{c}\right) (bc) \leq \frac{\frac{a^2}{c^2}+b^2c^2}{2}
+\]
+Set $c=\sqrt{2d}$, then gives the claim.
+\end{solution}
+
+\end{exercise}
+
+
+
+%
+%\begin{exercise} Let $a,b>0$. Show that 
+%\[
+%\frac{2}{1/a+1/b}\leq \sqrt{ab}.
+%\]
+%
+%\end{exercise}
+
+
+\begin{exercise} Show that for $a>0$, $a+\frac{1}{a}\geq 2$. 
+\begin{solution}
+This follows from Theorem \ref{t:AM-GM}:
+\[
+a+\frac{1}{a} \geq \sqrt{a\cdot \frac{1}{a}}=1.
+\]
+\end{solution}
+\end{exercise}
+
+\begin{exercise} Suppose $x,y>0$ and $r$ is a rational number so that $0<r\leq 1$. Use the AM-GM inequality to prove 
+\[
+x^{r}y^{1-r} \leq rx+(1-r)y.
+\]
+\begin{solution}
+Let $r=\frac{p}{q}$ For $i=1,...,p$, let $x_i=x$ and for $i=p+1,...,q$, let $x_i=y$. Then
+\begin{align*}
+x^{r}y^{1-r} 
+& =(x^{p}y^{1-p})^{\frac{1}{q}}
+=(x_{1}\cdots x_{p}\cdot x_{p+1}\cdots x_{q} )^{\frac{1}{q}}\\
+& \leq \frac{x_{1}+\cdots + x_{p}+x_{p+1}+\cdots + x_{q}}{q} \\
+& =\frac{px+(q-p)y}{q}=\frac{p}{q} x+(1-\frac{p}{q})y=rx+(1-r)y.
+\end{align*}
+\end{solution}
+
+\end{exercise}
+
+%\begin{exercise}
+%Prove that for $a,b>0$ and $p,q\in\mathbb{N}$ with $\frac{1}{p}+\frac{1}{q}=1$, 
+%\[
+%ab\leq \frac{a^{p}}{p}+\frac{b^{q}}{q} .
+%\]
+
+%\end{exercise}
+
+
+\begin{exercise} {\bf(Challenging!)} Prove that if $m_{1},...,m_{k}$ are positive integers and $y_{1},...,y_{k}>0$, then
+\[
+{m_1y_1+m_2y_2+\cdots+m_ky_k \over m_1+m_2+\cdots+m_k} \geq \sqrt[\large m_1+m_2+\cdots+m_k]{y_1^{m_1}\cdot y_2^{m_2}\cdots y_k^{m_k}}
+\]
+
+\begin{solution}
+Let $n=m_{1}+\cdots + m_{k}$. Then 
+\begin{multline*}
+{m_1y_1+m_2y_2+\cdots+m_ky_k \over m_1+m_2+\cdots+m_k} 
+= 
+{m_1y_1+m_2y_2+\cdots+m_ky_k \over m_1+m_2+\cdots+m_k} \\
+= 
+\frac{\overbrace{(y_1+y_1+\dots+y_1)}^{m_1 \text{ times}}+\overbrace{(y_2+y_2+\dots+y_2)}^{m_2 \text{ times}}+\dots+\overbrace{(y_k+y_k+\dots+y_k)}^{m_k \text{ times}}}n \\
+\qquad \geq  \sqrt[n]{\overbrace{(y_1 \cdot y_1 \dots y_1)}^{m_1 \text{ times}}\, \overbrace{(y_2 \cdot y_2 \dots y_2)}^{m_2 \text{ times}} \dots \overbrace{(y_k \cdot y_k \dots y_k)}^{m_k \text{ times}}}\\
+=  \sqrt[n]{y_1^{m_1} y_2^{m_2} \dots y_k^{m_k}}\\
+= \sqrt[\large m_1+m_2+\cdots+m_k]{y_1^{m_1}\cdot y_2^{m_2}\cdots y_k^{m_k}}.
+\end{multline*}
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} Given that $x,y,z\in\mathbb{N}$, solve
+\[
+\left(1+\frac{1}{x}\right)\left(1+\frac{1}{y}\right)\left(1+\frac{1}{z}\right)=3.
+\]
+\begin{solution}
+We claim that the only solutions $(x,y,z)\in \mathbb N$ with $x\le y\le z$ are $(1,3,8)$, $(1,4,5)$, and $(2,2,3)$.
+
+\begin{proof}
+We can assume $0< x\leq y\leq z$. We see that the biggest factor $1+\frac1x$ is at least $\sqrt[3]3$, which implies $x\leq 2$, so $x=1$ or $2$.
+
+\noindent {\bf Case 1:} $x=1$. Then the equation becomes
+$$\left(1+\frac1y\right)\left(1+\frac1z\right)=\frac32$$
+and so $1+\frac1y\geq\sqrt{\frac32}$, i.e. $y\leq 4$.
+Thus the allowed cases $y=3$ and $y=4$ can be easily checked by hand: $y=3$ leads to $1+\frac1z = \frac98$, i.e. $z=8$, whereas $y=4$ leads to $1+\frac1z = \frac{6}{5}$, i.e. $z=5$.
+
+\noindent {\bf Case 2:} $x=2$. Then the equation becomes
+$$\left(1+\frac1y\right)\left(1+\frac1z\right)=2$$ and we conclude $1+\frac1y\ge\sqrt{2}$, i.e. $y\leq 2$ and together with $y\geq x$ this means $y=2$ and finally $1+\frac1z=\frac43$, i.e. $z=3$.
+\end{proof}
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Induction}
+
+
+Mathematical induction is a particular form of proof.
+The goal of a proof by induction is to show that each member of an infinite family of statements is true.
+
+\section{Preliminaries on $\Sigma$ notation}
+
+Before getting into induction, it will be useful to review $\Sigma$ notation. 
+$\Sigma$ notation is spoken as ``sigma notation'' after the Greek letter $\Sigma$.
+\begin{definition}
+Given a sequence of numbers $a_{m},a_{m+1},...,a_{n}$, we write
+\[
+\sum_{k=m}^{n} a_{k} = a_{m}+a_{m+1}+\cdots +a_{n}.
+\]
+\end{definition}
+For example, 
+\[
+\sum_{k=1}^{n} k^2 = 1^2+2^2+3^2+\cdots + n^2.
+\]
+
+We can split sums and use the distribution \[\sum_{k=m}^{n} (a_{k} +b_{k})=\sum_{k=m}^{n} a_{k} +\sum_{k=m}^{n} b_{k}\;\; \;\;\; \mbox{ and }\;\;\;\;\; \sum_{k=m}^{n} c\cdot a_{k} =c\cdot \sum_{k=m}^{n} a_{k} .
+\]
+
+{\bf Note:} this is why we sometimes call numbers {\it constants}: the number $c$ when it appears inside a sum does not vary as $k$ changes, and for this reason we can factor it outside the sum.
+
+The following are useful manipulations of $\Sigma$ notation
+\begin{enumerate}
+\item Detaching the last element:
+\[ \sum_{k=1}^{n+1} a_k = \left(\sum_{k=1}^{n} a_k\right) + a_{n+1}.\]
+\item Differences
+\[ \mbox{If } S_n=\sum_{k=1}^{n} a_k, \mbox{ then } S_{n+1}-S_n = a_{n+1}.\]
+\item Change of variables:
+\[
+\sum_{k=m}^{n} a_{k+\ell} =\sum_{k=m+\ell}^{n+\ell} a_{k}.
+\]
+For example,
+\[
+\sum_{k=3}^{5} \frac{1}{(k+1)^2}
+=\frac{1}{(3+1)^2}+\frac{1}{(4+1)^2}+\frac{1}{(5+1)^2}
+=\frac{1}{4^2}+\frac{1}{5^2}+\frac{1}{6^2} = \sum_{k=4}^{6} \frac{1}{k^2}.
+\]
+\item Change of variables:
+\[
+\sum_{k=m}^{n} a_{k} =\sum_{j=m}^{n} a_{j}.
+\]
+\end{enumerate}
+
+\section{Induction}
+
+The main topic of this chapter is the following fundamental property of the natural numbers/axiom of mathematics called the Principle of Mathematical Induction.
+
+\begin{definition}[The Principle of Mathematical Induction]
+Given a list of statements $P(k),P(k+1),...$, we may conclude that $P(n)$ is true for every integer $n\geqslant k$ {\em provided that}
+
+\begin{itemize}
+\item we know that $P(k)$ is true ("base case")
+\item and we can prove that $P(n)\Rightarrow P(n+1)$ for any integer $n\geqslant k$ ("induction step").
+\end{itemize}
+\end{definition}
+
+The basic idea of an induction proof is to proceed step by step.
+We prove the base case is true, and the induction step retains truth as we move from $P(n)$ to $P(n+1)$.
+
+A full written proof by induction has the following four parts clearly separated.
+\begin{enumerate}
+	\item A clear and explicit statement of the ``induction hypothesis'' $P(n)$ and the intention to prove by induction.
+	\item Prove a ``base case'' is true. Typically prove the single statement $P(1)$.
+	\item Prove the ``induction step''.  Typically, if $P(n)$ is true then $P(n+1)$ is also true.
+	\item Conclude that steps (2) and (3) allow the conclusion that $P(n)$ is true for all natural numbers $n$ by the principal of mathematical induction.
+\end{enumerate}
+Mathematics written for experts might skimp on some of the detail, e.g. saying `` the base case is trivial''. In this course your proofs must be written systematically using all four parts of the format described above.
+
+\begin{example}
+For $n\in\mathbb{N}$, $\sum_{k=1}^{n}k=\frac{n(n+1)}{2}$. 
+
+\begin{proof}
+Let $P(n)$ be the statement that $\sum_{k=1}^{n}k=\frac{n(n+1)}{2}$. We prove that $P(n)$ is true for all $n\in\mathbb{N}$ by induction as follows:\\
+
+\begin{itemize}
+\item  {\bf Base Case:} First let's prove $P(1)$. This is just
+\[
+\sum_{k=1}^{1}k=1=\frac{1(1+1)}{2}. 
+\]
+Thus, the base case is true. \\
+
+\item  {\bf Induction Step:} Assume $P(n)$ holds and consider
+\[
+\sum_{k=1}^{n+1}k =\left({\color{magenta} \sum_{k=1}^{n} k}\right) + (n+1)  = {\color{magenta} \frac{n(n+1)}{2}} +(n+1) = \frac{(n+1)(n+2)}{2}.
+\]
+where we used the statement $P(n)$ to replace \(\sum_{k=1}^{n} k\) with \(\frac{n(n+1)}{2} \).
+Hence \(\sum_{k=1}^{n+1}k=\frac{(n+1)(n+2)}{2}\) which proves that 
+$P(n)\Rightarrow P(n+1)$ is true.
+\end{itemize}
+Since we have shown the base case and induction step, $P(n)$ is true for all $n$ by induction.
+\end{proof}
+\end{example}
+
+
+
+\begin{exercise}
+Prove the following formulas by induction:
+\begin{enumerate}[label=(\alph*)]
+\item $\sum_{k=1}^{n} k^{2} = \frac{n(n+1)(2n+1)}{6}$.
+\item $\sum_{k=1}^{n} k^{3}  = \left(\frac{n(n+1)}{2}\right)^{2}$. 
+\end{enumerate}
+It turns out that for all powers $p$ there is a degree $p+1$ polynomial that gives a formula for the value of $\sum_{k=1}^{n} k^{p}$. To learn more, read up on {\it Bernoulli numbers}.
+\end{exercise}
+
+%
+%\fbox{%
+%    \parbox{\textwidth}{{\bf Sidenote:} 
+%The above formula $\sum_{k=1}^{n}k=\frac{n(n+1)}{2}$ has been known for ages. It was shown, for example, by Abu Bakr Muḥammad ibn al Ḥasan al-Karaji (c. 953 – c. 1029), and he also found other formulae for $\sum_{k=1}^{n}k^2$ and $\sum_{k=1}^{n}k^3$. However, his proofs were not induction as we know today: he proved his formulas for the first 5 values of $n$ and then said the other statements could be proven similarly. 
+%
+%There is a famous story of Carl Friedrich Gauss (1777-1855) giving another proof of this formula when he was 10: His teacher one day asked students to sum up all integers from $1$ to $100$, and when they were done they were to bring their slate up to the teacher. In a few seconds, Gauss took his slate up to the desk. He explained to his teacher that he figured it out so quickly because he realized that 
+%\[
+%1+2+3+\cdots + 100 = (1+100)+(2+99)+(3+98)+\cdots (50+51) = 50\cdot 101.\]
+%
+%}}
+
+Some statements may not be true for all $n\geq 1$ but maybe for $n\geq k$ for some $k$, and depending on the problem you will need to figure out what this $k$ is. 
+
+%\vspace{10pt}
+%When should you use induction? There are a couple of things to look out for:
+
+%Induction is very useful when:
+%
+%\begin{itemize}
+%\item A statement has a nested structure: each statement builds off the last.
+%\item A statement involves a clear multi-step algorithm.
+%\item A statement involves an identity for a complicated sum.
+%\end{itemize}
+
+%{\bf Induction is difficult when:}
+%
+%\begin{itemize}
+%\item The statement for $n$ is not so clearly related to the statement for $n-1$.
+%\item There is no clear base case.
+%\item For sums, when you don't have a guess for a general answer.
+%\end{itemize}
+
+%Not all lists of statements $P(n)$ are true for $n=1$ but for all sufficiently large $n$:
+
+\begin{example}
+For which $n\in\mathbb{N}$ do we have $2^{n}<n!$? If we plug in $n=1,2,3$ this inequality fails, but for $n\geq 4$ it starts to hold. This gives rise to the following conjecture:\\
+
+{\bf Claim:} $2^{n}<n!$ for $n\geq 4$. 
+
+\begin{proof}
+We prove by induction.  Let $P(n)$ be the statement that $2^{n}<n!$.
+
+\begin{itemize}
+\item {\bf Base case:} The base case is $n=4$, and it holds because $2^{4} = 16 < 4!=24$. \\
+
+\item {\bf Induction Step:} Assume $P(n)$ is true, i.e. {\color{magenta} $2^{n}<n!$} for some $n\geq 4$, then
+\[
+2^{n+1} = {\color{magenta} 2^{n}}\cdot 2 < {\color{magenta}n!}\cdot 2 < n! \cdot (n+1)=(n+1)!.
+\]
+\end{itemize}
+Since we have shown the base case and induction step, $P(n)$ is true for all $n\geq 4$ by induction.
+\end{proof}
+\end{example}
+
+
+Some problems can be proven with or without induction:
+
+\begin{exercise}
+Prove that $n^{3}-n$ is divisible by $6$ for all $n\in\mathbb{N}$, first by induction, then without induction.
+\end{exercise}
+
+
+
+The following formula will be very useful throughout this course:
+
+\begin{theorem}[Geometric Series Formula]
+Let $x\neq 1$ be a real number. Then for $N\in\mathbb{N}$, 
+\begin{equation}
+\label{e:gs}
+\sum_{n=1}^{N} x^{n}=\frac{x-x^{N+1}}{1-x} \;\;\;and \;\;\;  \sum_{n=0}^{N} x^{n}=\frac{1-x^{N+1}}{1-x}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The second equation follows from the first (just by adding $1$), so we just need to prove the first. We prove this by induction. 
+\begin{itemize}
+\item {\bf Base case:} If $N=1$, then
+\[
+ \frac{x-x^{2}}{1-x} = \frac{x(1-x)}{1-x}=x=\sum_{n=1}^{1} x^{n}.
+ \]
+ \item {\bf Induction Step:} Suppose \eqref{e:gs} holds for some $N$. Then
+ \[
+ \sum_{n=1}^{N+1} x^{n}
+ =x^{N+1}+ \sum_{n=1}^{N} x^{n}
+ =x^{N+1} + \frac{x-x^{N+1}}{1-x}
+ =\frac{x^{N+1}-x^{N+2}}{1-x} + \frac{x-x^{N+1}}{1-x}
+ =\frac{x-x^{N+2}}{1-x}.
+ \]
+ This proves the induction step. Thus, \eqref{e:gs} holds for all $N\in\mathbb{N}$ by induction.
+ \end{itemize}
+\end{proof}
+
+
+%\begin{itemize}
+%\item See if it is a nested or recursive type statement.
+%\item Try and work backwards.  Start from $P(n+1)$ and try to find an occurrence where you can use the assumption of $P(n)$.
+%\item If working out an identity for sums, you have to guess at the general form.
+%\end{itemize}
+
+% 
+% 
+%\frametitle{Tower of Hanoi}
+%\begin{center}
+% \includegraphics[height=1.25in]{Tower-of-Hanoi.jpg}
+%\end{center}
+%{\bf Rules:} 
+%\begin{enumerate}
+%\item We start $n$ disks with holes in the center, stacked on one rod from largest to smallest (with largest on bottom).
+%\item The objective is to move the disks from the first rod to the third.
+%\item You can only move one disk at a time.
+%\item You can place a disk on top of any other larger disk (i.e. no disk can be under a larger disk). 
+%\end{enumerate}
+%
+
+\section{Strong Mathematical Induction}
+Sometimes it's not enough to know that $P(n)$ is true in order to prove that $P(n+1)$ is true; we might additionally need to use that some of the "previous" statements $P(k), P(k+1), \dots , P(n-1)$ are true.  \\
+%
+%\fbox{%
+%    \parbox{\textwidth}{
+%\begin{description}
+%\item[Principle of Strong Mathematical Induction]
+%  Let $k\in \mathbb{N}$ and let $P(k),P(k+1),...$ are statements. Suppose that\ 
+%  \begin{itemize}
+%  \item $P(k)$ is true,  (``base case")\ 
+%  \item for any integer
+%$n\geqslant k$:   $$ P(k),P(k+1),P(k+2),\ldots,P(n)\Longrightarrow
+%P(n+1).$$ (``induction step"). 
+%
+%\end{itemize} 
+%
+%  Then $P(n)$ is true for every positive integer $n\geqslant
+%k$.
+%\end{description}
+%}
+%}
+
+\begin{definition}[Principle of Strong Mathematical Induction]
+  Let $k\in \mathbb{N}$ and let $P(k),P(k+1),...$ be statements. Suppose that\ 
+  \begin{itemize}
+  \item $P(k)$ is true,  (``base case")\ 
+  \item for any integer
+$n\geqslant k$, statements 
+\[ P(k),P(k+1),P(k+2),\ldots,P(n)\mbox{{\color{blue} (all taken together)}}\Longrightarrow
+P(n+1)\] 
+("induction step"). 
+\end{itemize} 
+Then $P(n)$ is true for every positive integer $n\geqslant k$.
+\end{definition}
+
+
+\vspace{10pt}
+
+Strong induction is needed when you need to make use of several previous statements to prove the next one. For example:
+
+\begin{theorem}
+Every integer $n\geq 2$ can be written as a product of primes $n=p_{1}\cdots p_{k}$. 
+\end{theorem}
+
+
+If $n$ is prime, this statement still makes sense: we just interpret $n$ as being the product of just one number, $n$ itself. 
+
+
+\begin{proof}
+We prove by strong induction on $n$. The case $n=2$ immediately holds (taking into account the previous remark). For the induction step, suppose the theorem holds for all integers $n<N$ (this is our strong inductive hypothesis).  If $N$ is prime, there is nothing to prove; otherwise, if $N$ is not prime, then $N=a\cdot b$ for some positive integers $a$ and $b$ greater than $1$. Both $a$ and $b$ can be  decomposed by the strong induction hypothesis, thus so can $n=ab$.
+\end{proof}
+
+Another situation when you need strong induction is when studying recurrence relations. A {\it recurrence} relation is a sequence $a_{1},a_{2},...$ of numbers  where each $a_{n}$ is defined in terms of previous terms in the sequence. The most famous recurrence relation is the {\it Fibonacci sequence}, which is defined  as $f_{1}=1$, $f_{2}=1$ and for $n>2$, $f_{n}=f_{n-1}+f_{n-2}$. 
+
+\begin{example}
+Let $x_{1}=1, x_{2} =3$ and for $n\geq 2$, let
+\[
+x_{n+1} = 4x_{n}-3x_{n-1}.
+\]
+Let's try and find a general pattern for what $x_{n}$ is. If we test the first few values, we get 
+\[
+x_{1} = 1, \;\; x_{2} = 3 , \;\; x_{3} = 4\cdot 3-3\cdot 1 = 9, \;\; x_{4} = 4\cdot 9 - 3\cdot 3 = 27
+\]
+so it seems like $x_{n} = 3^{n-1}$. We will prove this by strong induction. Let $P(n)$ be the statement "$x_{n} = 3^{n-1}$". Let's first prove the first two base cases: $x_{1}=1=3^{1-1}$ and $x_{2}=3=3^{2-1}$, so $P(1)$ and $P(2)$ are true. Now  suppose $P(k)$ is true for $k=1,2,...,n$ for some $n\geq 2$. Then
+\[
+x_{n+1} =4x_{n}-3x_{n-1} = 4\cdot 3^{n-1} -3x_{n-1} = 4\cdot 3^{n-1} - 3\cdot 3^{n-2} = 3^{n} = 3^{(n+1)-1}.
+\]
+This proves the induction step, and thus $x_n=3^{n-1}$ for all $n$ by strong induction.\\
+
+{\bf Discussion:} {\it Why did we prove two base cases?} Note that the formula $x_{n+1} =4x_{n}-3x_{n-1} $ holds only for $n\geq 2$, so in particular, I can't use it to prove $P(2)$ (i.e. that $x_{2}=3^{2-1}$). For this reason, I need to prove a few more base cases that can't be covered in my induction step. \\
+
+{\it Why did we need strong induction instead of induction?}  I needed both $P(n)$ and $P(n-1)$ to be true to prove $P(n+1)$, but with standard induction I would need to prove $P(n+1)$ follows from just $P(n)$.\\
+\end{example}
+
+\begin{protip}
+{\it How do I know when to use induction vs. strong induction?} One way is to first try proving the induction step to see how many previous cases you need, then that will tell you how many base cases you need as well: if it is more than one, then you need strong induction. 
+\end{protip}
+
+\section{Inequalities revisited}
+
+Powered with induction, we can now prove some more useful inequalities. 
+
+\begin{proposition}
+Suppose $x,y>0$ and $n\in\mathbb{N}$.
+\begin{enumerate}[label=(\alph*)]
+\item $x^n>y^n$ if and only if $x>y$. 
+\item $x^{\frac{1}{n}}>y^{\frac{1}{n}}$ if and only if $x>y$. 
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Let $x,y>0$.
+\begin{enumerate}[label=(\alph*)]
+\item First we show $x>y$ implies $x^n>y^n$. We prove this by induction. The $n=1$ case is trivial. Suppose the claim is true for some integer $n$, we will prove the $n+1$ case. Let $x>y>0$. Then
+\[
+x^{n+1}-y^{n+1}
+=y^{n+1}\left(\left(\frac{x}{y}\right)^{n+1}-1\right).
+\]
+Let $a=\frac{x}{y}$. Since $x>y>0$, Proposition \ref{p:1/x>0} implies $1/y>0$ and  Proposition \ref{p:xu>xv} implies $x\cdot \frac{1}{y}>y\cdot\frac{1}{y}$, that is, $\frac{x}{y}>1$. Letting $a=\frac{x}{y}$, 
+\[
+x^{n+1}-y^{n+1}
+=y^{n+1}\left(a^{n+1}-1\right)
+=y^{n+1}(a^{n}a-1)
+\geq y^{n+1}(a^{n}\cdot 1-1)
+= y^{n+1}(a^{n}-1).
+\]
+By the induction hypothesis, we know $x^n>y^n$, which implies $a^{n}=\frac{x^{n}}{y^{n}}>1$, so the above quantity is positive. Thus, $x>y>0$ implies $x^n>y^n$. 
+
+The converse statement is $x^n>y^n$ implies $x>y$, which is equivalent to the contrapositive statement that $x\leq y$ implies $x^{n}\leq y^{n}$. If $x=y$, then clearly $x^n=y^n$; if $x<y$, then $x^n<y^n$ follows from the above proof.
+
+\item By part (a), $x^{\frac{1}{n}}>y^{\frac{1}{n}}$ if and only if $(x^{\frac{1}{n}})^{n}>(y^{\frac{1}{n}})^{n}$, that is, $x>y$.
+\end{enumerate}
+\end{proof}
+
+Let's finish proving the Cauchy-Schwarz inequality:
+\[
+x_{1}y_{1}+\cdots + x_{n}y_{n}
+\leq \sqrt{x_{1}^2+\cdots + x_{n}^{2}} \sqrt{y_{1}^2+\cdots + y_{n}^{2}} \;\;\; \mbox{ for } \;\;\; x_{1},...,x_{n},y_{1},...,y_{n}\in\mathbb{R}.
+\]
+We prove this by Strong Induction.  We already proved the base case $n=2$. Suppose we have shown the above inequality for $n=2,3,...,N$. By applying the $n=N$ and $n=2$ cases in succession,
+
+\begin{align*}
+x_{1}y_{1}+\cdots + x_{N}y_{N}+x_{N+1}y_{N+1}
+& \leq \sqrt{x_{1}^2+\cdots + x_{N}^{2}} \sqrt{y_{1}^2+\cdots + y_{N}^{2}}+x_{N+1}y_{N+1}\\
+& \leq  \left(  \sqrt{x_{1}^2+\cdots + x_{N}^{2}}^{2}+x_{N+1}^{2}\right)^{\frac{1}{2}}
+\left(  \sqrt{y_{1}^2+\cdots + y_{N}^{2}}^{2}+y_{N+1}^{2}\right)^{\frac{1}{2}}\\
+& =\left(x_{1}^{2}+\cdots + x_{N}^{2}+x_{N+1}^{2}\right)^{\frac{1}{2}}
+\left(y_{1}^{2}+\cdots + y_{N}^{2}+y_{N+1}^{2}\right)^{\frac{1}{2}}
+\end{align*}
+This proves the induction step, and thus proves the Cauchy-Schwarz inequality. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exercises}
+
+The relevant exercises in Liebeck are in Chapter 8.  
+
+\begin{exercise} 
+(Aug 2018 Exam) Show that, for all $n\geq 0$, $\sum_{k=1}^{n} k\cdot k! = (n+1)!-1$. 
+\begin{solution}
+The base case is $\sum_{k=1}^{1} k\cdot k!=1=2!-1$. For the induction step, assuming the $(n-1)$st case is true,
+\[
+\sum_{k=1}^{n} k\cdot k! 
+=\sum_{k=1}^{n-1} k\cdot k! + n\cdot n!
+=n!-1+ n\cdot n!
+=(n+1)\cdot n! -1 = (n+1)!-1.
+\]
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+Show that for all $n\geq 0$, $\sum_{k=1}^{n} k(k+1) = \frac{n(n+1)(n+2)}{3}$. 
+\begin{solution}
+The base case is $\sum_{k=1}^{1} k(k+1) = \frac{1(1+1)(1+2)}{3}$.
+For the induction step assume $\sum_{k=1}^{n} k(k+1) = \frac{n(n+1)(n+2)}{3}$ and consider
+\[
+\sum_{k=1}^{n+1} k(k+1) = 
+\sum_{k=1}^{n} k(k+1) +(n+1)(n+2) \]
+\[
+= \frac{n(n+1)(n+2)}{3}+(n+1)(n+2) 
+=\frac{(n+1)(n+2)(n+3)}{3}.
+\]
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+Show that $n!\leq n^{n}$ for all $n\geq 1$
+\begin{solution}
+The base holds immediately. Assume $n\geq 1$ is so that $n^{n}\geq n!$. Then
+\[
+(n+1)!=n! (n+1)\leq n^{n} (n+1)<(n+1)^{n}(n+1)=(n+1)^{n+1}.
+\]
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} Suppose $x_{1}=1$ and $x_{n+1} = \sqrt{1+2x_{n}}$ for all $n\geq 1$. Show $x_{n}\leq 4$ for all $n$. \\
+\begin{solution}
+This clearly holds for $n=1$. Assume $x_{n}\leq 4$, then 
+\[
+x_{n+1}= \sqrt{1+2\cdot x_{n}}\leq \sqrt{1+2\cdot 4}=\sqrt{9}=3<4\]
+and thus the induction step also holds. 
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  Let $f_{1}=f_{2}=1$ and $f_{n}=f_{n-1}+f_{n-2}$ for $n>2$. 
+\begin{enumerate}[label=(\alph*)]
+\item Show that $3|f_{4n}$ for all $n\geq 1$. 
+\item Show that $1\leq f_{n+1}/f_{n}\leq 2$ for all $n\geq 1$. 
+\end{enumerate}
+
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item We prove by induction. We can compute that $f_{4}=3$, which establishes the base case $n=1$. Now assume $3|f_{4n}$ for some $n\geq 1$, we'll show $3|f_{4(n+1)}$:
+\[
+f_{4(n+1)}=f_{4n+3}+f_{4n+2}
+=2f_{4n+2}+f_{4n+1}
+=2(f_{4n+1}+f_{4n})+f_{4n+1}
+=3f_{4n+1}+2f_{4n}.
+\]
+By assumption, $3|f_{4n}$, and clearly $3|3f_{4n+1}$, and so $3|f_{4(n+1)}$, which proves the induction step and hence the claim. 
+\item It is clear the inequalities hold for $n=1$. Assume we have shown it to hold for some $n$. Then
+\[
+\frac{f_{n+2}}{f_{n+1}}=1+\frac{f_{n}}{f_{n}}\leq 1+1=2
+\]
+and 
+\[
+\frac{f_{n+2}}{f_{n+1}}=1+\frac{f_{n}}{f_{n}}\geq 1+0=1.\]
+This proves the induction step and hence the claim. 
+\end{enumerate}
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+Let $F_{n}=2^{2^{n}}+1$ for $n\geq 0$. Prove that for $n>0$,
+\[
+F_{n} = F_{n-1}\cdots F_{0}+2.
+\]
+\begin{solution}
+We prove by induction. The base case $n=1$ is immediate. Suppose the statement is true for some $n\geq 1$. Then
+\[
+F_{n}\cdot F_{n-1}\cdots F_{0}+2
+= F_{n}(F_{n}-2)+2 
+=F_{n}^{2}-2F_{n}+2
+=(F_{n}-1)^2+1
+=(2^{2^{n}})^2+1 = 2^{2^{n+1}}+1 =F_{n+1}.
+\]
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+Find a formula for the number of diagonals in a convex polygon with $n\geq 3$ vertices. 
+\begin{solution}
+Let $f(n)$ denote the number of diagonals in a convex polygon of $n$ vertices. We will find a recurrence relation that $f$ satisfies. 
+
+Suppose we have a convex  polygon with $n+1$ vertices. Draw an edge between the second vertex $a$ and last vertex $c$, so splits the polygon into a triangle between $a$, $c$, and the first vertex $c$ and a polygon with $n$ vertices. The number of diagonals in this polygon (which are diagonals for the original polygon) are $f(n)$ many. The ones that are diagonals for the original polygon that weren't counted are the ones that have $b$ as an endpoint (of which there are $n+1-3=n-2$ many) and the edge that we first drew. Thus the total is
+\begin{align*}
+f(n+1)
+& =f(n)+n-2+1=f(n)+n-1  = f(n-1) + n-2+n-1=\cdots \\
+& = f(3) + \sum_{k=2}^{n-1}k
+=0+\sum_{k=1}^{n-1}k-1 = \frac{n(n-1)}{2}-1. 
+\end{align*}
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+Show that for all integers $n\geq 3$, there are {\it distinct} integers $x_{1},...,x_{n}$ so that 
+\[
+\sum_{k=1}^{n} \frac{1}{x_{k}}=1.
+\]
+(It is an open question whether you can always do this with $x_{n}$ distinct {\it odd} numbers.)
+\begin{solution}
+We prove this by induction. For the base case $n=3$, we see that
+\[
+1=\frac{1}{2}+\frac{1}{3}+\frac{1}{6}.
+\]
+ Suppose the claim is true for some integer $n\geq 3$. Let $x_{1},...,x_{n}$ be so that 
+\[
+\sum_{k=1}^{n} \frac{1}{x_{k}}=1.
+\]
+Note that we must have $x_{k}>1$ for all $k$. Then 
+\[
+\sum_{k=1}^{n} \frac{1}{2x_{k}}=\frac{1}{2}.
+\]
+Hence,
+\[
+\frac{1}{2} + \frac{1}{2x_{1}}+\cdots + \frac{1}{2x_{n}}=\frac{1}{2}+\frac{1}{2} =1,
+\]
+Note that as $x_{k}\geq 2$ for all $k$, $2x_{k}\neq 2$ for all $k$, thus the integers $2,2x_{1},...,2x_{n}$ are $n+1$ distinct integers whose reciprocals add up to one, which proves the induction step and hence the claim. 
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} Joseph Bertrand conjectured in 1845 (and it was proven by Chebychev in 1852) that, if $p_{1},p_{2},...$ are the primes in ascending order, then
+\[
+p_{n+1}<2p_{n}.
+\]
+This is called {\bf Bertrand's postulate}. Using this result, show that for all $n\geq 4$ we have 
+\[
+p_{n} <\sum_{k=1}^{n-1} p_{k}.
+\]
+\begin{solution}
+We prove this by induction. For $n=4$, we have 
+\[
+p_{4}=7 < 2+3+5 = \sum_{k=1}^{3} p_{k}.
+\]
+This establishes the base case. Now assume the statement is true for some integer $n$. Then
+\[
+p_{n+1}<2p_{n} = p_{n}+p_{n} < p_{n}+\sum_{k=1}^{n-1} p_{k} = \sum_{k=1}^{n} p_{k}.
+\]
+This proves the induction step and hence the claim. 
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+\label{ex:AMGM}
+ {\bf Challenge:} In this exercise, we will prove the Arithmetic-Geometric Inequality: for $x_{1},...,x_{n}\geq 0$,
+\[
+(x_{1}\cdots x_{n})^{\frac{1}{n}}\leq \frac{x_{1}+\cdots + x_{n}}{n}.
+\]
+We will do this in several steps. 
+
+\begin{enumerate}[label=(\alph*)]
+\item Prove that for all $n\in \mathbb{N}$, if $x_{1},...,x_{2^n}$ are positive numbers, then
+
+\[
+(x_{1}x_{2}\cdots x_{2^n})^{1/2^{n}} \leq \frac{x_{1}+\cdots + x_{2^n}}{2^n}.
+\]
+
+\begin{solution}
+This follows by induction on $n$. The $n=2$ case was shown just below the statement of Theorem \ref{t:AM-GM}. For the induction step, assume the $n$th case is true for some $n\geq 2$, we can prove the $(n+1)$st case using the base case: Let $a=(x_{1}\cdots x_{2^{n}})^{\frac{1}{2^{n}}}$ and $y=(x_{2^{n}+1}\cdots x_{2^{n+1}})^{\frac{1}{2^{n}}}$. Then
+\[
+(x_{1}....x_{2^{n+1}})^{\frac{1}{2^{n+1}}}
+=\sqrt{ab}\leq \frac{a+b}{2}
+\leq \frac{x_{1}+\cdots + x_{2^{n}}+x_{2^{n}+1}+\cdots + x_{2^{n+1}}}{2^{n+1}}\]
+where in the last line we used the induction hypothesis.\end{solution}
+
+\item Use  the previous case to prove the AM-GM inequality. {\it Hint: Let $2^{m}>n$ and define a new sequence $y_{1},...,y_{2^{m}}$ with $y_{i}=x_{i}$ for $i=1,2,...,n$ and $y_{i}=A$ otherwise where $A=\frac{x_{1}+\cdots + x_{n}}{n}$. Apply the previous case to the product of the $y_{i}$ and find an appropriate choice of $A$ that will imply the inequality for the $x_{i}$.}
+
+\begin{solution}
+With the notation as in the hint, we see that
+\begin{align*}
+(x_{1}\cdots x_{n}A^{2^{m}-n})^{\frac{1}{2^{m}}} 
+& = (y_{1}\cdots y_{2^{m}})^{\frac{1}{2^{m}}}\\
+& \leq \frac{y_{1}+\cdots + y_{2^{m}}}{2^{m}}\\
+& =\frac{x_{1}+\cdots + x_{n} + (2^{m}-n)A}{2^{m}}\\
+& = \frac{nA+(2^{m}-n)A}{2^{m}}\\
+& = A
+\end{align*}
+Taking both sides to the power $\frac{2^{m}}{n}$, we get
+\[
+(x_{1}\cdots x_{n}A^{2^{m}-n})^{\frac{1}{n}}
+\leq A^{\frac{2^{m}}{n}}.
+\]
+Now moving the $A$ from the left side to the right, we get
+\[
+(x_{1}\cdots x_{n})^{\frac{1}{n}}\leq A=\frac{x_{1}+\cdots + x_{n}}{n}.
+\]
+\end{solution}
+\end{enumerate}
+\end{exercise}
+
+%\item  Suppose two players play a game, where they are given $N$ stones and each player takes turns removing up to 4 stones from the pile (so they can remove 1,2,3, or 4 stones, and they have to take at least 1). The winner is the person who removes the last stone. Conjecture and prove a rule, depending on $N$, that determines whether the first player or second player has a winning strategy.
+%
+%\begin{solution}
+%If $N=5n$ for some integer $n\geq 1$, then player 2 always wins. We prove this by induction. If $n=1$, then regardless of how many stones Player 1 takes, Player 2 can take the rest and win. Now suppose we know that player 2 always wins if $N=5n$ for some integer $n$. If $N=5(n+1)$, and player 1 takes away 1,2,3, or 4 stones, then player 2 can take away 4,3,2, or 1 stones so that there are only 5N left. The induction hypothesis says that, now that it is player 1's turn, player 2 has a winning strategy. 
+%
+%If $n=5n+j$ for some $j\in \{1,2,3,4\}$, then player 1 has a winning strategy. Indeed, player 1 needs to remove j stones so that there are $5n$, now the first part of the problem says that player 1 (who now has second move since it is player 2's turn) has a winning strategy. 
+%
+%\end{solution}
+%
+
+%Exam 2019
+%\item Let $u_{n}$ be the sequence defined by $u_{1}=u_{2}=1$ and for $n>2$, $u_{n+1}=u_{n}+u_{n-1}$ (these are the Fibonacci numbers). Show that $u_{n}^2=u_{n-1}u_{n+1}+(-1)^{n-1}$ for all integers $n\geq 2$. 
+%
+%\begin{solution}
+%We prove by induction. The base cases $n=2$ and $n=3$ can easily be established, so let $n>2$ and assume we have verified that $u_{k}^2=u_{k-1}u_{k+1}+(-1)^{n-1}$ for all $k\leq n$. Then
+%\begin{align*}
+%u_{n+1}^2 
+%& = (u_{n+2}-u_{n})(u_{n}+u_{n-1})\\
+%& =u_{n+2}u_{n}+u_{n+2}u_{n-1}-u_{n}^2-u_{n}u_{n-1}\\
+%& = u_{n+2}u_{n}+u_{n+2}u_{n-1}-(u_{n+1}u_{n}+(-1)^{n-1})-u_{n}u_{n-1}\\
+%& = u_{n+2}u_{n}+(u_{n+1}+u_{n})u_{n-1}-u_{n+1}u_{n}+(-1)^{n}-u_{n}u_{n-1}\\
+%& =  u_{n+2}u_{n}+u_{n+1}u_{n-1}+u_{n}u_{n-1}-u_{n+1}u_{n}+(-1)^{n}-u_{n}u_{n-1}\\
+%& = u_{n+2}u_{n}+(-1)^{n}.
+%\end{align*}
+%This proves the induction step and hence the claim.
+%\end{solution}
+
+
+
+\end{document}

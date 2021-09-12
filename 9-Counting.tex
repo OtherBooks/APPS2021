@@ -1,0 +1,1324 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.0 (9/2/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass[11pt,fleqn,dvipsnames]{book} % Default font size and left-justified equations
+\documentclass[11pt,dvipsnames]{book} 
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+
+
+%%agregué
+
+
+
+
+%%%My stuff
+
+
+%\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+%\usepackage{due-dates}
+\usepackage[small]{eulervm}
+\usepackage{amsmath,amssymb,amstext,amsthm,amscd,mathrsfs,eucal,bm,xcolor}
+\usepackage{multicol}
+\usepackage{array,color,graphicx}
+\usepackage{xypic}
+
+
+\usepackage{epigraph}
+%\usepackage[colorlinks,citecolor=red,linkcolor=blue,pagebackref,hypertexnames=false]{hyperref}
+
+%\theoremstyle{remark} 
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{\bf Example}
+%\newtheorem*{solution}{Solution:}
+
+
+\usepackage{centernot}
+
+
+\usepackage{filecontents}
+
+\usepackage{tcolorbox} 
+
+
+
+
+
+% Ignore this part, this is the former way of hiding and unhiding solutions, new version is after this
+%
+%\begin{filecontents*}{MyPackage.sty}
+%\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{MyPackage}
+%\RequirePackage{environ}
+%\newif\if@hidden% \@hiddenfalse
+%\DeclareOption{hide}{\global\@hiddentrue}
+%\DeclareOption{unhide}{\global\@hiddenfalse}
+%\ProcessOptions\relax
+%\NewEnviron{solution}
+%  {\if@hidden\else \begin{tcolorbox}{\bf Solution: }\BODY \end{tcolorbox}\fi}
+%\end{filecontents*}
+%
+%
+%
+%\usepackage[hide]{MyPackage} % hides all solutions
+%\usepackage[unhide]{MyPackage} %shows all solutions
+
+
+
+
+%\usepackage[unhide,all]{hide-soln} %show all solutions
+\usepackage[unhide,odd]{hide-soln} %hide even number solutions
+%\usepackage[hide]{hide-soln} %hide all solutions
+
+
+
+
+
+
+\def\putgrid{\put(0,0){0}
+\put(0,25){25}
+\put(0,50){50}
+\put(0,75){75}
+\put(0,100){100}
+\put(0,125){125}
+\put(0,150){150}
+\put(0,175){175}
+\put(0,200){200}
+\put(25,0){25}
+\put(50,0){50}
+\put(75,0){75}
+\put(100,0){100}
+\put(125,0){125}
+\put(150,0){150}
+\put(175,0){175}
+\put(200,0){200}
+\put(225,0){225}
+\put(250,0){250}
+\put(275,0){275}
+\put(300,0){300}
+\put(325,0){325}
+\put(350,0){350}
+\put(375,0){375}
+\put(400,0){400}
+{\color{gray}\multiput(0,0)(25,0){16}{\line(0,1){200}}}
+{\color{gray}\multiput(0,0)(0,25){8}{\line(1,0){400}}}
+}
+
+
+
+%\usepackage{tikz}
+
+%\pagestyle{headandfoot}
+%\firstpageheader{\textbf{Proofs \& Problem Solving}}{\textbf{Homework 1}}{\textbf{\PSYear}}
+%\runningheader{}{}{}
+%\firstpagefooter{}{}{}
+%\runningfooter{}{}{}
+
+%\marksnotpoints
+%\pointsinrightmargin
+%\pointsdroppedatright
+%\bracketedpoints
+%\marginpointname{ \points}
+%\totalformat{[\totalpoints~\points]}
+
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\N{{\mathbb{N}}}
+\def\Q{{\mathbb{Q}}}
+\def\C{{\mathbb{C}}}
+\def\hcf{{\rm hcf}}
+
+
+%%end of my stuff
+
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+
+
+
+\usepackage{graphicx} % paquete que permite introducir imágenes
+
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%%hasta aquí
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=12cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{Figures/blank.png}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Proofs and Problem Solving \\[15pt] % Book title
+{\huge Week 9: Counting}\\[20pt] % Subtitle
+{\Large Notes  based on Martin Liebeck's \\ \textit{A Concise Introduction to Pure Mathematics}}}}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+%\newpage
+%~\vfill
+%\thispagestyle{empty}
+
+%\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+
+%\noindent \textsc{Published by Publisher}\\ % Publisher
+
+%\noindent \textsc{book-website.com}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+%\noindent \textit{First printing, March 2013} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{Figures/blank.png} % Table of contents heading image
+
+%\chapterimage{chapter_head_1.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+ \tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+
+
+\part{Week 9: Counting}
+
+
+\chapterimage{Figures/blank.png} 
+
+
+
+
+%\chapterimage{} 
+
+\setcounter{chapter}{14}
+
+\setcounter{page}{0}
+
+
+
+
+
+\chapter{Counting}
+
+
+
+
+\epigraph{\it    Though combinatorics has been successfully applied to many branches of mathematics, these cannot be compared either in importance or in depth to the applications of analysis in number theory or algebra to topology, but I hope that time and the ingenuity of the younger generation will change this.
+}{Paul Erd\H{o}s, 1970.}
+
+ 
+
+
+
+
+This week we will introduce {\it combinatorics}, which is the study of counting. As you can see from the above quotation, Paul Erd\H{o}s\footnote{Paul Erd\H{o}s was one of the greatest combinatorists in history, and the most prolific mathematician, publishing at least 1,525 mathematical papers, more than any other mathematician (though Euler wrote more total pages). His life is incredibly interesting as well, as he spent a large part of it technically homeless, with no permanent address, just travelling and staying with other mathematicians. For a short summary, you can read here ({\url{http://www-history.mcs.st-and.ac.uk/Biographies/Erdos.html}}), otherwise his biography {\it  The Man Who Loved Only Numbers} is a great read.}  felt that combinatorics played second fiddle to the fields of analysis and algebra. However, with the advent of computer science, combinatorics became essential for building efficient algorithms, and thus has a much larger importance for society than Erd\H{o}s could have anticipated back in 1970.\\
+
+
+If you enjoy the material this week, you may enjoy the course {\it Combinatorics and Graph Theory}.
+
+
+
+
+\section{The Multiplication Principle}
+
+Suppose I toss a coin twice: the total number outcomes is 4, since there are 2 outcomes for what the first coin can be (heads or tails), and then 2 outcomes for what the second coin can be. Hence the overall outcomes are (T,T), (T,H), (H,T), and (H,H), of which there are 4. 
+
+We can generalise this to events that involve more than just two possible outcomes:  if I roll a 6-sided die and then an 8-sided die, the total number of outcomes is $6\cdot 8=48$. I can figure this out because, for each of the outcomes for the first die (either $1, 2, \dots , \mbox{ or } 6$), there are 8 possible outcomes for the second die, and so the total of all possible outcomes is $48$. We can generalise this idea using the {\it multiplication principle}.
+
+
+\begin{theorem}[Multiplication Principle]
+Let $P$ be a process consisting of $n$ stages such that at each stage $i$, there are $a_{i}$ choices we can make, and no two distinct choices can result in the same outcome. Then after $n$ stages, the total number of outcomes is $a_{1}\cdot a_{2}\cdots a_{n}$. 
+\end{theorem}
+
+\begin{proof}
+We prove this by induction on $n$. For $n\in \mathbb{N}$, let $P(n)$ be the claim that, if $P$ is a process consisting of $n$ stages such that at each stage $i$, there are $a_{i}$ choices we can make, then there are $a_{1}\cdots a_{n}$ outcomes.
+\begin{itemize}
+\item[{\bf Base case:}] If $n=1$, then $P$ is a process of one stage where there are just $a_{1}$ choices, and so there are only $a_{1}$ many outcomes. This proves the base case. 
+\item[{\bf Inductive step:}] Suppose $P(n)$ is true for some $n\in \mathbb{N}$. Suppose now $P$ is a process with $n+1$ stages and the $i$th stage has $a_{i}$ choices. Note that if we stop the process before the last stage, we will have performed a process with $n$ stages and for each $i=1, \dots ,n$, there are $a_{i}$ choices. Then the induction hypothesis implies that there are $a_{1}\cdots a_{n}$ outcomes. However, for each outcome of the first $n$ stages, there are now $a_{n+1}$ choices we can make. So the total number of outcomes after the $n+1$ stage is the total number of outcomes after $n$ steps times the total number of outcomes that can happen from each of those outcomes, that is $(a_{1}\cdots a_{n})\cdot a_{n+1}$. This proves $P(n+1)$ and finishes the proof. 
+\end{itemize}
+\end{proof}
+
+This seems quite abstract, but let's look at a simple example. 
+
+
+
+\begin{proposition}
+\label{c:1}
+Let $S$ have $n$ elements. Then the number of subsets of $S$ is $2^{n}$. 
+\end{proposition}
+
+
+
+\begin{proof}
+Let $S$ be a set of $n$ elements and list the elements as $S=\{s_{1}, \dots ,s_{n}\}$.
+
+Let us define a process for picking a subset $A$ of $S$: at each stage $i=1,2,\dots ,n$, we decide whether to add $s_{i}$ to our set or exclude it. At the end of the process, we will have picked a subset of $A$, and every subset of $A$ is the outcome of such a process. By the Multiplication Principle, since there are $2$ choices we can make at each stage, there are $2\cdot 2\cdots 2=2^{n}$ many outcomes for what $A$ we could have chosen. Thus, there are $2^{n}$ sets. 
+\end{proof} 
+
+If $S$ is a finite set consisting of exactly $n$ distinct members, we call $n$ the {\em cardinality}
+or {\em size} of $S$ and we denote this by $|S| = n$ (or in some texts by $\#(S) =n$).
+
+\begin{definition}
+Let $S = \{a_1, \dots , a_n\}$ be a set of $n$ distinct objects. An {\it ordering} (or {\it arrangement}) of $S$ is a sequence $(a_{1}, \dots ,a_{n})$ in which each element of $S$ appears exactly once. 
+\end{definition}
+
+For example $(1,3,2)$ and $(3,2,1)$ are orderings of $\{1,2,3\}$. We can use the multiplication principle to count the number of orderings of $S$:
+
+\begin{example}
+How many ways are to order the set $\{1,2,3\}$?
+
+What we do is develop a process for constructing all of the orderings. Suppose we would like to choose an ordering $(a_{1},a_{2},a_{3})$ where the $a_{i}$ are distinct integers in $\{1, 2, 3\}$. We divide the process into 3 stages, where in the $i$th stage we pick the number $a_{i}$ for our ordering. 
+\begin{description}
+\item[\bf Stage 1:] There are $3$ choices for $a_{1}$: either 1, 2, or 3.
+\item[\bf Stage 2:] Having chosen $a_{1}$, there are now only 2 numbers remaining that we could pick to be $a_{2}$. So there are 2 choices for $a_2$. 
+\item[\bf Stage 3:] Having chosen $a_{1}$ and $a_{2}$ there is now only one choice for $a_{3}$. 
+\end{description} 
+\medskip
+Thus, by the multiplication principle, there are $3\cdot 2\cdot 1 = 6$ outcomes, that is, $6$ orderings.
+\end{example}
+
+In fact, more generally, we have the following:
+
+
+
+\begin{theorem}[Ordering Theorem]
+Given a set $S$ of $n$ distinct objects, there are $n!$ ways of ordering them.
+\end{theorem}
+
+This is a special case of the following proposition, (part (b) with $k=m$).
+
+\begin{proposition}
+\label{p:n^k}
+Let $S$ be a set with $n$ elements and let $0\leq k\leq n$. 
+\begin{enumerate}[label=(\alph*)]
+\item The number of ways of picking an ordered selection of $k$ elements from $S$ (i.e. an ordered list of elements $(a_{1}, \dots ,a_{k})$, possibly with repetitions, with $a_i\in S$) is $n^{k}$. 
+\item The number of ways of picking an ordered selection of $k$ {\it distinct} elements from $S$ is $n(n-1)\cdots (n-k+1) = \frac{n!}{(n-k)!}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item We count these possibilities using a $k$-step process: there are $n$ options for $a_1$, $n$ options for $a_2$, and so on. The Multiplication Principle tells us that there are $n\cdot n\cdots n = n^{k}$ outcomes. 
+\item Again, we use the multiplication principle as in (a), but while there were $n$ options for $a_1$, now there are $n-1$ options for $a_2$ because, for the $a_i$ to be distinct, we cannot repeat, so $a_{2}\neq a_{1}$ and so there are only $n-1$ options for $a_2$. Similarly, for $a_{3}$ there are $n-2$ options for what it can be (since it can't equal $a_{1}$ or $a_{2}$). Continuing in this way, after having picked $a_{1},\dots,a_{i-1}$, there will be $n-i+1$ remaining options for $a_i$. Thus, the total number of sequences $a_{1}, \dots ,a_{k}$ of $k$ {\it distinct} elements of $S$ is $n(n-1)\cdots (n-k+1) $.
+\end{enumerate}
+\end{proof}
+
+
+
+
+
+
+
+
+
+\section{Correspondence and overcounting}
+
+
+\indent Sometimes we may try to count the members of some set, but we accidentally count the same elements more than once. We can avoid this by trying to be more careful. However, if we are aware of how many times we overcount, we can also use this to our advantage! 
+
+
+
+\begin{example}
+How many diagonals are there in a regular polygon with $n \geq 3$ sides?\\
+
+This was an exercise in the chapter on induction, but now we will give a different proof. A first attempt is as follows using the Multiplication Principle. Given two vertices $v$ and $w$, we will let $\overline{vw}$ denote the line segment between them. Pick a corner $v$, there are $n$ options. Then there are $n-3$ other corners $w$ that you can pick to form a diagonal $\overline{vw}$ (since we have to exclude the vertex $v$ and the two vertices next to it, since connecting to those from $v$ won't form a diagonal contained in the polygon). Thus, there are $n(n-3)$ ways of picking a corner $v$ and then another corner $w$ so that $\overline{vw}$ forms a diagonal.
+
+However, this is {\it not} the final answer. Notice that in this algorithm, each diagonal actually gets counted twice, since for two nonadjacent corners $v$ and $w$, $\overline{vw}=\overline{wv}$. What we have really counted is the number of ordered pairs $(v,w)$ of corners that are not adjacent, and every diagonal corresponds to exactly two such pairs. Thus, if we divide $n(n-3)$ by two, we get the true number of diagonals, that is, $n(n-3)/2$. (And note that either $n$ or $n-3$ is even!)
+\end{example}
+
+
+The general idea behind overcounting is as follows: suppose you want to count a set of things $A$. Suppose there is another set $B$ that (a) is easier to count and (b) {\it to each $a\in A$ there correspond $m$ elements of $B$}, that is, {\it $B$ and $A$ are in $m$-to-one correspondence}. This means we can pair each element of $A$ with $m$ elements of $B$ so that every element of $B$ belongs to exactly one pairing. If we call the set of these pairs $P$, then $m|A|=|P|$ (since every $a$ is in exactly $m$ pairongs of the form $(a,b)\in P$), and $|P|=|B|$ since every $b\in B$ belongs in exactly one pairing. Thus, we get that $m|A|=|B|$.
+
+In the previous example, we could match every diagonal $d$ with two ordered pairs of nonadjacent corners; the total number of such ordered pairs is $n\cdot (n-3)$, and this is twice the number of diagonals. Thus, the number of diagonals is this number divided by $2$. In the figure below, we show an example of how, to each element in a set $A$, there correspond 3 elements in a set $B$ (and so $|B|=3|A|$).
+
+\begin{center}
+\includegraphics[width=300pt]{Figures/corresponds.pdf}
+\begin{picture}(0,0)(300,0)
+%\putgrid
+\put(75,0){$A$}
+\put(300,80){$B$}
+\end{picture}
+\end{center}
+
+
+\begin{example}
+How many ways are there to rearrange the letters in the words "orange" and "banana"? \\
+
+By the Ordering Theorem, there are $6!$ ways of rearranging the letters in "orange" since there are six {\it distinct} letters, but for "banana" we have to be careful. 
+
+Suppose first that we treat each letter as an individual letter, that is, we look at the number of rearrangements of the word "$ba_{1}n_{1}a_{2}n_{2}a_{3}$". There are now 6 distinct characters, so there are a total of $6!$ ways of rearranging this word. This isn't the same thing as counting the number of ways of rearranging "banana", since if we change the $a_{1},a_{2},a_{3}$ in a rearrangement back into a's and the $n_{1}$ and $n_{2}$ back into n's, there are multiple ways of getting the same rearrangement of "banana." For example, "nanaba" can be obtained from "$n_{1}a_{1}n_{2}a_{3}ba_{2}$" as well as "$n_{2}a_{2}n_{1}a_{3}ba_{1}$". However, to each arrangement of "banana", there are $3!$ ways of treating the a's as distinct letters and $2!$ ways of treating the n's as distinct letters so that they return the same rearrangement, and hence there are $3!\cdot 2!$ rearrangements of "$ba_{1}n_{1}a_{2}n_{2}a_{3}$" that correspond to the same rearrangement of "banana" when we turn the $n_i$'s into $n$'s and the $a_i$'s into 'a's. Thus,  counting the number of rearrangements of "$ba_{1}n_{1}a_{2}n_{2}a_{3}$"  (which is $6!$) overcounts the number of rearrangements of "banana" by a factor of $3!\cdot 2!$. Hence, we just need to divide $6!$ by $3!\cdot 2!$ to get the number of rearrangements of "banana", which is
+\[
+\frac{6!}{3!\cdot 2!} = \frac{720}{12} = 60.
+\]
+(Note that the original arrangement of the letters in "orange" counts as one of the 
+$6!$ rearrangements.)
+\end{example}
+
+\section{Counting subsets}
+
+We will now use the method of overcounting to count the number of subsets of a set $S$ with $|S|=n$ which have a given size $k$. Because this number appears over and over again, we give it a special notation:\\
+
+\begin{definition}
+Let $S$ be set with $n$ distinct members, and let $k$ be an integer such that $0\leq k\leq n$. We let 
+\[
+{n \choose k}
+\]
+denote the number of subsets of $S$ which have exactly $k$ members (and the above is read "$n$ choose $k$" because it gives the number of ways we can choose $k$ members from an $n$-element set). (If $k>n$, we set ${n \choose k}=0$). 
+\end{definition}
+
+
+\begin{theorem}\label{t:choose}
+For integers $0\leq k\leq n$, we have 
+\begin{equation}
+\label{e:choose}
+{n \choose k}=\frac{n!}{k!(n-k)!}
+.\end{equation}
+\end{theorem}
+
+Liebeck gives a different proof in the book of this theorem, so please look at both. Recall that by convention we declare $0! = 1$. 
+
+Notice also that 
+\begin{equation}
+{n \choose k}=\frac{n!}{k!(n-k)!} = \frac{n(n-1) \dots(n-k +1)}{k(k-1) \dots 2. 1}. 
+\end{equation}
+For example ${3 \choose 2} = \frac{3!}{2!1!} = 3$, 
+${6 \choose 3} = \frac{6!}{3!3!} = \frac{6 \cdot 5 \cdot 4}{3 \cdot 2 \cdot 1} =20$ and ${n \choose 0} =1$.
+
+\begin{proof}
+If $k=0$, there is only one subset of size $0$, which is the empty set, and in this case we see that $\frac{n!}{0!(n-0)!}=\frac{n!}{n!}=1$. Now let $1\leq k\leq n$ and $S$ be a set of $n$ elements. Consider the process where we pick an ordered list $(a_{1}, \dots ,a_{k})$ of $k$ distinct elements from $S$, one at a time, to form a set $A=\{a_{1}, \dots ,a_{k}\}$ of $k$ elements. By Proposition \ref{p:n^k}, there are $\frac{n!}{(n-k)!}$ ways of picking the list $(a_{1}, \dots ,a_{k})$. However, this is not the same thing as counting the number of subsets of size $k$, since if we picked $a_1, \dots ,a_k$ in a different order, they would still give rise to the same set $A=\{a_{1}, \dots ,a_{k}\}$. What we have really counted is the number of ways of picking an {\it ordered} list of $k$ elements, not a {\it set} of $k$ elements. The number of orderings of $\{a_{1}, \dots ,a_{k}\}$  is $k!$ by the Ordering Theorem. Thus, we have overcounted the number of subsets of size $k$ by a factor of $k!$, hence if we divide$\frac{n!}{(n-k)!}$ by $k!$, we get that the number of subsets of size $k$ is the right side of \eqref{e:choose}.
+\end{proof}
+Note that it's perhaps not completely obvious that the right-hand side of \eqref{e:choose} actually defines a whole number; however once we can identify it as the number of ways of doing something, it {\em has to be} a nonnegative integer!
+%
+%
+%Let $S=\{1,2,...,n\}$.  By the Rearrangement Theorem, the number of rearrangements is equal to $n!$. Now we count the number of rearrangements a second way via the following process that chooses a rearrangement:
+%\begin{itemize}
+%\item First, pick a subset $A$ of $S$ of size $k$. There are ${n\choose k}$ options. 
+%\item Next, pick an arrangement $s_{1}....s_{k}$ of the elements of $A$, there are $k!$ options. 
+%\item Also pick an arrangement $t_{1}...t_{n-k}$ of $S\setminus A$. There are $(n-k)!$ options.
+%\item Let $s_{k+j}=t_{j}$, so now we have picked an arrangement $s_{1}...s_{n}$ of $S$. 
+%\end{itemize} 
+%By the Multiplication Principle, the total number of outcomes is ${n\choose k}\cdot k! \cdot (n-k)!$. Thus,
+%\[
+%{n\choose k} = {n\choose k}\cdot k! \cdot (n-k)! \frac{!}{k!(n-k)!} = \frac{n!}{k!(n-k)!}.
+%\]
+%This finishes the proof.
+%\end{proof}
+
+%One cool aspect about the above theorem is that, at first glance, it isn't clear that $\frac{n!}{r!(n-r)!}$ should be an integer for every choice of integers $0\leq r\leq n$.
+
+\medskip
+This argument leads us to a new kind of proof, called a {\it combinatorial proof}, which is a way of proving a formula by showing that both sides of an equation count the same number of things, rather than trying to prove establish the equation directly via algebra. Let's start with an easy example:
+
+
+
+\begin{example}
+For $0 \leq k \leq n$ we have 
+\[
+{n\choose k} = {n \choose n-k}.
+\]
+This can be easily shown using the formula \eqref{e:choose}, but we will prove it instead using one-to-one correspondence (that is, $m$-to-one correspondence with $m=1$):
+
+Note that if $S$ is a set of size $n$ and $A$ is a subset of size $k$, then $S\setminus A$ is a set of size $n-k$. Conversely, if $B$ is a set of size $n-k$, then $S \setminus B$ is a set of size $k$. 
+Therefore to every set of size $k$ we can associate a unique set of size $n-k$ and vice-versa. Thus the sets of size $k$ and sets of size $n-k$ are in one-to-one correspondence, so the number of these sets is the same, that is, ${n\choose k} = {n \choose n-k}$. 
+(If you need a bit more convincing, check that if
+$B = S \setminus A$, then $S \setminus B = A$.) Slightly more formally we describe the correspondence $A \leftrightarrow S \setminus A$ as a {\em bijection} between the sets of size $k$ and the sets of size $n-k$.
+
+%Alternatively, we can prove this with bijections: Let $S_{k}$ be the subsets of $S$ of size $k$ and define a function $f:S_{k}\rightarrow S_{n-k}$ by $f(A)= S\setminus A$. Then $f$ is a bijection with inverse $f^{-1}:S_{n-k}\rightarrow S_{k}$ also defined by $f^{-1}(A)=S\setminus A$. We can check this function is an inverse because $f(f^{-1}(A))=A$ for every $A\in S_{n-k}$ and $f^{-1}(f(A))= A$  for every $A\in S_{k}$. Thus, by Theorem 14.1,
+%\[
+%{n\choose k} =|S_{k}|=|S_{n-k}|= {n \choose n-k}.
+%\]
+\end{example}
+
+
+Let's prove another identity where it may be less clear how to prove it algebraically.
+
+\begin{corollary}
+\label{c:2^n=nk}
+For $n\geq 0$, we have 
+\[
+2^{n} = \sum_{k=0}^{n} {n\choose k}
+.\]
+\end{corollary}
+
+\begin{proof}
+Let $S$ be a set of size $n$, let $A$ be the set of subsets of $S$, and for $k=0, \dots ,n$, let $A_k$ denote the subsets of $S$ of size $k$, so $A_{k}$ has size ${n\choose k}$ by Theorem \ref{t:choose}. These sets are disjoint and their union is all of $A$, so they form a {\em partition} of $A$. Thus, the size of $A$ is the sum of the sizes of the $A_{k}$. Hence, with $|A|$ denoting the size of $A$,
+\[|A|=|A_{1}|+\cdots + |A_{n}|= \sum_{k=0}^{n} |A_{k}|=\sum_{k=0}^{n}{n\choose k}. 
+\]
+We also know by Proposition~\ref{c:1} that $|A|=2^{n}$, and this proves the corollary.
+\end{proof}
+
+We have surreptitiously introduced the notion of a partition above. More formally, a {\em partition} of a nonempty finite set $A$ is a collection of subsets $A_1, \dots , A_m$ of $A$ such that $\bigcup_{i=1}^m A_i = A$ and such that for $i \neq j$, $A_i \cap A_j = \emptyset$. In other words, every $x \in A$ belongs to {\em exactly one} $A_i$.
+
+
+%
+%\begin{exercise}
+%Prove that for $n\geq i\geq 0$, 
+%\[
+%\sum_{k=0}^{n} {k \choose i} = {n+1\choose i+1}
+%\]
+%first by induction, then do this by showing that the two sides count the same thing two different ways. 
+%\end{exercise}
+%
+
+
+
+%\begin{protip} {\bf Divide and Conquer!} One way to count the number of elements in a set is to split or partition the set up into parts that are easier to count and then add up their sizes. For example, to get started on the above exercise, remember that ${n+1 \choose r}$ counts the number of subsets of size $r$ in a set of size $n+1$. Since we are writing this as a sum of ${n \choose r}$ and ${n \choose r-1}$, this suggests that we are splitting the set of subsets into two sets, counting them separately, and then adding their sizes together. So what you need to figure out is how we are splitting this up to get sets of sizes ${n \choose r}$ and ${n \choose r-1}$ respectively.\\
+%
+%We demonstrate this method in the following corollary of the above work.
+%\end{protip}
+
+\bigskip
+Suppose we are given $n$ identical red objects laid out along a line, and we are told to {\em intersperse} $m$ identical blue objects amongst them. (We are allowed to begin and end our new chain of objects with blue objects if we wish.) How many ways of doing this are there?
+
+\begin{proposition}\label{interspersion} {\bf -- Linear interspersion principle.}
+The number of ways of interspersing $m$ identical blue objects amongst $n$ identical red objects laid along a line is $n+m \choose m$.
+\end{proposition}
+\begin{proof}
+Each linear arrangement combining the $m$ blue objects and the $n$ red objects corresponds to choosing a subset of size $m$ (the blue objects) from a set of size $m+n$ (all the objects). There are $n+m \choose m$ such choices, and hence $n+m \choose m$ ways of interspersing $m$ identical blue objects amongst $n$ identical red objects laid along a line.
+\end{proof}
+
+
+\begin{example}
+\label{ex:1+'s}
+How many ways are there to express the number $9$ as a sum of three nonnegative integers? \\
+
+This uses a clever trick which reduces matters to the linear interspersion principle. (It might look intimidating to think it up on your own, but now you'll know it!). 
+
+Consider a sum $x+y+z=9$ with $0\leq x,y,z\leq 9$ and replace $x,y,z$ with the number of $1$'s that add up to $x$, $y$ and $z$ respectively separated by $+$'s. For example, $4+3+2=9$ and $5+0+4$ correspond to
+\[
+1\;\; 1\;\; 1\;\; 1\;\; + \;\;1\;\; 1\;\; 1\;\; +\;\;1\;\; 1\;\; \;\;\;\;\;\mbox{ and }\;\;\;\;\; 
+1\;\; 1\;\; 1\;\; 1\;\;  1 \;\; + \;\; + \;\; 1\;\; 1\;\; 1\;\; 1\;\; .
+\]
+{\bf Thus, the number of solutions to $x+y+z=9$ is exactly the number of ways to intersperse 2 +'s amongst 9 1's laid out in a row.} This is the case $n=9$, $m=2$ of the linear interspersion principle, and is the number of such solutions is thus ${9+2 \choose 2} = {11\choose 2}$.
+\end{example}
+
+\begin{example}\label{identicalballsinboxes}
+How many ways are there to place $9$ identical red balls in three boxes? \\
+
+This is the previous example in disguise! Put the 
+$9$ balls in a line, and introduce two "dividers" 
+to delineate the "gaps" between the three boxes.
+So, for example
+
+$$ B\;B\;B\;B\; |\; B\; |\; B\; B\;B\;B$$
+
+\noindent
+denotes placing $4$ balls in box $1$, $1$ ball in box $2$ and $4$ balls in box 3. The number of ways of inserting two dividers in a line of $9$ balls is therefore ${11\choose 2}$.
+
+\end{example}
+%
+%
+%Let's prove again that the number of subsets of a set of size $n$ is $2^{n}$ using pairing.
+%
+%\begin{proof}[Second proof of Proposition \ref{c:1}]
+%Let $s_{n}$ be the number of subsets of a set of size $n$. We prove by induction on $n$ that $s_{n}=2^{n}$ for all integers $n\geq 0$. For the base case, we observe that if $n=0$, then $S$ has no elements, and so it is the emptyset, and the only subset of the empty set is the empty set. Hence, $s_{0}=1=2^{0}$. 
+%
+%For the induction step, suppose we know that $s_{n}=2^{n}$. Let $S$ be a set of size $n+1$. Fix an element $a\in S$ and let $S'=S\setminus \{a\}$ (that is, $S$ is the set consisting of everything in $S$ apart from $a$). Then $|S'|=|S|-1=n+1-1=n$. Thus, we can apply our induction hypothesis to $S'$ to get that $S'$ has $2^{n}$ subsets. Let $A$ be the set of subsets of $S$ that contain $a$ and $B$ the subsets of $S$ that don't contain $a$. Then the subsets of $S$ are either in $A$ or $B$ but not both. The size of $A$ is $2^{n}$ by the induction hypothesis since every set in $A$ is a subset of $S'$ of size $n$ and vice versa. Now, notice that if $E\in B$, then $E$ contains $a$, and so $E\setminus \{a\}$ is a subset of $S'$. That is, we can pair subsets of $S'$ with every set in $S$ that contains $a$. Hence, $|B|=2^{n}$ as well. Thus, the total number of sets in $S$ is $|A|+|B|=2^{n}+2^{n}=2^{n+1}$. This completes the induction step and also the proof. 
+%
+%\end{proof}
+
+Now try your hand at combinatorial proofs in the following exercises. The second one will be a workshop problem.
+
+
+\begin{exercise}
+Given $S=\{1,2, \dots ,n\}$ and $0\leq j<n$, show that number of subsets of $S$ of the form $\{a,a+1, \dots ,a+j\}\subseteq S$ is ${n\choose 2} + n$.
+\begin{solution}
+Note that a set of the form $\{a,a+1, \dots ,a+j\}\subseteq S$ is uniquely determined by the first and last element of the set, which could be any two numbers, or the same number if $j=0$. Thus, the total number of sets of this form is the same as counting the number of subsets of size $2$ plus the number of sets of size $1$, and adding them together, hence the total number is 
+\[
+{n\choose 2} + n.
+\]
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise}
+Let $1 \leq r \leq n$. Prove that
+\begin{equation}
+\label{e:n+1/r}
+ \begin{pmatrix} n+1 \\ r \end{pmatrix}= \begin{pmatrix}n \\ r \end{pmatrix} + \begin{pmatrix} n \\ r-1\end{pmatrix}.
+ \end{equation}
+(You may be familiar with this result if you know about {\em Pascal's triangle}.) First prove this by induction using \eqref{e:choose}. But then can you give another proof by counting a single quantity in two different ways?
+
+Use this result to show that for $2 \leq r \leq n$,
+\[ \begin{pmatrix} n+2 \\ r \end{pmatrix}= \begin{pmatrix}n \\ r \end{pmatrix} + 2\begin{pmatrix} n \\ r-1\end{pmatrix} + \begin{pmatrix}n \\ r-2 \end{pmatrix}.\]
+How can you further generalise these results?
+\end{exercise}
+
+
+
+
+
+\section{Counting partitions}
+
+The binomial coefficient ${n\choose k}$ counts the number of ways to pick a subset of size $k$ from a set of size $n$, or in other words, the number of ways of splitting a set of size $n$ into a set of size $k$ and a set of size $n-k$. What if we wanted to count the number of ways to partition a set into more than two sets? 
+
+For example, let $A = \{1,2,3,4,5,6\}$. Then
+$\{\{1,2,3\},\{4,5\},\{6\}\}$
+is a partition of $A$ into sets of sizes $3$, $2$ and $1$ respectively. Another one is $\{\{1,4,6\},\{3,5\},\{2\}\}$. How many such partitions are there? One way to look at this is as follows. First we work out the number of ways to select $3$ members of $A$ for our first set: there are ${6 \choose 3}$ such ways. Each such choice leaves us with a set of $3$ remaining members of $A$, from which we choose $2$ for our second set, and there are $3 \choose 2$ ways to do this. 
+Finally there is exactly one choice for the last set. So altogether there are
+$$ {6 \choose 3} \times {3 \choose 2} \times 1= \frac{6!}{3! 3!} \times \frac{3!}{2! 1!} \times \frac{1!}{1!} = \frac{6!}{3! 2! 1!}$$
+ways to form such a partition, by the Multiplication Principle. 
+
+Another example: again let $A = \{1,2,3,4,5,6\}$ and suppose this time we want to partition $A$ into non-interchangeable sets of sizes
+$2, 2$ and $2$. More concretely, suppose we are given a red, a blue and a green bin, and we want to calculate the number of ways of throwing $2$ elements of $A$ into the red bin, $2$ elements of $A$ into the blue bin  and $2$ elements of $A$ into the green bin. (In the previous example there was no need to assign colours to the bins because they were always going to hold {\em different} numbers of members of $A$ -- the red bin was always going to hold $3$ members of $A$, the blue bin $2$ members and the green bin $1$ member of $A$.) There are $6 \choose 2$ ways to throw $2$ members of $A$ into the red bin,  $4\choose2$ ways of throwing $2$ of the remaining $4$ members of $A$ into the blue bin, and $2 \choose 2$ ways of throwing the remaining $2$ members of $A$ into the green bin. So altogether there are 
+$$ {6 \choose 2} \times {4 \choose 2} \times {2 \choose 2}= \frac{6!}{4! 2!} \times \frac{4!}{2! 2!} \times \frac{2!}{2!} = \frac{6!}{2! 2! 2!}$$
+ways to form such a partition, by the Multiplication Principle. 
+
+What we are discussing is more formally described using the terminology of an {\em ordered partition}.
+
+\begin{definition}\label{part}
+Let $S$ be a nonempty finite set. 
+An {\it ordered partition} of $S$ is a sequence of sets $(A_{1}, \dots ,A_{k})$ that partitions $S$. 
+\end{definition}
+
+In the case of our second example, the two ordered partitions $(\{1,2\}, \{3,4\}, \{5,6\})$ and
+ $(\{3,4\}, \{1,2\}, \{5,6\})$ are distinct because
+ in the first case $1$ and $2$ are in the red bin while in the second case they are in the blue bin; we want to count these separately. In general we think of having $k$ colours, and the set $A_1$ as being assigned colour $1$, $A_2$ as being assigned colour $2$, and so on.
+ 
+ 
+ 
+
+%Wait...what is the difference between these two definitions? The $A_{1}, \dots ,A_{k}$ appear in both?! 
+
+%The difference is that a partition is a {\it collection} or {\it set} of subsets that partition $S$, whereas an ordered partition is a {\it list} or {\it sequence} of sets, which implicitly means there is an ordering on the sets under consideration.\footnote{We've already seen something similar earlier: recall that the set $\{ a_1, \dots , a_k\}$ is different from the ordered sequence $(a_1, \dots , a_k)$, and there are $k!$ possible ordered sequences that we can build out of the set $\{ a_1, \dots a_k\}$.} For example
+%\[
+%\{\{1,2\},\{3,4\},\{5\}\}
+%\]
+%is a partition of $\{1,2,3,4,5\}$, but it makes no assumptions about the order of the sets. In particular, as sets, we have 
+%\[
+%\{\{1,2\},\{3,4\},\{5\}\}=\{\{5\},\{3,4\},\{1,2\}\}
+%.\]
+%However, if we let $A_{1}=\{1,2\}$, $A_{2}=\{3,4\}$, and $A_{3}=\{5\}$, then $(A_1, A_2, A_3)$ is an ordered partition, and this is distinct from the ordered partition $(B_1, B_2, B_3)$ given by  $B_{1}=\{5\},B_{2}=\{3,4\},B_{3}=\{1,2\}$. 
+
+\begin{definition}
+Given $n \in \mathbb{N}$, $k \in \mathbb{N}$ with $k \geq 2$, and nonnegative integers $r_{1}, \dots ,r_{k}$ such that $r_{1}+\cdots + r_{k}=n$, we denote the number of ordered partitions $(A_{1}, \dots ,A_{k})$ of a set $S$ such that $|A_{i}|=r_{i}$ by
+\[
+{n \choose r_{1}, \dots , r_{k}}.
+\]
+\end{definition}
+
+Our examples show us that 
+\[
+{6 \choose 3, 2, 1} = \frac{6!}{3!2!1!}
+\]
+and 
+\[
+{6 \choose 2,2,2} = \frac{6!}{2!2!2!}.
+\]
+The following result should therefore not be too surprising.
+\begin{theorem}
+\label{t:mutlinomial}
+For $n \in \mathbb{N}$, $k \geq 2$ and nonnegative integers $r_{1}, \dots ,r_{k}$ such that $r_{1}+\cdots + r_{k}=n$, we have
+\[
+{n \choose r_{1}, \dots , r_{k}} = \frac{n!}{r_{1}!r_{2}!\cdots r_{k}!}.
+\]
+\end{theorem}
+
+Again, we give a different proof from Liebeck.
+
+\begin{proof}
+Let $S$ be a set of size $n$. We prove the above formula by induction on $k$. Our inductive hypothesis is that for a certain $k$, the statement of Theorem~\ref{t:mutlinomial} holds for {\em all} $n$ and {\em all} $r_1, \dots , r_k$ such that $r_1 + \dots + r_k = n$ . 
+\begin{itemize}
+\item[{\bf Base case:}] If $k=2$, this follows since the number of ordered partitions $(A_{1},A_{2})$, where $|A_{1}|=r_{1}$ and $|A_{2}|=r_{2}=n-r_{1}$
+is just the number of ways of choosing an $r_1$-element subset of $S$ which equals 
+$${n \choose {r_1}} = {n \choose {r_1, n-r_1}}.$$ 
+This proves the base case. 
+\item[{\bf Inductive Step:}] Suppose the inductive hyothesis holds for some $k\geq 2$ and all $n$. Picking an ordered partition $(A_{1}, \dots,A_{k+1})$ with $|A_{i}|=r_i$ and $r_{1}+\cdots + r_{k+1}=n$ is the same as picking an $r_{k+1}$-member subset $A_{k+1}$ of $S$, and, for each such, then picking an ordered partition $A_1, \dots , A_k$ of the remaining $(n - r_{k+1})$-member set with $A_i = r_i$ for $1 \leq i \leq k$. By the Multiplication Principle the number of ways of doing this is
+$$ { n \choose r_{k+1}} \times  {n- r_{k+1} \choose r_1, \dots , r_{k}}$$
+which, by the inductive hypothesis, is 
+$$ { n \choose r_{k+1}} \times \frac{(n- r_{k+1})!}{ r_1! \dots r_{k}!}= \frac{n!}{(n-r_{k+1})! r_{k+1}!}\frac{(n- r_{k+1})!}{ r_1! \dots r_{k}!}=
+\frac{n!}{r_{1}!r_{2}!\cdots r_{k+1}!},$$
+completing the inductive step. 
+\end{itemize}
+\end{proof}
+%
+%\begin{proof}
+%Let's count the number of ways to rearrange a set $A$ of $n$ elements in the following way: first, pick an ordered partition $(A_{1},A_{2},...,A_{k})$ of sets of size $r_{1},r_{2},...,r_{k}$ so that $r_{1}+r_{2}+\cdots + r_{k}=n$, there are ${n\choose r_{1},...,r_{k}}$ ways of picking this set. Then there are $r_i!$ ways of rearranging each set $A_i$. If $a^{i}_{1},...,a^{i}_{r_{i}}$ is one rearrangement of $A_i$, we can combine all the arrangements into one rearrangement of $A$:
+%\[
+%a^{1}_{1},...,a^{1}_{r_{1}},a^{2}_{1},...,a^{2}_{r_{2}},.....,a^{k}_{r_{k}}.
+%\]
+%Thus, the total number of rearrangements is
+%\[
+%{n \choose r_{1},...r_{k}} r_{1}!r_{2}!\cdots r_{n}!.
+%\]
+%We also know the total number of rearrangements of $A$ is $n!$, and so the above is equal to $n!$. Solving for ${n \choose r_{1},...r_{k}}$ gives the theorem.
+%\end{proof}
+
+Take a good look at the above proof and check that the inductive hypothesis was indeed valid at the inductive step. 
+
+\begin{example}
+Let's revisit the "banana" problem. Each arrangement of "banana" corresponds to an ordered partition $(B,A,N)$ of the set $\{1,2, \dots ,6\}$ with $|B|=1,|A|=3,|N|=2$, where $i\in B$ if the $i$th letter in the rearrangement is a "b", $i\in A$ if the $i$th letter is an "a", and $i\in N$ if the $i$th letter is an $N$. Thus, the total number of rearrangements is again
+\[
+{6 \choose 3 , 2, 1} = \frac{6!}{3!2!1!}=60.
+\]
+\end{example}
+
+
+\begin{example}
+How many ways are there to choose from a set of size $10$ three disjoint subsets of sizes $5,3,$ and $2$ respectively? What about sizes $4,4,$ and $2$ respectively? \\
+
+
+Let $S=\{1,2,\dots,10\}$. There are ${10\choose 5,3,2}$ ways of choosing an ordered partition of $S$ into a first set of size 5, a second set of size 3, and a third set of size 2 by Theorem \ref{t:mutlinomial}.
+
+
+%Note that given an {\it unordered} partition $\{A,B,C\}$ of sizes $5,3,2$, we can order them from smallest to largest to get an {\it ordered} partition of sizes $5,3,2$, and every ordered partition arises in this way. Thus, there are as many unordered partitions as ordered partitions, of which there are ${10 \choose 5,3,2}$. 
+
+For the second part, there are ${10\choose 4,4,2}$ ways of picking an {\it ordered} partition with sets of sizes $4,4,$ and $2$. But what if we instead wanted the number $N$ of {\it unordered} partitions $\{A_{1},A_{2},A_{3}\}$ where $|A_{1}|=|A_{2}|=4$ and $|A_{3}|=2$? Given such a partition, there are $2!$ ordered partitions we can make from it, (by swapping the two sets $A_1$ and $A_2$ of the same size $4$), so that the first two sets have size 4 and the last has size 2. 
+Thus, counting the number of ordered partitions overcounts the number of unordered partitions by a factor of $2$, so the number of partitions is $N= {10\choose 4,4,2}/2$. 
+
+\end{example}
+
+
+
+\section{The Binomial and Multinomial Theorems}
+
+
+A very natural place that binomial coefficients appear (and the reason why they are called binomial coefficients) is in the following theorem, with which you are probably already familiar from high school, and use of which we have already made in Weeks 3 and 4 of this course :
+
+\begin{theorem}[The Binomial Theorem]
+Let $n\in\mathbb{N}$ and $a,b\in \mathbb{C}$. Then\footnote{Liebeck assumes $a,b\in \mathbb{R}$, but this is not necessary. }
+\begin{equation}
+\label{e:binomialtheorem}
+(a+b)^{n} = \sum_{k=0}^{n} {n\choose k} a^{k}b^{n-k}. 
+\end{equation}
+\end{theorem}
+
+
+As an application, let's give a second (faster) proof of Corollary \ref{c:2^n=nk}: by the Binomial Theorem,
+\[
+2^{n} = (1+1)^{n} =  \sum_{k=0}^{n} {n\choose k} 1^{k}1^{n-k}=\sum_{k=0}^{n} {n\choose k} .
+\]
+
+\begin{proof}
+We have
+\[ (a+b)^n =  \underbrace{(a + b)}_{1}\cdot \underbrace{(a+b)}_{2}\cdots \underbrace{(a+b)}_{n}.
+\]
+When we multiply out this product, we will get a sum of terms of the form $a^k b^{n-k}$ for $0 \leq k \leq n$. How many of each of these do we get? Each bracket contributes either an $a$ or a $b$ in the final answer, and the number of $a^k b^{n-k}$ terms 
+in this final answer will be precisely the number of ways of picking $k$ brackets from the brackets labelled $1,2 ,\dots , n$ above. That is, it is $n \choose k$. In other words, the coefficient of $a^k b^{n-k}$ in the expansion is exactly  $n \choose k$.
+\end{proof}
+
+
+The binomial theorem is a special case of the following theorem which is proved in much the same way:
+
+\begin{theorem}[The Multinomial Theorem]
+Let $n\in\mathbb{N}$ and $x_{1}, \dots ,x_{k}\in \mathbb{C}$. Then 
+\begin{equation}
+\label{e:multinomialtheorem}
+ (x_{1}+\cdots + x_{k})^{n} =
+ \sum {n\choose r_{1},\dots ,r_{k}} x_1^{r_{1}}\cdots x_{k}^{r_{k}} 
+\end{equation}
+where the sum is taken over all $r_{i}\in \{0,1, \dots ,n\}$ such that $r_{1}+\cdots + r_{k}=n$.
+\end{theorem}
+
+
+
+
+
+\begin{proof}
+%We will give two proofs, one by induction and one combinatorial proof. First, we prove by induction. Let $P(n)$ be the statement that \eqref{e:binomialtheorem} holds for an integer $n$ and for all $a,b\in \mathbb{C}$. 
+%\begin{itemize}
+%\item[{\bf Base Case:}] If $n=1$, then 
+%\[
+%(a+b)^{1}=a+b = {1\choose 0} a+ {1 \choose 1} b.
+%\]
+%Hence, the base case holds. 
+%\item[{\bf Induction Step:}] Assume $P(n)$ holds for some integer $n\geq 1$. Then
+%\begin{align*}
+%(a+b)^{n+1}
+%& =(a+b)  (a+b)^{n} 
+% =(a+b) \sum_{k=0}^{n} {n\choose k} a^{k}b^{n-k} \\
+%&=\sum_{k=0}^{n} {n\choose k} a^{k+1}b^{n-k}
+%+\sum_{k=0}^{n} {n\choose k} a^{k}b^{n-k+1}\\
+%& = \sum_{k=1}^{n+1} {n\choose k-1} a^{k}b^{n+1-k}
+%+\sum_{k=1}^{n} {n\choose k} a^{k}b^{n-(k-1)}+b^{n+1}\\
+%& = b^{n+1} +\sum_{k=1}^{n+1} \left({n\choose k-1} +{n\choose k} \right) a^{k}b^{n+1-k}\\
+%& = b^{n+1} +\sum_{k=1}^{n+1} {n+1 \choose k} a^{k}b^{n+1-k}\\
+%& =\sum_{k=0}^{n+1} {n+1 \choose k} a^{k}b^{n+1-k}
+%\end{align*}
+%In the fourth equality, we removed the first term of the second sum and placed it outside (this was the $b^{n+1}$), then we combined the two sums (now that they are both summing from $k=1$ to $n$), and in the next line we used \eqref{e:n+1/r} to get the last line. This proves the induction step, and thus the theorem.
+%\end{itemize}
+
+
+Let's number the parentheses in the product:
+\[
+(x_{1}+\cdots + x_{k})^{n} = \underbrace{(x_{1}+\cdots + x_{k})}_{1}\cdot \underbrace{(x_{1}+\cdots + x_{k})}_{2}\cdots \underbrace{(x_{1}+\cdots + x_{k})}_{n}.
+\]
+When we multiply out this product, we will get terms of the form $x_{1}^{r_{1}}\cdots x_{k}^{r_{k}}$ where $r_{1}+\cdots + r_{k}=n$. How many of these terms do we get? We can form such a product by picking a partition $A_{1}, \dots ,A_{k}$ of $\{1,2, \dots ,n\}$ with $|A_i|=r_i$ and then picking $x_j$ from $A_i$ to include in our $x_{1}^{r_{1}}\cdots x_{k}^{r_{k}}$ term if $j\in A_i$. Thus, the number of times $x_{1}^{r_{1}}\cdots x_{k}^{r_{k}}$ appears when we multiply out the above product is the same as counting the number of ordered partitions $(A_{1}, \dots ,A_{k})$ of $\{1,2, \dots ,n\}$ with $|A_i|=r_i$, which is  ${n\choose r_{1}, \dots ,r_{k}} $. 
+
+%
+%For example, if $A$ is a subset of $\{1,2,...,n\}$, we could multiply each $a$ that is in the $i$th term of the product for some $i\in A$, and then pick $b$'s from the other terms. For $0\leq k\leq n$, there are ${n \choose k}$ ways of picking a subset $A$ of size $k$, and so there are ${n \choose k}$ ways to obtain a product of the form $a^{k}b^{n-k}$ when we expand the product. 
+\end{proof}
+
+\begin{example}
+What is the coefficient of $x$ in $(1+x+\frac{1}{x})^{5}$? \\
+
+Let $a=1$, $b=x$ and $c=\frac{1}{x}$. When we expand $(a+b+c)^{5}$, the terms of the form $a^{r_{1}}b^{r_{2}}c^{r_{3}}$ (where $r_{i}\geq 0$ and $r_{1}+r_{2}+r_{3}=5$) that equal $x$ are of the form $a^{4}b$, $a^{2}b^2c$, and $b^3c^{2}$, so we just need to add together the coefficients of these terms, which by the multinomial theorem are 
+\[
+{5 \choose 4,1,0} + {5 \choose 2,2,1} + {5 \choose 0,3,2}
+=\frac{5!}{4!0!} + \frac{5!}{2!2!1!}+\frac{5!}{0!3!2!}
+=5+\frac{120}{4} + \frac{120}{12} = 5+30+10 = 45.
+\]
+\end{example}
+
+
+
+
+\section{Inclusion-Exclusion}
+
+\indent Suppose we want to count how many numbers between 1 and 100 are divisible by either 3 or 5. A first attempt might be to say, well, there are $99/3=33$ numbers divisible by $3$ and $100/5=20$ numbers that are divisible by $5$, so the numbers that are divisible by $3$ or $5$ is the sum of these two numbers, i.e. $33+20=53$. However, we again run into an {\it overcounting} problem, since some numbers are divisible both by $3$ and $5$ and thus are being counted twice. We can't just divide our answer by 2 as before, since there are plenty of numbers that are divisible by $3$ but not $5$ and vice versa. The way to overcome this is by using the {\it inclusion-exclusion principle}: 
+
+\begin{theorem}[Inclusion-Exclusion Principle]
+Let $n\geq 2$ and suppose $A_{1},A_{2}, \dots ,A_{n}$ are finite sets. Let
+\[
+N_{1}  = |A_{1}|+|A_{2}|+\cdots +|A_n|,
+\]
+\[N_{2}  = |A_{1}\cap A_{2}|+|A_{1}\cap A_{3}|+|A_{2}\cap A_{3}|+\cdots +|A_{n-1} \cap A_n|,
+\]
+and similarly, let 
+\[N_k = \sum_{1 \leq i_1 < i_2 < \dots < i_k \leq n}
+|A_{i_1} \cap A_{i_2} \cap \dots \cap A_{i_k}|\] 
+be the sum of the sizes of the intersections of all collections of $k$ different $A_i$'s, so that \[N_{n} = |\bigcap_{k=1}^{n}A_{k}|.\] Then%\footnote{The statement in Liebeck's book is not correct, there should be a $(-1)^{n+1}$ not $(-1)^{n}$.}
+\begin{equation}
+\label{e:incl-excl-n}
+|A_{1}\cup\cdots \cup A_{n}| = N_{1}-N_{2}+N_3 -N_4 +\cdots + (-1)^{n+1}N_n = \sum_{k=1}^{n} (-1)^{k+1}N_k .\end{equation}
+In particular, for finite sets $A,B,C$,
+\[
+|A\cup B| = |A|+|B|-|A\cap B|,\]
+and
+\[
+|A\cup B\cup C| = |A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C| + |A\cap B\cap C|.
+\]
+\end{theorem}
+
+
+\begin{proof}
+Let $A=A_{1}\cup\cdots \cup A_{n}$, and list the elements as $A=\{x_{1}, \dots ,x_{M}\}$ where $M=|A|$. Notice that when we compute $N_1=|A_{1}|+\cdots + |A_{n}|$, this is the same as computing for each $x_k$ the number of sets $A_i$ that $x_k$ appears in, and then summing over $k$. Similarly, $c_2$ is the same as adding together over all $x_k$ the number of times $x_k$ appears in some pair $A_i\cap A_j$, and so on. Thus, the sum on the right of \eqref{e:incl-excl-n} is the same as computing the sum over each $x_k$,  how many times $x_k$ appears in one set $A_i$ minus how many times it appears in the intersection of two sets, and so on, and then adding over all $x_k\in A_{1}\cup\cdots \cup A_{n}$. What we will do is show that for each $k$, this number is $1$.
+
+Suppose $x_k$ appears in each of the sets $A_{k_{1}}, \dots ,A_{k_{m}}$ for some $1\leq k_1<k_2<\cdots < k_m\leq n$, and none of the others. This means $x_k$ appears in exactly $m$ sets, so its contribution to $N_{1}$ is exactly $m$. It also appears in ${m\choose 2}$ many pairs $A_{k_{i}}\cap A_{k_{j}}$ with $1\leq i<j\leq m$, so it contributes ${m\choose 2}$  to $N_2$. Similarly, $x$ contributes ${m\choose k}$  to $N_k$ for each $k\leq n$ (and recall that ${m\choose k}=0$ for $k>m$). Thus, by the Binomial Theorem, the total contribution of $x$ to the right side of \eqref{e:incl-excl-n} is 
+\[
+\sum_{k=1}^{m} {m\choose k}(-1)^{k+1}
+=1 + \sum_{k=0}^{n} {m\choose k}(-1)^{k+1}
+=1 -\sum_{k=0}^{n} {m\choose k}(-1)^{k}
+=1-(1-1)^{m}=1.
+\]
+
+
+
+\end{proof}
+
+This proof is quite abstract, but using it is a lot easier, which we demonstrate in the following example.
+
+\begin{example}
+Let's return to the example of counting how many natural numbers at most 100 are divisible by $5$ or $3$. Let $A$ be those numbers divisible by $3$ and $B$ those numbers which are divisible by $5$. Then as we showed before, $|A|=33$ and $|B|=20$. Note that the set we want to count is $A\cup B$, which are those numbers either in $A$ or in $B$ (that is, divisible by $3$ or divisible by $5$). Also note that $A\cap B$ are those numbers divisible by both $3$ and $5$, that is, divisible by 15, of which there are only $6$. Thus, 
+\[
+|A\cup B|=|A|+|B|-|A\cap B|=33+20-6 = 47.
+\]
+\end{example}
+
+
+\section{Exercises}
+\begin{exercise}
+ How many ways are there for $n$ people to stand in a circle?
+ 
+ \begin{solution}
+ Let's first count the number of ways to order people clockwise around a circle where the first person stands at a specific spot. This is just $n!$. However, we are counting the number of ways for $n$ people to stand in a circle, and so there is no first position, and for such an arrangement, there are $n$ ways to pick who should be the "first person". Thus, we overcounted by a factor $n$, so dividing $n!$ by $n$ gives the answer $(n-1)!$.
+ \end{solution}
+ \end{exercise}
+ 
+ 
+\begin{exercise}
+How many ways are there to partition a set of size $n$ into two subsets (one of which can be empty)? 
+\begin{solution}
+For 2 sets, if $S$ is our set, notice that to each $A\subseteq S$ there corresponds a partition of $S$, namely $\{A,S\backslash A\}$. Thus, the number of partitions is the same as the number of subsets, which is $2^{n}$. 
+\end{solution}
+\end{exercise}
+
+
+
+\begin{exercise}
+Determine how many ways there are to distribute $9$ sweeties in $4$ boxes if
+\begin{enumerate}[label=(\alph*)]
+\item The sweeties and boxes are distinct.
+\begin{solution}
+For each sweetie, there are $4$ options for which box to place it in, thus by the multiplication principle, the number of options is $4^{9}$.
+\end{solution}
+\item The sweeties are identical and the boxes are distinct.
+\begin{solution}
+Using the method in Example~\ref{identicalballsinboxes}, this is equal to the number of ways of placing $4-1 = 3$ dividers in a line of $9$ balls, which is ${{9+3}\choose {3}} = {12 \choose 3}$. 
+\end{solution}
+\end{enumerate}
+\end{exercise}
+
+
+
+\begin{exercise}
+How many numbers at most 200 are divisible by 
+\begin{enumerate}[label=(\alph*)]
+\item 5 or 6?
+\begin{solution}
+The largest multiple of 6 at most 200 is 192, and so there are 192/6=31 multiples of 6 at most 200 (call this set $A$). Similarly, there are 200/5=40 multiples of 5 (call this set $B$). The largest multiple of $5\cdot 6=30$ is 180, and so there are at most $180/30=6$ numbers divisible by 5 and 6, thus
+\[
+|A\cup B| = |A|+|B|-|A\cap B| = 31+40-6 = 65.
+\]
+\end{solution}
+\item 3,4 or 5?
+\begin{solution}
+Homework problem.
+%The largest multiple of $3$ less than 200 is 198, and so there are 198/3=66 multiples of 3 at most 200, call this set $A$. There are 200/4=50 multiples of $4$, call this set $B$. There are 200/5=40 multiples of 5, call this set $C$. The set $A\cap B$ is the set of multiples of $3$ and $4$ (that is, multiples of 12) at most 200; the largest multiple of 12 at most 200 is 192, so there are 192/12=16 multiples of 12 at most 200, so $|A\cap B|=12$. The largest multiple of $3\cdot 5=15$ at most 200 is 195, so $|A\cap C| = 195/15=13$. Finally, $|B\cap C|=200/20=10$. Finally, the largest multiple of $3\cdot 4\cdot 5=60$ at most 200 is 180, and so $|A\cap B\cap C| = 180/60=3$. Thus,
+%\begin{align*}
+%|A\cup B\cup C|
+%& =|A|+|B|+|C| -|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|\\
+%& =66+50+40-12-13-10+3=124.
+%\end{align*}
+\end{solution}
+\item 3,5, or 6?
+\begin{solution}
+Let $A,B,C$ be those numbers at most 200 which are divisible by 3,5 and 6 respectively. We want to figure out what $|A\cup B\cup C|$ is. Notice that $C\subseteq A$, and so $A\cup B\cup C = A\cup B$. Thus, by the inclusion exclusion principle,
+\[
+|A\cup B\cup C|=| A\cup B|=|A|+|B|-|A\cap B|
+=66 + 40-13 = 93.
+\]
+\end{solution}
+\end{enumerate}
+\end{exercise}
+
+
+
+
+\begin{exercise} Use a combinatorial argument to prove that  for $2\leq k\leq n$, 
+\[
+{k \choose 2} + {n-k \choose 2}+k(n-k) = {n \choose 2}.\]
+\begin{solution}
+The term on the right is the number of ways to choose two elements from a set $S$ of size $n$. We can alternatively count this as follows: first let $2\leq k\leq n$ and let $A\subseteq S$ have size $k$. Then we can pick a subset of $S$ of size two either by picking two elements from $A$ (of which there are ${k \choose 2}  $ options), or two elements from $S\setminus A$ (of which there  are ${n-k \choose 2}$ options) , or one from $A$ and one from $S\setminus A$ (of which there are $k(n-k)$ options). Adding these all together gives the left side of the above equation.
+\end{solution}
+\end{exercise}
+
+
+
+
+\begin{exercise}
+ Use a combinatorial argument to show
+\[
+\binom{nk}{2} = k \binom{n}{2} + n^2 \binom{k}{2}.
+\]
+
+
+
+\begin{solution}
+
+
+Consider a grid of $nk$ squares with $k$ columns and $n$ rows, and let $A$ be the set of unordered pairs of distinct squares from the $nk$ squares in the grid. Then $|A|=\binom{nk}{2}$. Alternatively, we could compute $|A|$ as follows: let $A_{1}$ be those pairs of squares that are in different columns and $A_{2}$ be those pairs of squares in the same column: there are $ \binom{k}{2}$ ways to pick the two columns, then $n$ ways to pick a square from one column, then another $n$ ways to pick a square from the second column, thus $|A_{1}|=n^2 \binom{k}{2}$. Next, to count $A_{2}$, there are $k$ columns to pick from, and then we can pick a subset of size $2$ in $ \binom{n}{2}$ ways from that column, so $|A_{2}|=k \binom{n}{2} $. Thus,
+\[
+\binom{nk}{2} = |A|=|A_{1}|+|A_{2}|= n^2 \binom{k}{2}+k \binom{n}{2} .
+\]
+
+\end{solution}
+
+\end{exercise}
+
+ 
+ \begin{exercise}
+  Give two proofs that ${2n\choose n}$ is even.
+  \begin{solution}
+  First solution: notice that ${2n\choose n}$ counts the number of sets of size $n$ from a set $S$ of size $2n$. Notice that each such set $A$ of size $n$ appears once in the first component of the following pairs
+ \[P=\{(B,S\setminus B) \; | \; B\subseteq S,\;\; |B|=n\}.\]
+Thus, ${2n\choose n}=|P|$. If we look at the set of {\it unordered} pairs $\{A,S\setminus A\}$ where $|A|=n$, then this is exactly half the size of $P$ since to each undordered pair $\{A,S\setminus A\}$ there corresponds two ordered pairs $(A,S\setminus A)$ and $(S\setminus A,A)$. Hence, $P$ must be even, and so ${2n \choose n}$ is even. \\
+\end{solution}
+
+\begin{solution}
+Second solution: for a second proof, by the binomial theorem,
+\begin{align*}
+2^{2n} & = (1+1)^{2n} = \sum_{k=0}^{2n} {2n\choose k}
+=\sum_{k=0}^{n-1} {2n\choose k}+{2n\choose n}+\sum_{k=n+1}^{2n} {2n\choose k}\\
+& =\sum_{k=0}^{n-1} {2n\choose k}+{2n\choose n}+\sum_{k=n+1}^{2n} {2n\choose 2n-k}\\ 
+& =\sum_{k=0}^{n-1} {2n\choose k}+{2n\choose n}+\sum_{j=0}^{n-1} {2n\choose j}\\ 
+& = 2 \sum_{k=0}^{n-1} {2n\choose k}+{2n\choose n}\\ 
+%& =\sum_{k=0}^{n-1} {2n\choose k}+{2n\choose n}+\sum_{k=0}^{n-1} {2n\choose 2n-(k+n+1)}\\ 
+%& =\sum_{k=0}^{n-1} {2n\choose k}+{2n\choose n}+\sum_{k=0}^{n-1} {2n\choose n-k-1}\\ 
+%& =\sum_{k=0}^{n-1} {2n\choose k}+{2n\choose n}+\sum_{k=0}^{n-1} {2n\choose n-k-1}\\ 
+\end{align*}
+where in the second line we used the fact that ${m \choose r} = {m \choose m-r}$ and in the third line we made a change of variables $j = 2n-k$. Thus ${2n\choose n}$ is a difference of even numbers and so it must be even.
+\end{solution}
+\end{exercise}
+
+
+
+
+
+\begin{exercise} If $n\geq 5$ distinct objects are arranged in a circle, how many ways are there to choose three of these $n$ objects so that no two of them are next to each other?
+
+\begin{solution}
+{\bf Claim:} 
+There are $\frac{1}{6}n(n-4)(n-5)$ ways to choose three of $n$ distinct objects arranged in a circle so that no two of them are next to each other.
+
+
+\begin{proof}
+Choose one object, which can be done in $n$ ways. Then the remaining two must be picked from those that aren't adjacent to it, so there are $n-3$ objects to pick from, (and we can think of these objects as now being arranged along a line). There are ${{n-3} \choose 2}$ ways of choosing {\em any} two of these objects and
+$n-4$ ways of choosing them to be adjacent. So there are
+$${{n-3} \choose 2} - (n-4) = \frac{(n-3)(n-4)}{2} - (n-4) = \frac{(n-4)(n-5)}{2}$$
+ways of choosing the remaining two to be non-adjacent. By the multiplication principle, there are $\frac{n(n-4)(n-5)}{2}$ ways of making the choice, having fixed the first one. But this overcounts by a factor of $3! = 3$, so the final answer is $\frac{n(n-4)(n-5)}{6}$. 
+\end{proof}
+
+\end{solution}
+\end{exercise}
+
+
+%
+%\begin{exercise}
+%Prove by induction that 
+%\[
+%\sum_{k=0}^n {k\choose i} = {n+1\choose i+1} \mbox{ for $n\geq i\geq 0$}.
+%\] 
+%Then prove it using a combinatorial argument instead.
+%
+%\begin{solution}
+%First we prove by induction. For base case $n=0$, we can only have $i=0$ and so
+%\[
+%\sum_{k=0}^0 {k\choose 0}
+%=1 = {0+1\choose 0+1}.
+%\]
+%For the induction step, suppose we have shown the claim is true for some $n\geq 0$. Then if $0\leq i\leq n$,
+%\[
+%\sum_{k=0}^{n+1} {k\choose i}
+%=\sum_{k=0}^n {k\choose i} + {n+1 \choose i}
+%={n+1\choose i+1} + {n+1 \choose i}
+%={n+2 \choose i+1}
+%\]
+%where in the last equation we used \eqref{e:n+1/r}.  If $i=n+1$, if $k\leq n$ then ${k \choose n+1}=0$, and so 
+%\[
+%\sum_{k=0}^{n+1} {k\choose n+1}
+%=\sum_{k=0}^n {k\choose n+1} + {n+1 \choose n+1}
+%=0+1={n+2 \choose (n+1)+1}
+%\]
+%This proves the induction step and hence the claim. \\
+%
+%Now we give a combinatorial proof. If $i\leq n$, then ${n+1 \choose i+1}$ is the number of ways to choose a subset $A$ of size $i+1$ from a set $S$ of size $n+1$. 
+%\end{solution}
+%\end{exercise}
+
+
+
+
+%
+%
+%\begin{exercise} Suppose that $A$ is a non-empty finite set. Prove that $A$ has as many even-sized subsets as it does odd-sized subsets.
+%
+%
+%\begin{solution}
+%We will give three different solutions.\\
+%
+% Let $n=|S|$, $E$ be the number of even subsets, and $O$ the number of odd subsets. If $n$ is odd, if we look at the pairs $P=\{(A,S\backslash A):A\subseteq S \mbox{ is even}\}$, then each even set appears in exactly one of these pairs, since if $|A|$ is even, then $|S\backslash A|$ is odd. Similarly, every odd number appears in exacly one of these pairs, so 
+%\[
+%|E|=|P|=|O|.
+%\]
+%If $S$ is even (so $|S|\geq 2$ since $S\neq\emptyset$), let $a\in S$ and let $S'=S\backslash \{a\}$, so $|S'|$ is odd (and $|S'|\geq 1$ so it is nonempty). Then the number of even and odd subsets of $S'$ are equal, so we just need to ensure that the number of even and odd subsets of $S$ that contain $a$ are also equal, but notice that if $A\subseteq S$ is even and contains $a$, then $A$ appears in exactly one of the pairs $(A,A\backslash \{a\})$, and similarly, every $B\subseteq S'$ of odd size appears in exactly one of the pairs $(A,A\backslash \{a\})$ (we just set $A=B\cup \{a\})$.
+%
+%
+%Thus, the number of these pairs is equal to both the number of even sets in $S$ containing $a$ and the number of odd sets in $S'$. A similar argument shows that the number of odd sets in $S$ containing $a$ is equal to the number of even sets in $S'$. Since the number of odd and even sets in $S'$ are equal, this means the number of odd and even sets in $S$ containing $a$ are equal.
+%
+%\end{solution}
+%
+%\begin{solution} An alternative proof is as follows: by the binomial theorem, if $n=2m$, then 
+%\begin{align*}
+%0 & =(-1+1)^{n} = \sum_{k=0}^{n} {n\choose k} (-1)^{k}\\
+%&  =\sum_{j=0}^{n/2} {n\choose 2j} (-1)^{2j}+\sum_{j=0}^{n/2-1} {n\choose 2j+1} (-1)^{2j+1} \\
+%& =\sum_{j=0}^{n/2} {n\choose 2j}-\sum_{j=0}^{n/2-1} {n\choose 2j+1}
+%\end{align*}
+%and so 
+%\[
+%\sum_{j=0}^{n/2} {n\choose 2j}=\sum_{j=0}^{n/2-1} {n\choose 2j+1}
+%\]
+%but the sum on the left is equal to the number of even subsets, and the quantity on the right is equal to the number of odd subsets.
+%
+%Similarly, if $n=2m+1$, 
+%\begin{align*}
+%0 & =(-1+1)^{n} = \sum_{k=0}^{n} {n\choose k} (-1)^{k}\\
+%& =\sum_{j=0}^{(n-1)/2} {n\choose 2j} (-1)^{2j}+\sum_{j=0}^{(n-1)/2} {n\choose 2j+1} (-1)^{2j+1} \\
+%& =\sum_{j=0}^{(n-1)/2} {n\choose 2j}-\sum_{j=0}^{(n-1)/2} {n\choose 2j+1}
+%\end{align*}
+%and so 
+%\[
+%\sum_{j=0}^{(n-1)/2}{n\choose 2j}=\sum_{j=0}^{(n-1)/2}{n\choose 2j+1}
+%\]
+%and again, the left and right sides count the number of even and odd sized subsets as well. 
+%
+%\end{solution}
+%
+%\begin{solution} Finally, one last proof: Let $E$ be the set of even sets and $O$ the set of odd sets in $S$. Fix an element $x\in S$ (such an element exists because $S$ is nonempty). Define a map $f:E\rightarrow O$ by 
+%\[
+%f(A)=\left\{\begin{array}{ll} A\backslash \{x\} & \mbox{ if }x\in A\\
+%A\cup \{x\} & \mbox{ if }x\not\in A\end{array}\right.
+%.\]
+%
+%Then if $A$ is even, then $A$ is odd, since we either add an element to $A$ (hence increasing its size by 1) or we remove an element of $A$ (hence decreasing its size by 1). Moreover, it is bijective: To see that it is surjective, note that if $B$ is an odd set, then if $x\in B$, $f(B\backslash \{x\})=B$ and if $x\not\in B$, then $f(B\cup \{x\})=B$, and in each case $B\backslash \{x\}$ and $B\cup \{x\}$ are in $E$. To see that $f$ is injective, suppose  $f(A)=f(B)$ for some even sized sets $A$ and $B$. Assume for the sake of a contradiction that $f(A)=A\backslash \{x\}$ and $f(B)=B\cup \{x\}$, then $|A|=|f(A)|+1$ and $|B|=|f(B)|-1$, so in particular, $|A|=|B|+2$, so they differ by at least two points. One of those is $x$, since $x$ is in $A$ and $x$ is not in $B$ by assumption. Thus, there is another point in $A\backslash B$ besides $x$, and that point won't change under $f$,  so $y\in f(A)\backslash f(B)$, which means $f(A)\neq f(B)$, which is a contradiction. Thus, we must have $f(A)=A\backslash \{x\}$ and $f(B)=B\backslash \{x\}$, or $f(A)=A\cup \{x\}$ and $f(B)=B\cup \{x\}$. In the first case, we then have 
+%\[
+%A=f(A)\cup \{x\}=f(B)\cup \{x\} = B
+%\]
+%and similarly for the second case. This proves injectivity, and thus bijectivity. 
+%
+%Now by proposition 19.1, since $f:E\rightarrow O$ is bijective, $|E|=|O|$. 
+%
+%
+%
+%if $f(A)=f(B)$, then that means $A\backslash \{x\}=B\backslash \{x\}$, 
+%
+%
+%
+%
+%
+%\end{solution}
+%\end{exercise}
+
+
+\begin{exercise}
+Give both an algebraic argument and a combinatorial argument to show (for $0 \leq k \leq n$)
+\[k\binom{n}{k} = n\binom{n-1}{k-1}\]
+in two different ways. {\it( {\bf Hint for the combinatorial proof:}  For a set $S$ with $|S|=n$, the left side is the same as counting the number of pairs $(a,A)$ where $a\in A\subseteq S$ and $|A|=k$. Can you show the right side counts the same set in a different way?)}
+
+\begin{solution}
+First we do the algebraic argument:
+\[k\binom{n}{k} 
+=\frac{k\cdot n!}{(n-k)!k!} = \frac{n!}{(n-k)!(k-1)!}  = \frac{n\cdot (n-1)!}{(n-k)!(k-1)!}\]
+\[=\frac{n\cdot (n-1)!}{((n-1)-(k-1))!(k-1)!} = n\binom{n-1}{k-1}.
+\]
+Now we give a combinatorial proof. We need to find a common thing these two numbers are counting, or that they count two sets that are in one-to-one correspondence. If you see a term with a product, it might mean that it is counting some set using the Multiplication Principle. In fact, the left side counts the number of ways of pairing a set $A$ of size $k$ with an element $a\in A$, i.e. the set of pairs $(a,A)$ where $A\subseteq S$, $|A|=k$, and $a\in A$. Let's see if the right side is in one-to-one correspondence with this set. Note that $n$ is the number of ways of picking one element $a\in S$, and $\binom{n-1}{k-1}$ is the number of ways of picking a subset $B$ of size $k-1$ from the remaining $n-1$ elements of $S$, i.e. this counts the set of pairs $(a,B)$ where $a\in S$, $|B|=k-1$, and $a\not\in B$. But each such pair is in one-to-one correspondence with a pair $(a,A)$ (where $a\in A$ and $|A|=k$ as before by setting $A=B\cup \{a\}$. Thus, these sets of pairs are in one-to-one correspondence and so they have the same number. This proves the formula.
+
+\end{solution}
+\end{exercise}
+
+
+
+
+\begin{exercise} Use a combinatorial argument to show
+\[
+\sum_{k=0}^{n} k{n\choose k} =n2^{n-1}.
+\]
+
+\begin{solution}
+\begin{proof}
+Let $S$ have $n$ elements. Then $n2^{n-1}$ is the number of ways to pick an element $a\in S$ and pair it with a subset $A\subseteq S\backslash \{a\}$. We can also count these pairs by first picking $k$, then picking a subset $A$ of size $n-k$ -- which can be done ${n\choose n-k}={n\choose k}$ ways -- and then picking an element $a\in S\backslash A$, and then adding over all $k$.
+\end{proof}
+\end{solution}
+\end{exercise}
+
+
+
+\begin{exercise} {\bf (Challenging!)} How many subsets does the set $\{1,2, \dots ,n\}$ have that contain no two consecutive integers?  {\bf Hint}: maybe compute this for the first few values of $n$ to see if you can spot a pattern.
+
+\begin{solution}
+See the solutions to the workshop problems.
+\end{solution}
+
+\end{exercise} 
+
+
+%
+%\begin{enumerate}
+%
+%
+%%
+%%
+%%
+%%\item Show that 
+%%\[
+%%\sum_{k=1}^{2n} {2n \choose k} 
+%%= \left(\sum_{k=0}^{n}{n\choose k}\right)^{2}.
+%%\]
+%%
+%%\begin{solution}
+%%
+%%By the binomial theorem,
+%%\[
+%%\sum_{k=1}^{2n} {2n \choose k} 
+%%=(1+1)^{2n} =( (1+1)^{n})^{2} =  \left(\sum_{k=0}^{n}{n\choose k}\right)^{2}.
+%%\]
+%%\end{solution}
+%% 
+%
+%
+%
+%
+%
+%%
+%%
+%%\item Prove that for $n>i\geq 0$,
+%%\[
+%%\sum_{k=0}^n {k\choose i}k = {n+1\choose i+1}n-{n+1\choose i+2}.
+%%\]
+%%
+%%\begin{solution}
+%%
+%%\end{solution}
+%
+%
+%
+%
+%\item  Find the number of ways to write a natural number $n$ as an ordered sum of $1$'s and $2$'s. For example, when $n=4$, there are five ways: $1+1+1+1$, $2+1+1$, $1+2+1$, $1+1+2$, and $2+2$.
+%
+
+
+
+%
+%
+%\item Prove that for $x>0$, $\lim_{n\rightarrow\infty} x^{1/n}=1$. {\it Hint: First suppose $x\geq 1$, let $x_{n} = x^{1/n}-1$, and first show that $(x_{n}+1)^{n}\geq 1+nx_{n}$. What about the case $0<x< 1$?}
+%
+%\begin{solution}
+%\begin{proof}
+%Let's first assume $x>1$. Then by the binomial theorem
+%\[
+%x = (x_{n}+1)^{n} =\sum_{k=0}^{n} {n \choose k} x_{n}^{k}
+%\geq \sum_{k=0}^{1} {n \choose k} x_{n}^{k}
+%=1+{n\choose 1} x_{n} = 1+nx_{n}
+%\]
+%Thus rearranging the inequality, we get that
+%\[
+%\frac{x-1}{n} \geq x_{n}\geq 0
+%\]
+%Since $\frac{x-1}{n}\rightarrow 0$, $x_{n}\rightarrow 0$ by the Squeeze theorem, and so $x^{1/n}\rightarrow 1$. 
+%\end{proof}
+%\end{solution}
+%
+%\item Prove that $\lim_{n\rightarrow\infty} n^{\frac{1}{n}}=1$.
+%
+%\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3
+%----------------------------------------------------------------------------------------
+
+%\chapterimage{ima2} % Chapter heading image
+
+
+%----------------
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+%
+%\chapter*{Bibliografía}
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliografía}}
+%\section*{Books}
+%\addcontentsline{toc}{section}{Books}
+%\printbibliography[heading=bibempty,type=book]
+%
+%\begin{itemize}
+%	\item GREENE, W.H. (2003) “Econometric Analysis”5ª edición. Prentice Hall N.J. Capítulo 21
+%\\\\
+%    \item WOOLDRIDGE, J.M. (2010) “Introducción a la Econometría: Un Enfoque Moderno". 4ª edición. Cengage Learning. Capítulo 17
+%
+%\end{itemize}
+
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage
+\phantomsection
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Índice Alfabético}}
+\printindex
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
+
+

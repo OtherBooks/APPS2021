@@ -1,0 +1,1751 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.0 (9/2/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass[11pt,fleqn,dvipsnames]{book} % Default font size and left-justified equations
+\documentclass[11pt,dvipsnames]{book} 
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+%%agregué
+
+%\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+%\usepackage{due-dates}
+\usepackage[small]{eulervm}
+\usepackage{amsmath,amssymb,amstext,amsthm,amscd,mathrsfs,eucal,bm,xcolor}
+\usepackage{multicol}
+\usepackage{array,color,graphicx}
+%\usepackage{enumerate}
+
+
+\usepackage{epigraph}
+%\usepackage[colorlinks,citecolor=red,linkcolor=blue,pagebackref,hypertexnames=false]{hyperref}
+
+%\theoremstyle{remark} 
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{\bf Example}
+%\newtheorem*{solution}{Solution:}
+
+\usepackage{centernot}
+
+\usepackage{filecontents}
+
+\usepackage{tcolorbox} 
+
+
+% Ignore this part, this is the former way of hiding and unhiding solutions, new version is after this
+%
+%\begin{filecontents*}{MyPackage.sty}
+%\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{MyPackage}
+%\RequirePackage{environ}
+%\newif\if@hidden% \@hiddenfalse
+%\DeclareOption{hide}{\global\@hiddentrue}
+%\DeclareOption{unhide}{\global\@hiddenfalse}
+%\ProcessOptions\relax
+%\NewEnviron{solution}
+%  {\if@hidden\else \begin{tcolorbox}{\bf Solution: }\BODY \end{tcolorbox}\fi}
+%\end{filecontents*}
+%
+%
+%
+%\usepackage[hide]{MyPackage} % hides all solutions
+%\usepackage[unhide]{MyPackage} %shows all solutions
+
+
+%\usepackage[unhide,all]{hide-soln} %show all solutions
+\usepackage[unhide,odd]{hide-soln} %hide even number solutions
+%\usepackage[hide]{hide-soln} %hide all solutions
+
+\def\putgrid{\put(0,0){0}
+\put(0,25){25}
+\put(0,50){50}
+\put(0,75){75}
+\put(0,100){100}
+\put(0,125){125}
+\put(0,150){150}
+\put(0,175){175}
+\put(0,200){200}
+\put(25,0){25}
+\put(50,0){50}
+\put(75,0){75}
+\put(100,0){100}
+\put(125,0){125}
+\put(150,0){150}
+\put(175,0){175}
+\put(200,0){200}
+\put(225,0){225}
+\put(250,0){250}
+\put(275,0){275}
+\put(300,0){300}
+\put(325,0){325}
+\put(350,0){350}
+\put(375,0){375}
+\put(400,0){400}
+{\color{gray}\multiput(0,0)(25,0){16}{\line(0,1){200}}}
+{\color{gray}\multiput(0,0)(0,25){8}{\line(1,0){400}}}
+}
+
+
+
+%\usepackage{tikz}
+
+%\pagestyle{headandfoot}
+%\firstpageheader{\textbf{Proofs \& Problem Solving}}{\textbf{Homework 1}}{\textbf{\PSYear}}
+%\runningheader{}{}{}
+%\firstpagefooter{}{}{}
+%\runningfooter{}{}{}
+
+%\marksnotpoints
+%\pointsinrightmargin
+%\pointsdroppedatright
+%\bracketedpoints
+%\marginpointname{ \points}
+%\totalformat{[\totalpoints~\points]}
+
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\N{{\mathbb{N}}}
+\def\Q{{\mathbb{Q}}}
+\def\C{{\mathbb{C}}}
+\def\hcf{{\rm hcf}}
+
+
+%%end of my stuff
+
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+
+
+
+\usepackage{graphicx} % paquete que permite introducir imágenes
+
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%%hasta aquí
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=12cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{Figures/blank.png}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Proofs and Problem Solving \\[15pt] % Book title
+{\huge Week 5: Complex Numbers and Polynomials}\\[20pt] % Subtitle
+{\Large Notes  based on Martin Liebeck's \\ \textit{A Concise Introduction to Pure Mathematics}}}}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+%\newpage
+%~\vfill
+%\thispagestyle{empty}
+
+%\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+
+%\noindent \textsc{Published by Publisher}\\ % Publisher
+
+%\noindent \textsc{book-website.com}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+%\noindent \textit{First printing, March 2013} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{Figures/blank.png} % Table of contents heading image
+
+%\chapterimage{chapter_head_1.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+ \tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+\setcounter{chapter}{8}
+\part{Week 5: Complex Numbers and Polynomials}
+
+\chapterimage{Figures/blank.png} 
+\setcounter{page}{0}
+\chapter{Complex Numbers}
+
+%
+%
+%\begin{multicols}{2}
+%\epigraph{\it     To divide 10 in two parts, the product of which is 40....It is clear that this case is impossible. Nevertheless, we shall work thus...
+%%: We divide 10 into two equal parts, making each 5. These we square, making 25. Subtract 40, if you will, from the 25 thus produced, as I showed you in the chapter on operations in the sixth book leaving a remainder of -15, the square root of which added to or subtracted from 5 gives parts the product of which is 40. These will be $5 + \sqrt{- 15}$ and $5 - \sqrt{-15}$. 
+%Dismissing mental tortures, and multiplying $5 + \sqrt{- 15}$ by $5 - \sqrt{-15}$, we obtain $25 - (-15)$. Therefore the product is $40$...and thus far does arithmetical subtlety go, of which this, the extreme, is, as I have said, so subtle that it is useless.}{Cardan, {\it Ars Magna}, 1545} 
+%
+%%\epigraph{\it For any equation one can imagine as many roots [as its degree would suggest], but in many cases no quantity exists which corresponds  to  what  one  imagines.}{Rene Descartes, {\it Discours de la M\'{e}thode Pour bien conduire sa raison, et chercher la v\'{e}rit\'{e} dans les sciences}, 1637} 
+%\end{multicols}
+%
+%
+%The first of the above quotes comes from the inception of complex numbers. Here, Cardan is trying to find two numbers $x$ and $y$ so that $x+y=10$ but $xy=40$. This ends up being possible if you allow for taking square roots of negative numbers, since then $x=5+\sqrt{-15}$ and $y=5-\sqrt{-15}$ solves these equations. Mathematicians like Cardan considered these clever sophisms, but it was in this way that complex numbers come about. Rene Descartes called these numbers {\it imaginary}. It turns out that they aren't just sophisms, but they are fundamental to mathematics and physics. \\
+
+%At this time, Italian mathematicians like Cardan and Tartaglia were researching how to solve polynomial equations. (In this day, there were even contests for solving cubic equations, for which Tartaglia achieved his fame). 
+
+%Given $z=a+bi \in \mathbb{C}$, with $a,b \in \mathbb{R}$ we define
+%\[ \mathrm{Re}(z)=a \qquad \mathrm{Im}(z)=b \]
+%to be the real and imaginary parts of $z$ respectively. A complex number written in this way (as $z=x+iy$) is said to be in {\em Cartesian form}.
+%
+%We can think of $(\mathrm{Re}(z),\mathrm{Im}(z))$ as a point on a plane using Cartesian coordinates. 
+
+\section{Complex Numbers}
+
+Complex numbers are an extension of the real numbers, defined by introducing a new special number called $i$ whose square is defined to be $-1$.
+
+\begin{definition}[Complex Numbers]
+
+Define $i$ to be a number such that $i^2=-1$. 
+
+The {\it complex numbers} are any number of the form 
+\[z=x+iy\mbox{ where }x,y \in \mathbb{R}.\]
+
+The set of all complex numbers is denoted $\mathbb{C}$.
+
+We define $\mathrm{Re}(z)=x$ and $\mathrm{Im}(z)=y$ to be the {\it real} and {\it imaginary parts} of $z$. 
+\end{definition}
+
+Just like vectors, we represent complex numbers on an $xy$-plane, where the $x$-coordinate is the real part and the $y$ coordinate is the imaginary part. Using the plane to represent complex numbers in this way is sometimes called an {\it Argand diagram}.
+
+\begin{center}
+\includegraphics[width=150pt]{Figures/cartesian.pdf}
+\begin{picture}(0,0)(150,0)
+\put(-5,60){$iy$}
+\put(80,5){$x$}
+\put(85,65){$z=x+iy$}
+\end{picture}
+\end{center}
+
+Multiplication, addition and subtraction of complex numbers maintains how addition works for real numbers, and treating \(i\) as an algebraic letter. In multiplication we proceed using an obvious approach:
+consider any two complex numbers $z=a+i b$ and $w=c+i d$.
+\begin{eqnarray*}
+zw&=&(a+i b)(c+i d)\\
+&=&ac+ai d+i
+bc+i^2bd
+\end{eqnarray*}
+This is obtained in the usual way by multiplying all the
+terms in one bracket by all the terms in the other
+bracket. Use the defining property of \(i\), which is
+$i^2=-1$ so that
+\begin{eqnarray*}
+zw&=&ac+ai d+i bc-bd\\
+&=&ac-bd+i(ad+bc)
+\end{eqnarray*}
+where we have re-grouped terms with the  $i$ symbol and terms
+without the $i$ symbol separately. These are the real and imaginary parts of the product $zw$ respectively. 
+
+For example:
+\[
+(5+6i) + (3+4i)=(5+3)+(6+4)i= 8+10i\]
+and
+\[
+(1+3i)(2+i)=1\cdot 2 + 1\cdot i + 3i\cdot 2 + 3i\cdot i = 2+i+6i-3=-1+7i.
+\]
+For an integer $n$, we write  $z^{n}=z\cdot z\cdots z$ as we did with real numbers. 
+
+Complex addition can be interpreted as vector addition in the complex plane.
+Consider any two complex numbers $z=a+i b$ and $w=c+i d$.
+\[ z+x=(a+ib)+(c+id)=(a+c)+i(b+d).\]
+This is identical to adding vectors
+\[ \begin{pmatrix} a \\ b \end{pmatrix} + \begin{pmatrix} c \\ d \end{pmatrix}
+= \begin{pmatrix} a+c \\ b+d \end{pmatrix} \]
+What effect does multiplication have?
+
+\begin{example}
+Plot each of these complex numbers in the plane.
+\begin{center}
+\begin{tabular}{llll}
+1. $1$    & 2. $i$     & 3. $-1$    & 4.  $-i$ \\
+5. $4+3i$ & 6. $-3+4i$ & 7. $-3-4i$ & 8. $4-3i$\\
+9. $a+ib$ & 10. $-b+ia$ & 11. $-a-ib$ & 12. $b-ia$
+\end{tabular}
+\end{center}
+where you may choose any non-zero $a$ and $b$ you think are suitable.\\
+(i) Multiply each of them by $i$ and plot the result on the same diagram.\\
+(ii) Describe the geometric relationship between $z$ and $iz$
+\end{example}
+We will examine the geometry of complex multiplication fully in a short while.
+
+Given $z\in\mathbb{C}$ not equal to zero, we let $z^{-1}=\frac{1}{z}$ denote the complex number such that $z\cdot z^{-1}=1$. Such a number (i) exists and (ii) is unique (a theorem we omit to save space).
+In particular, we can divide complex numbers by each other, but before we explain how to do this, there are a couple of important quantities related to a complex number that will make this task easier. 
+
+%What if we want to do something more complicating, like $\frac{3+i}{1+i}$? How do we write it as $a+ib$? 
+
+The first is the {\it modulus}:
+
+\begin{definition}[Modulus]
+\begin{multicols}{2}
+Given a complex number $z=x+iy$, the {\it modulus} of $z$ is
+\[
+|z|=|x+iy|=\sqrt{x^{2}+y^{2}}.
+\]
+
+Geometrically, the modulus of $z$ is its distance from the origin, which is the length of the hypotenuse of a triangle of base $x$ and height $y$, computed using the Pythagorean theorem.
+
+\includegraphics[width=150pt]{Figures/modulus.pdf}
+\begin{picture}(0,0)(150,0)
+\put(-5,60){$iy$}
+\put(80,5){$x$}
+\put(86,65){$z=x+iy$}
+\put(25,35){$|z|$}
+\end{picture}
+
+\end{multicols}
+
+\end{definition}
+
+This extends the definition of the absolute value to complex numbers, and in fact, if $x$ is real, the modulus of $x$ is equal to the absolute value. 
+This definition should remind you of the vector norm: for a vector $(x,y)$, its norm was $||(x,y)|| = \sqrt{x^2+y^2}$ as well. \\
+
+A second important quantity is the conjugate. 
+
+\begin{definition}[Complex Conjugate] 
+\begin{multicols}{2}
+Given a complex number $z=x+iy$, its {\em complex conjugate} is defined to be 
+
+\[\overline{z}=x-yi.\]
+Geometrically, this is the complex number obtained by reflecting $z$  across the `$x$-axis'. \\
+
+\includegraphics[width=150pt]{Figures/conjugate.pdf}
+\begin{picture}(0,0)(150,0)
+\put(80,0){$\bar{z}=x-iy$}
+\put(80,125){$z=x+iy$}
+\end{picture}
+\end{multicols}
+\end{definition}
+
+Note: many books and resources use \(z^*\) as the complex conjugate, so please get used to using this notation.  But choose only one notation in your own writing and stick to it.
+
+One useful thing about a conjugate is 
+\[z\overline{z} = (a+bi)(a-bi) = a^2 + b^2 = |z|^2.\]
+
+We can use these concepts to show how to divide two complex numbers.  E.g.~let's look at $\frac{3+i}{1+i}$: we can make the denominator real by multiplying and dividing by the conjugate of $1+i$ (which is $\overline{1+i}=1-i$):
+
+$$\frac{3+i}{1+i}=\frac{3+i}{1+i}\frac{1-i}{1-i} = \frac{(3+i)(1-i)}{(1+i)(1-i)} = \frac{5-2i}{2}=\frac{5}{2}-i.
+$$
+
+In general, for $w,z\in\mathbb{C}$ with $z\neq 0$, we have
+
+\begin{equation}
+\label{e:1/z}
+ \frac{w}{z} = \frac{w}{z}\frac{\overline z}{\overline z} = \frac{w\overline z}{z\overline z} = \frac{w\overline z}{|z|^2}, \;\; \;\;\;\;\;\frac{1}{z} = \frac{\overline{z}}{|z|^2}
+ \end{equation}
+
+Here are some other properties that we will use throughout the chapter.
+
+\begin{lemma}
+\label{l:modulus-rules}
+For all $u,v\in \mathbb{C}$:
+\begin{itemize}
+\item $\overline{u+v} = \overline{u}+\overline{v}$.
+\item $\overline{uv} = \overline{u}\cdot\overline{v}$.
+\item $|uv|=|u|\cdot|v|$.
+\end{itemize}
+\end{lemma}
+
+We leave the proof as an exercise.\\
+
+Note (a).  \(a^2+b^2\) is ``the difference of two squares'' 
+\[ a^2+b^2 = a^2-(ib)^2 = (a+ib)(a-ib).\]
+We can factor expressions over the complex numbers which have no factors over the reals, e.g. \(2=1^2+1^2=(1+i)(1-i)\).
+
+Note (b). The process for finding \(z^{-1}\) is very similar to removing surds from the denominator of a rational expression. 
+E.g. compare multiplying \(\frac{1}{1+i}\) by the conjugate, \[ \frac{1}{1+i} = \frac{1}{1+i}\frac{1-i}{1-i}= \frac{1-i}{2}\]
+with
+\[ \frac{1}{\sqrt{3}+1} = \frac{1}{\sqrt{3}+1}\frac{\sqrt{3}-1}{\sqrt{3}-1}= \frac{\sqrt{3}-1}{2} .\]
+
+\begin{solution}
+
+\begin{proof}
+These each follow by direct computation.  Let us denote $u=a+bi$, $v=c+di$, for $a,b,c,d\in\mathbb{R}$.
+\begin{itemize}
+\item We have:
+$$\overline{u+v} = \overline{(a+c) + (b+d)i} = a+c - (b+d)i = (a-bi) + (c-di) = \overline{u} + \overline{v}.$$
+\item We have:
+\begin{align*}
+\overline{u\cdot v} 
+& = \overline{(a+bi)(c+di)}\\
+&  = \overline{(ac-bd) + (bc+ad)i} \\
+& = ac-bd - (bc+ad)i \\
+& = (a-bi)(c-di) \\
+& = \overline{u}\cdot\overline{v}.
+\end{align*}
+
+\item We have:
+$$|uv|^2 = (uv)(\overline{u}\overline{v}) = u\overline{u}v\overline{v} = |u|^2\cdot|v|^2,$$
+where we have used (b) and (c) above.  Since both sides of the final equality are non-negatives, the inequality holds if, and only if, it holds after taking square roots (as we showed in Chapter 5, on inequalities)
+\end{itemize}
+Hence, we have established each of the four equalities.\end{proof}
+\end{solution}
+
+\section{Cartesian and Polar form}
+
+Another useful representation of a complex number \(z=x+iy\) is {\it polar form}.  In polar form we represent a complex number by specifying an angle $\theta$ from the $x$ axis, and a distance from the origin which, recall, is $|z|$. 
+
+\begin{definition}
+\begin{multicols}{2}
+Let $z\neq 0$ be a complex number. Let $r = |z|$ and define the {\em argument} of $z$ be the angle $\theta\in [0,2\pi)$ between the line from $0$ to $z$ and the positive $x$-axis. 
+We can then write
+$$z= r(\cos\theta+i\sin\theta).$$
+
+This is the {\it polar form} of $z$.
+
+\includegraphics[width=150pt]{Figures/modulus.pdf}
+\begin{picture}(0,0)(150,0)
+\put(87,65){$z$}
+\put(35,40){$r$}
+\put(35,20){$\theta$}
+\put(85,30){$r\sin \theta$}
+\put(25,0){$r\cos\theta$}
+\end{picture}
+
+\end{multicols}
+\end{definition}
+If we look at the triangle in the above figure, the hypotenuse is $r=|z|$, and so the base and height of the triangle are $r\cos \theta$ and $r\sin\theta$ respectively, and so these give the real and imaginary parts (i.e. the $x$ and $y$ coordinates) of $z$. \\
+
+While we specify that the argument $\theta$ of a complex number $z$ to be in the range $[0,2\pi)$, there are infinitely many numbers $\phi$ so that $z= r(\cos\phi+i\sin\phi)$ (where $r=|z|$): we can just take $\phi = \theta+ 2n\pi$ for $n\in\mathbb{Z}$. 
+We have made a choice to only take $\theta\in [0,2\pi)$.  This is called the {\em principal argument}.
+Other books and resources sometimes choose $\theta\in (-\pi,\pi]$.
+Mathematicians are free to ``cut'' the complex plane where we choose, but be clear about which choice you make and stick to it.
+For PPS only take $\theta\in [0,2\pi)$, unless otherwise stated clearly.
+
+\section{Geometry and arithmetic in \(\mathbb{C}\)}
+
+There are at least three ways to treat complex numbers
+\begin{enumerate}
+  \item As a single number $z$,
+  \item As a sum of {\em real} and {\em imaginary parts} $z=a+ib$,
+  \item Using geometry, as a point in the {\em complex plane}.
+\end{enumerate}
+Algebra is applied to geometry by representing points in the plane using coordinates.  
+In Cartesian coordinates a point has coordinates $(a,b)$, so \(z=a+ib\). 
+In polar coordinates we have {\em modulus} $r$ (i.e.~length) and {\em argument} $\theta$ (i.e.~angle anti-clockwise from the $x$-axis, or real axis). 
+We can also think of complex numbers as {\em vectors} from the origin.
+\begin{quote}
+    {\em One of the most powerful techniques in mathematics is to describe something independently in two different forms and equate them.}
+\end{quote}
+Complex numbers have many representations and we will exploit this regularly.
+
+Think about the geometric effect of multiplying \(z=x+iy\) by \(i\).
+\[ i(x+iy)=-y+ix\]
+What is the geometric transformation that multiplication by \(i\) creates?
+In vector notation this transformation would be 
+\[ \begin{pmatrix} x \\ y \end{pmatrix} \rightarrow \begin{pmatrix} -y \\ x \end{pmatrix}\]
+which is an anti-clockwise rotation by \(\frac{\pi}{2}=90^o\).
+
+More generally multiplication of complex numbers can be understood by writing the two numbers in polar form.
+%
+Let $z=r(\cos \theta + i \sin \theta)$ and $w=s(\cos \phi + i \sin \phi)$ then $zw$
+\begin{align*}
+zw & = r(\cos \theta + i \sin \theta)\times  s(\cos \phi + i \sin \phi) \\
+& = rs ( \cos \theta \cos \phi - \sin \theta \sin \phi)+ rsi (\cos \theta \sin \phi + \sin \theta \cos \phi) \\ 
+                                                                                               & = rs (\cos(\theta + \phi) + i\sin(\theta + \phi)).
+\end{align*}
+Notice the overall geometric effect is to just multiply the moduli and add the arguments.
+
+\begin{example}
+Since $i=cos(\pi/2)+i\sin(pi/2)$, multiplying $z$ by $i$ corresponds to rotating counter clockwise by $\frac{\pi}{2}$, and multiplying by $-1=cos(\pi)+i\sin(pi)$ corresponds to rotating $z$ 180 degrees, i.e. flipping $z$ in the opposite direction.
+
+\begin{center}
+\includegraphics[width=300pt]{Figures/polar2.pdf}
+\begin{picture}(0,0)(300,0)
+\put(135,70){$z$}
+\put(5,90){$iz$}
+\put(170,15){$-z$}
+\put(280,90){$z$}
+\end{picture}
+\end{center}
+\end{example}
+
+Given \(z^n\) is just \(z\) multiplied together \(n\) times we can prove De Moivre's Theorem.
+
+\begin{theorem}[De Moivre's Theorem]
+If we let $z = r(\cos \theta + i \sin \theta)$, and $n \in \mathbb{N}$ then 
+\begin{align*}
+z^n & = r^{n} (\cos n\theta + i \sin n\theta) \\
+z^{-n} &= r^{-n} (\cos (-n\theta) + i \sin (-n\theta)) = \frac{1}{r^n} (\cos (n\theta) - i \sin (n\theta)) 
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+We prove the first statement by induction. Let \(P(n)\) be the statement 
+\[ z^n = r^{n} (\cos (n\theta) + i \sin (n\theta)).\]
+
+The base case $n=1$ holds immediately by definition. 
+
+Assume \(P(n)\) holds for some integer $n\geq 1$. 
+\[ z^{n+1} = zz^n = z\times r^{n} (\cos (n\theta) + i \sin (n\theta))\]
+using the induction hypothesis.  And so this
+\[ =r(\cos \theta + i \sin \theta) \times r^{n} (\cos (n\theta) + i \sin (n\theta))
+\]
+\[ = r^{n+1} ( \cos \theta\cos (n\theta) - \sin \theta\sin (n\theta)
++i(\cos \theta\sin (n\theta) + \sin \theta\cos (n\theta)))
+\]
+\[ = r^{n+1} (\cos ((n+1)\theta) + i \sin ((n+1)\theta)),\]
+which proves \(P(n+1)\) holds.
+
+Since \(P(1)\) and \(P(n)\rightarrow P(n+1)\) it follows that the first equation in the theorem holds by the principle of mathematical induction.
+
+For the second part, we just note that by \eqref{e:1/z},
+\[
+\frac{1}{\cos n \theta +i\sin n \theta} =\cos n \theta - i\sin n \theta,\]
+and so
+\[ 
+z^{-n}=(z^{n})^{-1} = (r^{n}(\cos n\theta + i\sin n\theta))^{-1} = r^{-n} (\cos n \theta - i\sin n \theta) = r^{-n} e^{-i n\theta}.\]
+
+\end{proof}
+
+
+\section{Exponential form}
+
+De Moivre's Theorem allows us to calculate powers \(z^n\) for \(n\in\mathbb{N}\), but what about more a general exponential such as \(e^z\) when \(z\in\mathbb{C}\). Euler's formula provides the answer.
+\begin{theorem}[Euler's formula]
+\[e^{i \theta} = \cos(\theta)+i\sin(\theta).\]
+\end{theorem}
+Euler's formula is one of the most remarkable and important formulae in mathematics.  E.g. the special case \(e^{i\pi}=-1\) links together \(i\) (algebra), \(\pi\) (geometry) and \(e\) (calculus, since \(\frac{\mathrm{d}}{\mathrm{d}x}e^x=e^x\)) in a single equation.
+Euler's formula justifies the definition of {\em exponential form} of a complex number \(z\) as.
+\begin{equation}
+\label{e:expform}
+z= re^{i\theta} = r(\cos \theta + i \sin \theta).
+\end{equation}
+Exponential notation is a very convenient form for writing complex numbers.
+
+There are many approaches to proving Euler's formula.  
+If you are studying Calculus and Taylor Series, is to show that $e^{i\theta} = \cos \theta + i \sin \theta$ by plugging $i\theta$ into the Taylor series for $e^{x}$ and then you can split the series into $\cos \theta + i\sin\theta$. We omit this working here, but it is provided as part of the online lecture quiz.
+
+\begin{center}
+\includegraphics[width=\textwidth]{Figures/polar.pdf}
+\begin{picture}(0,0)(200,0)
+\put(0,0){(a) Multiplying $z$ by $e^{i\phi}$.}
+\put(45,50){$z=re^{i\theta}$}
+\put(20,80){$e^{i\phi}z=re^{i(\theta+\phi)}$}
+\put(20,30){$\theta$}
+\put(165,30){$\theta$}
+\put(311,30){$\theta$}
+\put(20,55){$\phi$}
+\put(190,50){$z=re^{i\theta}$}
+\put(230,80){$sz=sre^{i\theta}$}
+\put(150,0){(b) Multiplying $z$ by $s>0$.}
+\put(300,0){(c) Multiplying $z$ by $se^{i\phi}$.}
+\put(335,50){$z=re^{i\theta}$}
+\put(375,80){$sz=sre^{i\theta}$}
+\put(325,125){$se^{i\phi}z=sre^{i(\theta+\phi)}$}
+\end{picture}
+\end{center}
+
+
+Exponential notation makes taking a power of a complex number much easier if we know it's polar form. 
+
+\begin{example}
+What is $(1+i)^{6}$?\\
+
+We could multiply this out by using the Binomial Theorem, but we'll use polar coordinates instead: To write $1+i$ in polar form $re^{i\theta}$, we first find $r$:
+\[
+r=|1+i|=\sqrt{1^2+1^2}=\sqrt{2}.
+\]
+Then 
+\[
+e^{i\theta} = \frac{1+i}{r} =\frac{1+i}{\sqrt{2}} = \frac{1}{\sqrt{2}}+i\frac{1}{\sqrt{2}}=\cos \frac{\pi}{4} + i\sin\frac{\pi}{4}=e^{i\frac{\pi}{4}}.
+\]
+Finally,
+\[
+(1+i)^{6}= (\sqrt{2})^{6} e^{i\frac{6\pi}{4}} = 8\left(\cos \frac{6\pi}{4}+i\sin \frac{6\pi}{4}\right) =8\left(\cos \frac{3\pi}{2}+i\sin\frac{3\pi}{2}\right)= -8i.
+\]
+\end{example}
+
+
+\section{Roots of Unity}
+
+\begin{center}
+{\it How do we find all solutions to $z^{n}=1$?
+}
+\end{center}
+We now have enough tools in place to answer this. We find them all in a few steps:
+
+\begin{itemize}
+\item First, using polar coordinates, we can find one root rather easily: $w=e^{\frac{2\pi i}{n}}$, since then 
+\[
+w^{n} = e^{\frac{2\pi i}{n}\cdot n}=e^{2\pi i}=1.\]
+\item In particular, this means that any power of $w$ is also a root, since if $j\in\mathbb{N}$, 
+\[
+(w^{j} )^{n} = (w^{n})^{j}=1.
+\]
+\item Finally, we will show later that for any degree $n$ polynomial there are at most $n$ distinct roots. So if we show that the numbers
+\[
+1,w,w^{2},...,w^{n-1}
+\]
+are all distinct, then we will have all the roots. \\
+
+\item Suppose for the sake of a contradiction that there are distinct integers $j$ and $k$ with $0\leq j,k<n$ so that $w^{j}=w^{k}$. Then
+\[
+1=w^{j-k}=e^{(j-k)\frac{2\pi i}{n}} = \cos \left((j-k)\frac{2\pi }{n}\right)+i\sin \left((j-k)\frac{2\pi }{n}\right).\]
+The only way this can be $1$ is if the cosine is 1 and the sine is zero, so which only happens if their arguments are multiples of $2\pi$, that is, we must have 
+\[
+(j-k)\frac{2\pi }{n} = 2\pi \ell \mbox{ for some integer }\ell\]
+which implies $j-k=n\ell$ for some $\ell\in\mathbb{Z}$, but this is impossible since $0\leq j,k<n$, and hence $-n<j-k<n$, so $j-k$ must be zero, and so $j$ and $k$ cannot be distinct. Thus, the numbers $1,w,...,w^{n-1}$ are distinct and form all the roots.
+\end{itemize}
+
+We have thus shown the following.
+
+\begin{theorem}[Roots of Unity]
+The solutions to $z^{n}=1$ are $1,w,\cdots w^{n-1}$ where $w=e^{\frac{2\pi i}{n}}$. That is, they are $e^{\frac{2\pi k i}{n}}$ for $k=0,1,...,n-1$.
+\end{theorem}
+
+
+\begin{example}[The third roots of unity]
+\hspace{5pt}
+
+The third roots of unity are
+\begin{multicols}{2}
+\begin{align*}
+z_1=&1\\
+z_2=& e^{2\pi i/3} =  \cos \frac{2\pi}{3} + i\sin \frac{2\pi}{3}  = -\frac{1}{2}+i\frac{\sqrt{3}}{2} \\
+z_3= & e^{4\pi i/3} = \cos \frac{4\pi}{3} + i\sin \frac{4\pi}{3}  = -\frac{1}{2}-i\frac{\sqrt{3}}{2} 
+\end{align*}
+\vspace{10pt}
+\begin{center}
+\includegraphics[width=120pt]{Figures/3rdroots.pdf}
+\begin{picture}(0,0)(120,0)
+\put(20,115){$e^{\frac{2\pi i}{3}}$}
+\put(5,5){$e^{\frac{4\pi i}{3}}$}
+\put(120,55){$1$}
+\end{picture}
+\end{center}
+\end{multicols}
+
+Note: the cube roots of unity are used so frequently that writers often define \(\omega :=  e^{2\pi i/3}\).   Then we have \(\omega^2=\bar{\omega}\), and lots of other interesting and useful algebraic relationships.
+
+\end{example}
+ 
+
+
+\begin{center}
+{\it How do we find all solutions to $
+z^{n}=a$ where $a\in\mathbb{C}$?}
+\end{center}
+
+Again, we can use $n$th roots of unity. We showcase the method in an example:
+
+
+
+\begin{example}
+
+Suppose we set $a=16i$ and wish to find the fourth roots of $a$ (i.e., solve $z^4=16i$). We can find one quick root using polar coordinates: note that $a=16e^{i\frac{\pi}{2}}$, so we can spot one root as
+\[
+z=16^{1/4}e^{i\frac{\pi}{2}\frac{1}{4}} = 2e^{i\frac{\pi}{8}},\]
+since then $z^{4} = a$. 
+
+Recall that there are at most $4$ distinct roots for a degree $4$ polynomial. Note that since $z$ is a solution, if $1,w,w^2,w^3$ (that is, $1,e^{i2pi/4}=e^{i\pi/2}, e^{i4\pi/4}=e^{i\pi}$, and $e^{i6\pi/4}=e^{i3\pi/2}$) are the $4$th roots of unity, then for $k=0,1,2,3$,
+\[
+(zw^{k})^{4}=z^{4}w^{4k}=a\cdot 1=a.
+\]
+Thus, the other solutions are $z,zw,zw^2,zw^3$. For $k \in \{0,1,2,3\}$ this gives the following (in exponential form)
+\vspace{-1mm}
+\[ 2e^{i\frac{\pi}{8}},2e^{i\frac{5\pi}{8}},2e^{i\frac{9\pi}{8}},2e^{i\frac{13\pi}{8}}\]
+\vspace{-1mm} 
+or equivalently
+\vspace{-1mm}
+\[ 2e^{i\frac{\pi}{8}},2e^{i\frac{5\pi}{8}},2e^{i\frac{-7\pi}{8}},2e^{i\frac{-3\pi}{8}}\]
+\end{example}
+
+ 
+
+\section{Exercises}
+
+
+The relevant exercises in Liebeck's book are in Chapter 6.
+
+
+
+\begin{exercise} Show that $\Re(z) = \frac{z+\bar{z}}{2}$ and $\Im(z) = \frac{z-\bar{z}}{2i}$.
+
+\begin{solution} 
+If $z=x+iy$, then
+\[
+\frac{z+\bar{z}}{2} = \frac{z+iy+ z-iy}{2} = \frac{2x}{2} = x=\Re(z)
+\]
+and 
+\[
+\frac{z-\bar{z}}{2i} = \frac{z+iy-( z-iy)}{2i} = \frac{2iy}{2i} = y=\Im(z).
+\]
+
+\end{solution}
+
+\end{exercise}
+
+\begin{exercise} Show that 
+\[
+\Re(zw)\leq \frac{|z|^2+|w|^2}{2}.
+\]
+\begin{solution}
+
+By Lemma \ref{l:modulus-rules},  and the AM-GM inequality,
+\[
+\Re(zw)
+\leq |zw|
+=|z|\cdot |w| =(|z|^2\cdot |w|^2)^{\frac{1}{2}}\leq \frac{|z|^2+|w|^2}{2}.
+\]
+\end{solution}
+
+\end{exercise}
+
+
+%
+%\begin{exercise}  Below you see a graph of the complex plane and some points representing some complex numbers (the outer and inner circles have radii $1$ and $1/2$ for scale). They lie on lines through the origin making a 45 degree angle with the x-axis.
+%
+%
+%\begin{multicols}{2}
+%Draw the points in the plane if we plug these points into the functions
+%\begin{itemize}
+%\item $\left(\sqrt{2}+\sqrt{2}i\right)z$
+%\item $z^2$
+%\item $\frac{1}{z}$. 
+%\end{itemize}
+%
+%\begin{center}
+%\includegraphics[width=100pt]{Figures/complex-diagram.pdf}
+%\end{center}
+%\end{multicols}
+%
+%
+%\begin{solution}
+%The portraits of (a), (b) and (c) are as follows:
+%
+%\begin{center}
+%\includegraphics[width=300pt]{Figures/complex-soln.pdf}
+%\end{center}
+%\end{solution}
+%%\vspace{1cm}
+%
+%
+%\end{exercise}
+
+\begin{exercise} Solve $z^2=i\overline{z}$. 
+
+\begin{solution}
+Notice that if this equation holds, then
+\[
+|z|^2=|i\overline{z}|=|i|\cdot |\overline{z}| = |z|,\]
+so either $|z|=0$ or $|z|=1$. In the latter case, this means that $\overline{z} = \frac{1}{z}$, and so
+\[
+z^2=i\overline{z} = \frac{i}{z}\]
+which implies
+\[
+z^3=i.
+\]
+Hence, we just need to solve this equation now. Since $i=e^{\frac{\pi}{2}i}$, then $e^{\frac{\pi}{6}i}$ is one solution. Thus, to get all 3 solutions, we multiply this by all the 3rd roots of unity, so we get
+\[
+e^{\frac{\pi}{6}i}, \;\; e^{\frac{5\pi}{6}i}, \;\; e^{\frac{3\pi}{2}i}.
+\]
+Thus, all solutions to the original equation are 
+\[
+0, \;\; \pm \frac{\sqrt{3}}{2}+\frac{i}{2}, \;\; -i.
+\]
+
+\end{solution}
+
+
+\end{exercise}
+
+
+
+
+
+
+
+\begin{exercise} Solve $|z|^2 - z|z| + z = 0$. 
+
+\begin{solution}
+Note that by rearranging the equations so that the $z's$ are on one side and $|z|'s$ are on the other, we get if $|z|\neq 1$ that 
+\[
+z  =\frac{|z|^{2}}{|z|-1},\]
+and so $z\in\R$. If $z\geq 0$, then our original equation becomes $z^2-z^2+z=0$, hence $z=0$. If $z<0$, then $|z|=-z$, and our original equation is 
+\[
+z^2+z^2+z=0\]
+So $0=z(2z+1)$, hence $z=0$ or $z=-\frac{1}{2}$. 
+
+If $|z|=1$, then the original equation is
+\[
+1-z+z=0,\]
+which is impossible, so there are no solutions in this case. Thus, $z=0,-\frac{1}{2}$ are the only solutions.
+\end{solution}
+
+
+\end{exercise}
+
+
+
+
+\begin{exercise} Show that if $|z| = 1$, then $\Re\frac{1}{1-z} =
+\frac{1}{2}$.
+
+\begin{solution}
+\[ \frac{1}{1-z} = \frac{1}{1-z}\frac{1+\bar{z}}{1+\bar{z}} =
+\frac{1+\bar{z}}{1-z+\bar{z} + z\bar{z}}\]
+\[ =
+\frac{1+\bar{z}}{1-2iy-|z|^{2}}=\frac{1+\bar{z}}{-2iy}=i\frac{1+\bar{z}}{2y}\]
+\[\Re \frac{1}{1-z} = \Re i\frac{1+\bar{z}}{2y} = \Re
+i\frac{1+x-iy}{2y} = \Re\left(\frac{y}{2y} + i\frac{1+x}{2y}\right) =
+\frac{y}{2y}\]
+\[=\frac{1}{2}\]
+\end{solution}
+
+
+\end{exercise}
+
+
+
+
+
+\begin{exercise} Describe geometrically the points $z\in\mathbb{C}$ so that $|z-1|=|z+i|$. 
+
+
+\begin{solution}
+These are all points that lie on the $x=y$ line in the $xy$-plane (so the line that makes a 45 degree angle with the axes. To see this, let $z=x+i$ and observe that 
+\begin{align*}
+|z-1|=|z+i| & \;\;\; \Longleftrightarrow \;\;\; |z-1|^2=|z+i|^2\\
+& \;\;\; \Longleftrightarrow \;\;\; (z-1)\overline{(z-1)} = (z+i)\overline{(z+i)} \\
+& \;\;\; \Longleftrightarrow \;\;\;  (z-1)(\bar{z}-1)=(z+i)(\bar{z}-i) \\
+& \;\;\; \Longleftrightarrow \;\;\; z\bar{z}-z-\bar{z}+1 = z\bar{z} -zi+i\bar{z}+1\\
+& \;\;\; \Longleftrightarrow \;\;\;  -z-\bar{z}= -zi+i\bar{z}\\
+& \;\;\; \Longleftrightarrow \;\;\;  -(x+iy)-(x-iy) = -(x+iy)i+i(x-iy) \\
+& \;\;\; \Longleftrightarrow \;\;\;  -2x = -2y\\
+& \;\;\; \Longleftrightarrow \;\;\;  x=y.
+\end{align*}
+\end{solution}
+\end{exercise}
+
+
+
+
+\begin{exercise} Find all solutions to $(z+1)^4=z^4$. 
+
+\begin{solution}
+First, we write this equation as $(1+1/z)^4=1$, so this implies that $1+1/z$ is one of the $4$th roots of unity $\pm1,\pm i$. However, there are no solutions to $1+1/z=1$, so the only solutions are when $1+1/z$ is $-1$ or $\pm i$, in which case 
+\[
+z=-\frac{1}{2}, \frac{1}{-1\pm i}.
+\]
+\end{solution}
+
+
+\end{exercise}
+
+
+
+
+
+
+\begin{exercise} Let $\mathbb{D}=\{z\in \mathbb{C}: |z|<1\}$, that is, the set of complex numbers with modulus strictly less than $1$. \(\mathbb{D}\) is for ``disc''. For a complex number $z\in \mathbb{D}$ and a real number $-1< r<1$, define\footnote{The function $f_{r}$ is called a {\it M\"obius transformation} and is usually defined for $r\in \mathbb{D}$ as well, not just $-1<r<1$. They are the only functions with the property that, if $A$ is a circle or straight line in $\mathbb{D}$, then $f_{r}(A)$ is also a line or circle (this is not part of the problem, it's just cool).}
+\[
+f_{r}(z) = \frac{z-r}{1-zr}.\]
+ Show $f_{r}(z)\in \mathbb{D}$ for all $z\in \mathbb{D}$ and $-1<r<1$.
+
+
+\begin{solution}
+If $-1<r<1$, then
+\begin{align*}
+\left|\frac{z-r}{1-rz}\right|<1
+& \Leftrightarrow \;\;|z-r|<|1-rz|\\
+&  \Leftrightarrow \;\; |z-r|^{2}<|1-rz|^{2}\\
+& \Leftrightarrow \;\; |z|^{2}+|r|^{2}-2Re(zr)<1+|rz|^{2}-2Re(zr)\\
+& \Leftrightarrow \;\; |z|^{2}+|r|^{2}-|rz|^{2}<1\\
+& \Leftrightarrow \;\; |z|^{2}(1-|r|^{2})+|r|^{2}<1\\
+\end{align*}
+
+But this inequality is true since $|z|<1$, so
+\[
+|z|^{2}(1-|r|^{2})+|r|^{2}<1\cdot (1-|r|^{2})+|r|^{2}=1. 
+\]
+
+\end{solution}
+
+
+\end{exercise}
+
+\chapter{Polynomials}
+%
+%
+%\epigraph{\it  The mathematicians have been very much absorbed with finding the general solution of algebraic equations, and several of them have tried to prove the impossibility of it. However, if I am not mistaken, they have not as yet succeeded. I therefore dare hope that the mathematicians will receive this memoir with good will, for its purpose is to fill this gap in the theory of algebraic equations.}{Niels Henrik Abel, 1824, having shown there are no formulas for roots to polynomials degree $5$ and higher.}
+%
+%
+
+\section{Introduction}
+
+
+
+\begin{definition}
+For $n\in\mathbb{N}$, an {\it $n$-degree complex polynomial} \(p\) is a function of the form 
+\begin{equation}
+\label{e:pz}
+p(z)=a_nz^n + a_{n-1}z^{n-1} + \cdots + a_0
+\end{equation}
+where $a_n \neq 0$ and $a_i \in \mathbb{C}$ for all $i$. 
+
+\(n\) is called the {\em degree} of the polynomial.
+
+A {\it root} of $p$ is a complex number  $\alpha\in\mathbb{C}$ such that $p(\alpha)=0$.
+\end{definition}
+
+If the degree of a polynomial is \(2\) then the polynomial is called a {\em quadratic}.   Any quadratic $az^2+bz+c$ has two roots which can be found using the familiar {\it quadratic formula}:
+\[\frac{-b\pm \sqrt{b^2-4ac}}{2a}.\]
+
+{\bf Note:} One needs to be careful here, since we are allowing $a,b,c\in\mathbb{C}$, so  $b^2-4ac$ could be complex. In this case, $\sqrt{b^2-4ac}$ is interpreted to mean any number $z$ so that $z^2=b^2-4ac$, and then the solutions are $\frac{-b\pm z}{2a}$.
+
+There are also formulae for the roots of cubic or quartic (i.e. degree 3 or 4) polynomials, although these are much less convenient to write down. It is natural to ask whether there are convenient formulae for higher order polynomials, but this is not the case:
+
+
+\begin{theorem}[Abel-Ruffini Theorem] There is no formula (like the quadratic formula) for the roots of a polynomial of degree $\geq 5$.
+\end{theorem}
+
+This doesn't mean degree $5$ polynomials don't have roots, we will see below that they must have at least one root. This also doesn't mean it is impossible to solve higher order polynomials for their roots, it just means we do not have an expression (i.e. formula) for the roots of the polynomial in terms of the coefficients.
+
+
+\section{Factorizing Polynomials}
+
+The following theorem is stated without proof in PPS (although we prove it later in the degree):
+
+\begin{theorem}[Fundamental Theorem of Algebra]
+Any complex polynomial has at least one root in $\mathbb{C}$.
+\end{theorem}
+
+Using this, we can prove that any polynomial can be factored completely.
+
+\begin{theorem}[Factorization Theorem]
+If $p$ is a degree $n$ polynomial, then there are $n$ roots $r_{1},...,r_{n}\in\mathbb{C}$ and a number $a\in\mathbb{C}$ so that
+\[
+p(z) = a(z-r_{1})(z-r_{2})\cdots (z-r_{n}).\]
+\end{theorem}
+In the above theorem some roots may repeat. If a root appears $m$ times in $r_{1},...,r_{n}$, then we say it has {\it multiplicity} $m$. 
+
+Notice that if we multiply out the above polynomial, then we get a polynomial like $p(z)=az^{n}+\cdots $, so if $p$ was as in \eqref{e:pz}, then we actually know that $a=a_n$. 
+
+The above theorem tells us that an $n$-degree polynomial always has $n$ roots if we also take into account the multiplicity of the roots (that is, how often it appears in the factorization above). For example, $(z-1)^2$ is a $2$-degree polynomial with only one root, but that root has multiplicity $2$. 
+
+\begin{proof}
+We prove this by induction on \(n\), the degree of the polynomial \(p\).  
+Let \(P(n)\) be the statement
+\begin{quote}
+A degree $n$ polynomial \(p\) has $n$ roots $r_{1},...,r_{n}\in\mathbb{C}$ and there is a number $a\in\mathbb{C}$ so that
+\[
+p(z) = a(z-r_{1})(z-r_{2})\cdots (z-r_{n}).\]
+\end{quote}
+
+{\bf Base Case:} Assume \(p\) is any degree \(1\) polynomial.  
+If we write \(p\) as $p(z)=az+b$, we can re-write $p(z) = a(z-\frac{-b}{a})$.  
+Then \(p\) has precisely one root \(r_1=\frac{-b}{a}\) and \(p\) can be written in the form \(p(z)=a(z-r_1)\). This proves \(P(1)\). 
+
+{\bf Induction Step:} 
+Suppose the theorem holds true for some integer $n\geq 1$, i.e. \(P(n)\) is true. 
+Let $p$ be a degree $n+1$ polynomial. 
+By the Fundamental Theorem of Algebra there is a root $w$ of $p$, i.e.~\(p(w)=0\).
+
+Consider the polynomial $q(z):=p(z+w)$. 
+Then \(q\) is also degree \(n+1\) and has a root at $0$.
+Write \(q\) out as a polynomial then because it has a root at \(z=0\) the constant term is also zero and we can write 
+\[
+q(z) = q_{1}z+\cdots + q_{n+1}z^{n+1} 
+= z\underbrace{(q_{1}+q_{2}z+\cdots + q_{n+1}z^{n})}_{=g(z)}.
+\]
+where \(g\) is a polynomial of degree \(n\).
+By our induction hypothesis \(P(n)\), there are $a,z_{1},...,z_{n}\in\mathbb{C}$ so that 
+\[
+g(z) = a(z-z_{1})(z-z_{2})\cdots (z-z_{n}).
+\]
+Note if \(q(z):=p(z+w)\) then 
+\[
+p(z)=q(z-w)=(z-w)g(z-w)
+\]
+and so if \(r_{i}:=z_{i}+w\) for \(i=1,\cdots, n\) and \(r_{n+1}=w\)
+then
+\[
+p(z) = a(z-w-z_{1})(z-w-z_{2})\cdots (z-w-z_{n})(z-w)
+=a(z-r_{1})(z-r_{2})\cdots (z-r_{n+1}).
+\]
+This proves \(p\) has $n+1$ roots and there is a number $a\in\mathbb{C}$ so that we can write
+\[
+p(z) = a(z-r_{1})(z-r_{2})\cdots (z-r_{n+1}).\]
+
+
+Since \(P(1)\) is true, and \(P(n)\Rightarrow P(n+1)\) it follows that \(P(n)\) is true for all \(n\in\mathbb{N}\) by the principle of mathematical induction.
+\end{proof}
+
+\section{Real Polynomials}
+ 
+If we are given a {\it real polynomial}, by which we mean a polynomial $p(z)=a_{0}+\cdots + a_{n}z^{n}$ such that each $a_i \in \mathbb{R}$, then we have a bit more information about the roots:
+
+
+\begin{theorem}[Real Polynomials have conjugate roots] If $p(x)$ has {\it real} coefficients and $r$ is a root, so is $\bar{r}$. 
+\end{theorem}
+
+\begin{proof}
+If $p(x)=a_0+a_{1}x+\cdots +a_{n}x^n$ with $a_{i}$ real, and $p(r)=0$, then
+\begin{align*}
+0 =\overline{p(r)}
+ & =\overline{a_0+a_{1}r+\cdots +a_{n}r^n} \\
+{\color{magenta} (\overline{z+w}=\bar{z}+\bar{w})} & = \overline{a_0}+\overline{a_1 r}+\cdots + \overline{ a_n r^n} \\ 
+{\color{magenta} (\overline{zw}=\bar{z}\bar{w})} & =\overline{a_0}+\bar{a_1} \bar{ r}+\cdots + \bar{ a_n}\bar{ r^n} \\ 
+{\color{magenta} (\overline{a_{i}}=a_{i}\;\; \mbox{ since }\;\;a_{i} \;\; \mbox{are real})} &  ={a_0}+{a_1} \bar{ r}+\cdots + { a_n}\bar{ r}^n = p(\bar{r}).
+\end{align*}
+ 
+\end{proof}
+ 
+
+%Here we've used that conjugation commutes with both sums and products, and that real numbers (the $a_i$) are invariant under conjugation. 
+
+
+\noindent {\bf Note:} If any of the coeffients is not a real number then all bets are off! That is, we won't be able to factor into conclude that conjugates of roots are also roots. \\
+
+
+
+
+\begin{example}
+Find the roots of $x^4+2x^3-7x^2+2x-8$ given that one of them is $i$. \\
+
+
+Recall that the roots come in conjugate pairs, and so $-i$ is also a root, hence $(x-i)(x+i)=x^2+1$ is a factor in the above polynomial, so we can do polynomial long division to see how it factors: first, since the leading term of the above polynomial is $x^4$, we subtract a multiple of $x^2+1$ that will eliminate the $x^4$, so we subtract $x^2(x^2+1)$ from the polynomial to get
+\[
+2x^3-8x^2+2x-8\]
+Now the leading term is $2x^3$, so we remove $2x(x^2+1)$ from this to get
+\[
+-8x^2-8=-8(x^2+1).
+\]
+Finally, we can eliminate this term by subtracting $-8(x^2+1)$. Thus, adding together all the multiples of $(x^2+1)$ we subtracted, we get that
+Thus, we see that 
+\[
+x^4+2x^3-7x^2+2x-8=(x^2+1)(x^2+2x-8)
+\]
+Now we just need to solve $x^2+2x-8=0$. Using the quadratic formula, we find that the other two roots are $2$ and $-4$. Thus, all the roots are $\pm i, 2,$ and $-4$. 
+\end{example}
+
+Notice how in that example, we started off just knowing one root and from that the polynomial collapsed and we could find the other 3, thus, even with partial information about the roots of a polynomial, we can use reasoning like this to solve for them all. 
+
+\section{Root-Coefficient Theorem}
+
+Another useful tool is the following theorem which shows how the coefficients of a polynomial relate to the roots.
+
+\begin{theorem}[Root-Coefficient Theorem] If $p(x)=x^{n}+a_{n-1}x^{n-1}+\cdots + a_{1}x+a_{0}$, has roots $r_{1},...,r_{n}$ (counting multiplicities), then
+\[
+r_{1}+\cdots + r_{n} = -a_{n-1} \]
+\[
+r_{1}\cdots r_{n} = (-1)^{n}a_{0}.\]
+In general, if $s_{j}$ denotes the sum of all products of $j$-tuples of the roots (e.g. $s_{2} = r_{1}r_{2}+r_{1}r_{3}+r_{2}r_{3}+\cdots $), then
+\[
+s_{j} = (-1)^{j}a_{n-j}.
+\]
+\end{theorem}
+
+A ``tuple'' is a finite ordered list of items, here the roots.
+The phrase ``$j$-tuples'' means a list of items of length \(j\).
+
+\begin{proof}
+%We prove by induction. The case when $n=1$ can easily be verified. Suppose now that any degree $n$ polynomial satisfies the conclusions of the above theorem. Let 
+%\[
+%p(x)=x^{n+1}+a_{n}x^{n}+\cdots + a_{1}x+a_{0}.
+%\]
+%Let $r_{n+1}$ be a root of $p(x)$, so we can factor
+%\[
+%p(x) = (x-r_{n+1})q(x)\]
+%where 
+%\[
+%q(x) = x^{n}+(a_n-r_{n+1})x^{n-1}+\cdots + 
+
+First, factorize
+\[
+p(x)=x^{n}+a_{n-1}x^{n-1}+\cdots + a_{1}x+a_{0}=a(x-r_{1})\cdots (x-r_{n}).\]
+Note that as the coefficient of $x^{n}=1$, we know $a=1$ (since otherwise the right side, when multiplied out, wouldn't equal the left). We can establish the formulas in the theorem now by multiplying out the product on the right.
+\end{proof}
+
+This theorem looks complicated, but in fact it just encodes a pattern.
+\[ (x-\alpha)=x-\alpha\]
+\[ (x-\alpha)(x-\beta)=x^2-(\alpha+\beta)x + \alpha\beta\]
+\[ (x-\alpha)(x-\beta)(x-\gamma)
+=x^3-(\alpha+\beta+\gamma)x^2 +(\alpha\beta+\beta\gamma +\alpha\gamma)x^2 - \alpha\beta\gamma\]
+In the language of the theorem, a single \(2\)-tuple from the set \(\{\alpha,\beta,\gamma\}\) would be a two of these items.  The set of all different \(2\)-tuples is
+\[ \alpha\beta,\beta\gamma,\alpha\gamma\]
+
+\begin{example}
+Suppose $x^{3}+ax^{2}+bx+c$ has roots $\alpha,\beta,$ and $\gamma$. Find a polynomial with roots $\alpha\beta$, $\beta\gamma$, and $\gamma\alpha$ in terms of $a,b,c$ (that is, the coefficients of your polynomial should only be described using $a,b,$ and $c$, not $\alpha,\beta$, and $\gamma$). 
+
+By the Root Coefficient Theorem,
+\[
+\alpha+\beta+\gamma = -a,
+\]
+\[
+\alpha\beta+\beta\gamma+\gamma\alpha = b\]
+and 
+\[
+\alpha\beta\gamma = -c.\]
+Let $x^{3}+Ax^{2}+Bx+C$ be a polynomial with roots $\alpha\beta$, $\beta\gamma$ and $\gamma\alpha$. Then we know
+\[
+-A=\alpha\beta+\beta\gamma+\gamma\alpha = b\]
+\[
+B=\alpha\beta^{2}\gamma+\alpha\beta\gamma^{2}+\alpha^{2}\beta\gamma=-c(\alpha+\beta+\gamma)=ac
+\]
+and 
+\[
+-C=\alpha\beta \cdot \beta\gamma\cdot \gamma\alpha 
+ = (\alpha\beta\gamma)^{2}=c^{2}
+ \]
+ Hence, the polynomial is 
+ \[
+ x^{3}-bx^{2}+acx-c^{2}.
+ \]
+\end{example}
+ 
+
+\begin{example}
+Are all the roots of $x^{3}+11x^2+7$ integers? \\
+
+Suppose they were. Notice that by the Factorization Theorem, this polynomial has three roots $a,b,c$ (where some of these roots could repeat). By the Root-Coefficient Theorem, $abc=-7$, so $7=|abc|=|a|\cdot|b|\cdot |c|$. Since $7$ is prime and we are assuming the roots are integers, the only way this is possible is if one of these absolute values is $7$ and the others are $1$, say $|a|=7$ and $|b|=|c|=1$. The Root-Coefficient Theorem also says $a+b+c=-11$, so by the triangle inequality, 
+\[
+11=|-11|=|a+b+c|\leq |a|+|b|+|c|=1+1+7=9,
+\]
+which is impossible. Thus, at least one of the roots is not an integer. \end{example}
+
+
+
+
+
+\section{Exercises}
+
+
+\begin{exercise} Find the (complex) roots of the following polynomials:\\
+
+(a) $x^2-5x+7-i=0$. 
+
+\begin{solution}
+Recall that the roots of this polynomial are 
+\[x= \frac{5\pm z}{2}\]
+where $z$ are the solutions to 
+\[z^2 = 5^2-4\cdot (7-i)\cdot 1  = 25-28+4i = -3+4i.\]
+If we set $z=a+ib$, this gives
+\[a^2-b^2+2abi = -3+4i.\]
+So in particular, $2ai = 4i$ and $a^2-b^2 = -3$. Moreover, 
+\[|z^2|= |-3 + 4i| = 5\]
+Thus, 
+\[
+5=|z^2|=|z|^2 = \sqrt{a^2+b^2}^2 = a^2+b^2
+\]
+Adding this to  $a^2-b^2=-3$ implies $2a^2 = 2$, so $a^2=1$, and so $a = \pm 1$. 
+Similarly, subtracting $a^2-b^2=-3$ from the above equation gives $2b^2 = 8$, so $b=\pm 2$. 
+Finally, $2ab = 4$ implies that $a$ and $b$ have the same algebraic sign, so we must have $a+ib$ is $1+2i$ or $-1-2i$ as our two solutions for $z$. Hence,
+\[
+x=\frac{5 \pm (1+2i)}{2} \]
+so $x$ is either $3+i$ or $2-i$. 
+
+We can substitute these in to check, e.g. (just the first)
+\[ (3+i)^2-5(3+i)+7-i = (8+6i)-5(3+i)+7-i =0 \]
+\end{solution}
+
+(b)  $ x^4 -x^2 - 1 = 0$.
+
+\begin{solution}
+Let $y=x^2$. Then $y^2+y+1=0$, and the solutions to this are
+\[
+x^2=y=\frac{1\pm \sqrt{5}}{2} 
+\]
+Thus, we see that $x=\pm \sqrt{\frac{1+\sqrt{5}}{2}}$ are two solutions, we just need to find the other two. They will be solutions to $x^2 = \frac{1-\sqrt{5}}{2} = - \frac{\sqrt{5}-1}{2}$, which are $\pm i \sqrt{\frac{\sqrt{5}-1}{2}}$. Thus, all 4 solutions are 
+
+\[
+\pm \sqrt{\frac{1+\sqrt{5}}{2}}, \;\; \pm i \sqrt{\frac{\sqrt{5}-1}{2}}.
+\]
+\end{solution}
+
+
+(c) $2x^4-4x^3+3x^2+2x-2$, given that one of the roots is $1+i$.
+
+\begin{solution}
+Since this is a real polynomial, the conjugate of $1+i$ is also a root, so two of the root are $1\pm i$. Hence, the polynomial contains 
+\[
+(x-(1+i))(x-(1-i))=
+x^2-2x+2
+\]
+as a factor. Now let's do polynomial long division to find the other factor. The leading factor of our original polynomial is $2x^{4}$, which we can eliminate by subtracting $2x^2(x^2-2x+2)$ to get
+\[
+-x^2+2x-2=-(x^2-2x+2)
+\]
+Then finally we can just subtract $-1\cdot (x^2-2x+2)$ to eliminate this.
+Thus, we can factor the above polynomial as
+\[
+2x^4-4x^3+3x^2+2x-2=(2x^2-1)(x^2-2x+2)=2(x-2^{-1/2})(x+2^{1/2})(x-(1+i))(x+(1-i))
+\]
+so the roots are finally $\pm 2^{-1/2}, 1\pm i$.
+\end{solution}
+
+\end{exercise}
+
+\begin{exercise} Factor the following polynomials into products of real polynomials that are linear and/or quadratic:
+
+\begin{itemize}
+\item $x^3-1$.
+\begin{solution}
+We first need to find the roots of unity of $x^3$, which are $1, w=e^{2\pi i/3}=-\frac{1}{2}+\sqrt{3}{2}i$ and $w^2=e^{4\pi i/3} = -\frac{1}{2}-\sqrt{3}{2}i=\overline{w}$.  Thus,
+\begin{align*}
+x^3-1 & = (x-1)(x-w)(x-\overline{w}) = (x-1)(x^2-wx-\overline{w}x+\overline{w}w) \\
+& = (x-1)(x^2+x+|w|^2) = (x-1)(x^2+x+1).
+\end{align*}
+\end{solution}
+\item $x^3+1$.
+
+\begin{solution}
+We need to find the roots of $x^3+1=0$, which are solutions to $x^3=-1=e^{\pi i}$. One solution is clearly $1$. Another we can get by taking 1/3 the exponent of $e^{\pi i}$, which is $w=e^{\pi i/3} = \frac{1}{2}+\frac{\sqrt{3}}{2}$. We know that roots of real polynomials come in conjugate pairs, and so the other root is $\overline{w}$. Thus,
+\begin{align*}
+x^3+1 & = (x-(-1))(x-w)(x-\overline{w}) = (x+1)(x^2-wx-\overline{w}x+\overline{w}w) \\
+& = (x+1)(x^2-x+|w|^2) = (x+1)(x^2-x+1).
+\end{align*}
+\end{solution}
+
+\item $x^4-1$.
+
+\begin{solution}
+There is no need to find complex roots here:
+\[
+x^4-1 = (x^2)^2-1 = (x^2-1)(x^2+1).
+\]
+\end{solution}
+
+\item $x^4+1$. 
+
+\begin{solution}
+To find the roots of $x^4+1$, we need to find solutions to $x^4=-1=e^{\pi i}$. One solution is $z=e^{\pi i/4}=\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}i$. To find all 4 roots, we just multiply this by the 4th roots of unity, which are $\pm 1, \pm 1$, thus all solutions which will be
+\[
+\pm \frac{1}{\sqrt{2}} \pm \frac{1}{\sqrt{2}}i
+\]
+where we consider all 4 possible combinations of $+$'s and $-$'s. Let $z=\frac{1}{\sqrt{2}}+i\frac{1}{sqrt{2}}$ and $w=-\frac{1}{\sqrt{2}}+i\frac{1}{\sqrt{2}}$. Then the roots are $z,w,\overline{z},\overline{w}$. Thus,
+\begin{align*}
+x^4+1 & 
+= (x-z)(z-\overline{z})(x-w)(x-\overline{w})\\
+& =(x^2 -zx-\overline{z}x+z\overline{z})(x^2 -wx-\overline{w}x+w\overline{w})\\
+& = (x^2-\sqrt{2}x+|z|^2)(x^2+\sqrt{2}x+|w|^2)\\
+& = (x^2-\sqrt{2}x+1)(x^2+\sqrt{2}x+1).
+\end{align*}
+\end{solution}
+
+\item $x^5+1$. {\it Hint: $\cos \frac{2\pi}{5}= \frac{-1+\sqrt{5}}{4}$ and $\cos \frac{4\pi}{5}= \frac{-1-\sqrt{5}}{4}$.}
+
+\begin{solution}
+We note that this is easily completely factorized over the complex numbers.  Let $\xi = e^{\frac{2\pi i}{10}}$, then the $5$th roots of unity are $1,\xi,\xi^2, \xi^3,\xi^4$. By examining these numbers, we can see that $\xi^{4}=\overline{\xi}$ and $\xi^{3} = \overline{\xi}^{2}$.  Thus, 
+
+$$x^5+1 = (x+1)\underbrace{(x-\xi)(x-\bar{\xi})}_{\textrm{conjugate}}\underbrace{(x-\xi^2)(x-\bar{\xi}^2)}_{\textrm{conjugate}}.$$
+
+If we collect into pairs the terms which involve a root and its conjugate, we obtain real polynomials.
+
+We compute:
+$$(x-\xi)(x-\bar{\xi}) = x^2 - (\xi+\bar{\xi})x + \xi\bar{\xi} = x^2 - 2\cos(\frac{2\pi}{5})x+1 
+= x^2 +\frac{1-\sqrt{5}}{2}x+1.
+$$ 
+and 
+
+$$(x-\xi^2)(x-\bar{\xi}^2) = x^2 -(\xi^2 + \bar{\xi}^2)x + \xi^2\bar{\xi}^2 = x^2 - 2\cos(\frac{4\pi}{5})x+1
+= x^2 +\frac{1+\sqrt{5}}{2}x+1.
+,$$
+Hence,
+\[
+x^5 = \left(x^2 +\frac{1-\sqrt{5}}{2}x+1\right) \left(x^2 +\frac{1+\sqrt{5}}{2}x+1\right).
+\]
+\end{solution}
+
+
+%\item $x^6+1$. 
+%
+%\begin{solution}
+%
+%The roots of $x^6+1$ are $e^{i\pi/6}\omega^{j}$ where $\omega= e^{i2\pi/6}=e^{i\pi/3}$ and $j=0,1,2,3,4,5$. Hence,
+%\[x^{6}+1
+% =(x-e^{i\pi/6})(x-e^{i\pi/6}w)(x-e^{i\pi/6}w^2)(x-e^{i\pi/6}w^3)(x-e^{i\pi/6}w^4)(x-e^{i\pi/6}w^5).\]
+%We need to group the terms into conjugate pairs, so that when we multiply the pairs out they become real numbers. 
+%Note that 
+%\[
+%e^{i\pi/6}w^{5}=e^{i\pi/6+i5\pi/3}=e^{i11\pi/6}=e^{-i\pi/6}=\overline{e^{i\pi/6}},
+%\]
+%\[
+%e^{i\pi/6}w^{4}=e^{i\pi/6+4\pi/3}=e^{i3\pi/2}=-i=\overline{i}=\overline{e^{i\pi/6}\omega}
+%\]
+%\[
+%e^{i\pi/6}w^{3}=e^{i\pi/6+i\pi}=e^{i7\pi/6}=\overline{e^{5\pi/6}}
+%=\overline{e^{i\pi/6}w^{2}}
+%\]
+%Thus,
+%\begin{align*}
+%x^{6}+1
+%&  =(x-e^{i\pi/6})(x-e^{i\pi/6}w)(x-e^{i\pi/6}w^2)(x-e^{i\pi/6}w^3)(x-e^{i\pi/6}w^4)(x-e^{i\pi/6}w^5)\\
+%& = (x-e^{i\pi/6})(x-e^{i\pi/6}w)(x-e^{i\pi/6}w^2)(x-e^{i\pi/6}w^3)(x-e^{i\pi/6}w^4)(x-e^{i\pi/6}w^5)
+%\end{align*}
+%Hence, rearranging the terms in our product for $x^6+1$, we get
+%\begin{align*}
+% x^6+1
+%&  =(x-e^{i\pi/6})(x-e^{i\pi/6}w^5)(x-e^{i\pi/6}w^2)(x-e^{i\pi/6}w^3)(x-e^{i\pi/6}w^4)(x-e^{i\pi/6}w)\\
+%& =(x-e^{i\pi/6})(x-e^{-i\pi/6})(x-e^{i\pi/6}w^2)(x-e^{-i\pi/6}w^{-2})(x-e^{-i\pi/6}w^{-1})(x-e^{i\pi/6}w)\\
+%& =(x^2-2xRe(e^{i\pi/6})+1)(x^2-2xRe(e^{i\pi/6}w^2)+1)(x^2-2xRe(e^{i\pi/6}w)+1)\\
+%& = (x^2-2x\cos\pi/6+1)(x^2-2x\cos(7\pi/6)+1)(x^2-2x\cos \pi/2+1)\\
+%& = (x^2-\sqrt{3}x+1)(x^2+\sqrt{3}x+1)(x^2+1).
+%\end{align*}
+%
+%
+%\end{solution}
+\end{itemize}
+\end{exercise}
+
+
+
+%2019/20 Exam problem
+%\begin{exercise} Prove that for complex numbers $z$ and $w$
+%\[
+%|z+w|^2+|z-w|^2=2|z|^2+2|w|^2.
+%\]
+%
+%
+%\end{exercise}
+
+
+
+\begin{exercise} If $x^3+15x^2+74x+120$ has roots of the form $a,a+1,a+2$, find $a$.
+
+\begin{solution}
+We see that by the Root-Coefficient Theorem,
+\[
+-15=a+a+1+a+2=3a+3\]
+and so $a=-6$.
+\end{solution}
+
+\end{exercise}
+
+
+\begin{exercise} 
+ Let $a\in \mathbb{R}$. If $x^{3}-x+a$ has three integer roots, solve for $a$. 
+
+\begin{solution}
+
+
+Note that if the integer roots are $r_{1},r_{2}$, and $r_{3}$, then by Proposition 7.1,
+\[
+r_{1}+r_{2}+r_{3}=0\]
+and 
+\[
+r_{1}r_{2}+r_{2}r_{3}+r_{3}r_{1}=-1
+\]
+Hence,
+\[
+r_{1}^{2}+r_{2}^{2}+r_{3}^{2} = (r_{1}+r_{2}+r_{3})^{2}-2(r_{1}r_{2}+r_{2}r_{3}+r_{3}r_{1})=2.
+\]
+Since the $r_{i}$ are integers, the $r_{i}^{2}$ are nonnegative integers, and so one of them has to be zero. Thus, $0=0^{2}-0+a$, hence $a=0$. 
+
+\end{solution}
+
+
+\end{exercise}
+
+
+
+
+
+\begin{exercise} Show that if $z_1,z_2,z_3\in \C$ are so that $z_1+z_2+z_3=0$, and $z_1^2+z_2^2+z_3^2=0$ then $|z_1|=|z_2|=|z_3|$
+
+
+\begin{solution}
+Let $f(z)=(z-z_1)(z-z_2)(z-z_3)$. Then $f(z)=z^3-az^2+bz-c$ where 
+\begin{align*}
+a&=z_1+z_2+z_3\\[4pt]
+b&=z_1z_2+z_2z_3+z_3z_1\\[4pt]
+c&=z_1z_2z_3\\[4pt]
+\end{align*}
+By assumption, we get that $a=z_1+z_2+z_3=0$.  Also, since $z_{1}^2+z_{2}^2+z_{3}^2=0$, we have 
+\[
+(z_1+z_2+z_3)^2=z_1^2+z_2^2+z_3^2+2(z_1z_2+z_2z_3+z_3z_1)
+\]
+and so $b=0$. Thus, $f(z)=z^3-c$, so in particular, since $z_{1},z_{2}$ and $z_{3}$ are roots, we have $z_{1}^3=z_{2}^3=z_{3}^{3}=c$. Thus
+\[
+|c|=|z_{i}^3|=|z_{i}|^3
+\]
+so $|z_{i}|=|c|^{1/3}$ for $i=1,2,3$. 
+\end{solution}
+
+\end{exercise}
+
+%
+%
+%\begin{exercise} Show that the solutions of $z^3=c$ where $|c|=1$ are the corners of an equilateral triangle.
+%
+%\end{exercise}
+%
+
+
+\begin{exercise} Suppose $|z_{1}|=|z_{2}|=|z_{3}|=1$ and $z_{1}+z_{2}+z_{3}=0$. Show that $z_{1}^3=z_{2}^3=z_{3}^3$. {\it Hint: First think about when $z_{1}=1$, then use that to prove the general case.}
+
+\begin{solution}
+First let's assume $z_{1}=1$. Then $z_{2}+z_{3}=-1$. In particular, this means that the imaginary parts of $z_{2}$ and $z_{3}$ cancel, that is, if $z_{j}=x_{j}+iy_{j}$, then $y_{2}=-y_{3}$. Also, $x_{2}+x_{3}=-1$, and we can't have $x_{2}>0$, since then $x_{2}+x_{3}>x_{3}\geq -1$. Similarly, we can't have $x_{3}>0$, thus $x_{2},x_{3}\leq 0$. Also, 
+\[
+-x_{2} = \sqrt{1-y_{2}^2} = \sqrt{1-y_{3}^2}= -x_{3},\]
+hence $z_{3} = -x_{2} -iy_{2} = \overline{z_{2}}$, and $-1=z_{2}+z_{3}=-x_{2}-x_{2}=-2x_{2}$, thus $x_{2}=-\frac{1}{2}$. Thus, we must have that $z_{3} = -\frac{1}{2}\pm i\frac{\sqrt{3}}{2}$. 
+
+For the general case, let $w_{i}=\overline{z_{1}}z_{i}$, then $w_{1}=1$ and $w_{1}+w_{2}+w_{3}=0$. We now apply the previous case to conclude that $w_{i} = w^{i}$ where $w=e^{2\pi i/3}$. Thus,
+\[
+z_{j}^3 = (z_{1} w_{j})^3 = z_{1}^3 w_{j}^3 = z_{1} (w^{3j})=z_{1}.
+\]
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} Suppose $|z_{1}|=|z_{2}|=|z_{3}|=1$ and $z_{1}+z_{2}+z_{3}=0$. Show that $z_{1}^{2^{n}}+z_{2}^{2^{n}}+z_{3}^{2^{n}}=0$ for all $n\in \mathbb{N}$. 
+
+\begin{solution}
+By the previous problem, $z_1,z_2,z_3$ are roots of $z^3-c$ for some complex number $c$ with $|c|=1$. In particular, by the Root-Coefficient Theorem,
+\[
+z_{1}z_{2}+z_{1}z_{2}+z_{2}z_{3}=0.
+\]
+Thus, 
+\[
+0=(z_{1}+z_{2}+z_{3})^2 = z_{1}^2+z_{2}^2+z_{3}^2 + 2(z_{1}z_{2}+z_{1}z_{2}+z_{2}z_{3})=z_{1}^2+z_{2}^2+z_{3}^2 .
+\]
+Now we can repeat the process by induction using $z_{1}^2,z_{2}^2,z_{3}^2$ instead of $z_1,z_2,z_3$.
+\end{solution} 
+
+
+\end{exercise}
+
+%
+%\begin{exercise} {\bf Challenging:} We all know what $\cos \theta$ and $\sin\theta$ are when $\theta$ is a multiple of $\pi/6$, $\pi/4$, $\pi/3$, or $\pi/2$, but what about $\pi/5$, $\pi/7$ and $\pi/8$?  In the following problems, we will use complex numbers to find other values of cosine and sine, and other interesting facts about these trigonometric functions. 
+%
+%
+%\begin{itemize}
+%
+%\item (Liebeck 6.7)  Here we will find $\cos \pi/5$.
+%\begin{itemize}
+%\item Let $w=e^{2\pi i/5}$. Show that
+%\[
+%1+w+w^2+w^3+w^4=0.
+%\]
+%\begin{solution}
+%Note that 
+%\[
+%1+w+w^2+w^3+w^4 = \frac{1-w^5}{1-w}=\frac{1-1}{1-w}=0.
+%\]
+%\end{solution}
+%
+%\item Let $\alpha = 2\cos 2\pi/5$ and $\beta = \cos 4\pi/5$. Show that $\alpha = w+w^4$ and $\beta = w^2+w^3$. 
+%
+%\item Find a polynomial whose roots are $\alpha$ and $\beta$, solve it to find $\cos 2\pi /5$. 
+%
+%\begin{solution}
+%Let 
+%\begin{align*}
+%p(x) 
+%& = (x-\alpha)(x-\beta)\\
+%& =x^2 - (\alpha + \beta)x+\alpha \beta \\
+%& =x^2 -(w+w^2+w^3+w^4)x+(w^3+w^4+w^6+w^7) \\
+%& = x^2 +x + w^3 (1+w+w^3+w^4)\\
+%& = x^2 + x - w^3w^2 = x^2 + x -1 .
+%\end{align*}
+%The roots of this polynomial are 
+%\[
+%\frac{-1 \pm \sqrt{5}}{2}.
+%\]
+%Since $\alpha>0>\beta$, we see that 
+%\[
+%2\cos \frac{2\pi}{5} = \alpha  = \frac{-1+\sqrt{5}}{2}.
+%\]
+%Thus,
+%\[
+%\cos \frac{2\pi}{5} = \frac{-1+\sqrt{5}}{4}.
+%\]
+%Finally, since 
+%\[
+%\cos \frac{2\pi}{5} = 2\cos^2 \frac{\pi}{5} -1,\]
+%we see that 
+%\[
+%\cos \frac{\pi}{5} = \sqrt{\frac{3 + \sqrt{5}}{8}}.
+%\]
+%
+%
+%
+%\end{solution}
+%\end{itemize}
+%
+%%
+%\item Repeat the argument using $7$th roots of unity to find a polynomial with integer coefficients whose roots are $2\cos 2\pi/7$,  $2\cos 4\pi/7$, and $2\cos 6\pi/7$.
+%
+%\begin{solution}
+%Again, if $w=e^{2\pi i/7}$, we have 
+%\[
+%1+w+w^2+\cdots + w^6=0.
+%\]
+%Moreover, notice that we can match these terms as conjugate pairs: $\overline{w} = w^6$, $\overline{w^2}=w^5$, $\overline{ w^3} = w^{4}$. Thus, when we add these together, we get 
+%\[
+%\alpha = w+w^6 = 2\cos \frac{2\pi}{7}, \;\; \beta = w^2+w^5 = 2\cos \frac{4\pi }{7}, \;\; \gamma = w^{3} + w^{4} = 2\cos\frac{6\pi }{7} .
+%\]
+%Let's look at the polynomial that has these numbers as roots:
+%
+%\[
+%p(x) 
+% = (x-\alpha)(x-\beta)(x-\gamma) 
+%= x^3+ax^2+bx+c
+%\]
+%where
+%\[
+%-a=\alpha +\beta + \gamma=1+w+\cdots + w^6=0,
+%\]
+%\begin{align*}
+%b & = \alpha \beta + \beta \gamma + \gamma\alpha\\
+%& = w^3+w^6+w^8+w^{11} + w^5+w^6+w^8+w^9 + w^4+w^5+w^9+w^{10}\\
+%& =w^3(1+2w^3+2w^5+w^8+2w^2+2w^6+w+w^7) \\
+%& w^3(1+2w^3+2w^5+w+2w^2+2w^6+w+1)  \\
+%& = 2w^3(1+w^3+w^5+w^2+w^6+w)\\
+%& =2w^3\cdot 2^4 = 2.
+%\end{align*}
+%and finally,
+%\begin{align*}
+%-\alpha\beta\gamma 
+%& = (w+w^6)(w^2+w^5)(w^3+w^4)\\
+%& =w(1+w^5)w^2(1+w^3)w^3(1+w) \\
+%& =w^6(1+w^5)(1+w^3)(1+w) = w^6(1+w+w^3+w^4+w^5+w^6+w^8+w^9)\\
+%& = w^{6}(-w^2+w^8+w^9) =w^6(-w^2+w+w^2) = w^7=1.
+%\end{align*}
+%Hence,
+%\[
+%p(x) = x^3+2x-1.
+%\]
+%
+%
+%\end{solution}
+%
+%
+%\item Find $\cos \pi/8$. 
+%
+%\begin{solution}
+%We can just do this via the double angle formula:
+%\[
+%\frac{1}{\sqrt{2}} = \cos \pi/4 = 2\cos^2 \pi/8-2
+%\]
+%and so 
+%\[
+%\cos \frac{\pi}{8} = \sqrt{\frac{2\sqrt{2}+1}{2\sqrt{2}}}.
+%\]
+%
+%\end{solution}
+%
+%
+%
+%%
+%%\begin{align*}
+%%\cos \frac{\pi}{3} 
+%%& =\cos \frac{\pi}{9}\cos\frac{2\pi}{9}
+%%-\sin \frac{2\pi}{9}\sin\frac{\pi}{9}\\
+%%& =\cos\frac{\pi}{9}(2\cos^2\frac{\pi}{9}-1)-2\sin^2\frac{\pi}{9}\cos\frac{\pi}{9}\\
+%%& =2\cos^3\frac{\pi}{9} - \cos\frac{\pi}{9} -2\cos\frac{\pi}{9} +2\cos^2\frac{\pi}{9}
+%%=4\cos^3\frac{\pi}{9} -3\cos\frac{\pi}{9}
+%%\end{align*}
+%%
+%%Thus, $\cos^3\frac{\pi}{9}$ is a root of $0=4x^3-3x-\cos \frac{\pi}{3}=4x^3-3x-\frac{1}{2}$.
+%
+%
+%\item Similar to what we did with $7$th roots of unity, use $9$th roots of unity to find a three degree polynomial with integer coefficients whose roots are $ 2 \cos \frac{2\pi}{9}$, $ 2\cos \frac{4\pi}{9}$, and $ 2\cos \frac{8\pi }{9}$.
+%
+%\begin{solution}
+%Consider the numbers $\alpha = 2 \cos \frac{2\pi}{9}$, $\beta = 2\cos \frac{4\pi}{9}$, $\gamma = 2\cos \frac{8\pi }{9}$.
+%
+%\[
+%\alpha = w+w^8, \;\; \beta = w^2+w^7, \;\; \gamma = w^4+w^5.
+%\]
+%Thus,
+%\[
+%p(z)
+%=(z-\alpha)(z-\beta)(z-\gamma)
+% = z^3 -(\alpha+\beta+\gamma)z^2 +(\alpha\beta+\beta\gamma+\alpha\gamma)z-\alpha\beta\gamma.
+% \]
+% Note that if $u=e^{2\pi i/3}$, then $w^3=u$, and so 
+% \[
+% \alpha+\beta+\gamma=w+w^2+w^4+w^5+w^7+w^8
+% =-1-w^3-w^6 = -1-w-w^2
+% =0.
+% \]
+% Also,
+% \begin{align*}
+% \alpha\beta & +\beta\gamma+\alpha\gamma\\
+%& =w^3+w^8+w^{10}+w^{15} +w^6+w^7+w^{11}+w^{12} + w^5+w^6+w^{12}+w^{13}\\
+%& = w^3+w^8+w+w^{6} +w^6+w^7+w^{2}+w^{3} + w^5+w^6+w^{3}+w^{4}\\
+%& = 3w^3+w^8+w+3w^6+w^7+w^2+w^5+w^4 \\
+%& = 2w^3+2w^6=2(u+u^2)=-2.
+% \end{align*}
+% Finally,
+% \begin{align*}
+% \alpha\beta\gamma 
+% & = (w^3+w^8+w^{10}+w^{15})(w^4+w^5)
+% =w^7+w^{12}+w^{14}+w^{19}+w^8+w^{13}+w^{15}+w^{20}\\
+% & = w^7+w^3+w^5+w+w^8+w^4+w^6+w^2
+% -1.
+% \end{align*}
+% 
+% Thus, 
+% \[
+% p(z) = z^3-2z+1.
+% \]
+% 
+% 
+% 
+%
+%\end{solution}
+%\end{itemize}
+%
+%
+%\end{exercise}
+%
+%\begin{exercise} ({\bf Challenge!}) Show that 
+%\[
+%\prod_{k=1}^{n-1}\sin\frac{k \pi}{n} = \frac{n}{2^{n-1}}.
+%\]
+%
+%\begin{solution}
+%Let $P$ denote the product above and $w=e^{2i\pi/n}$ be the $n$th root of unity. Then
+%\begin{align*}
+%P 
+%& =\prod_{k=1}^{n-1}\sin(k\pi/n)=(2i)^{1-n}\prod_{k=1}^{n-1}(e^{ik\pi/n}-e^{-ik\pi/n})\\
+%& =(2i)^{1-n}e^{-i\pi n(n-1)/(2n)}\prod_{k=1}^{n-1}(e^{2ik\pi/n}-1)\\
+%& =(-2)^{1-n}\prod_{k=1}^{n-1}(w^k-1)=2^{1-n}\prod_{k=1}^{n-1}(1-w^k),
+%\end{align*}
+%Now note, that $x^n-1=(x-1)\sum_{k=0}^{n-1}x^k$ and $x^n-1=\prod_{k=0}^{n-1} (x-w^k)$, thus cancelling $x-1$ we have $\prod_{k=1}^{n-1} (x-w^k) =\sum_{k=0}^{n-1}x^k$. Substituting $x=1$ we have $\prod_{k=1}^{n-1} (1-w^k)=n$. Therefore $P=n2^{1-n}$.
+%
+%\end{solution}
+%
+%\end{exercise}
+%
+
+
+
+
+
+
+
+
+
+
+
+%Interesting open problems:
+%
+%
+%\begin{question}[Bocard's problem]
+%Are there infinitely many $n\in\mathbb{N}$ so that $n!+1$ is a square? Only 3 integers are known: $4!+1=5^2$, $5!+1=11^2$, and $7!=71^2$. 
+%\end{question}
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3
+%----------------------------------------------------------------------------------------
+
+%\chapterimage{ima2} % Chapter heading image
+
+
+%----------------
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+%
+%\chapter*{Bibliografía}
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliografía}}
+%\section*{Books}
+%\addcontentsline{toc}{section}{Books}
+%\printbibliography[heading=bibempty,type=book]
+%
+%\begin{itemize}
+%	\item GREENE, W.H. (2003) “Econometric Analysis”5ª edición. Prentice Hall N.J. Capítulo 21
+%\\\\
+%    \item WOOLDRIDGE, J.M. (2010) “Introducción a la Econometría: Un Enfoque Moderno". 4ª edición. Cengage Learning. Capítulo 17
+%
+%\end{itemize}
+
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage
+\phantomsection
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Índice Alfabético}}
+\printindex
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

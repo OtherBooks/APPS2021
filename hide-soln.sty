@@ -1,0 +1,24 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{odd-soln}
+\RequirePackage{environ}
+\newif\if@hidden% \@hiddenfalse
+\newif\if@odd% \@hiddenfalse
+\newif\ifoddonly% Boolean to print odd-only answers
+\oddonlytrue% Odd only answers = TRUE
+\DeclareOption{hide}{\global\@hiddentrue}
+\DeclareOption{odd}{\global\@oddtrue}
+\DeclareOption{all}{\global\@oddfalse}
+\DeclareOption{unhide}{\global\@hiddenfalse}
+
+\ProcessOptions\relax
+\NewEnviron{solution}
+  {\if@hidden\else
+  \if@odd
+  \ifodd\value{exercise} \begin{tcolorbox}{\bf Solution: }\BODY \end{tcolorbox}\else\fi
+  \else \begin{tcolorbox}{\bf Solution: }\BODY \end{tcolorbox}\fi\fi}
+
+
+%\usepackage{enumitem}% http://ctan.org/pkg/enumitem
+
+
+

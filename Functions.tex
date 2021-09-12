@@ -1,0 +1,639 @@
+
+
+
+\documentclass[a4paper,12pt,dvipsnames]{book}
+
+\usepackage{multirow}
+\usepackage{xypic}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+%\usepackage{due-dates}
+\usepackage[small]{eulervm}
+\usepackage{amsmath,amssymb,amstext,amsthm,amscd,mathrsfs,eucal,bm,xcolor}
+\usepackage{multicol}
+\usepackage{array,color,graphicx}
+\usepackage{enumerate}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{question}[theorem]{Question}
+
+\newtheorem{pt}[theorem]{Proof Technique}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{exercise}{Exercise}
+\newtheorem{claim}[theorem]{Claim}
+\numberwithin{theorem}{chapter}
+\usepackage{epigraph}
+\usepackage[colorlinks,citecolor=red,linkcolor=blue,pagebackref,hypertexnames=false]{hyperref}
+
+\theoremstyle{remark} 
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{\bf Example}
+%\newtheorem*{solution}{Solution:}
+
+
+\usepackage{centernot}
+
+
+\usepackage{filecontents}
+
+\begin{filecontents*}{MyPackage.sty}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{MyPackage}
+\RequirePackage{environ}
+\newif\if@hidden% \@hiddenfalse
+\DeclareOption{hide}{\global\@hiddentrue}
+\DeclareOption{unhide}{\global\@hiddenfalse}
+\ProcessOptions\relax
+\NewEnviron{solution}
+  {\if@hidden\else {\bf Solution: }\BODY\fi}
+\end{filecontents*}
+
+\usepackage[unhide]{MyPackage}
+%\usepackage[hide]{MyPackage}
+
+
+
+
+
+
+%\usepackage{tikz}
+
+%\pagestyle{headandfoot}
+%\firstpageheader{\textbf{Proofs \& Problem Solving}}{\textbf{Homework 1}}{\textbf{\PSYear}}
+%\runningheader{}{}{}
+%\firstpagefooter{}{}{}
+%\runningfooter{}{}{}
+
+%\marksnotpoints
+%\pointsinrightmargin
+%\pointsdroppedatright
+%\bracketedpoints
+%\marginpointname{ \points}
+%\totalformat{[\totalpoints~\points]}
+
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\N{{\mathbb{N}}}
+\def\Q{{\mathbb{Q}}}
+\def\C{{\mathbb{C}}}
+\def\hcf{{\rm hcf}}
+
+%\printanswers
+%\noprintanswers
+
+\begin{document}
+
+
+\title{Week 3: Functions}
+\date{}
+
+\maketitle
+
+
+\chapter{Functions}
+
+
+
+\epigraph{\it I see it, but I don't believe it!}{George Cantor in a letter to Dedekund in 1877 after discovering that points in the interval $[0,1]$ could be matched to every point in $\mathbb{R}^{2}$ in 1-1 correspondence.} 
+
+
+
+Functions are ubiquitous in mathematics. We have already worked with them implicitly in this course, but in this chapter we will study them abstractly for their own sake. 
+
+
+\begin{definition}
+Given two sets $X$ and $Y$, a {\it function from $X$ to $Y$}, denoted $f:X\rightarrow Y$, is a relation pairing each $x\in A$ with an element in $Y$ which we denote $f(x)$. The set $X$ is called the {\it domain} of $f$ and $Y$ is the {\it codomain} or {\it range} of $Y$. 
+\end{definition}
+
+So for example: $f:\mathbb{Z}\rightarrow \mathbb{N}$ defined by $f(n)=n^2$ is a function, so is $g:\mathbb{C}\rightarrow \mathbb{R}$ defined by $g(z)=\Im z$. 
+
+
+\begin{definition}
+Let $f:X\rightarrow Y$ be a function. 
+\begin{itemize}
+\item $f$ is {\bf \color{orange} Surjective} if 
+\[
+{\color{orange} \forall y\in Y\exists x\in X \mbox{ s.t. } f(x)=y}\]
+ 
+\item $f$ is  {\bf \color{cyan} injective} if
+
+\[
+{\color{cyan}  \forall x,y\in X,  \;\; f(x)=f(y) \;\; \Longrightarrow x=y.
+}.\]
+ 
+\item $f$ is {\bf \color{ForestGreen} bijective} if it is injective and surjective.
+\end{itemize}
+
+\end{definition}
+ 
+\begin{center}
+\includegraphics[width=300pt]{inj-surj.png}
+\end{center}
+
+
+\section{Compositions}
+
+\begin{definition}
+Let $f:X\rightarrow Y$ and $g:Y\rightarrow Z$ be functions. We define  the {\it composition} of $f$ and $g$, denoted $g\circ f:X\rightarrow Z$, to be the function 
+\[
+g\circ f(x) = g(f(x)).
+\]
+\end{definition}
+
+\begin{remark}
+Note that we do not denote a function by $f(x)$ but just by $f$, this is because $f(x)$ denotes the value or output we get by plugging in $x$ into $f$, that is $f(x)$ denotes an element of $Y$, not a function (it is almost like calling $f(2)$ a function; it isn't, it is just $2$ plugged into $f$). This is why we need the special circle notation to denote the composition $g\circ f$ when at first it would seem more natural to just write $g(f(x))$ all the time. 
+\end{remark}
+
+
+The proof of the following result is a good one to study, since it showcases how to prove injectivity and surjectivity for functions. 
+
+\begin{theorem}
+Let $f:X\rightarrow Y$ and $g:Y\rightarrow Z$ be functions. 
+\begin{enumerate}
+\item If $f$ and $g$ are injective, so is $g\circ f$. 
+\item If $f$ and $g$ are surjective, so is $g\circ f$.
+\item If $f$ and $g$ are bijective, so is $g\circ f$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}
+\item Suppose $f$ and $g$ are injective. To show that $g\circ f$ is injective, we need to show that if $g\circ f(x)=g\circ f(y)$, then $x=y$. So suppose $x,y\in X$ are so that $g\circ f(x)=g\circ f(y)$. Then $g(f(x))=g(f(y))$. Since $g$ is injective, this means $f(x)=f(y)$; since $f$ is injective, this implies $x=y$, as desired. This completes the proof that $g\circ f$ is injective.
+\item Now suppose $f$ and $g$ are surjective. To show that $g\circ f$ is surjective, we need to show that for all $z\in Z$, there is $x\in X$ so that $z=g\circ f(x)=g(f(x))$. Since $g$ is surjective, there is $y\in Y$ so that $z=g(y)$; since $f$ is surjective, there is $x\in X$ so that $f(x)=y$, and so $g(f(x))=g(y)=z$, as desired. This finishes the proof that $g\circ f$ is surjective. 
+\item If $g$ and $f$ are bijective, then they are both injective and surjective, so by the previous two cases, $g\circ f$ is also both injective and surjective, hence $g\circ f$ is bijective. 
+\end{enumerate}
+\end{proof}
+
+
+
+\begin{exercise}
+Let $X,Y,Z$ be sets, and let $f:X\to Y$ and $g:Y\to Z$ be functions.
+
+\begin{enumerate}[(a)]
+\item Given that $g\circ f$ is onto (=surjective), can you deduce $f$ is onto?
+
+\item Given that $g\circ f$ is onto (=surjective), can you deduce $g$ is onto?
+
+\item Given that $g\circ f$ is 1-1 (=injective), can you deduce that $f$ is 1-1?
+
+\item Given that $g\circ f$ is 1-1 (=injective), can you deduce that $g$ is 1-1?
+\end{enumerate}
+\end{exercise}
+
+\begin{remark} As always, you must prove your assertion either way in the above two problems.  If yes, give a general proof, if no, give a counter-example. As a hint, you should be able to get a complete intuition for what's going on (and set of counter-examples) by considering sets of size at most $2$.\end{remark}
+
+\begin{solution}
+We claim that
+
+(a) There exists sets $X, Y, Z$, and functions $f:X\to Y$ and $g:Y\to Z$ with $g\circ f$ surjective but $f$ not surjective.
+
+(b) For any composable functions $f:X\to Y$ and $g:Y\to Z$, if $g\circ f$ is surjective, then $g$ is onto.
+
+(c) For any composable functions $f$ and $g$, if $g\circ f$ is injective (=injective), then $f$ is injective.
+
+(d) There are sets $X, Y, Z$, and functions $f$ and $g$ with $g\circ f$ injective (=injective), but $g$ not injective.
+
+
+\begin{proof}
+(a) Let $X=\{1\}, Y=\{1,2\}, Z=\{1\}$.  Let $f:X\to Y$ send $1$ to $1$, and let $g:Y\to Z$ send both elements to $1$.  Then clearly $g\circ f$ is surjective but $f$ is not, as it does not hit $2$ in $Y$.
+
+(b) To show that $g$ is surjective, we need to show that for all $z\in Z$ there is $y\in Y$ so that $g(y)=z$. Since $g\circ f$ is surjective, there is $x\in X$ so that $g\circ f(x)=g(f(x))=z$. Since $f(x)\in Y$, we have that $y=f(x)$ is such that $g(y)=z$, and this finishes the proof. 
+%We prove the contrapositive.  Suppose there is an element $z$ in $Z$ which is not in the image of $g$.  Then there is no $y\in Y$, which maps to it under $g$, and hence no $x$ which maps to $z$ under $g\circ f$.
+
+
+
+(c) To show that $f$ is injective, we need to show that for all $x,y\in X$, if $f(x)=f(y)$, then $x=y$. So let $x,y\in X$ and suppose $f(x)=f(y)$. Then $g\circ f(x)=g(f(x))=g(f(y))=g\circ f(y)$, and since $g\circ f$ is injective, we have $x=y$. This finishes the proof. 
+
+%We again prove the contrapositive.  Supose $f$ is not $injective$.  Then there exists $x_1\neq x_2\in X$ with $f(x_1)=f(x_2)$, hence 
+%$g(f(x_1))=g(f(x_2))$.
+(d) The same example as in (a) works.
+
+
+\end{proof}
+
+
+\end{solution}
+
+
+
+
+
+\section{Inverses}
+
+\begin{definition}
+
+If $f:X\rightarrow Y$ is bijective, the {\color{ForestGreen} inverse} of $f$, denoted {\color{ForestGreen} $f^{-1}:Y\rightarrow X$}, is the function such that 
+\[
+{\color{ForestGreen} f^{-1}(y)=x \;\; \Leftrightarrow \;\; f(x)=y.}
+\]
+ 
+ \end{definition}
+ 
+An easy way to check that a function $g$ is the inverse of another function is to show that you get the identity function when composing $f$ with $g$ and vice versa:
+ 
+ \begin{theorem}
+ Let $f:X\rightarrow Y$ and $g:Y\rightarrow X$ be functions. Then $g=f^{-1}$ if and only if $f(g(y))=y$ for all $y\in Y$ and $g(f(x))=x$ for all $x\in X$. 
+ \end{theorem}
+ 
+ \begin{proof}
+ Assume $g=f^{-1}$. If $x\in X$ and $y\in Y$, then $g(y)=x$ if and only if $f(x)=y$, so in particular, if we let $y=f(x)$, then $g(f(x))=x$ if and only if $f(x)=f(x)$, which is certainly true. Thus, $g(f(x))=x$ for all $x\in X$. A similar proof shows $f(g(y))=y$ for all $y\in Y$.
+ 
+ Conversely, suppose  $f(g(y))=y$ for all $y\in Y$ and $g(f(x))=x$ for all $x\in X$. We need to show that for $y\in Y$ and $x\in X$, $g(y)=x \;\; \Leftrightarrow \;\; f(x)=y$. If $g(y)=x$, then $f(g(y))=f(x)$, which implies $y=f(x)$, thus $g(y)=x$ implies $y=f(x)$. Conversely, if $y=f(x)$, then $g(y)=g(f(x))=x$. Thus, $g$ satisfies the conditions of being $f^{-1}$. 
+ \end{proof}
+
+
+{\bf Note:} The condition that $g(f(x))=x$ for all $x\in X$ is necessary but not sufficient for $g$ to be the inverse of $f$, we really do also need $f(g(y))=y$ for all $y\in Y$.
+
+\begin{exercise}
+Find sets $X$ and $Y$ and functions $f:X\rightarrow Y$ and $g:Y\rightarrow X$ so that $g(f(x))=x$ for all $x\in X$ but $f$ has no inverse (that is, $f$ is not bijective). 
+\end{exercise}
+
+
+ 
+\vspace{10pt}
+
+
+
+\section{Comparing sizes of sets with functions}
+
+One of the main reasons that we wish to do so is that they give us a way of comparing sizes of sets to each other. Take for example the meaning of {\it finite}: A set $S$ is finite if we can count off the elements as $S=\{s_{1},s_{2},...,s_{n}\}$. Implicitly, the act of counting defines a function $f(j)=s_{j}$ from $\{1,2,...,n\}$ to $S$. That is, $S$ if finite because we are able to construct a function from the first $n$ integers to $S$ that pairs an element from one set with one from the other. 
+
+We can also make a few observations about size from the diagram above. Notice that when a function between $A$ and $B$ is injective, $B$ needs to have at least as many elements as $A$; if the function is surjective, then $B$ has at most as many elements as $A$; and if the function is bijective, the numbers of points must be equal. We make this more precise in the following theorem. 
+
+\begin{theorem}
+\label{t:f-size}
+Let $X$ and $Y$ be finite sets and let $f:X\rightarrow Y$ be a function. 
+
+\begin{enumerate}
+\item If $f$ is injective, then $|X|\leq |Y|$.
+\item If $f$ is surjective, then $|X|\geq |Y|$. 
+\item If $f$ is bijective, then $|X|=|Y$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Since $X$ is finite, we may number the elements $\{x_{1},...,x_{n}\}$ where $n=|X|$. If $f$ is injective, then the element $f(x_{1}),...,f(x_{n})$ are distinct, so there are exactly $n$ elements in the set $S=\{f(x_{1}),...,f(x_{n}))\}$, and since this is a subset of $Y$, $Y$ must have at least as many elements as $S$, so $|Y|\geq n=|X|$. 
+
+If $f$ is surjective, then if we number the elements $Y=\{y_{1},...,y_{m}\}$ where $m=|Y|$, then for each $i=1,...,m$, there is $s_{i}\in X$ so that $f(s_{i})=y_{i}$. Each of the $s_{i}$ are distinct, since otherwise if $s_{i}=s_{j}$, then $y_{i}=f(s_{i})=f(s_{j})=$...
+
+\end{proof}
+
+
+
+\section{Images and preimages}
+
+\begin{definition}
+If $f:X\rightarrow Y$ and $A\subseteq X$,  the  {\bf \color{orange} image of $A$} under $f$ is  
+\[
+ { \color{orange} f(A)=\{f(x):x\in A\} \subseteq Y.}
+\]
+If $B\subseteq Y$, the  {\bf \color{cyan} preimage of $B$} under $f$ is
+\[
+{ \color{cyan} f^{-1}(B)=\{x\in X: f(x)\in B\} \subseteq X. }
+\]
+\end{definition}
+
+\begin{remark}
+This notation may seem confusing since we have already let $f^{-1}$ denote the inverse of a bijective function $f$, whereas now we are using it to denote the preimage of a set under a function $f$ that might not be bijective. However, notice that their meaning can be deciphered from context: if $f:X\rightarrow Y$ and we ever write $f^{-1}(y)$ for an {\it element} $y\in Y$, you know we are referring to $f^{-1}$ as a function, and if we write $f^{-1}(A)$ for a {\it set $A$}, you know we are talking about the preimage as defined above. Notice also that if $f$ is invertible so that the function $f^{-1}$ exists, then there are two ways of reading what $f^{-1}(A)$ means: it is the image of $A$ under $f^{-1}$, and it is the preimage of $A$ under $f$, but in this case, these two are the same set, so there is no ambiguity.
+
+
+\end{remark}
+
+
+For example, if $f:\mathbb{N}\rightarrow \mathbb{N}$ is $f(n)=n+1$, and $A=\{2n:n\in\mathbb{N}$ are the even integers, then the image of $A$ under $f$ is 
+\[
+f(A)=\{f(n):n\in A\} = \{f(2n): n\in\mathbb{N}\} = \{2n+1:n\in\mathbb{N}\},\]
+that is, $f(A)$ are the odd integers. 
+
+
+\begin{exercise}
+Let $f:X\rightarrow Y$ and $B\subseteq Y$. Show that $f(f^{-1}(B))=B$. 
+\end{exercise}
+
+\begin{exercise}
+Show that there are sets $X$ and $Y$, a function $f:X\rightarrow Y$, and a set $B\subseteq Y$ so that $f^{-1}(f(B))\neq B$.
+\end{exercise}
+
+
+\begin{theorem}
+Let $f:X\rightarrow Y$ be a function and $A,B\subseteq Y$. Then
+\[
+f^{-1}(A\cap B)=f^{-1}(A)\cap f^{-1}(B)
+\]
+and 
+\[
+f^{-1}(A\cup B)=f^{-1}(A)\cup f^{-1}(B)
+\]
+\end{theorem}
+
+\begin{proof}
+To show the first equality, note that $x\in f^{-1}(A\cap B)$ if and only if $f(x)\in A\cap B$, that is, $f(x)\in A$ and $f(x)\in B$, which is true if and only if $x\in f^{-1}(A)$ and $x\in f^{-1}(B)$, that is, if and only if $x\in f^{-1}(A)\cap f^{-1}(B)$. Thus, $f^{-1}(A\cap B)=f^{-1}(A)\cap f^{-1}(B)$. The second equation has a similar proof (basically just change the "and's" to "or's".
+\end{proof}
+
+
+\begin{exercise}
+Let $f:X\rightarrow Y$ be a function and $A,B\subseteq X$. Show that $f(A\cup B)=f(A)\cup f(B)$. 
+\end{exercise}
+
+\begin{exercise}
+Show that there are sets $X$ and $Y$, a function $f:X\rightarrow Y$, and sets $A,B\subseteq X$ so that $f(A\cap B)\neq f(A)\cap f(B)$. 
+\end{exercise}
+
+
+
+
+
+\section{Applications: Cardinality}
+
+This section is not required reading, but it is a preview into another aspect of mathematics: set theory. 
+
+Consider the following question: {\it How do we compare sizes of infinite sets?} The sets $\mathbb{N}$, $\mathbb{Q}$, and $\mathbb{R}$ are all infinite, but is any one {\it more infinite} than the other? 
+
+We first need a notion of size. Recall that in Theorem \ref{t:f-size} we showed how two finite sets that have a bijection between them have the same size. We can do the same for infinite sets:
+
+\begin{definition}
+We say two sets $A$ and $B$ have the same {\it cardinality} if there is a bijective function $f:A\rightarrow B$, and we write $|A|=|B|$ or $A\sim B$. If there is an injective man $f:A\rightarrow B$, we write $|A|\leq |B|$, and if $|A|\leq |B|$ and there is no injective map from $B$ to $A$, we write $|A|<|B|$.
+
+When $A\sim \mathbb{N}$, we say $A$ is {\it countable}. 
+\end{definition}
+
+\begin{exercise}
+Show that the relation $\sim$ is an equivalence relation on the collection of sets. 
+\end{exercise}
+
+The word {\it countable} comes from the fact that, if $A\sim \mathbb{N}$, then there is a bijection $f:\mathbb{N}\rightarrow A$, and so 
+\[
+A=\{f(1),f(2),...\},\]
+that is, we can count off the elements of $A$ in a list. 
+
+\begin{example}
+We will show $\mathbb{Z}\sim \mathbb{N}$ by constructing an explicit bijection from $\mathbb{Z}$ to $\mathbb{N}$. Let
+\[
+f(n) = \left\{ \begin{array}{cl} 
+2n & n\geq 0 \\
+-2n+1 & n<0\end{array}\right.
+\]
+\end{example}
+
+More surprising is the following:
+\begin{theorem}
+$\Q\sim \N$.
+\end{theorem}
+
+
+\begin{proof}
+The proof of this uses the so-called ``zig-zag" trick: Write all the rational numbers in an infinite array, and then start listing all the rationals by going up and down each diagonal as follows:
+
+
+ Let us add draw arrows in this infinite matrix as
+follows
+
+$$\xymatrixrowsep{0.2cm}
+\xymatrixcolsep{0.3cm}\xymatrix{
+&\frac{1}{1}\ar@{->}[r] &\frac{2}{1}\ar@{->}[dl]&\frac{3}{1}\ar@{->}[r] &\frac{4}{1}\ar@{->}[dl]&\frac{5}{1}\ar@{->}[r] & \frac{6}{1}\ar@{->}[dl]& \frac{7}{1}\ar@{->}[r] & \frac{8}{1}\ar@{->}[dl]& \frac{9}{1}\ar@{->}[r] & \frac{10}{1}\ar@{->}[dl]& \frac{11}{1}\ar@{->}[r] &\cdots\ar@{->}[dl]&\\
+&\frac{1}{2}\ar@{->}[d] &\frac{2}{2}\ar@{->}[ur]&\frac{3}{2}\ar@{->}[dl]&\frac{4}{2}\ar@{->}[ur]&\frac{5}{2}\ar@{->}[dl]& \frac{6}{2}\ar@{->}[ur]& \frac{7}{2}\ar@{->}[dl]& \frac{8}{2}\ar@{->}[ur]& \frac{9}{2}\ar@{->}[dl]& \frac{10}{2}\ar@{->}[ur]& \frac{11}{2}\ar@{->}[dl]&\cdots &\\
+&\frac{1}{3}\ar@{->}[ur]&\frac{2}{3}\ar@{->}[dl]&\frac{3}{3}\ar@{->}[ur]&\frac{4}{3}\ar@{->}[dl]&\frac{5}{3}\ar@{->}[ur]& \frac{6}{3}\ar@{->}[dl]& \frac{7}{3}\ar@{->}[ur]& \frac{8}{3}\ar@{->}[dl]& \frac{9}{3}\ar@{->}[ur]& \frac{10}{3}\ar@{->}[dl]& \frac{11}{3}\ar@{->}[ur]&\cdots\ar@{->}[dl] &\\
+&\frac{1}{4}\ar@{->}[d] &\frac{2}{4}\ar@{->}[ur]&\frac{3}{4}\ar@{->}[dl]&\frac{4}{4}\ar@{->}[ur]&\frac{5}{4}\ar@{->}[dl]& \frac{6}{4}\ar@{->}[ur]& \frac{7}{4}\ar@{->}[dl]& \frac{8}{4}\ar@{->}[ur]& \frac{9}{4}\ar@{->}[dl]& \frac{10}{4}\ar@{->}[ur]& \frac{11}{4}\ar@{->}[dl]&\cdots &\\
+&\frac{1}{5}\ar@{->}[ur]&\frac{2}{5}\ar@{->}[dl]&\frac{3}{5}\ar@{->}[ur]&\frac{4}{5}\ar@{->}[dl]&\frac{5}{5}\ar@{->}[ur]& \frac{6}{5}\ar@{->}[dl]& \frac{7}{5}\ar@{->}[ur]& \frac{8}{5}\ar@{->}[dl]& \frac{9}{5}\ar@{->}[ur]& \frac{10}{5}\ar@{->}[dl]& \frac{11}{5}\ar@{->}[ur]&\cdots\ar@{->}[dl]&\\
+&\frac{1}{6}\ar@{->}[d] &\frac{2}{6}\ar@{->}[ur]&\frac{3}{6}\ar@{->}[dl]&\frac{4}{6}\ar@{->}[ur]&\frac{5}{6}\ar@{->}[dl]& \frac{6}{6}\ar@{->}[ur]& \frac{7}{6}\ar@{->}[dl]& \frac{8}{6}\ar@{->}[ur]& \frac{9}{6}\ar@{->}[dl]& \frac{10}{6}\ar@{->}[ur]& \frac{11}{6}\ar@{->}[dl]&\cdots &\\
+&\frac{1}{7}\ar@{->}[ur]&\frac{2}{7}\ar@{->}[dl]&\frac{3}{7}\ar@{->}[ur]&\frac{4}{7}\ar@{->}[dl]&\frac{5}{7}\ar@{->}[ur]& \frac{6}{7}\ar@{->}[dl]& \frac{7}{7}\ar@{->}[ur]& \frac{8}{7}\ar@{->}[dl]& \frac{9}{7}\ar@{->}[ur]& \frac{10}{7}\ar@{->}[dl]& \frac{11}{7}\ar@{->}[ur]&\cdots &\\
+& \vdots                & \vdots\ar@{->}[ur]    &    \vdots             & \vdots \ar@{->}[ur]   &   \vdots              &   \vdots\ar@{->}[ur]   &   \vdots               &   \vdots\ar@{->}[ur]   &   \vdots               &   \vdots\ar@{->}[ur]    &   \vdots    & \ddots &}%
+$$
+
+
+
+So the list would be:
+
+\[
+\frac{1}{1}, \;\; \frac{2}{1}, \;\; \frac{1}{2}, \;\; \frac{1}{3}, \;\; \frac{2}{2}, \;\; \frac{3}{1}, \;\; \frac{4}{1}, \;\; \frac{3}{2}, \;\; \frac{2}{3}, \;\; \frac{1}{4}, \;\; \frac{1}{5}, \;\; \frac{2}{4},...\cdots \]
+
+Note that this list repeats numbers (e.g. the number 1 appears as both $\frac{1}{1}$ and $\frac{2}{2}$). But we can just remove numbers that repeat, so the modified list looks like this:
+
+\[
+\frac{1}{1}, \;\; \frac{2}{1}, \;\; \frac{1}{2}, \;\; \frac{1}{3},  \;\; \frac{3}{1}, \;\; \frac{4}{1}, \;\; \frac{3}{2}, \;\; \frac{2}{3}, \;\; \frac{1}{4}, \;\; \frac{1}{5},...\cdots \]
+
+and now this gives a bijection from $\mathbb{N}$ to $\mathbb{Q}$, where we send $n\in\mathbb{N}$ to the $n$th term in this list. 
+
+\end{proof}
+
+Not everything is countable though:
+
+\begin{theorem}
+Let $S$ be an infinite set and let $P(S)$ denote the {\it power set} consisting of the subsets of $S$, i.e. $P(S)= \{A\subseteq S\}$. Then $|S|<|P(S)|$. 
+\end{theorem}
+
+\begin{exercise}
+Prove the above theorem. {\it Hint: Suppose there was $f:S\rightarrow P(S)$ bijective and think about the set $B=\{x\in S: x\not\in f(x)\}$.}
+\end{exercise}
+
+\begin{solution}
+\begin{proof}
+Suppose there was $f:S\rightarrow P(S)$ bijective, let $B=\{x\in S: x\not\in f(x)\}$. Since $f$ is bijective, it is surjective, and so there is $x$ so that $f(x)=B$. 
+\begin{enumerate}
+\item If $x\in B$, then by definition of $B$, $x\not\in f(x)=B$, a contradiction.
+\item If $x\not\in B$, then by definition of $B$, $x\in f(x)=B$, again a contradiction.
+\end{enumerate}
+Since these are the only two possibilities, we have a full contradiction. Thus, there cannot be a function $f:S\rightarrow P(S)$ bijective, thus $|S|\neq |P(S)|$. Since there is a clear injection $g:S\rightarrow P(S)$ defined by $g(x)=\{x\}$, we have that $|S|\leq |P(S)|$, and so $|S|<|P(S)|$. 
+\end{proof}
+\end{solution}
+
+A few natural questions arise from our discussions on cardinality:\\
+
+Firstly, we have seen that $|\N|<|\R|$, but is there anything in between? This is the {\it continuum hypothesis} posed by George Cantor:
+
+\begin{question}[Continuum Hypothesis (CH)] Is there no set $S$ with $|\mathbb{N}|<|S|<|\mathbb{R}|$?
+\end{question}
+
+
+Modern set theory (and mathematics in general) is based on a finite set of axioms called {\bf Zermelo--Fraenkel} set theory ({\bf ZFC}). In 1940, Kurt G\"odel showed that the CH cannot be disproved assuming ZFC, so it would see then that CH has to be true...but then Paul Cohen showed in 1963 that CH cannot be {\bf proved} assuming ZFC. In other words, CH is {\bf independent} of the axioms of mathematics: one can assume it's true or false and it won't contradict anything proven using the ZFC axioms!
+
+
+
+%
+%Cantor invented the notion of cardinality, countability vs. uncountability, the notion of and laid the groundwork for modern set theory. Until his time, people thought the only sets were finite sets and "infinite," whereas Cantor showed that some sets are more infinite than others, for example, that $|\N|<|\R|$. 
+
+
+
+\begin{multicols}{3} 
+
+
+\begin{center}
+\includegraphics[height=150pt]{Figures/Cantor-photo.jpg}\\
+George Cantor\\
+1845-1918
+\end{center}
+
+\begin{center}
+\includegraphics[height=150pt]{Figures/Godel-photo.jpg}\\
+Kurt G\"odel\\
+1906-1978\\
+\end{center}
+
+\begin{center}
+\includegraphics[height=150pt]{Figures/Cohen-photo.jpg}\\
+Paul Cohen\\
+1934-2007
+\end{center}
+\end{multicols}
+
+
+
+
+
+
+
+\section{Exercises}
+
+
+\begin{enumerate}
+\item Show that if $f:X\rightarrow Y$ and $g:Y\rightarrow Z$ are  functions, $g\circ f$ is injective, and $f$ is surjective, then $g$ and $f$ are bijections. 
+
+\item Let $f:X\rightarrow Y$ be a function. 
+
+\begin{enumerate}[(a)]
+\item Show that $f$ is injective if and only if for all sets $Z$ and functions $g,h:Z\rightarrow Y$, $f\circ g=f\circ h$ implies $g=h$. 
+\item Show that $f$ is surjective if and only if for all sets $Z$ and functions $g,h:Y\rightarrow Z$, $g\circ f = h\circ f$ if and only if $g=h$. 
+\end{enumerate}
+
+
+\item Let $X$ and $Y$ be finite sets, $m\in \mathbb{N}$, and suppose $f:X\rightarrow Y$ is a function such that for all $y\in Y$, $|f^{-1}(\{y\})|=m$ . Then
+\[
+|X|=m\cdot |Y|.\]
+
+
+\begin{solution}
+
+
+If we number the elements of $Y$ as $y_{1},...,y_{n}$ where $n=|Y|$. Then the sets $f^{-1}(\{y_{1}\}),f^{-1}(\{y_{2}\}),...,f^{-1}(\{y_{n}\})$ partition $X$. (MAKE THIS EARLIER EXERCISE). Thus,
+\[
+|X|=\sum_{i=1}^{n}| f^{-1}(\{y_{i}\})| = \sum_{i=1}^{n}m=nm.
+\]
+\end{solution}
+
+
+
+
+
+
+\item Let $f:X\rightarrow Y$ be a function. For $a,b\in X$, declare $a\sim b$ if $f(a)=f(b)$. 
+Show that $\sim$ defines an equivalence relation on $X$. 
+
+
+\begin{solution}
+\begin{claim}
+Let $f:X\rightarrow Y$ be a function. For $a,b\in X$, delcare $a\sim b$ if $f(a)=f(b)$. Then $\sim$ defines an equivalence relation on $X$. 
+\end{claim}
+
+\begin{proof}
+We need to verify reflexivity, symmetry, and transitivity:
+\begin{itemize}
+\item (Reflexivity) Let $x\in X$. Since $f(x)=f(x)$, we have $x\sim x$, so reflexivity holds.
+\item (Symmetry) Let $x,y\in X$ and suppose $x\sim y$. Then $f(x)=f(y)$, so $f(y)=f(x)$, thus $y\sim x$ and symmetry holds. 
+\item (Transitivity)  Let $x,y,z\in X$ and suppose $x\sim y$ and $y\sim z$. Then $f(x)=f(y)=f(z)$, so $f(x)=f(z)$, hence $x\sim z$. This proves transitivity. 
+\end{itemize}
+\end{proof}
+\end{solution}
+
+
+
+\item  Let $f:X\rightarrow Y$ and $\sim$ be as in the previous problem.  For $y\in f(X)$, define  $F(y)=f^{-1}(\{y\})$ (where recall $f^{-1}(A)=\{x\in X: f(x)\in A\}$).  Show that $F$ is a bijection between $f(X)$ and the set of equivalence classes in $X$ under the relation $\sim$. {\it Hint: 
+As a first step, you'll need to show the values of $F$ are indeed equivalence classes. }
+
+\item Show that $f:\mathbb{R}\rightarrow \mathbb{R}$ defined by $f(x)=x^{2n+1}$ is bijective for $n\in\mathbb{N}$. 
+
+%\begin{solution}
+%Recall that 
+%\[
+%1+z+\cdots + z^{n} = \frac{1-z^{n+1}}{1-z}
+%\]
+%and so if $x\neq y$, and $x\neq 0$,
+%%\[
+%%x^{2n+1} - y^{2n+1} = x^{2n+1} \left(1-\left(\frac{y}{x})^{2n+1}\right)
+%%= x^{2n+1} (1-\left(\frac{y}{x}\right)^2)\left(1+\left(\frac{y}{x})^2+\cdots + \left(\frac{y}{x})^{2n}\right).
+%\]
+%and this can't be zero if $x\neq 0$ and $x\neq y$. If $x=0$ and $y\neq x=0$, then we clearly have $f(x)\neq f(y)$. Thus, $f$ is injective.
+%\end{solution}
+
+
+\item Show that the following functions are bijective:
+
+\begin{enumerate}[(a)]
+\item $f:\mathbb{H}\rightarrow \mathbb{D}$ where $\mathbb{H} = \{x+iy\in \C: y>0\}$, $\mathbb{D}=\{z\in\C:|z|<1\}$, and $f(z)=\frac{z+i}{z-i}$. 
+
+\item $f:\mathbb{H}\rightarrow \C\backslash (0,\infty)$ (that is, $\mathbb{C}\backslash (0,\infty)$ is the set of all complex numbers minus the positive real numbers) and $f(z)=z^2$.
+
+\end{enumerate}
+
+\item Find bijection between the following sets:
+
+\begin{enumerate}[(a)]
+\item $\R$ and $(0,\infty)$
+
+\begin{solution}
+Let $f:(0,\infty) \rightarrow \R $ be $f(x)=x-\frac{1}{x}$. Then $f$ is increasing, so it is injective. Furthermore, if $y\in \R$, we can solve $f(x)=y$ by solving the equation
+\[
+y= x-\frac{1}{x},
+\]
+and rearranging, this is equivalent to 
+\[
+0=x^2-yx-1,\]
+which has solution
+\[
+x=\frac{y\pm\sqrt{y^2+4}}{2},\]
+and one of these solutions is in $(0,\infty)$, thus $f$ is surjective, and hence bijective. 
+\end{solution}
+
+\item $(0,\infty)$ and $(1,\infty)$
+
+\begin{solution}
+We can take $f:(0,\infty)\rightarrow (1,\infty)$ to be $f(x)=x+1$. 
+\end{solution}
+
+\item ({\bf Challenge!}) $(0,\infty)$ and $[0,\infty)$
+
+\item $(0,\infty)$ and $(0,1)$.
+\end{enumerate}
+
+
+
+\begin{solution}
+
+For short, we will write $f^{-1}(y)$ to mean $f^{-1}(\{y\})$. 
+\begin{claim}
+Let $S$ denote the set of equivalence classes under $\sim$. Let $y\in f(X)$ and define  $F(y)=f^{-1}(y)$. Then $F:f(X)\rightarrow S$ is a bijection. 
+\end{claim}
+
+\begin{proof}
+For $y\in f(X)$, $f^{-1}(y)$ is an equivalence class: since $y\in f(X)$, $y=f(x)$ for some $x\in X$, and if $[x]$ denotes the equivalence class for $x$,
+\[
+[x]=\{z\in X:x\sim z\} = \{z\in X:f(z)=f(x)\}
+= \{z\in X:f(z)=y\}
+ =f^{-1}(\{y\}).
+ \]
+hence $F$ is a function from $f(X)$ to $S$. We need to show that it is injective and surjective:
+
+\begin{itemize}
+\item (Injectivity) Let $y,z\in f(X)$ and suppose $F(y)=F(z)$, we will show that $y=z$. Since $F(y)=F(z)$, this means $f^{-1}(y)=f^{-1}(z)$. Let $x\in f^{-1}(y)$, so $f(x)=y$. But then $x\in f^{-1}(y)=f^{-1}(z)$, so $f(x)=z$, thus $y=f(x)=z$. This proves injectivity. 
+\item (Surjectivity) Let $[x]\in S$ be an equivalence class. Let $y=f(x)$. Then $[x]=f^{-1}(y)$ and $y\in f(X)$. Thus, $F(y)=f^{-1}(y)=[x]$. This implies surjectivity. 
+\end{itemize} 
+\end{proof}
+
+
+
+
+
+\end{solution}
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+\end{document}

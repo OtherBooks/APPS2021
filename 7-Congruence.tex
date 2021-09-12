@@ -1,0 +1,1165 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.0 (9/2/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass[11pt,fleqn,dvipsnames]{book} % Default font size and left-justified equations
+\documentclass[11pt,dvipsnames]{book} 
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+
+
+%%agregué
+
+
+
+
+%%%My stuff
+
+
+%\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+%\usepackage{due-dates}
+\usepackage[small]{eulervm}
+\usepackage{amsmath,amssymb,amstext,amsthm,amscd,mathrsfs,eucal,bm,xcolor}
+\usepackage{multicol}
+\usepackage{array,color,graphicx}
+
+
+
+\usepackage{epigraph}
+%\usepackage[colorlinks,citecolor=red,linkcolor=blue,pagebackref,hypertexnames=false]{hyperref}
+
+%\theoremstyle{remark} 
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{\bf Example}
+%\newtheorem*{solution}{Solution:}
+
+
+\usepackage{centernot}
+
+
+\usepackage{filecontents}
+
+\usepackage{tcolorbox} 
+
+
+
+
+
+% Ignore this part, this is the former way of hiding and unhiding solutions, new version is after this
+%
+%\begin{filecontents*}{MyPackage.sty}
+%\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{MyPackage}
+%\RequirePackage{environ}
+%\newif\if@hidden% \@hiddenfalse
+%\DeclareOption{hide}{\global\@hiddentrue}
+%\DeclareOption{unhide}{\global\@hiddenfalse}
+%\ProcessOptions\relax
+%\NewEnviron{solution}
+%  {\if@hidden\else \begin{tcolorbox}{\bf Solution: }\BODY \end{tcolorbox}\fi}
+%\end{filecontents*}
+%
+%
+%
+%\usepackage[hide]{MyPackage} % hides all solutions
+%\usepackage[unhide]{MyPackage} %shows all solutions
+
+
+
+
+%\usepackage[unhide,all]{hide-soln} %show all solutions
+\usepackage[unhide,odd]{hide-soln} %hide even number solutions
+%\usepackage[hide]{hide-soln} %hide all solutions
+
+
+
+
+
+
+\def\putgrid{\put(0,0){0}
+\put(0,25){25}
+\put(0,50){50}
+\put(0,75){75}
+\put(0,100){100}
+\put(0,125){125}
+\put(0,150){150}
+\put(0,175){175}
+\put(0,200){200}
+\put(25,0){25}
+\put(50,0){50}
+\put(75,0){75}
+\put(100,0){100}
+\put(125,0){125}
+\put(150,0){150}
+\put(175,0){175}
+\put(200,0){200}
+\put(225,0){225}
+\put(250,0){250}
+\put(275,0){275}
+\put(300,0){300}
+\put(325,0){325}
+\put(350,0){350}
+\put(375,0){375}
+\put(400,0){400}
+{\color{gray}\multiput(0,0)(25,0){16}{\line(0,1){200}}}
+{\color{gray}\multiput(0,0)(0,25){8}{\line(1,0){400}}}
+}
+
+
+
+%\usepackage{tikz}
+
+%\pagestyle{headandfoot}
+%\firstpageheader{\textbf{Proofs \& Problem Solving}}{\textbf{Homework 1}}{\textbf{\PSYear}}
+%\runningheader{}{}{}
+%\firstpagefooter{}{}{}
+%\runningfooter{}{}{}
+
+%\marksnotpoints
+%\pointsinrightmargin
+%\pointsdroppedatright
+%\bracketedpoints
+%\marginpointname{ \points}
+%\totalformat{[\totalpoints~\points]}
+
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\N{{\mathbb{N}}}
+\def\Q{{\mathbb{Q}}}
+\def\C{{\mathbb{C}}}
+\def\gcd{{\rm gcd}}
+
+
+%%end of my stuff
+
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+
+
+
+\usepackage{graphicx} % paquete que permite introducir imágenes
+
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\newcommand{\cell}[1]% #1 = text
+{\makebox[1em]{#1}}
+
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%%hasta aquí
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=12cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{Figures/blank.png}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Proofs and Problem Solving \\[15pt] % Book title
+{\huge Week 7: Congruence}\\[20pt] % Subtitle
+{\Large Notes  based on Martin Liebeck's \\ \textit{A Concise Introduction to Pure Mathematics}}}}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+%\newpage
+%~\vfill
+%\thispagestyle{empty}
+
+%\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+
+%\noindent \textsc{Published by Publisher}\\ % Publisher
+
+%\noindent \textsc{book-website.com}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+%\noindent \textit{First printing, March 2013} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{Figures/blank.png} % Table of contents heading image
+
+%\chapterimage{chapter_head_1.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+ \tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+
+
+\part{Week 7: Modular Arithmetic}
+
+
+\chapterimage{Figures/blank.png} 
+
+
+
+
+%\chapterimage{} 
+
+\setcounter{chapter}{11}
+
+\setcounter{page}{0}
+
+
+\chapter{Modular Arithmetic}
+
+
+%
+%\epigraph{\it And this proposition is generally true for all progressions and for all prime numbers; the proof of which I would send to you, if I were not afraid to be too long.}{Pierre de Fermat, 1640, in a letter to his friend Fr\'{e}nicle de Bessy commenting on his what later was later to be called, ironically, {\it Fermat's Little Theorem}.}
+
+
+
+
+
+\indent Is $30^{99}+61^{100}$  divisible by 31? This seems like a daunting question. However, in a couple of pages, you'll learn a trick that will make this and other problems involving divisibility of very large numbers much easier. This method involves {\it modular arithmetic}.  
+
+The framework of modular arithmetic as we are familiar with it was first developed by Gauss in his book {\it  Disquisitiones Arithmeticae} in 1801, whereas many fundamental results that are now stated in terms of congruences were in fact proven much earlier; for example, Fermat's Little Theorem below was proven in 1640, though now it is standard to formulate it using congruences. 
+
+Despite its classical roots, modular arithmetic is important for both mathematics and applications. In mathematics, it is fundamental for studying {\it abstract algebra}, which you will learn more about in {\it Fundamentals of Pure Math} next year and in {\it Honours Algebra} the year after that. Moreover, it is also a cornerstone of modern cryptography (Chapter 15 in Liebeck's book has a good introduction to {\it public key cryptography}). \\
+
+If you like the material from this week, you might enjoy taking the following classes:
+
+\begin{itemize}
+\item Fundamentals of Pure Math (2nd year)
+\item Honours Algebra, Introduction to Number Theory (3rd year)
+\item Commutative Algebra, Group Theory, Galois Theory, Algebraic Geometry (4th Year)
+\end{itemize}
+
+\section{Arithmetic modulo $m$}
+
+\begin{definition}
+\label{d:mod}
+For $m\in \mathbb{N}$ and $a,b\in \mathbb{Z}$, we write $a = b\mod m$ or sometimes $a  = b\mod m$ (read {\it $a$ is congruent to $b$ modulo $m$}) if one of the following equivalent conditions holds:
+ 
+\begin{itemize}
+\item $m$ divides $a-b$;
+\item $a$ and $b$ have same remainder when divided by $m$;
+\item $b=qm+a$ for some $q\in \mathbb{Z}$.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}
+For any integer $n$, there exists a unique element $\overline{n}$ such that $n = \overline{n} \mod m$.
+\end{proposition}
+\begin{proof}
+Exercise.
+\end{proof}
+
+\begin{example}
+$32=2\mod 10$. $82=1 \mod 3$. 
+\end{example}
+ 
+\begin{theorem}
+We have the following properties for integers $a,b,c\in\mathbb{Z}$ and $m\in\mathbb{N}$:
+\begin{enumerate}[label=(\alph*)]
+\item $a = a\mod m$. 
+\item If $a = b\mod m$, then $b = a\mod m$. 
+\item If $a = b\mod m$ and $b = c\mod m$, then $a = c\mod m$. 
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item Since $m$ divides $a-a=0$, we have that $a = a$.
+\item If $a = b\mod m$, then $m$ divides $(a-b)$, so $m$ divides $(b-a)$ as well, hence $b = a \mod m$. 
+\item Suppose $a = b \mod m$ and $b = c\mod m$. Then $m$ divides $a-b$, so $a-b=km$ for some integer $k$. Moreover, $m$ divides $b-c$, so $b-c=jm$ for some integer $j$. Thus,
+\[
+a-c = a-b+b-c = km+jm = (k+j)m,\]
+hence $m$ divides $(a-c)$, thus $a = c \mod m$.\qedhere
+\end{enumerate}
+\end{proof}
+
+\begin{theorem}%[Propositions 13.3 and 13.4]
+\label{t:mod-artithmetic}
+Suppose $a  = x \mod m$ and $b = y \mod m$. Then
+\begin{enumerate}[label=(\alph*)]
+\item $-a = -x \mod m$;
+\item $a+b = x+y \mod m$;
+\item $ab  = xy \mod m$;
+\item for any natural number $k$, one has $a^{k} = x^{k} \mod m$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+We have that $m$ divides $a-x$ and $m$ divides $b-y$
+\begin{enumerate}[label=(\alph*)]
+\item It is clear that $m$ divides $-(a-x)=(-a)-(-x)$, so that $-a = -x \mod m$.
+\item The Linear Combination Lemma implies that $m$ divides
+\[
+(a-x)+(b-y)=(a+b)-(x+y),
+\]
+and so $a+b = x-y\mod m$.   
+\item $a = x \mod m$ implies $a=x+pm$ for some $p\in\mathbb{Z}$ and $b = y \mod m$ implies $b=y+qm$ for some $q\in\mathbb{Z}$. Thus,
+\[
+ab = (x+pm)(y+qm) = xy+pmy+xqm+ pqm^2 = xy + m(py+xq+pqm),\]
+and so $ab = xy$ by Definition \ref{d:mod}(3).
+\item This can be proven by induction. For the base case of $k=1$, this is immediate. Now suppose $a^{k} = x^{k}\mod m$ for some $k\geq 1$. Then by part (b) of this theorem with $b=a^{k}$ and $x=y^{k}$ and our induction hypothesis
+\[
+a^{k+1}=a\cdot a^{k} = a x^{k} \mod m\]
+and then applying part (b) again but with $b=y=x^k$,
+\[
+a x^{k} = x\cdot x^k=x^{k+1}.\]
+This proves the induction and hence the theorem. \qedhere
+\end{enumerate}
+\end{proof}
+
+This result proves that many of the algebraic manipulations we enjoy performing on integers -- addition, subtraction, and multiplication -- can be done modulo $m$ systematically.
+This simplifies many challenging-looking problems.
+Let's revisit our earlier example: is $30^{99}+61^{100}$ divisible by 31?
+Note that $30=31-1=-1\mod 31$ and $61=2\cdot 31-1=-1\mod 31$, and so 
+\[
+30^{99}+61^{100} = (-1)^{99}+(-1)^{100}=-1+1=0 \mod 31.
+\]
+Indeed, $31$ divides $30^{99}+61^{100}$.\\
+
+Theorem \ref{t:mod-artithmetic} says we can add and multiply modulo $m$. Can we also divide? That is, if $ad = bd\mod m$, do we also have $a = b\mod m$? This is \emph{not} always the case.
+Perhaps the simplest example is the following: $2 = 0 \mod 2$, but we cannot divide this equation by $2$, because $1 \neq 0 \mod 2$.
+More subtly, $12 = 24 \mod 6$, but here we cannot divide by $3$, because $4 \neq 8 \mod 6$. 
+The following theorem says when we can divide in this way. 
+
+\begin{proposition}
+\label{p:xa=ya-x=a}
+Let $d$ and $m$ be coprime. If $x,y\in \mathbb{Z}$ and $xd=yd\mod m$, then $x = y\mod m$.
+In particular, if $p$ is prime and $p$ does not divide $a$, then $xa = ya\mod p$ implies that $x = y\mod p$. 
+\end{proposition}
+
+\begin{proof}
+Suppose $a$ and $m$ are coprime and $xa = ya\mod m$. Then $m$ divides $xa-ya=(x-y)a$. Since $m$ and $a$ are coprime, $m$ divides $x-y$, and so $x = y\mod m$ by definition. The second part of the proposition follows from the first.
+\end{proof}
+
+\begin{example}
+Find an integer $x\in \{0,1,..,6\}$ so that $4^{6} = x\mod 7$. \\
+
+Let's look at some powers of $4$ and see what they are modulo $ 7$. 
+
+\begin{align*}
+4^2 & = 16 =14+2 = 2 \mod 7 \\
+4^4 & = (4^2)^2  = 2^2 =4 \mod 7.
+\end{align*}
+
+
+Thus,
+\[
+4^6=4^2\cdot 4^4 = 2\cdot 4=8 = 1 \mod 7.
+\]
+This is certainly much quicker than computing $4^6$ by hand and then doing long division!
+\end{example}
+
+
+
+\section{Solving linear equations modulo $m$}
+
+
+When can we solve $ax = b\mod m$ for $x$? Before we even start, it's good to have a test to see if there is actually a solution:
+
+\begin{theorem}%[(Liebeck Proposition 13.6)] 
+The equation $ax = b\mod m$ has a solution if and only if $\gcd(a,m)$ divides $b$. 
+\end{theorem}
+
+
+\begin{proof} An integer $x$ is a solution to $ax = b\mod m$ if and only if $ax=b-my$ for some integer $y$.
+In other words, $ax = b\mod m$ has a solution if and only if $b$ can be written as $ax + my$ for some integers $x$ and $y$.
+
+If $b = ax+my$, then the Linear Combination Lemma ensures that $\gcd(a,m)$ divides $b$. 
+
+Conversely, assume that $\gcd(a,m)$ divides $b$, so that $b = h\gcd(a,m)$ for some integer $h$.
+Bezout's identity implies that there exist integers $x'$ and $y'$ such that $\gcd(a,m)=ax'+my'$.
+Hence if $x = hx'$ and $y=hy'$, then
+\[
+b = h\gcd(a,m) = ax + my,
+\]
+as desired.
+\end{proof}
+
+\begin{example}
+Find $x\in \{0,1,...,13\}$ so that $18x = 10\mod 14$. \\
+
+We see that $\gcd(18,14)=2$ divides $10$, so there is at least one solution.
+We can use the Euclidean Algorithm to express $2$ as an integer linear combination:
+since $18 - 14 = 4$, and $14 - 3\cdot 4 = 2$ is the gcd, so we can write
+\[
+2 = 14 - 3\cdot 4 = 4\cdot 14 - 3 \cdot 18.
+\]
+Multiplying this by $5$, we obtain
+\[
+10 = 20\cdot 14 - 15 \cdot 18.
+\]
+So $-15$ is a solution, and so is $3 = -15 \mod 18$.
+\end{example}
+
+Note that when finding a solution to $a = bx\mod m$, any integer $x$ is congruent modulo $m$ to a number in $\{0,1,...,m-1\}$. Thus, whenever we ask for a solution, we prefer to write it as one of these integers.
+
+\begin{exercise}
+Find $x$ so that $7x = 8\mod 12$. \\
+\begin{solution}
+Since $\gcd(7,12)=1$, we can use the Euclidean Algorithm:
+\[
+12-7 = 5 \text{\quad and \quad} 7-5 = 2 \text{\quad and \quad} 5-2\cdot 2 = 1.
+\]
+We find
+\[
+1 = 5 - 2\cdot 2 = 3\cdot 5 - 2\cdot 7 = 3\cdot 12 - 5\cdot 7,
+\]
+so by multiplying by $8$, we get
+\[
+8 = 24 \cdot 12 - 40 \cdot 7.
+\]
+
+Thus $x = -40$ is a solution, and so is $8 = -40 \mod 12$. 
+\end{solution}
+\end{exercise}
+
+\section{$\mathbb{Z}/m$}
+ 
+In this section we introduce a set $\mathbb{Z}/m$ that will be important your future algebra classes.
+Just like the integers, the rationals, and the reals, it is what is called a \emph{ring}: it is equipped with addition, subtraction, and multiplication operations.
+Unlike $\mathbb{Z}$, $\mathbb{Q}$, or $\mathbb{R}$, the set $\mathbb{Z}/m$ is {\it finite}.
+
+As a set,
+\[
+\mathbb{Z}/m=\{0,1,\dots,m-1\}. 
+\]
+On this set we shall define addition and multiplication operations: for any $x,y \in \mathbb{Z}/m$,
+\[
+x + y = z \mbox{ where $z\in \{0,1,...,m-1\}$ is the unique element such that } x + y = z\mod m,
+\] 
+and
+\[
+x \cdot y = z \mbox{ where $z\in \{0,1,...,m-1\}$ is the unique element such that } x \cdot y = z\mod m,
+\]
+There is an additive inverse:
+\[
+- x = m-x
+\]
+(Some books write $\mathbb{Z}_m$ for $\mathbb{Z}/m$, but most algebraists reserve this notation for a very different object!!)
+
+\begin{example}
+Let's write the addition and multiplication tables for $\mathbb{Z}/5=\{0,1,2,3,4\}$.
+
+\begin{center}
+\begin{tabular}{| c| c | c | c | c | c |}
+\hline
+\cell{$+$} & \cell{0} & \cell{1} & \cell{2} & \cell{3} & \cell{4}\\
+\hline
+\cell{0} & \cell{0} & \cell{1} & \cell{2} & \cell{3} & \cell{4} \\ 
+\hline
+\cell{1} & \cell{1} & \cell{2} & \cell{3} & \cell{4} & \cell{0} \\ 
+\hline
+\cell{2} & \cell{2} & \cell{3} & \cell{4} & \cell{0} & \cell{1} \\ 
+\hline
+\cell{3} & \cell{3} & \cell{4} & \cell{0} & \cell{1} & \cell{2} \\ 
+\hline
+\cell{4} & \cell{4} & \cell{0} & \cell{1} & \cell{2} & \cell{3} \\ 
+\hline
+\end{tabular}
+
+\smallskip
+
+\begin{tabular}{| c| c | c | c | c | c |}
+\hline
+\cell{$\times$} & \cell{0} & \cell{1} & \cell{2} & \cell{3} & \cell{4}\\
+\hline
+\cell{0} & \cell{0} & \cell{0} & \cell{0} & \cell{0} & \cell{0} \\ 
+\hline
+\cell{1} & \cell{0} & \cell{1} & \cell{2} & \cell{3} & \cell{4} \\ 
+\hline
+\cell{2} & \cell{0} & \cell{2} & \cell{4} & \cell{1} & \cell{3} \\ 
+\hline
+\cell{3} & \cell{0} & \cell{3} & \cell{1} & \cell{4} & \cell{2} \\ 
+\hline
+\cell{4} & \cell{0} & \cell{4} & \cell{3} & \cell{2} & \cell{1} \\ 
+\hline
+\end{tabular}
+\end{center}
+\end{example}
+ 
+We can check that for $m\in\mathbb{N}$, $\mathbb{Z}/m$ has all the nice algebraic properties of being a field (recall this definition from Week 1) apart from perhaps property (M4), which said that each nonzero element must have a multiplicative inverse.
+An element $x\in \mathbb{Z}/m$ is {\it invertible} if there exists $y\in \mathbb{Z}/m$ so that $x\cdot y=1$.
+
+If $m$ is composite, then not every nonzero element $\mathbb{Z}/m$ is invertible.
+Consider the multiplication table of $\mathbb{Z}/4$:
+\begin{center}
+\begin{tabular}{| c| c | c | c | c |}
+\hline
+\cell{$\times$} & \cell{0} & \cell{1} & \cell{2} & \cell{3} \\
+\hline
+\cell{0} & \cell{0} & \cell{0} & \cell{0} & \cell{0}  \\ 
+\hline
+\cell{1} & \cell{0} & \cell{1} & \cell{2} & \cell{3}  \\ 
+\hline
+\cell{2} & \cell{0} & \cell{2} & \cell{0} & \cell{2}  \\ 
+\hline
+\cell{3} & \cell{0} & \cell{3} & \cell{2} & \cell{1}  \\ 
+\hline
+\end{tabular}
+\end{center}
+As you can see, $2x=1$ has no solution modulo $4$.
+
+Observe that an element $a \in \mathbb{Z}/m$ is invertible if and only if the equation $ax = 1 \mod m$ admits a solution.
+Such a solution exists if and only if $\gcd(a,m)$ divides $1$, hence if and only if $a$ and $m$ are coprime.
+Thus the invertible elements of $\mathbb{Z}/m$ are precisely those elements that are coprime to $m$.
+In particular, if $p$ is prime, then every nonzero element of $\mathbb{Z}/p$ is coprime to $p$, so we deduce the following.
+
+\begin{proposition}
+Let $m\geq 2$ be a natural number.
+Then $\mathbb{Z}/m$ is a field if and only if $m$ is prime.
+\end{proposition}
+
+\begin{exercise}
+How many invertible elements are there in $\mathbb{Z}/{81}$? 
+\end{exercise}
+
+\begin{solution}
+An element $y\in\mathbb{Z}/{81}$ is invertible if and only if $x$ and $81$ are coprime.
+The is possible if and only if $3$ does not divide $y$.
+The number of numbers in $\{0,1,...,80\}$ divisible by $3$ is $\frac{81}{3}=27$, so the number of invertible elements is $81-27 = 54$. 
+\end{solution}
+
+Just like there is a notion of inverses for $\mathbb{Z}/m$, we also have a notion of a root. We say $y\in\mathbb{Z}/m$ is the $n$-th root of $x\in\mathbb{Z}$ if $x^n=y$. 
+
+
+\begin{example}
+In $\mathbb{Z}/{5}$, does $2$ have a cubed root?    
+Let us test the values: 
+
+\begin{itemize}
+\item $0^{3}=0$. 
+\item $1^{3}=1$. 
+\item $2^{3}=3$ since $2^{3} = 8 = 3\mod 5$.  
+\item $3^{3}=2$ since $3^{3} = 27 = 2\mod 5$.  
+\item $4^{3}=4$ since $4^{3} = (-1)^{3}=-1 = 4 \mod 5$.  
+\end{itemize}
+Thus, the unique cubed root of $2$ is $3$. \\
+\end{example}
+ 
+However, not all numbers in every $\mathbb{Z}/m$ have roots! Confirm for yourself that $2\in\mathbb{Z}/{4}$ has no cubed root. 
+
+\section{Fermat's Little Theorem}
+ 
+The great thing about congruence is that arithmetic  becomes easier since you can replace big numbers with smaller numbers that are congruent. The following is a little but powerful theorem due to Fermat that allows you to eliminate large powers if you are working modulo some prime. 
+ 
+\begin{theorem}[Fermat's Little Theorem (FLT)]
+Let $a$ be an integer, and let $p$ be a prime number.
+If $p$ does not divide $a$, then
+\[
+a^{p-1} = 1 \mod p. 
+\]
+\end{theorem}
+
+\begin{proof}
+Without loss of generality, we may assume that $a \in \{1,\dots,p-1\}$.
+We consider the numbers $a,2a,3a,\dots,(p-1)a$. We first observe that each of these numbers is distinct modulo $p$;
+that is, for each $c,d\in \mathbb{Z}/p$, one has $ca = da\mod p$ if and only if $c=d$.
+This follows from Proposition \ref{p:xa=ya-x=a}.
+
+If $\overline{a},\overline{2a}, \dots, \overline{(p-1)a}$ are the remainders of $a,2a,\dots,(p-1)a$ after dividing by $p$, then we deduce that the sets $\{\overline{a},\overline{2a}, \dots, \overline{(p-1)a}\}$ and $\{1,2,\dots,p-1\}$ are equal
+Consequently, 
+\[
+a\cdot 2a \cdots (p-1)a = \overline{a}\cdot\overline{2a}\cdot \cdots\cdot \overline{(p-1)a} = 1\cdot 2 \cdots \cdot (p-1) \mod p.\]
+Thus
+\[
+(p-1)!a^{p-1} = (p-1)!\mod p.
+\]
+Now since $p$ does not divide $(p-1)!$, Proposition \ref{p:xa=ya-x=a} implies that $a^{p-1} = 1 \mod p$, as desired.
+\end{proof}
+
+\begin{example}
+Find $5^{100}\mod 7$. \\
+
+Since $7$ does not divide $5$, the FLT says $5^{6} = 1\mod 7$. Thus, we can shave off any power of $5$ from $5^{100}$ that is a multiple of $6$. Thus,
+\[
+5^{100} = 5^{96}5^{4}=(5^{6})^{16}5^{4} = 1^{16}5^{4}= 5^{4}.
+\]
+Then the rest is as before: 
+\begin{align*}
+5^{2} & =25 = 4\mod 7\\
+5^{4} & =(5^{2})^{2} = 4^{2}=16 = 2\mod 7.
+\end{align*}
+\end{example}
+
+Fermat's Little Theorem gives us a way of solving a large class of polynomial equations mod $m$:
+
+\begin{theorem}
+\label{t:x^n=bmodp}
+Let $n\in\mathbb{N}$ and $p$ be a prime number. Assume $n$ and $p-1$ are coprime and $p$ does not divide $b$. Then the equation
+\begin{equation}
+\label{e:x^n=bmodp}
+x^{n} = b\mod p.
+\end{equation} 
+has exactly one solution $x\in \{1,\dots,p-1\}$.
+\end{theorem}
+
+\begin{proof}
+Since $n$ and $p-1$ are coprime, there are integers $s,t$ so that $sn+t(p-1)=1$. 
+
+Let us prove the uniqueness.
+If $x_1,x_2 \in \{1,\dots,p-1\}$ are two such solutions, then $x_1^n=x_2^n \mod p$, and so for $i \in \{1,2\}$,
+\[
+x_i = x_i^{sn+t(p-1)} = x_i^{sn}x_i^{t(p-1)} = b^s(x_i^t)^{p-1} \mod p.
+\]
+Since $p$ does not divide $x_i^t$, Fermat's Little Theorem that each $x_i = b^s \mod p$, whence $x_1=x_2$.
+
+Now let us prove the existence.
+Let $x$ be the remainder after dividing $b^s$ by $p$.
+Now in $\mathbb{Z}/p$,
+\[
+x^{n}  = (b^{s})^{n}=b^{ns}  = b^{1-t(p-1)}=b\cdot (b^{p-1})^{-t}.\]
+(Note that this makes sense, since $p$ does not divide $b$, so $b$ is invertible.)
+Since $p$ does not divide $b$, Fermat's Little Theorem implies that $x^n = b \mod p$.
+\end{proof}
+
+Notice that even though the choice of $s, t$ is not unique, the remainder after dividing $b^s$ by $p$ \emph{is} unique.
+In other words, if $s_1,t_1,s_2,t_2$ are integers such that for $i \in \{1,2\}$, we have
+\[
+s_in+t_i(p-1)=1,
+\]
+then $b^{s_1} = b^{s_2} \mod p$.
+To see this directly, note that in $\mathbb{Z}/p$, we have by FLT:
+\[
+b^{s_1} = (b^{s_1})^{s_2n+t_2(p-1)} = b^{s_1s_2}(b^{s_1t_2})^{p-1}=b^{s_1s_2},
+\]
+and by the same reasoning:
+\[
+b^{s_2} = (b^{s_2})^{s_1n+t_1(p-1)} = b^{s_1s_2}(b^{s_2t_1})^{p-1}=b^{s_1s_2}.
+\]
+
+We now have a blueprint to how to solve equations of the form \eqref{e:x^n=bmodp} when $n$ and $p-1$ are coprime and $p$ does not divide $b$. 
+
+\begin{example}
+ Find $x\in\{0,1,...16\}$ so that $ x^{7} = 4\mod 17$.  \\
+
+Since $\gcd(7,17-1)=\gcd(7,16)=1$, we can use the Euclidean Algorithm to show that $7\cdot 7=1+3\cdot 16$.  Thus, if $x$ solves the above equation, then $4 = x^{7}$,   and so
+\[
+4^{7} = (x^{7})^{7}  
+= x^{7\cdot 7}  
+= x^{1+3\cdot 16} 
+ = x\cdot (x^{16})^{3} 
+   = x\cdot (1)^{3} 
+   = x.
+\] 
+Thus, $x = 4^{7}$, so we need to find a representative in $\{0,1,...,16\}$. Note that $4^{2}=16 = -1\mod 17$,  so 
+\[
+4^{7}=(4^{2})^{3} \cdot 4
+ = (-1)^{3} \cdot 4
+=-4 = 13\mod 17. 
+\] 
+Thus, $x=13$ is the unique solution in $\{0,1,...,16\}$. 
+\end{example}
+
+
+
+Not all polynomial equations can be solved using the above method:
+ 
+
+\begin{example}
+Find a solution to $x^{22} = 3 \mod 11$.  \\
+
+Note that $\gcd(22,11-1)=\gcd(22,10)=2$, so we can't use the method in Theorem \ref{t:x^n=bmodp}. However, let's suppose $x$ is a solution to the above equation and try to narrow down what it must be. Note that $11$ does not divide $x$   (otherwise $x^{22} = 0$).  Thus, FLT implies $x^{10} = 1 \mod 11$. Hence, 
+\[
+x^{22}=x^{2}(x^{10})^{2}   = x^{2}.\]  
+Now we just need to solve $x^{2} = 3 \mod 11$.  Again, $\gcd(2,11-1)=\gcd(2,10)=2$, so we still can't use the method of Theorem \ref{t:x^n=bmodp}.  But now the power $2$ is small enough we can just try values $x\in \{0,1,...,10\}$ and see what works: 
+
+\begin{itemize}
+\item $1^{2}=1$ 
+\item $2^{2}=4$ 
+\item $3^{2}=9$ 
+\item $4^{2}=16 = 5 \mod 11$.  
+\item $5^{2}=25 = 3\mod 11$.  
+\end{itemize}
+Thus, $x=5$ is a solution to $x^{22} = 3 \mod 11$:  
+\[
+5^{22}=5^{2}(5^{10})^{2} = 3\cdot (1)^{2}=3.
+\]
+
+Note that if we can't use Theorem \ref{t:x^n=bmodp}, then the solution may not be unique. In this example, note that $x=6$ is also a solution
+\end{example}
+
+\begin{example}
+ Find $x\in\{0,1,...,10\}$ that solves $x^{3} = 9 \mod 11$.  \\
+
+Note $\gcd(3,11-1)=\gcd(3,10)=1$, so this tells us that the method of Theorem \ref{t:x^n=bmodp} should work in finding the unique solution. Note also that $7\cdot 3 = 21=1+2\cdot 10$.  Thus, if $x$ is the solution, then $9 = x^{3}\mod 11$ implies  
+\[
+9^{7} = (x^{3})^{7}  
+=x^{3\cdot 7}  
+ =x^{1+2\cdot 10}   
+  =x\cdot (x^{10})^{2}  
+   = x\cdot(1)^{2}  
+  =x \mod 11.\]
+  Thus, $x = 9^{7}$. Now we must find $x\in \{0,1,...,10\}$ so that $x = 9^{7}$.   
+  \begin{itemize}
+  \item $9^{2}=81   = 4 \mod 11$
+  \item $9^{4}=(9^{2})^{2}   = 4^{2}  =16 = 5\mod 11$.   
+  \item $9^{7}=9^{4}\cdot 9^{2}\cdot 9  = 5\cdot 4\cdot 9 =180 =176+4 = 4\mod 11$. 
+  \end{itemize}
+    
+Thus, $x=4$ is the solution.  We can also check $4^{3}=64=55+9 = 9\mod 11$. 
+
+
+\end{example}
+
+
+
+\subsection{Diophantine equations}
+
+As congruences relate to divisibility, we can also use them to solve diophantine equations. 
+
+\begin{example}
+What are the integer solutions to $9x^{2}+9x+2=y^{4}$?
+
+ 
+ We will present two methods for comparison, first using the usual divisbility methods from last week, and then a second method using modular arithmetic.\\
+
+\noindent {\bf Method 1:}  If $x,y$ are integer solutions, then
+\[
+y^{4}=9x^{2}+9x+2 =(3x+2)(3x+1).
+\] 
+ Since $y^{4}\geq 0$, we know $3x+1,3x+2> 0$ or $<0$.  First assume $>0$.   They are coprime since $\gcd(3x+1,3x+2)$ divides $ (3x+2)-(3x+1)=1$.   Thus, $3x+1=a^{4}$ and $3x+2=b^{4}$ for some integers $a$ and $b$.   (We can assume they are non-negative). But then $b^{4}-a^{4} =3x+2-(3x+1) =1$.   This is only possible if $(a,b)=(0,1)$  (exercise :). We can't have $a=0$ since then $3x+1=0$,  which is impossible if $x$ is an integer. The same happens if $3x+1,3x+2<0$.  Thus, there are no solutions.
+
+
+
+
+\vspace{10pt}
+
+As you can see, the above solution is quite long (and we didn't do some of the details). Now let's instead use modular arithmetic for a shorter proof:
+
+
+
+ \vspace{10pt}
+
+\noindent {\bf Method 2:} If $x,y$ are integer solutions to $9x^{2}+9x+2=y^{4}$, then 
+\[
+y^{4}=9x^{2}+9x+2  
+ = 2\mod 3.
+\] 
+Let $z\in \{0,1,2\}$ be such that $z = y\mod 3$, then   $z^{4} = y^{4} = 2\mod 3$.  
+ So let's test some $z$'s! 
+\begin{itemize}
+\item $0^{4}=0$ 
+\item $1^{4}=1$ 
+\item $2^{4}=16 = 1 \mod 3$.  
+\end{itemize}
+So there are no $z\in \{0,1,2\}$ so that $z^{4} = 2 \mod 3$.  Thus, there are no integer solutions to $9x^{2}+9x+2=y^{4}$.
+
+
+
+
+\end{example}
+
+
+ 
+
+\section{Exercises}
+
+
+The relevant exercises in Liebeck's book are in Chapters 13 and 14.
+
+\begin{exercise} Determine whether the following equations have integer solutions:
+\begin{itemize}
+\item $x^2+y^2=9z+3$.
+
+\begin{solution}
+If $(x,y,z)$ was a solution, then $x^2+y^2 = 3\mod 9$, but the squares modulo $9$ are $0,1,4,0,7,0,0,1$, and adding any pair of these gives $0,1,2,4,5,7,8$ modulo $9$, and none of these are $3$, thus there cannot be any solutions to the original equation.
+\end{solution}
+
+
+\item $3x^2-y^2=-2$.
+
+\begin{solution}
+If $(x,y)$ was a solution, then $-y^2 = -2\mod 3$,and so $y^2 = 2\mod 3$, but if we look at the squares of integers mod 3, we see that they are just $0$ and $1$, so there is no integer $y$ for which $y^2 = 2 \mod 3$, thus there are no solutions to the original equation.
+\end{solution}
+
+
+
+\item $3x^2+2=y^2+6z^3$.
+
+\begin{solution}
+If $(x,y,z)$ is a  solution, we see then that $y^2 = 2\mod 3$, and we have already seen that this has no solutions. 
+
+\end{solution}
+
+
+\end{itemize}
+
+\end{exercise}
+
+
+
+\begin{exercise} Show that If $n\in\mathbb{N}$, then $n^5$ and $n$ have the same last digit (that is, the digit in the $1$'s place). 
+
+\begin{solution}
+FLT says that $n^{4} = 1 \mod 5$, hence $n^{5} = n \mod 5$, and so $n^{5}-n = 0\mod 5$. Also, $n^5-n=n^4(n-1)$, and since either $n$ or $n-1$ is even, we have $n^5-n = 0\mod 2$. Thus, we have $2$ divides $n^5-n$ and $5$ divides $ n^5-n$, hence $10$ divides $n^5-n$, so the last digit of $n^5$ and $n$ must be the same.
+\end{solution}
+
+\end{exercise}
+
+
+\begin{exercise} Find the last digit of $7^{7^{7^{7}}}$.
+
+\begin{solution}
+$7^2=49 = -1\mod 10$, $7^3 = -7 = 3\mod 10$, $7^4 = 1 \mod 10$. Thus, as we take powers of $7$, the 1's digit cycles through 7,9,3, and 1. So we should look at what $7^{7^7}\mod 4$ is. 
+
+Note that $7 = 3\mod 4$, and $7^2 = 1\mod 4$, thus odd powers of $7$ are equivalent to $3\mod 4$. Since $7^7$ is odd, $7^{7^7} = 3\mod 4$, and so $7^{7^{7^{7}}} = 3\mod 10$.
+\end{solution}
+
+
+
+\end{exercise}
+
+
+\begin{exercise} Suppose $n\in\mathbb{N}$ satisfies $n = 3\mod 4$. Show that $n$ has a prime factor $p$ with $p = 3\mod 4$. 
+
+\begin{solution}
+
+Note that $n$ is not even, so $n$ has prime factorizaiton $p_{1}^{r_{1}}\cdots p_{k}^{r_{k}}$ for some primes $2<p_{1}<\cdots < p_{k}$ and integers $r_{i}>0$. Suppose $p_{i} = 1 \mod 4$ for all $i$. Then $p_{i}^{r_{i}} = 1 \mod 4$ as well, and so
+\[
+n=p_{1}^{r_{1}}\cdots p_{k}^{r_{k}} = 1 \mod 4,
+\]
+which is a contradiction. Thus, there is $i$ so that $p_{i} = 3\mod 4$.
+
+
+\end{solution}
+
+\end{exercise}
+
+\begin{exercise}
+Show that there are no integer solutions to $m^3-n^3=3$ or $m^3-n^3=4$. (Hint: if there were solutions, there would also be a solution $\mod 7$).
+
+\begin{solution}
+Let us look at what cubes are $\mod 7$:
+\begin{align*}
+1^3 & =1 = 1 \mod 7 \\
+2^3 & =8  = 1 \mod 7\\
+3^3 & =27  = -1 \mod 7 \\
+4^3 & =64  = 1 \mod 7\\
+5^3 & =125 = -1 \mod 7\\
+6^3 & = 216  = -1 \mod 7
+\end{align*}
+Thus, the only values $m^3-n^3$ can be $\mod 7$ are $0,\pm 1,$ and $\pm 2$, or alternatively, $0,1,2,5,6$. In particular, $m^3-n^3=3$ and $m^3-n^3=4$ have no solutions.
+
+\end{solution}
+
+\end{exercise}
+
+
+
+\begin{exercise} Show that for all primes $p>3$, $p = \pm 1\mod 6$. Use this to show $24$ divides $p^2-1$ for all primes $p>3$.
+
+\begin{solution}
+Note that $p$ is odd so $p\not = 2,4\mod 6$. Also, $p>3$, hence $p\neq 3\mod 6$. Thus, the only remaining possibilities are $\pm 1 \mod  6$. Hence, $p=6k\pm 1$ for some integer $k$, so that
+\[
+p^2-1 = (6k\pm 1)^2-1=36k^2\pm 12k=12(3k^2\pm k).
+\]
+Note that $3k^2\pm k$ is always even (just consider the different cases when $k$ is odd or even), so in fact $p^2-1$ is divisible by 24. 
+
+
+
+\end{solution}
+
+\end{exercise}
+
+%
+%\begin{exercise} ({\bf Challenge!}) For which primes $p$ does $(p-1)!+1=p^{k}$ for some integer $k$?
+%
+%\begin{solution}
+%Let's rearrange this equality: this would imply
+%\[
+%(p-1)! = p^{k}-1=(p-1)\sum_{j=0}^{k-1} p^{j}
+%\]
+%and so
+%\[
+%(p-2)! = \sum_{j=0}^{k-1} p^{j}.
+%\]
+%Notice that $p = 1\mod (p-1)$, hence 
+%\[
+%(p-2)! = \sum_{j=0}^{k-1} 1=k\mod (p-1).
+%\]
+%Also notice that for $p>5$, $p-1$ divides $(p-2)!$, and so $(p-2)! = 0\mod (p-1)$, hence the above equation implies $k = 0 \mod (p-1)$, thus $k=\ell(p-1)$ for some integer $\ell$. But then $p^{k}\geq p^{p-1}>(p-1)!$, a contradiction. Hence, $p$ cannot be greater than $5$, so $p=2,3$ or $5$.
+%
+%\begin{itemize}
+%\item If $p=2$, then $(p-1)!+1=2=2^{1}$, so $(p,k)=(2,1)$ is a solution.
+%\item If $p=3$, then $(p-1)!+1=2!+1=3=3^{1}$, so $(3,1)$ is a solution.
+%\item If $p=5$, then $(p-1)!+1=4!+1=25=5^2$, so $(5,2)$ is a solution. 
+%\end{itemize}
+%
+%Thus, these are the only solutions. 
+%
+%
+%\end{solution}
+%
+%
+%\end{exercise}
+
+
+\begin{exercise} Show that if $p_{1}<\cdots < p_{31}$ are prime and $30$ divides $p_{1}^{4}+\cdots + p_{31}^{4}$, then $p_{1}=2$, $p_{2}=3$ and $p_{3}=5$. {\it Hint: Assume the contrary and use FLT.}
+
+\begin{solution}
+
+\begin{itemize}
+\item  If $p_1\neq 2$ then $p_1>2$ and so $p_1,p_2,\cdots p_{31}$ are all odd, hence $p_1^4+p_2^4+\cdots+p_{31}^4$ is odd, so in particular $30$ does not divide $ p_{1}^{4}+\cdots + p_{n}^{4}$, and we get a contradiction. Thus, $p_{1}=2$.
+
+\item If $p_2\neq 3$ then $p_{i} = \pm 1\mod 3$ since $p_{1}=2 = -1$, and for $i\geq 2$, $p_{i}\neq 3$. Thus, $p_{i}^{2} = 1\mod 3$ by FLT, so $p_i^{4} = 1(\mod 3)$ for $i=1,2,\cdots,31$. Thus, 
+\[
+p_1^4+p_2^4+\cdots+p_{31}^4 = 31 = 1 \mod 3.
+\]
+Thus, $p_1^4+p_2^4+\cdots+p_{31}^4$ is not a multiple of $30$. So $p_3=3$. 
+\item A similar argument shows that $p_3$ should be $5$: $p_3\neq 5 $ implies $ p_i^4 = 1 (\mod 5)$ for $i=1,2,\cdots,31$ by FLT and $p_1^4+p_2^4+\cdots+p_{31}^4 = 1 (\mod 5)$.
+\end{itemize}
+\end{solution}
+
+
+\end{exercise}
+
+
+\begin{exercise} (Regional Mathematical Olympiad 1998, India) Show that if $5<p_{1}<\cdots < p_{n}$ and $6$ divides $p_{1}^{2}+\cdots + p_{n}^{2}$, then $6$ divides $n$. 
+
+\begin{solution}
+From an earlier exercise, we know that $p_{i} = \pm 1 \mod 6$, hence $p_{i}^{2} = 1 \mod 6$, thus 
+\[
+0=p_{1}^{2}+\cdots + p_{n}^{2}  = n\mod 6,
+\]
+where in the first equation we used our problem assumption, thus $n = 0\mod 6$, hence $6$ divides $n$. 
+\end{solution}
+
+
+\end{exercise}
+
+
+%\begin{exercise} How  many  prime  numbers $p$ are  there  such that $29^p+ 1$ is a multiple of $p$?
+%
+%\begin{solution}
+%If $p$ divides $29^{p}+1$, then $0 = 29^{p}+1 \mod p$, and by FLT, $29^{p}+1 = 29+1=30\mod p$, so $p$ divides $30$, hence $p=2,3,$ or $5$. 
+%\end{solution}
+%
+%\end{exercise}
+
+
+\begin{exercise} Given that $p$ and $8p^2+1$ are prime, find $p$. 
+
+\begin{solution}
+By trying out some primes, we can see that it seems like $3$ is the only option, so let's try to prove $p=3$. Suppose $p\neq 3$. Note that any prime $p\neq 3$ satisfies $p = \pm 1 \mod 3$, so $p^2  = 1 \mod 3$. Thus, since $8 = -1\mod 3$, 
+\[
+8p^2+1 = (-1)1+1=0\mod 3,\]
+thus $8p^2+1$ is a prime divisible by 3, which is only possible if $8p^2+1=3$, which is impossible. Thus $p=3$ is the only solution.
+\end{solution}
+
+
+\end{exercise}
+
+%%
+%%\begin{exercise} Let $a,x,y\in \mathbb{N}$. Show that if $a>1$ and $a^x+1$ divides $a^y+1$, then $x$ divides $y$. 
+%%
+%%{\it Hint: Recall the geometric series formula.}
+%%
+%%\begin{solution}
+%%Recall from the geometric series formula that
+%%\[
+%%\frac{a^y+1}{a+1}   = \sum_{k=0}^{y-1}(-a)^{k}
+%%\]
+%%Since $a=-1 \mod (a+1)$,
+%%\[
+%%\frac{a^y+1}{a+1} = \sum_{k=0}^{y-1}(-a)^{k} = \sum_{k=0}^{y-1}1^k=y\mod(a+1)
+%%\]
+%%The same holds with $x$ in place of $y$. If $a^x+1$ divides $a^y+1$, then $a^y+1 = n (a^x+1)$ for some integer $n$, hence
+%%\[
+%%y  = \frac{a^{y}+1}{a+1}= n \frac{a^{x}+1}{a+1} = nx \mod (a+1)
+%%\]
+%%Thus, $y= nx + m(a+1)$ for some integer $m$. We could do the same argument $\mod (ka+1)$ instead of $\mod (a+1)$ for any $k\in\mathbb{N}$ (since $a = -1 \mod (ka+1)$, and so for each such $k$ there is an integer $q$ so that $y=nx+q(ka+1)$. Since $x,y,n>0$, we have that $y>q(ka+1)>qka$, so if we pick $k>y$, then the only way this inequality can hold is if $q=0$, and so $y=nx$. 
+%%\end{solution}
+%%
+%%
+%%\end{exercise}
+%
+%
+%\begin{exercise} Let $a,b\in \mathbb{N}$. Show there are infinitely many $n\in \mathbb{N}$ so that $n^b+1 $ does not divide $a^n+1$. 
+%
+%\begin{solution}
+%Suppose the contrary that $n^b+1$ does not divide $a^b+1$ for only finitely many $n$, so we have $n^b+1$ divides $ a^n+1$ for all $n$ large enough (specifically, $n>N$ where $N$ is the last integer where they don't divide).  
+%
+%Let $n=a^k$, then for $k$ large enough, $a^k>N$ and so
+%\[
+%(a^k)^b +1 =a^{kb}+1$ divides $ a^n+1=a^{a^{k}}+1.
+%\]
+%Thus, by the previous problem, $kb$ divides $a^k$. Hence, if $k$ is any integer coprime to $a$.
+%
+%
+%\end{solution}
+%
+
+
+
+%\end{exercise}
+
+
+
+\begin{exercise}
+Prove that $42$ divides $n^7-n$ for all $n\in\mathbb{N}$. 
+\begin{solution}
+Since $42 = 2\cdot 3 \cdot 7$, we just need to verify each of these factors divides $n^7-n$ for each $n\in\mathbb{N}$.
+\begin{itemize}
+\item Since $n^7-n=n^6(n-1)$, one of $n$ and $n-1$ must be even, so one of $n^6$ and $n$ must be even, so $2$ divides $n^{7}-n$.
+\item $n^7-n = n^4\cdot (n-1)n\cdot (n-1)$, and one of $n-1,n,n+1$ must be divisible by 3. 
+\item Finally, by FLT,
+\[
+n^7-n = n-n=0 \mod 7.
+\]
+\end{itemize}
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+If $7$ does not divide $a$, then $7$ divides $a^3-1$ or $7$ divides $a^3+1$. 
+\begin{solution}
+
+Note that since $7$ does not divide $a$, FLT implies
+\[
+(a^{3}-1)(a^3+1) = a^6-1 = 1-1=0 \mod 7
+\]
+and so $7$ divides $(a^{3}-1)(a^3+1) $, and since $7$ is prime, it must divide one of the factors. 
+\end{solution}
+\end{exercise}
+
+%
+%\begin{exercise}
+%If $p$ is prime, what is $(p-1)!\mod p$? (Hint: Recall that $ax = b\mod m$ has a solution if and only if $\gcd(a,m)$ divides $b$.)
+%\begin{solution}
+%By using the hint, we know that for each $q\in \{1,2,...,p-1\}$, there is $r\in \{1,2,...,p-1\}$ so that $qr = 1\mod p$. For $q=1$, this is just $r=1$. If $q\neq 1$ and $r=q$, then $q^2 = 1\mod p$ and so $p$ divides $q^2-1=(q-1)(q+1)$, thus $q$ is either $p-1$ or $p+1 = 1$. Hence, for $q\in \{2,3,...,p-2\}$, the inverse $r$ of $q$ is another number. Thus, all these numbers can be paired up and they cancel each other out in the product $(p-1)!$, so that $(p-1)!=p-1 = 01\mod p$. 
+%\end{solution}
+%\end{exercise}
+%
+
+
+
+
+
+%Interesting open problems:
+%
+%
+%\begin{question}[Bocard's problem]
+%Are there infinitely many $n\in\mathbb{N}$ so that $n!+1$ is a square? Only 3 integers are known: $4!+1=5^2$, $5!+1=11^2$, and $7!=71^2$. 
+%\end{question}
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3
+%----------------------------------------------------------------------------------------
+
+%\chapterimage{ima2} % Chapter heading image
+
+
+%----------------
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+%
+%\chapter*{Bibliografía}
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliografía}}
+%\section*{Books}
+%\addcontentsline{toc}{section}{Books}
+%\printbibliography[heading=bibempty,type=book]
+%
+%\begin{itemize}
+%	\item GREENE, W.H. (2003) “Econometric Analysis”5ª edición. Prentice Hall N.J. Capítulo 21
+%\\\\
+%    \item WOOLDRIDGE, J.M. (2010) “Introducción a la Econometría: Un Enfoque Moderno". 4ª edición. Cengage Learning. Capítulo 17
+%
+%\end{itemize}
+
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage
+\phantomsection
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Índice Alfabético}}
+\printindex
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
+
+

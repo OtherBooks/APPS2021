@@ -1,0 +1,1841 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.0 (9/2/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass[11pt,fleqn,dvipsnames]{book} % Default font size and left-justified equations
+\documentclass[11pt,dvipsnames]{book}
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+
+
+%%agregué
+
+
+
+
+%%%My stuff
+
+
+%\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+%\usepackage{due-dates}
+\usepackage[small]{eulervm}
+\usepackage{amsmath,amssymb,amstext,amsthm,amscd,mathrsfs,eucal,bm,xcolor}
+\usepackage{multicol}
+\usepackage{array,color,graphicx}
+%\usepackage{enumerate}
+
+
+\usepackage{epigraph}
+%\usepackage[colorlinks,citecolor=red,linkcolor=blue,pagebackref,hypertexnames=false]{hyperref}
+
+%\theoremstyle{remark} 
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{\bf Example}
+%\newtheorem*{solution}{Solution:}
+
+
+\usepackage{centernot}
+
+
+\usepackage{filecontents}
+
+\usepackage{tcolorbox} 
+
+
+
+
+
+% Ignore this part, this is the former way of hiding and unhiding solutions, new version is after this
+%
+%\begin{filecontents*}{MyPackage.sty}
+%\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{MyPackage}
+%\RequirePackage{environ}
+%\newif\if@hidden% \@hiddenfalse
+%\DeclareOption{hide}{\global\@hiddentrue}
+%\DeclareOption{unhide}{\global\@hiddenfalse}
+%\ProcessOptions\relax
+%\NewEnviron{solution}
+%  {\if@hidden\else \begin{tcolorbox}{\bf Solution: }\BODY \end{tcolorbox}\fi}
+%\end{filecontents*}
+%
+%
+%
+%\usepackage[hide]{MyPackage} % hides all solutions
+%\usepackage[unhide]{MyPackage} %shows all solutions
+
+
+
+
+%\usepackage[unhide,all]{hide-soln} %show all solutions
+\usepackage[unhide,odd]{hide-soln} %hide even number solutions
+%\usepackage[hide]{hide-soln} %hide all solutions
+
+
+
+
+
+
+\def\putgrid{\put(0,0){0}
+\put(0,25){25}
+\put(0,50){50}
+\put(0,75){75}
+\put(0,100){100}
+\put(0,125){125}
+\put(0,150){150}
+\put(0,175){175}
+\put(0,200){200}
+\put(25,0){25}
+\put(50,0){50}
+\put(75,0){75}
+\put(100,0){100}
+\put(125,0){125}
+\put(150,0){150}
+\put(175,0){175}
+\put(200,0){200}
+\put(225,0){225}
+\put(250,0){250}
+\put(275,0){275}
+\put(300,0){300}
+\put(325,0){325}
+\put(350,0){350}
+\put(375,0){375}
+\put(400,0){400}
+{\color{gray}\multiput(0,0)(25,0){16}{\line(0,1){200}}}
+{\color{gray}\multiput(0,0)(0,25){8}{\line(1,0){400}}}
+}
+
+
+
+%\usepackage{tikz}
+
+%\pagestyle{headandfoot}
+%\firstpageheader{\textbf{Proofs \& Problem Solving}}{\textbf{Homework 1}}{\textbf{\PSYear}}
+%\runningheader{}{}{}
+%\firstpagefooter{}{}{}
+%\runningfooter{}{}{}
+
+%\marksnotpoints
+%\pointsinrightmargin
+%\pointsdroppedatright
+%\bracketedpoints
+%\marginpointname{ \points}
+%\totalformat{[\totalpoints~\points]}
+
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\N{{\mathbb{N}}}
+\def\Q{{\mathbb{Q}}}
+\def\C{{\mathbb{C}}}
+\def\hcf{{\rm hcf}}
+
+
+%%end of my stuff
+
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+
+
+
+\usepackage{graphicx} % paquete que permite introducir imágenes
+
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+%\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%%hasta aquí
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=12cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{Figures/blank.png}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Proofs and Problem Solving \\[15pt] % Book title
+{\huge Week 1: Logic and the Reals}\\[20pt] % Subtitle
+{\Large Notes  based on Martin Liebeck's \\ \textit{A Concise Introduction to Pure Mathematics}}}}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+%\newpage
+%~\vfill
+%\thispagestyle{empty}
+
+%\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+
+%\noindent \textsc{Published by Publisher}\\ % Publisher
+
+%\noindent \textsc{book-website.com}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+%\noindent \textit{First printing, March 2013} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{Figures/blank.png} % Table of contents heading image
+
+%\chapterimage{chapter_head_1.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+ \tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+
+
+\part{Week 1: Logic and the Reals}
+
+
+\chapterimage{Figures/blank.png} 
+
+
+
+\chapter{Logic}
+
+\setcounter{page}{1}
+
+%
+%\title{Week 1: Sets, Logic, and the Real Numbers}
+%\date{}
+%\maketitle
+%
+%
+%\epigraph{\it Don't just read it; fight it! Ask your own question, look for your own examples, discover your own proofs. Is the hypothesis necessary? Is the converse true? What happens in the classical special case? What about the degenerate cases? Where does the proof use the hypothesis?}{Paul Halm\"os, from his book \\{\it I Want to be a Mathematician: An Automathography}  (1985)} 
+%
+%
+%
+%\epigraph{\it I read once that the true mark of a pro — at anything — is that he understands, loves, and is good at even the drudgery of his profession.}{Paul Halm\"os, from his book \\{\it I Want to be a Mathematician: An Automathography}  (1985)} 
+%
+%
+%
+%
+%\maketitle
+
+%This course will cover a diverse range of topics, some weeks having no relation to the previous week. However, this week we introduce some fundamental objects and tools that will be required for every week: logic, sets, and the real numbers.
+
+
+\section{Sets}
+
+A set $S$ is a collection of objects, which we call the \emph{elements} of $S$. Those elements can be anything: numbers, letters, animals, other sets. For example:
+\begin{itemize}
+\item $\mathbb{N} = \{1,2,3, \dots\}$ is the set of strictly positive integers,
+\item $\mathbb{N}_0 = \{0,1,2, \dots\}$ is the set of nonnegative integers,
+\item $\mathbb{Z} = \{\dots -3, -2, -1, 0,1,2,3, \dots\}$ is the set of all integers,
+\item $\mathbb{Q}$ is the set of rational numbers (numbers that can be expressed as $\frac{m}{n}$ for $m \in \mathbb{Z}$ and $n \in \mathbb{N}$), and
+\item $\mathbb{R}$ is the set of all real numbers.
+\end{itemize}
+For the moment, we're assuming that you have some familiarity with these sets:
+they will help us build examples to illustrate the different logical concepts that appear below.
+Later on we'll study each of these sets of numbers in much more detail.
+
+One way of writing down a set is to list them between curly brackets. So the set whose elements are $1,2,3$ is written as 
+\[
+S=\{1,2,3\}.
+\]
+
+Two sets are \emph{equal} if and only if they have the same elements.
+That means, for instance, that $\{1,2,3\}$ is the \emph{same set} as $\{3,1,2\}$.
+Consequently, when you're writing down a set, the order in which you list the elements is unimportant.
+
+As a matter of notation, if $a$ is an element of the set $S$, we write $a\in S$. We write $a\not\in S$ if $a$ is not an element of the set $S$.
+For example, $1\in \{1,2,3\}$ but $4\not\in \{1,2,3\}$. 
+Similarly, $\text{Clark} \notin \{1,2,3\}$.
+
+Sets can contain anything, even other sets.
+For example,  $S=\{1,\{2\}\}$ is the set consisting of the number $1$ and also the set $\{2\}$.
+Thus $1\in S$, and $\{2\}\in S$, but $2\notin S$.
+
+\begin{definition}
+Let $A$ and $B$ be two sets.
+We say that $A$ is a {\it subset} of $B$, or that $A$ is {\it contained} in $B$ if and only if each $x\in A$ is also an element of $B$.
+We write $A \subseteq B$ to say that ``$A$ is a subset of $B$.''
+If there is an element of $A$ not in $B$, we write $A\not\subseteq B$.
+\end{definition}
+
+\begin{example}
+Let's write down all the subsets of the set $\{1,2,3\}$.
+In all there are $8$.
+
+There's $\{1,2,3\}$ itself.
+Then there are the subsets with $2$ elements: these are $\{1,2\}$, $\{1,3\}$, and $\{2,3\}$.
+(Note that $\{2,1\}$ is a set that is already on our list!)
+Then there are the subsets with $1$ element (sometimes called \emph{singletons}): these are $\{1\}$, $\{2\}$, and $\{3\}$.
+
+There is one more subset of $\{1,2,3\}$.
+This is the set with $0$ elements.
+This is called the \emph{empty set}.
+\end{example}
+
+\begin{definition}
+The \emph{empty set}, written $\varnothing$, is the set that has no elements.
+\end{definition}
+
+\begin{example}
+Recall that two sets $A$ and $B$ are equal if they have the same elements.
+In other words, $A=B$ if and only if both $A \subseteq B$ and $B \subseteq A$.
+\end{example}
+
+If $A \subseteq B$ and $B \not\subseteq A$, then we say that $A$ is \emph{properly contained} in $B$.
+Some people write $A \subset B$ or even $A \subsetneqq B$ to emphasize this.
+
+\begin{example}
+We have $\mathbb{N}\subseteq \mathbb{Q}$ since each integer is also a rational number, but $\mathbb{Q}\not\subseteq \mathbb{N}$ since $\frac{1}{2}\in \mathbb{Q}$ but $\frac{1}{2}\not\in \mathbb{N}$.
+Thus $\mathbb{N}$ is properly contained in $\mathbb{Q}$.
+
+In fact, we have
+\[
+\mathbb{N} \subseteq \mathbb{N}_0 \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R},
+\]
+and all these containments are proper.
+ 
+Similarly, $\{1,2\}\subseteq \{1,2,3\}$ since $1\in \{1,2,3\}$ and $2\in \{1,2,3\}$. However, $\{1,2,3\}\not\subseteq \{1,2\}$  since $3\in \{1,2,3\}$ but $3\not\in \{1,2\}$.
+\end{example}
+
+\section{Logical Statements}
+
+By a \emph{statement}, we mean a sentence that asserts that something is the case.
+Here are some statements:
+\begin{itemize}
+    \item ``$2$ is even.''
+    \item ``$937$ is prime.''
+    \item ``$57$ is prime.''
+    \item ``The only subset of $\varnothing$ is $\varnothing$ itself.''
+    \item ``There are two points on opposite sides of the equator of the Earth where the temperatures are identical.''
+\end{itemize}
+Sentences like ``go to bed'' or ``why so serious?'' are not statements, because they don't assert that something is the case.
+
+Every statement is either True or False.
+That is, to any statement $A$, there is one and only one corresponding element of the set $\{True, False\}$.
+This is called the \emph{truth-value} of $A$.
+Thus the truth value of ``$2$ is even'' is True; the truth-value of ``$937$ is prime'' is True; the truth-value of ``$57$ is prime'' is False; and the truth-value of ``the only subset of $\varnothing$ is $\varnothing$ itself'' is True.
+
+Let's emphasize that there are plenty of statements whose truth-value is unknown to us.
+That is, we just don't know whether they are true or false.
+For instance, ``Every even integer greater than $2$ can be written as the sum of exactly two primes'' is a statement, but we don't know whether this sentence is True or False.
+(This particular statement is known as the \emph{Goldbach Conjecture}.)
+
+Statements that include a \emph{free variable} are useful in describing subsets of existing sets.
+For example, let's say we write down the set of integer multiples of $5$.
+If $n$ is an integer, then we can consider the statement
+\[
+    A(n) = \text{``$n$ is divisible by $5$''}.
+\]
+Now what we want to do is to look at the set of integers $n$ such that $A(n)$ holds.
+This is a subset of the set $\mathbb{Z}$ of integers;
+here's how we write it:
+\[
+    S = \{n \in \mathbb{Z} : A(n)\} = \{n \in \mathbb{Z} : n \text{ is divisible by 5}\} \subseteq \mathbb{Z}.
+\]
+This reads ``$S$ is the set of integers $n$ such that $n$ is divisible by $5$.''
+This is called \emph{set-builder notation}.
+The colon $:$ reads as "such that";
+some authors use a vertical bar $|$ for this, so that the sentence above could be rewritten
+\[
+S=\{n\; |\; n \text{ is divisible by 5}\}.
+\]
+
+Informally, $S$ is the set
+\[
+    \{ \dots, -10, -5, 0, 5, 10, 15, \dots \},
+\]
+but the set-builder notation above is generally preferable to this informal description, because it isn't always clear what the pattern is.
+For example: if we write
+\[
+    \{3, 5, 7, \dots \},
+\]
+is that the set of odd numbers greater than $1$, or the set of odd prime numbers?
+
+\begin{example}
+If $x$ is a real number, then let $A(x)$ be the statement ``$x\geq 0$.''
+Now we can look at the subset
+\[
+    \{x \in \mathbb{R} : A(x)\} = \{x \in \mathbb{R} : x \geq 0 \} \subseteq \mathbb{R}
+\]
+That's the set of nonnegative real numbers.
+\end{example}
+
+\begin{example}
+Consider the sets 
+\[
+A=\{x\in\mathbb{R} : x^2= 1\} \quad \text{and} \quad B=\{-1,1\}.
+\]
+These are two subsets of $\mathbb{R}$.
+In fact, we claim $A=B$.
+To prove this, we will first prove that $A \subseteq B$ and then that $B \subseteq A$:
+\begin{enumerate}[label=(\alph*)]
+\item If $x\in A$, then $x^2=1$, so $0=1-x^2=(1-x)(1+x)$. The only way the product of two numbers is zero is if at least one of them is zero, so $1-x=0$ or $1+x=0$, i.e. $x=1$ or $x=-1$, hence $x\in B$. 
+\item If $x\in B$, then $x=1$ or $x=-1$, and in either case $x^2=1$, so $x\in A$. 
+\end{enumerate}
+\end{example}
+
+\begin{example}
+Let $S=\{x\in\mathbb{R} : x^2=-1\}$. The sentence ``$x^2=-1$ has no solutions in $\mathbb{R}$'' is the natural language translation of the sentence ``$S=\varnothing$.'' 
+\end{example}
+
+\bigskip
+
+\noindent {\bf Warning.} In order for set-builder notation $\{x \in S : A(x)\}$ to be meaningful, it has to be the case that the statement $A(x)$ makes sense for all elements $x \in S$.
+For example, if $S$ is the set of all trees, then the set
+\[
+    \{ x \in S : x^2 = 1\}
+\]
+doesn't make any sense, because we don't know how to take the square of a tree, or what it means for such a square to be equal to $1$.
+That may seem like a silly point, but this basic error leads to lots of mistakes!
+
+\section{Conjunction}
+One can combine statements together to get new statements.
+
+\begin{definition}
+If $A$ and $B$ are statements, their \emph{conjunction} is the statement $A \text{ and }  B$.
+Some authors use the notations $ A \wedge B $ or $A \& B$ for the conjunction of $A$ and $B$.
+For example, if $A$ is the statement ``$2$ is even'' and $B$ is the statement ``$57$ is prime,'' the statement $A \wedge B$ asserts that ``$2$ is even and $57$ is prime.''
+The truth-value of the conjunction operates like this:
+\[
+A \wedge B \text{ is true exactly when both }A\text{ is true and }B\text{ is true}
+\]
+\end{definition}
+
+To unpack this, we use of a \emph{truth table}.
+When we combine statements $A$, $B$, $C$, etc. to get a statement $P$, a truth table is then a list of the truth-values of $P$ depending on the truth-values of $A$ and $B$.
+Here is the truth table for the conjunction:
+\begin{center}
+    \begin{tabular}{ c|c|c}
+        $A$ & $B$ & $A \wedge B$  \\ \hline 
+        T & T & T \\
+        T & F & F \\
+        F & T & F \\
+        F & F & F \\
+    \end{tabular}
+\end{center}
+
+\begin{example}
+From our truth table, we can see that the truth-value of ``$2$ is even and $57$ is prime'' is False.
+\end{example}
+
+\section{Intersection}
+
+\begin{definition}
+Let $S$ and $T$ be two sets.
+The \emph{intersection} $S \cap T$ is the set consisting of the elements $S$ and $T$ have in common.
+That is, $x \in S \cap T$ exactly when both $x \in S$ and $x \in T$.
+One can write
+\[
+    S \cap T = \{x : (x \in S) \wedge (x \in T)\}
+\]
+\end{definition}
+
+When $S$ and $T$ are subsets of some common set $U$ and are given by set-builder notation, we can use conjunction to describe the intersection.
+That is, if
+\[
+    S = \{x \in U : A(x) \}
+\]
+for a statement $A(x)$, and if
+\[
+    T = \{x \in U : B(x) \}
+\]
+for a statement $B(x)$, then the intersection is given by
+\[
+    S \cap T = \{x \in U : A(x) \wedge B(x)\}.
+\]
+
+\begin{example}
+Consider the sets
+\[
+    S = \{n \in \mathbb{Z} : n\text{ is divisible by }2\}\quad \text{and}\quad T = \{n \in \mathbb{Z} : n\text{ is divisible by }5\}.
+\]
+Then the intersection is
+\[
+    S \cap T = \{n \in \mathbb{Z} : n\text{ is divisible by both }2\text{ and }5\}.
+\]
+From this you can see that:
+\[
+    S \cap T = \{n \in \mathbb{Z} : n\text{ is divisible by }10\}=\{\dots,-20,-10,0,10,20,\dots\}.
+\]
+\end{example}
+
+\begin{example}
+Consider the sets
+\[
+    S = \{x \in \mathbb{R} : x \geq 0\}
+\]
+and
+\[
+    T = \{x \in \mathbb{R} : x \leq 1\}.
+\]
+Then the intersection is
+\[
+    S \cap T = \{x \in \mathbb{R} : 0 \leq x \leq 1 \},
+\]
+the set of real numbers between $0$ and $1$ (including $0$ and $1$).
+(This set is called the \emph{closed interval} from $0$ to $1$, and it is often written as $[0,1]$.)
+\end{example}
+
+\begin{example}
+Consider the sets
+\[
+    S = \{x \in \mathbb{R} : x \geq 1\}
+\]
+and
+\[
+    T = \{x \in \mathbb{R} : x \leq 0\}.
+\]
+Then the intersection is
+\[
+    S \cap T = \{x \in \mathbb{R} : (x \geq 1)\wedge(x \leq 0) \} = \varnothing.
+\]
+\end{example}
+
+\section{Disjunction}
+
+\begin{definition}
+The \emph{disjunction} of two statements $A$ and $B$ is the statement $A\text{ or } B$.
+This is also sometimes written as $A \vee B$.
+
+The truth-value of the disjunction operates like this:
+\[
+A \vee B \text{ is true exactly when either }A\text{ is true or }B\text{ is true}
+\]
+\end{definition}
+
+Here is the truth table for the disjunction:
+\begin{center}
+    \begin{tabular}{ c|c|c}
+        $A$ & $B$ & $A \vee B$  \\ \hline 
+        T & T & T \\
+        T & F & T \\
+        F & T & T \\
+        F & F & F \\
+    \end{tabular}
+\end{center}
+Note that ``or'' in this sense is not taken in the \emph{exclusive} sense: if both $A$ and $B$ are both true, then $A\vee B$ is true as well.
+
+\begin{example}
+From this we can see that the truth-value of ``$2$ is even or $57$ is prime'' is True.
+\end{example}
+
+\bigskip
+
+\noindent Once you have these basic connectives, you can combine statements to your heart's content, and you can analyze the results.
+\begin{example}
+For example, let's have a look at the statement $(A \vee B) \wedge C$.
+Let's analyze the truth table by dealing with what's in parentheses first, and then combining that with the statement $C$:
+\begin{center}
+    \begin{tabular}{c|c|c|c|c}
+        $A$ & $B$ & $C$ & $A \vee B$ & $(A \vee B) \wedge C$ \\ \hline 
+        T & T & T & T & T\\
+        T & T & F & T & F\\
+        T & F & T & T & T\\
+        T & F & F & T & F\\
+        F & T & T & T & T\\
+        F & T & F & T & F\\
+        F & F & T & F & F\\
+        F & F & F & F & F\\
+    \end{tabular}
+\end{center}
+
+This is the kind of sentence that we don't say too often in natural language (at least, outside of the legal profession): it asserts that both $A \vee B$ is true and $C$ is true.
+Maybe a reasonable way to say this in English is ``Either $A$ or $B$ is true, and $C$ is true too.''
+\end{example}
+
+\begin{example}
+The previous example brings up a critical issue.
+\emph{We must write our connectives carefully!}
+For example, consider the statement
+\[
+\text{``$57$ is prime or $2$ is  and $937$ is prime.''}
+\]
+What do we mean by this statement?
+As written, it's ambiguous, and that ambiguity affects the truth-value!
+
+Parentheses clarify things:
+the statement
+\[
+\text{``($937$ is prime or $2$ is even) and $57$ is prime''}
+\]
+is false, whereas the statement
+\[
+\text{``$937$ is prime or ($2$ is even and $57$ is prime)''}
+\]
+is true.
+
+Here's the truth table for $A \vee (B \wedge C)$;
+notice the differences from the truth table for $(A \vee B) \wedge C$ above:
+\begin{center}
+    \begin{tabular}{c|c|c|c|c}
+        $A$ & $B$ & $C$ & $B \wedge C$ & $A \vee (B \wedge C)$ \\ \hline 
+        T & T & T & T & T\\
+        T & T & F & F & T\\
+        T & F & T & F & T\\
+        T & F & F & F & T\\
+        F & T & T & T & T\\
+        F & T & F & F & F\\
+        F & F & T & F & F\\
+        F & F & F & F & F\\
+    \end{tabular}
+\end{center}
+\end{example}
+
+\section{Union}
+
+\begin{definition}
+Let $S$ and $T$ be two sets.
+The \emph{union} $S \cup T$ is the set consisting of the elements of either $S$ or $T$.
+That is, $x \in S \cup T$ exactly when both $x \in S$ or $x \in T$.
+One can write
+\[
+    S \cup T = \{x : (x \in S) \vee (x \in T)\}
+\]
+\end{definition}
+
+When $S$ and $T$ are subsets of some common set $U$ and are given by set-builder notation, we can use disjunction to describe the union.
+That is, if
+\[
+    S = \{x \in U : A(x) \}
+\]
+for a statement $A(x)$, and if
+\[
+    T = \{x \in U : B(x) \}
+\]
+for a statement $B(x)$, then the union is given by
+\[
+    S \cup T = \{x \in U : A(x) \vee B(x)\}.
+\]
+
+\begin{example}
+Consider the sets
+\[
+    S = \{n \in \mathbb{Z} : n\text{ is divisible by }2\}\quad \text{and}\quad T = \{n \in \mathbb{Z} : n\text{ is divisible by }5\}.
+\]
+Then the union is
+\[
+    S \cup T = \{n \in \mathbb{Z} : n\text{ is divisible by either }2\text{ or }5\}.
+\]
+We can write out a few of the elements:
+\[
+    S \cup T =\{\dots,-10,-8,-6,-5,-4,-2,0,2,4,5,6,8,10,12,14,15,\dots\}.
+\]
+\end{example}
+
+\begin{example}
+Consider the sets
+\[
+    S = \{x \in \mathbb{R} : x \geq 0\}
+\]
+and
+\[
+    T = \{x \in \mathbb{R} : x \leq 1\}.
+\]
+Then the union is
+\[
+    S \cup T = \{x \in \mathbb{R} : (x \geq 0) \vee (x \leq 1) \} = \mathbb{R}.
+\]
+\end{example}
+
+\begin{example}
+Consider the sets
+\[
+    S = \{x \in \mathbb{R} : x \geq 1\}
+\]
+and
+\[
+    T = \{x \in \mathbb{R} : x \leq 0\}.
+\]
+Then the union is
+\[
+    S \cup T = \{x \in \mathbb{R} : (x \geq 1)\vee(x \leq 0) \},
+\]
+the set of real numbers that are either at least as big as $1$, or no greater than $0$.
+\end{example}
+
+\section{Negation}
+
+The \emph{negation} of a statement $A$ (which we denote $\overline{A}$ or $\neg A$) is the statement ``$A$ is false.''
+For example, the negation of the statement ``$57$ is prime'' is ``$57$ is not prime.''
+The negation of the statement ``$57$ is not prime'' is ``$57$ is prime.''
+Depending on the statement, its negation can be written differently from just inserting a "not":
+\begin{enumerate}[label=(\alph*)]
+\item If $S$ is a set, and $s$ is not an element of $S$, then the sentence ``$s \notin S$'' is the negation of the sentence ``$s \in S$.''
+\item If $B$ is the statement ``$x = y$,'' then the negation $\overline{B}$ is the sentence ``$x \neq y$.''
+\item If $C="a=b"$, then $\bar{C}="a\neq b"$.
+\end{enumerate}
+
+The negation of a statement has the opposite truth value: if $A$ is true, then $\overline{A}$ is false; if $A$ is false, then $\overline{A}$ is true.
+\begin{center}
+    \begin{tabular}{ c|c}
+        $A$ & $\overline{A}$   \\ \hline 
+        T & F \\
+        F & T \\
+    \end{tabular}
+\end{center}
+
+\begin{example}
+For any statement $A$, consider the statement $A \vee \overline{A}$.
+That's the statement that either $A$ is true or $A$ is not true.
+In other words, it's the assertion that either $A$ is true or false.
+Here's the truth table:
+\begin{center}
+    \begin{tabular}{ c|c|c}
+        $A$ & $\overline{A}$ & $A \vee \overline{A}$   \\ \hline 
+        T & F & T \\
+        F & T & T\\
+    \end{tabular}
+\end{center}
+Note that we only have T's in the last column.
+That means that the sentence $A \vee \overline{A}$ is always true, no matter what the truth-value of $A$ is.
+This statement is sometimes called the \emph{Law of Excluded Middle}.
+\end{example}
+
+\begin{example}
+Now let's contemplate the statement $A \wedge \overline{A}$.
+Here's the truth table:
+\begin{center}
+    \begin{tabular}{ c|c|c}
+        $A$ & $\overline{A}$ & $A \vee \overline{A}$   \\ \hline 
+        T & F & F \\
+        F & T & F\\
+    \end{tabular}
+\end{center}
+Note that we only have F's in the last column.
+That means that $A \wedge \overline{A}$ is always false, no matter what the truth-value of $A$ is.
+This statement is sometimes just called a \emph{Contradiction}.
+\end{example}
+
+\section{Complements}
+
+\begin{definition}
+Let $S$ be a set, and let $T \subseteq S$ be a subset.
+Then the \emph{complement} of $T$ in $S$ is the subset
+\[
+    S \setminus T = \{ x \in S : x \notin T \} \subseteq S.
+\]
+\end{definition}
+
+Assume that the subset $T \subseteq S$ is identified using set-builder notation:
+\[
+    T = \{x \in S : A(x) \}.
+\]
+Then we can do the same for its complement by using negation:
+\[
+    S \setminus T = \{x \in S : \overline{A}(x)\}.
+\]
+
+\begin{example}
+Consider the set of even integers:
+\[
+    T = \{n \in \mathbb{Z} : 2\text{ divides }n\} \subseteq \mathbb{Z}.
+\]
+Its complement in $\mathbb{Z}$ is the set of odd integers:
+\[
+    \mathbb{Z} \setminus T = \{n \in \mathbb{Z} : 2\text{ does not divide }n\} \subseteq \mathbb{Z}.
+\]
+\end{example}
+
+\begin{example}
+Consider the subset
+\[
+    S = \{ x \in \mathbb{R} : x \geq 0 \},
+\]
+the set of real numbers no less than $0$.
+Its complement in $\mathbb{R}$ is
+\[
+    \mathbb{R} \setminus S = \{ x \in \mathbb{R} : x < 0 \},
+\]
+the set of real numbers less than $0$.
+\end{example}
+
+\section{Conditionals}
+
+A \emph{conditional} is a statement of the form ``if $A$ then $B$,'' or ``$A$ only if $B$,'' or ``$A$ implies $B$.''
+We write this symbolically as 
+\[
+    A \implies B. 
+\]
+This statement says that whenever $A$ is true, we can conclude $B$ is true.
+Statement $A$ is called the \emph{premise} of the conditional, and $B$ is its \emph{conclusion}.
+We can also write this backwards as $B \Longleftarrow A$, which is read ``$B$ if $A$.''
+
+Here is the truth table for the conditional
+\begin{center}
+    \begin{tabular}{ c|c|c}
+        $A$ & $B$ & $A \implies B$  \\ \hline 
+        T & T & T \\
+        T & F & F \\
+        F & T & T \\
+        F & F & T \\
+    \end{tabular}
+\end{center}
+Notice that if the statement $B$ is true, then the statement $A \implies B$ is true.
+If $A$ is false, then the statement $A \implies B$ is again true.
+The only way $A \implies B$ ends up false is when $A$ is true but $B$ isn't.
+
+\begin{example}
+The statement ``If $2$ is even, then $14$ is even'' is true.
+
+The statement ``If $2$ is even, then $15$ is even'' is false.
+
+The statement ``If $57$ is prime, then $937$ is prime'' is true.
+
+The statement ``If $57$ is prime, then $2$ is odd'' is true.
+\end{example}
+
+This sometimes surprises people a little, because in English (and in other natural languages), we are a little more casual in our use of the words ``if $A$, then $B$.''
+In mathematics, the statement $A \implies B$ can be re-expressed as the following:
+\[
+    \text{``either $B$ is true or $A$ is false.''}
+\]
+Indeed, $A \implies B$ has exactly the same truth table as $\overline{A} \vee B$.
+
+To prove a conditional statement $A\Longrightarrow B$ \emph{directly}, you proceed as follows:
+\begin{enumerate}[label=(\alph*)]
+\item Start your proof by \emph{assuming} the premise $A$. 
+\item Then deduce the conclusion $B$.
+\end{enumerate}
+
+\begin{example}
+Consider the following statement
+\[
+\text{``If $n$ is an odd integer, then $n^2$ is odd.''}
+\]
+The premise in this example is ``$n$ is an odd integer" and the conclusion is ``$n^2$ is odd".
+So to prove it, we need to assume the premise and then deduce the conclusion.
+\begin{proof}
+Assume $n$ is an odd number.
+By definition this means $n=2k+1$ for some integer $k$.
+Then
+\[
+n^2=(2k+1)^2=4k^2+4k+1=2(2k^2+2k)+1.
+\]
+Consequently $n^2$ is odd. 
+\end{proof}
+\end{example}
+
+\begin{example}
+If $A\implies B$ and $B\implies C$, then $A\implies C$.
+In other words, $((A \implies B) \wedge (B \implies C)) \implies (A \implies C)$.
+
+The premise is $(A\implies B)\wedge(B\implies C)$.
+The conclusion is $A\implies C$.
+\begin{proof}
+Assume $(A\implies B)\wedge(B\implies C)$.
+That is, both $A \implies B$ and $B \implies C$ are true.
+
+We must deduce that $A\implies C$.
+To do this, assume $A$ is true.
+We aim to show that $C$ is true. 
+
+Since $A$ is true, and since $A\implies B$, we conclude $B$ is true.
+Since $B$ is true, and since $B\implies C$, we conclude $C$ is true.
+
+We have now shown that if $A$ is true, then $C$ is true, thus $A\implies C$.
+\end{proof}
+\end{example}
+
+\begin{definition}
+The \emph{converse} to the conditional $A \implies B$ is the statement $B \implies A$.
+\end{definition}
+
+Note that the converse of a conditional is \emph{not the same statement}.
+Compare the truth tables:
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+        $A$ & $B$ & $A \implies B$ & $B \implies A$  \\ \hline 
+        T & T & T & T \\
+        T & F & F & T \\
+        F & T & T & F \\
+        F & F & T & T \\
+    \end{tabular}
+\end{center}
+The conditional ``if $2$ is odd, then $937$ is prime'' is true (if a little strange).
+The converse ``if $937$ is prime, then $2$ is odd'' is false!
+
+\begin{definition}
+The \emph{contrapositive} of a conditional $A \implies B$ is the statement $\overline{B} \implies \overline{A}$.
+\end{definition}
+
+The contrapositive really is just a repackaging of the original conditional.
+It has exactly the same truth table:
+\begin{center}
+    \begin{tabular}{c|c|c|c|c|c}
+        $A$ & $B$ & $A \implies B$ & $\overline{A}$ & $\overline{B}$ & $\overline{B} \implies \overline{A}$  \\ \hline 
+        T & T & T & F & F & T \\
+        T & F & F & F & T & F \\
+        F & T & T & T & F & T \\
+        F & F & T & T & T & T \\
+    \end{tabular}
+\end{center}
+
+\section{Logical equivalence} 
+
+This idea of ``repackaging'' a sentence in another way is called \emph{logical equivalence}.
+
+\begin{definition}
+    We say that two statements $A$ and $B$ are \emph{equivalent} if $A$ is true if and only if $B$ is true.
+\end{definition}
+
+One also says ``$A$ if and only if $B$'' or ``$A$ iff $B$'' or $A \iff B$.
+Here is the truth table for this connective:
+\begin{center}
+    \begin{tabular}{ c|c|c}
+        $A$ & $B$ & $A \iff B$  \\ \hline 
+        T & T & T \\
+        T & F & F \\
+        F & T & F \\
+        F & F & T \\
+    \end{tabular}
+\end{center}
+
+In other words, $A \iff B$ is the same statement as $(A\implies B) \wedge (B \implies A)$.
+
+Equivalence behaves like "=" does in algebra: you are free to swap one statement for another equivalent statement.
+For example, if $A\iff B$, then the statement $A \vee C$ is equivalent to the statement $B \vee C$. 
+
+\begin{example}
+Let $A$ be a statement.
+The \emph{double negation} of $A$ is the statement $\overline{\overline{A}}$.
+Then $\overline{\overline{A}}$ is equivalent to $A$.
+In other words, $\overline{\overline{A}} \iff A$.
+Indeed, $A$ is true if and only if $\overline{A}$ is false, which happens if and only if $\overline{\overline{A}}$ is true.
+\end{example}
+
+To prove $A\iff B$, you'll usually have to prove \emph{both} $A\implies B$ and $B\implies A$.
+
+\begin{theorem}
+Let $A$ and $B$ be statements.
+Then $A \implies B$ is equivalent to $\overline{A} \vee B$.
+That is, $(A \implies B) \iff (\overline{A} \vee B)$.
+\end{theorem}
+
+\begin{proof}
+We begin with the forward direction;
+that is, we shall show first that $(A \implies B) \implies (\overline{A} \vee B)$.
+So assume $A\implies B$.
+We aim to show $\overline{A} \vee B$.
+
+There are two options for $A$: it is either true or false.
+Let's consider these options in turn:
+\begin{itemize}
+\item If $A$ is false, then $\overline{A}$ is true, and so certainly $\overline{A} \vee B$ is true as well.
+\item If $A$ is true, then since we are assuming $A\implies B$, we can conclude $B$.
+Thus $\overline{A} \vee B$ is true as well.
+\end{itemize}
+Either way, we see that $\overline{A} \vee B$ holds, so it follows that $A\implies B$ implies $\overline{A} \vee B$. 
+
+Now we prove the reverse direction;
+that is, we shall show that $(\overline{A} \vee B) \implies (A \implies B)$.
+Assume $\overline{A} \vee B$.
+We aim to show that $A\Rightarrow B$ is true.
+To prove this, we assume that $A$ is true, and we aim to conclude $B$.
+But we are \emph{assuming} that either $\overline{A}$ is true or $B$ is true.
+Since $A$ is true, $\overline{A}$ is false.
+So $B$ must be true.
+Thus, we conclude $A\implies B$, and so we have shown that $\overline{A} \vee B$ implies $A \implies B$.
+\end{proof}
+
+\begin{theorem}
+Let $A$ and $B$ be statements.
+Then $A \implies B$ is equivalent to $\overline{B} \implies \overline{A}$.
+That is, $(A \implies B) \iff (\overline{A} \vee B)$.
+\end{theorem}
+
+\begin{proof}
+We begin with the forward direction;
+that is, we shall show first that $(A \implies B) \implies (\overline{B} \implies \overline{A})$.
+So assume $A\implies B$.
+We aim to show that $\overline{B} \implies \overline{A}$.
+So assume $\overline{B}$; that is, that $B$ is false.
+
+The previous theorem shows that $A \implies B$ is equivalent to $\overline{A} \vee B$.
+Since $B$ is false, the only remaining option is that $\overline{A}$ holds.
+We have thus shown that $\overline{B} \implies \overline{A}$.
+
+Now we prove the reverse direction;
+that is, we shall show that $(\overline{B} \implies \overline{A}) \implies (A \implies B)$.
+So assume that $\overline{B} \implies \overline{A}$.
+We aim to show that $A \implies B$.
+So assume $A$.
+We aim to deduce $B$.
+
+By the previous theorem, $\overline{B} \implies \overline{A}$ is equivalent to $\overline{\overline{B}} \vee \overline{A}$, which is in turn equivalent to $B \vee \overline{A}$.
+Since $A$ is true, $\overline{A}$ is false, and so the only option remaining is that $B$ holds.
+Thus we have shown that $A \implies B$.
+\end{proof}
+
+\section{Proof by Contradiction}
+
+Suppose we have a statement $A$ that we suspect is false.
+How can we prove that?
+One approach is to leverage a statement $B$ that we \emph{know} is false, and try to prove that $A \implies B$.
+Remember, $A \implies B$ is the same thing as $\overline{A} \vee B$,
+so if we know that $B$ is false, then the only alternative is that $A$ is false.
+This is called proof by contradiction.
+
+\begin{theorem}
+Let $A$ and $B$ be statements.
+Then $\overline{A \vee B}$ is equivalent to $\overline{A} \wedge \overline{B}$.
+\end{theorem}
+
+\begin{proof}
+We begin with the forward direction;
+that is, we shall show first that if $\overline{A \vee B}$, then $\overline{A} \wedge \overline{B}$.
+So let us assume $\overline{A \vee B}$.
+We aim to prove that both $\overline{A}$ and $\overline{B}$.
+
+In other words, we need to show that $A$ is \emph{false}.
+So we want to prove that $A$ implies something we know to be false.
+In our case, we are assuming that $\overline{A \vee B}$, so we know $A \vee B$ to be false.
+This is great news: if $A$ is true, then certainly $A \vee B$ is true.
+That is, $A \implies (A \vee B)$.
+Since we know that $A \vee B$ is false, that implies that $A$ is false as well.
+Thus $\overline{A}$ holds.
+Similarly, $B \implies (A \vee B)$, but that contradicts our assumption that $\overline{A \vee B}$ is true.
+Thus $\overline{B}$ holds.
+
+Now let's reverse directions;
+that is, let's show that if $\overline{A} \wedge \overline{B}$, then $\overline{A \vee B}$.
+So let us assume that both $\overline{A}$ and $\overline{B}$.
+We aim to prove that $\overline{A \vee B}$.
+
+In other words, we need to show that $A \vee B$ is \emph{false}.
+If $A \vee B$, there are two options:
+\begin{itemize}
+    \item One possibility is that $A$ is true. But this would contradict our assumption that $\overline{A}$ is true.
+    \item So that leaves the other possibility, which is that $B$ is true. But that contradicts our other assumption, that $\overline{B}$ is true.
+\end{itemize}
+Either way, we arrive at a contradiction, and so $A\vee B$ is indeed false.
+\end{proof}
+
+As a quick corollary of this, we deduce that
+\[
+    \overline{A \wedge B} \iff \overline{\overline{\overline{A}} \wedge \overline{\overline{B}}} \iff \overline{\overline{\overline{A} \vee \overline{B}}} \iff (\overline{A} \vee \overline{B}).
+\]
+
+Here's another example of proof by contradiction.
+\begin{example}
+Let's say we want to prove that $\sqrt{3}< 1+\sqrt{2}$.
+
+\begin{proof}
+Let's prove this by contradiction: we assume instead that $\sqrt{3}\geq 1+\sqrt{2}$, and
+we aim to deduce something we know to be false.
+If we square both sides of the inequality we assumed, we obtain
+\[
+3\geq (1+\sqrt{2})^2=1+2\sqrt{2}+2=3+\sqrt{2}>3,
+\]
+which is definitely false.
+We have thus shown by contradiction that $\sqrt{3}< 1+\sqrt{2}$. 
+\end{proof}
+\end{example}
+
+Why didn't we do the same computations but with the original inequality?
+If we assumed $\sqrt{3}< 1+\sqrt{2}$, then squaring both sides gives
+\[
+    3< (1+\sqrt{2})^2=1+2\sqrt{2}+2=3+\sqrt{2}
+\]
+which is certainly true, but this doesn't help us.
+We started by assuming the thing we wanted to prove and then deducing something we know to be true.
+if $A$ is the statement ``$\sqrt{3}< 1+\sqrt{2}$'' and $B$ is the statement ``$3<3+\sqrt{2}$,'' then what we just showed was $A\implies B$, but that can't help us conclude that $A$ is true.
+In our proof of $A$ by contradiction, we assumed first that $A$ is \emph{false}, and then we deduce the statement $C$: ``$3>3$,'' which we know perfectly well is false.
+Since $C$ is false, the implication $\overline{A} \implies C$ ensures that $\overline{A}$ has to be false as well; in other words, $A$ is true.
+
+\section{Quantifiers}
+
+Sometimes a statement tells us about a number of things satisfying a certain property.
+For example, consider the two statements ``$x^2=4$'' and ``there is an integer $x$ so that $x^2=4$.''
+The first statement asserts some condition about a \emph{particular} $x$, whereas the second statement says there is \emph{at least one} $x$ satisfying this condition.
+Words like ``there is,'' ``there exists,'' and ``for some'' are called \emph{existential quantifiers}, and we write $\exists$ for short. So the statement
+\[
+\text{there is an integer $x$ such that $x^2=4$}
+\]
+can be written more succinctly as 
+\[
+(\exists x\in\mathbb{Z})(x^2=4).
+\]
+(Some authors will write this a little more informally, as ``$\exists x \in \mathbb{Z} \text{ st } x^2 = 4$,'' where the ``st'' is shorthand for ``such that.'')
+
+To prove an existentially quantified sentence $(\exists x\in S)(A(x))$, you generally have to \emph{construct} or \emph{find} an $x\in S$ for which $A(x)$ holds.
+\begin{example}
+    To prove the statement $(\exists x\in\mathbb{Z})(x^2=4)$, we have to construct an $x \in \mathbb{Z}
+    $ whose square is $4$.
+    But this is not too hard: $x = 2$ has this property.
+    
+    Note that this sentence didn't say anything about the question of whether $x=2$ is the \emph{only} integer that satisfies this condition.
+    (And of course, it isn't!)
+\end{example}
+
+If $S$ is a set, and $A(x)$ is a statement with variable $x$, then the sentence $(\exists x \in S)(A(x))$ is equivalent to the sentence ``the set $\{x \in S : A(x)\}$ is not the empty set.''
+
+Some statement assert that \emph{every} $x \in S$ satisfies some condition.
+Terms like ``for every'' and ``for all'' are called \emph{universal quantifiers}.
+Symbolically, we just write $\forall$ to mean any one of these.
+So the statement
+\[
+\text{every positive integer $n$ is less than or equal to its square}
+\]
+can be written
+\[
+(\forall n\in\mathbb{N})(n\leq n^2).
+\]
+
+To prove a universally quantified sentence $(\forall x \in S)(A(x))$, you generally have to contemplate an arbitrary element $x$ of $S$ and to prove that $A(x)$ holds for it.
+\begin{example}
+    To prove the statement $(\forall n \in \mathbb{N})(n \leq n^2)$, we start with the word ``let.''
+    Let $n \in \mathbb{N}$.
+    Then $n-1$ is an integer, and $n-1\geq 0$.
+    Thus $n^2-n = n(n-1) \geq 0$.
+    Consequently, $n^2 \geq n$, as desired.
+\end{example}
+
+Most mathematical statements involve many quantifiers at once.
+For example, the statement that ``every positive real number is the square of some negative real number'' has two quantifiers.
+To write it, let $P = \{ x \in \mathbb{R} : x > 0\}$, the set of positive real numbers, and let $N = \{ x \in \mathbb{R} : x < 0\}$, the set of negative real numbers.
+Now our sentence can be written:
+\[
+    (\forall x \in P)(\exists y \in N)(y^2 = x).
+\]
+\begin{example}
+    Let's define the \emph{successor} to a natural number $n$ as the smallest natural number that is larger than $n$.
+    Let's consider the sentence ``every natural number has a successor.''
+
+    Let's unpack this sentence in stages.
+    First, we have
+    \[
+        (\forall n \in \mathbb{N})(\text{there is a natural number $k$ such that $k$ is a successor to $n$}).
+    \]
+    What we have there in parentheses can itself be unpacked;
+    now our sentence is
+    \[
+        (\forall n \in \mathbb{N})(\exists k \in \mathbb{N})(\text{$k$ is a successor to $n$}).
+    \]
+    Going even farther, this becomes
+    \[
+        (\forall n \in \mathbb{N})(\exists k \in \mathbb{N})(\forall m \in \mathbb{N})((m>n) \implies (n<k\leq m)).
+    \]
+    This is about as unpacked as you can get.
+    
+    The advantage of unpacking sentences like this is that you can now prove this claim by following the order of the quantifiers, from left to right:
+    \begin{enumerate}[label=(\alph*)]
+        \item The first quantifier is universal, so the first sentence of our proof has to be: ``Let $n \in \mathbb{N}$.''
+        \item The second quantifier is existential, so we have to \emph{specify} or \emph{construct} the successor $k$. We are free to \emph{use} $n$ in our definition of $k$ (in this case we'll \emph{have} to), and our $k$ will be defined so that the condition that ``for any natural number $m>n$, one has $n<k\leq m$'' holds.
+        \item Finally, we have to prove that condition, which is our third quantifier, which is universal. So that means we have to begin this portion of the proof with the words: ``Let $m \in \mathbb{N}$.''
+    \end{enumerate}
+    
+    Let's follow that recipe to write our proof.
+    \begin{proof}
+        Let $n \in \mathbb{N}$.
+        We aim to construct a successor $k$;
+        so define $k$ as $n+1$.
+        Now we aim to prove that the condition holds.
+        So let $m \in \mathbb{N}$.
+        Assume $m > n$.
+        Thus $m - n$ is an integer and $m-n>0$.
+        That implies that $m-n\geq 1$.
+        Thus $m \geq n+1=k$.
+        Also, $n< n+1=k$, so we deduce that $n< k \leq m$, just as we wanted.
+    \end{proof}
+\end{example}
+
+It's a good idea to reflect on what happened here.
+Often, the hardest part about proving a statement is getting precise control over what the statement actually \emph{is}.
+In particular, it should always be possible for you to convert a mathematical statement into a series of $\forall$'s and $\exists$'s with logical connectives relating simple statements.
+Doing this in the right order, and manipulating the resulting expressions carefully, is at the heart of doing pure mathematics.
+
+\bigskip
+
+{\bf How do we negate a statement with a quantifier?}
+Consider the statement ``every person in this room has blue eyes.''
+What would it take for this statement to be false?
+You need at least one person in the room to \emph{not} have blue eyes, and you're in business!
+That is, the statement ``there is some person in this room who does not have blue eyes'' is the negation of the statement ``every person in this room has blue eyes.''
+Note that the original statement has the universal quantifier ``every'' and its negation has the existential quantifier ``there is some,'' and the last part of the sentence ``has blue eyes'' become ``does not have blue eyes.''
+
+So to negate a statement with a quantifier, we can ``push'' the negation past the quantifier, and as we do, $\forall$ turns into $\exists$, and $\exists$ turns into a $\forall$.
+It's maybe a little easier to see this if we use the $\neg$ notation for negation.
+Thus,
+\[
+    \neg(\forall x \in S)(A(x)) \iff (\exists x \in S)(\neg A(x)).
+\]
+Similarly,
+\[
+    \neg(\exists x \in S)(A(x)) \iff (\forall x \in S)(\neg A(x)).
+\]
+
+\begin{example}
+Consider the statement
+\[
+    (\forall n \in \mathbb{N})(\exists m \in \mathbb{N})(m^2 = n).
+\]
+This statement isn't true, so let's write down its negation.
+\begin{center}
+\[
+\neg(\forall n\in\mathbb{N})(\exists m\in\mathbb{N})(m^2=n)
+\]
+\[\Updownarrow\]
+\[
+(\exists n\in\mathbb{N})(\neg(\exists m\in\mathbb{N})(m^2=n))
+\]
+\[\Updownarrow\]
+\[
+(\exists n\in\mathbb{N})(\forall m\in\mathbb{N})\neg(m^2=n)
+\]
+\[\Updownarrow\]
+\[
+(\exists n\in\mathbb{N})(\forall m\in\mathbb{N})(m^2\neq n).
+\]
+\end{center}
+
+The reason it's important to be able to do this is that if our aim is to \emph{disprove} the sentence $(\forall n \in \mathbb{N})(\exists m \in \mathbb{N})(m^2 = n)$, then this unpacking shows us what we need to do.
+We have to \emph{specify} or \emph{construct} a natural number $n$; let's take $n=2$.
+Then we have to show that for every natural number $m$, it is not the case that $m^2 = n$.
+In this case, we can note that $1^2 = 1 < 2$, and for any natural number $m \geq 2$, we have $m^2 > 2^2 = 4 > 2$.
+\end{example}
+
+\noindent {\bf All this work to negate quantifiers! Do we need to show the above individual steps when negating in our homework?} No! Don't worry, in your homework you won't be expected to give the full justification of why the negation of some statement is what it is. But, especially for complicated statements, it's important to get keep this straight!
+
+
+\section{Exercises}
+
+The relevant exercises in Liebeck's book are at the end of Chapter 1.
+
+
+\begin{exercise}
+Find statements $A$ and $B$ so that $A\Rightarrow B$ is true but
+\begin{enumerate}[label=(\alph*)]
+\item $A$ is false and $B$ is true.
+\item $B$ is false.
+\end{enumerate}
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item
+Recall that $A\Rightarrow B$ is equivalent to $\bar{A}$ or $B$, so we just need to find a statement so that $A$ is false (so $\bar{A}$ is true) and $B$ is true. This could be $A$="2 is odd" and $B$="2 is even".
+\item Recall that $A\Rightarrow B$ is equivalent to $\bar{A}$ or $B$, so if $B$ is false, then $\bar{A}$ must be true (i.e. $A$ is false). We  can  let $A=B$="2 is odd", for example.
+\end{enumerate}
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise}
+Show that $A\Rightarrow B$ is not equivalent to $A\Leftarrow B$, either by finding examples or using their truth tables. 
+\begin{solution}
+One could have A="$n$ is a prime bigger than 2" and B="$n$ is odd". 
+
+Recall that $A\Rightarrow B$ is equivalent to "$\bar{A}$ or $B$", and  $B\Rightarrow A$ is equivalent to "$\bar{B}$ or $A$", which have truth tables
+\begin{center}
+\begin{multicols}{2}
+\begin{tabular}{ c|c|c|c}
+$A$ & $B$ & $\bar{A}$ & $\bar{A}$ or ${B}$  \\ \hline 
+T & T & F  & T \\
+T & F & F  & F \\
+F & T & T  & T \\
+F & F &  T  &  T \\
+\end{tabular}
+
+\begin{tabular}{ c|c|c|c}
+$A$ & $B$ & $\bar{B}$ & $\bar{B}$ or ${A}$  \\ \hline 
+T & T & F  & T \\
+T & F & F  & T \\
+F & T & T  & T \\
+F & F &  T  &  F \\
+\end{tabular}
+
+
+\end{multicols}
+Since the truth tables are not the same, they are not equivalent.
+
+\end{center}
+
+\end{solution}
+\end{exercise}
+
+
+
+
+
+
+\begin{exercise}
+Suppose $A,B,C$ are statements. Negate the statements
+\[
+A\mbox{ and }(B \mbox{ or }C)\]
+and 
+\[
+A\mbox{ or }(B \mbox{ and }C)
+.
+\]
+\begin{solution}
+The negations are, respectively,
+\[
+\bar{A} \mbox{ or } (\bar{B}\mbox{ and }\bar{C})
+\]
+and
+\[
+\bar{A} \mbox{ and } (\bar{B}\mbox{ or }\bar{C}).
+\]
+\end{solution}
+
+\end{exercise}
+
+
+\begin{exercise}
+Suppose $P,Q,R$ are statements and $P\Rightarrow Q$, $Q\Rightarrow R$ and $R\Rightarrow P$. Show that $P\Leftrightarrow R$.
+
+\begin{solution}
+Assume $P\Rightarrow Q$, $Q\Rightarrow R$ and $R\Rightarrow P$, we will show that $P\Leftrightarrow R$. To prove this, we need to show $P\Rightarrow R$ and $R\Rightarrow P$. We area already assuming $R\Rightarrow P$, so we just need to prove $P\Rightarrow R$. Hence, assume $P$. Then since $P\Rightarrow Q$, we know $Q$ is also true, and since $Q\Rightarrow R$, we also know $R$ is true. Thus $P\Rightarrow R$.
+\end{solution}
+\end{exercise}
+
+
+
+
+
+\begin{exercise}
+Negate the following statements 
+\begin{enumerate}[label=(\alph*)]
+\item $(\forall x \;\; P)\Rightarrow ((\exists y \mbox{ s.t. } Q) \mbox
+{ and }R)$.
+\item $\forall x\;\; \exists y \mbox{ s.t. } P\Rightarrow Q$
+\item $\exists x  \mbox{ s.t. } ((\forall y \;\; A)\Rightarrow (\exists z  \mbox{ s.t. } B))$.
+\end{enumerate}
+
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item $(\forall x \;\; P) \mbox{ and }((\forall y \;\; \bar{Q}) \mbox
+{ or }\bar{R})$.
+\item $\exists x \mbox{ s.t. }  \;\; \forall y \; (P\mbox{ and } \bar{Q})$.
+\item $\forall x ( (\forall y \;\; A) \mbox{ and } (\forall z   \bar{B}))$.
+\end{enumerate}
+\end{solution}
+\end{exercise}
+
+
+
+\chapterimage{Figures/blank.png} 
+
+
+\chapter{The Real Line}
+
+\section{The Reals}
+
+In this course, our aim is to derive as many useful tools and theorems as we can from the fewest assumptions. We could spend a whole year (or years!) on the foundations of mathematics, and try to make sense of, for example, what the number 2 is, but instead we will take for granted the existence the {\it real} numbers $\mathbb{R}$ that you are all familiar with from school. We assume that, if an expression contains a term $x$ and $x=y$, we can replace $x$ with $y$ in that expression.  For example, $3+(5-1)=3+4$ since $5-1=4$. 
+
+We will also assume we have the familiar addition operation ``$+$'' and multiplication operation ``$\cdot$''  that combines two numbers $a$ and $b$ to make another real number $a+b$ and $a\cdot b=ab$ respectively, and which make $\mathbb{R}$ into what we call a ``field'': 
+
+\begin{definition}
+A {\it field} is a set $F$ along with operations $+$ and $\cdot$ so that the following hold:\\
+
+\begin{description}
+\item[{\bf Rules of Addition $+$:}] For $a,b,c\in F$,
+\begin{itemize}%[label=(\alph*)]
+\item[(A0)] $a+b\in F$
+\item[(A1)] Commutativity: $a+b=b+a$.
+\item[(A2)] Associativity: $a+(b+c)=(a+b)+c$.
+\item[(A3)] There is an element $0\in F$ so that $0+a=a$ for all $a\in F$.
+\item[(A4)] There is an element we denote $-a\in F $ so that $a+(-a)=0$. We write $b+(-a)=b-a$ for short.
+\end{itemize}
+\end{description}
+
+
+
+\begin{description}
+\item[{\bf Rules of Multiplication $\cdot$:}] For $a,b,c\in F$,
+\begin{itemize}%[label=(\alph*)]
+\item[(M0)] $a\cdot b\in F$
+\item[(M1)] Commutativity: $a\cdot b=b\cdot a$
+\item[(M2)] Associativity: $a\cdot (b\cdot c)=(a\cdot b)\cdot c$
+\item[(M3)] There is an element $1\in F$ so that $1\cdot a=a$ 
+\item[(M4)] If $a\neq 0$, there is a number we denote $\frac{1}{a}$ so that $a\cdot\frac{1}{a}=1$. We write $\frac{1}{a}\cdot b=\frac{b}{a}$ for short.
+\item[(M5)] Distribution: $a\cdot (b+c)=a\cdot b+a\cdot c$.
+\end{itemize}
+\end{description}
+\end{definition}
+
+We will frequently write $ab$ for $a\cdot b$ when there is no chance of ambiguity, so for example, "$a$ times $b$" can be write $ab$ or $a\cdot b$, but "$2$ times $3$" must be written $2\cdot 3$ to avoid confusion with the number $23$.
+
+We will take as an {\it axiom} that the real numbers $\mathbb{R}$ form a field with the usual addition and multiplication operations, that is, we assume they hold without proof.  There are many other fields apart from the reals, and we will see a few more in this class (you will learn about more interesting ones in future algebra classes).
+
+Without these rules it would be hard to solve any equations. For example, if we want to solve $3x+2=2x+5$, what rules do we need? Below we prove some propositions using only the axioms above that list the "moves" we would usually make in solving such an equation.
+
+\begin{proposition}
+\label{p:field-consequences}
+The properties (A0),...,(A4) above imply that, for $x,y,z\in \mathbb{R}$,
+\begin{enumerate}[label=(\alph*)]
+\item $x+y=x+z$ if and only if $y=z$
+\item If $x+y=x$, then $y=0$
+\item If $x+y=0$, then $x=-y$
+\item $-(-x)=x$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item If $y=z$, then we can just substitute $y$ with $z$ in $x+y$ to get that this equals $x+z$. Conversely, if $x+y=x+z$, then
+\begin{align*}
+y
+& \stackrel{(A3)}{=}y+0\stackrel{(A4)}{=}y+(x-x)\stackrel{(A2)}{=}(y+x)-x\stackrel{(A1)}{=}(x+y)-x
+=(x+z)-x\stackrel{(A1)}{=}(z+x)-x\\
+& 
+\stackrel{(A2)}{=}z+(x-x)
+\stackrel{(A4)}{=}z+0
+\stackrel{(A3)}{=}z.
+\end{align*}
+
+\item If $x+y=x$, then by (A3), $x+y=x=x+0$, so (a) (with $z=0$) implies $y=0$.
+\item If $x+y=0$, then
+\[
+x+y=0 \stackrel{(A4)}{=}y+(-y)
+\]
+and so (a) (with $z=-y$) implies $x=-y$.
+
+\item By definition, 
+\[
+-x+-(-x)\stackrel{(A4)}{=}
+0\stackrel{(A2)}{=}x-x
+\stackrel{(A1)}{=}-x+x
+\]
+so (a) implies $-(-x)=x$. 
+\end{enumerate}
+\end{proof}
+
+Try this proposition on your own (the proof is very similar to the above):
+
+\begin{proposition}
+The properties (M0),...,(M5) imply that, for $x,y,z\in \mathbb{R}$, if $x\neq 0$,
+\begin{enumerate}[label=(\alph*)]
+\item $xy=xz$ if and only if $y=z$
+\item If $xy=x$, then $y=1$
+\item If $xy=1$, then $y=\frac{1}{x}$
+\item $1/(1/x)=x$.
+\end{enumerate}
+\end{proposition}
+
+
+We mention a few more useful facts about the reals. Again, they look obvious, but it takes some work to show that they are derived from the property that $\mathbb{R}$ being a field. We leave their proofs as an exercise, but remember to use the above axioms and propositions that we have proved so far:
+
+\begin{proposition}
+\label{p:0x=0}
+For $x,y\in \mathbb{R}$,
+\begin{enumerate}[label=(\alph*)]
+\item $0\cdot x=0$.
+\item If $x\neq 0\neq y$, then $xy\neq 0$.
+\item $(-x)y=-(xy)=x(-y)$.
+\item $(-x)(-y)=xy$.
+\end{enumerate}\end{proposition}
+
+%\begin{proof}
+%\begin{enumerate}[label=(\alph*)]
+%\item Note that 
+%\[
+%0\cdot x \stackrel{(A3)}{=}(0+0)x
+%\stackrel{(M5)}{=}0\cdot x+0\cdot x
+%\]
+%so Proposition \ref{p:field-consequences}(c) implies $0\cdot x=0$. 
+%
+%
+%\end{proof}
+
+\section{The integers and the Archimedean Property}
+
+An important subset of the reals is the {\it integers }
+\[
+\mathbb{Z}=\{...-2,-1,0,1,2,...\}
+\]
+We will also let $\mathbb{N}=\{1,2,3...\}$ denote the {\it positive integers} or {\it natural numbers}\footnote{Some courses assume $\mathbb{N}$ also contains $0$. It's best to clarify this with the instructor if you aren't sure.}.
+
+Notice that the set $\mathbb{N}$ has the properties that $1 \in \mathbb{N}$, and that if $x \in \mathbb{N}$, then also $x+1 \in \mathbb{N}$. {\em Moreover, $\mathbb{N}$ is the smallest subset of the reals which has these two properties.} It is this observation which makes mathematical induction such a powerful tool for proving statements about the natural numbers -- the natural numbers and mathematical induction are inextricably bound up together. We shall examine induction more carefully below in Section 4.
+
+\medskip
+An important result about the reals and integers is the following:
+
+\begin{description}
+\item[Archimedean property:] For every $x, y \in \mathbb{R}$ with $x,y>0$, there is an integer $n\in \mathbb{N}$ so that $ny>x$. \\
+\end{description}
+
+This might seem like it should be obvious, but how would you prove it? Consider just finding an integer $n>x$. If $x$ was an integer, we could simply let $n=x+1$, but if $x$ is not an integer what would we do? You might think "round up to the nearest integer," but that this number exists {\it is} what we are trying to show! {\it Why not look at the decimal expansion $x=a_{0}.a_{1}...$ and let $n=a_0+1$?} Firstly, we haven't proven that decimal expansions even exist for any real number yet (we will in a few weeks), and second, the proof that each number has a decimal expansion {\it requires} the Archimedean property. 
+
+In a couple of weeks' time, we will prove the Archimedean property, as a consequence of the completeness axiom for the real numbers, which we shall study in Section 5.\footnote{It is perhaps disconcerting that it's {\em not} possible to prove the Archimedean property only using the rules (A0-A4) and (M0-M5), together with (R1-R5) which are introduced in Section 3. Indeed, it can be established that, in the terminology of Section 3, there are ordered fields which do not satisfy the Archimedean property. It is precisely because of pitfalls such as this that we are adopting a careful axiomatic perspective for the real numbers.}
+
+
+
+\section{The rationals and irrationals}
+
+The next important subset of the reals is the {\it rationals}:
+\[
+\mathbb{Q} = \left\{\frac{a}{b} \;|\; a,b\in \mathbb{Z},\; b\neq 0\right\}
+\]
+
+While we can multiply and add integers together, $\mathbb{Z}$ not a field since (M4) fails: given an integer $x$ we can't find another {\it integer} $y$ with $xy=1$. The rationals is the smallest subset of $\mathbb{R}$ that contains $\mathbb{Z}$ and {\it is} a field. Indeed, if we add two rationals $\frac{a}{b}$ and $\frac{c}{d}$  we get
+\[
+\frac{a}{b}+\frac{c}{d} = \frac{ad}{bd}+\frac{cb}{db} = \frac{ad+cb}{bd}\in\mathbb{Q}
+\]
+so (A0) holds, and similarly (M0) holds since
+\[
+\frac{a}{b}\cdot \frac{c}{d}=\frac{ac}{bd}\in\mathbb{Q}.
+\]
+The other axioms can easily be checked as well.\\
+
+The rationals are {\it dense} in the reals in the following sense: 
+
+\begin{theorem}
+Given any two real numbers $a<b$, there is $r\in\mathbb{Q}$ with $a<r<b$.
+\end{theorem}
+
+{\it Idea for proof:} Imagine placing dots along the real line equally spaced apart by a distance $d$ with $d<b-a$. Notice that the interval between $a$ and $b$ is of length bigger than $d$, so one of the dots in this progression must land in this interval (otherwise, it would have to make a jump a distance at least $b-a$ to avoid the interval). Now let's give the real proof:
+
+\begin{proof}
+Since $b>a$, $b-a>0$, and by the Archimedean property, there is $n\in  \mathbb{Z}$ with $n>\frac{1}{b-a}$, and so $\frac{1}{n}<b-a$. Let's look at the numbers $\{j/n:j\in\mathbb{Z}\}$: they are equally spaced along the real line by a distance $\frac{1}{n}$. Now we need to find one of them between $a$ and $b$. We pick the last one before $b$, that is, we let $j$ be the largest integer so that $\frac{j}{n}<b$. We claim that $\frac{j}{n}>a$ (which will then finish the theorem, as now we have a rational $\frac{j}{n}$ between $a$ and $b)$. We prove by contradiction: If $\frac{j}{n}\leq a$, then
+\[
+\frac{j+1}{n}=\frac{j}{n}+\frac{1}{n}\leq a+\frac{1}{n}<a+(b-a)=b,
+\]
+but then $j$ wasn't the largest integer for which $\frac{j}{n}<b$, since $\frac{j+1}{n}$ is, too, and so we get a contradiction. Thus, $\frac{j}{n}>a$. 
+\end{proof}
+
+In other words, no matter how small an interval $(a,b)$ that we look at\footnote{The notation $(a,b)$ here means $\{ x \in \mathbb{R} :  a < x < b\}$.}, we can always find a rational number inside. However, not all real numbers are rational numbers. A real number is said to be {\it irrational} if it is not a rational number. In other words, the set of irrational numbers is the set $\mathbb{R} \setminus \mathbb{Q}$.
+
+The first known irrational number is $\sqrt{2}$, that is, the positive real number whose square is $2$. We will actually prove that $\sqrt{2}$ exists in a couple weeks. For now, let us assume this fact and prove that it is irrational:
+\begin{theorem}
+The number $\sqrt{2}$ is irrational.
+\end{theorem}
+
+\begin{proof}
+We prove by contradiction. Assume $\sqrt{2}$ is rational, so there are integers $p$ and $q\neq 0$ so that $\sqrt{2}=\frac{p}{q}$. By reducing the fractions, we can assume $p$ and $q$ share no common factor. Squaring both sides gives
+\[
+2=\frac{p^{2}}{q^2,}
+\]
+whence $2q^2=p^2$.
+This means that $p^2$ is even, so $p$ must be even (otherwise, $p$ is odd, and we have already proved that the square of an odd number is odd). Thus, $p=2r$ for some integer $r$, so the above equation gives
+\[
+2q^2=p^2=(2r)^2=4r^2,
+\]
+whence $ q^2=2r^2$.
+Again, this means $q$ is also even, but now $p$ and $q$ are both divisible by $2$, contradicting our assumption that they shared no common factor. Thus, $\sqrt{2}$ must be irrational.
+\end{proof}
+
+This is just one irrational number, but the next proposition says that we can construct infinitely many irrational numbers just from one:
+
+\begin{proposition}
+Let $a$ be rational and $b$ be irrational. 
+\begin{enumerate}[label=(\alph*)]
+\item $a+b$ is irrational.
+\item If $a\neq 0$, then $ab$ is irrational.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+We just prove (a) as (b) is similar. Suppose $a+b$ is rational. Then
+\[
+b=0+b=(-a+a)+b=-a+(a+b)
+\]
+that is, $b$ is a sum of two rational numbers: $-a$ and $a+b$, so it is rational, and we get a contradiction since $b$ is irrational. Thus $a+b$ is irrational.
+\end{proof}
+
+
+There are of course many other irrational numbers out there like $e$ and $\pi$. Interestingly, there are some numbers that seem like they should be irrational but to this date we still don't know. For example, it is unknown whether the following numbers are irrational:
+
+\[
+\pi\pm e,\;\;  \pi e,\;\;  \pi/e,\;\; \pi^e,\;\; \pi^{\sqrt{2}},\;\; \pi^\pi,\;\; e^{\pi^2}, \;\; 2^{e},\;\; e^{e}.
+\]
+
+We will discuss how to construct many irrational numbers not involving $e$, $\pi$, in the coming weeks when we discuss decimals.
+
+
+\section{Roots}
+
+In this class we will be working a lot with roots of numbers like $\sqrt{2}$, but like $\sqrt{2}$, that they exist at all takes justification. This is given in the following proposition whose proof we postpone until Week 3. Recall that $y^n=y\cdot y\cdots y$ with $n$ $y$'s in the product.
+
+\begin{proposition}
+\label{p:roots-exist}
+Given $x>0$ and $n\in\mathbb{N}$, there is a unique $y>0$ so that $y^n=x$, and we write this number $y$ as $y=x^{\frac{1}{n}}$. 
+\end{proposition}
+
+
+ We can define more generally any rational root: if $\frac{m}{n}>0$ is rational and $x>0$, we define
+\begin{equation}
+\label{e:x^m/n}
+x^{\frac{m}{n}} = \left(x^{\frac{1}{n}}\right)^{m}=\underbrace{x^{\frac{1}{n}}\cdots x^{\frac{1}{n}}}_{m\mbox{ times}}.
+\end{equation}
+
+
+\begin{proposition}
+Let $x>0$ and $p,q\in \mathbb{Q}$. Then
+\begin{enumerate}[label=(\alph*)]
+\item $x^{p}x^q=x^{p+q}$
+\item $(x^{p})^{q}=x^{pq}$
+\item $(xy)^{p}=x^p y^p$.
+\end{enumerate}
+\end{proposition}
+
+
+
+
+\begin{protip}
+{\bf Try special cases:} When given something to prove as above, it might not be clear how to get started, but you don't have to prove everything on the first try! Try first proving the statement in some easier cases, and then see if you can adjust your proof or even use your easy cases to prove the general case.
+\end{protip}
+
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item First notice that this holds when $p$ and $q$ are integers, since then
+\[
+x^{p+q}=\underbrace{x\cdot x\cdots x}_{\mbox{$p+q$ times}}
+=\underbrace{x\cdot x\cdots x}_{\mbox{$p$ times}}\cdot \underbrace{x\cdot x\cdots x}_{\mbox{$q$ times}} = x^{p}x^{q}.
+\]
+Now suppose $p=\frac{a}{b}$ and $q=\frac{c}{d}$ are two positive rationals and $x>0$. Then
+\begin{align*}
+x^{p+q}
+& =x^{\frac{a}{b}+\frac{c}{d}}
+=x^{\frac{ad+bc}{bd}}
+\stackrel{\eqref{e:x^m/n}}{=} \left(x^{\frac{1}{bd}}\right)^{ad+bc}
+=\left(x^{\frac{1}{bd}}\right)^{ad}\left(x^{\frac{1}{bd}}\right)^{bc}
+\stackrel{\eqref{e:x^m/n}}{=}x^{\frac{ad}{bd}}x^{\frac{bc}{bd}}=x^{\frac{a}{b}}x^{\frac{c}{d}}=x^{p}x^{q}
+\end{align*}
+where in the fourth equation we used the integer case we proved earlier.
+\item
+
+Let's first prove the slightly simpler case that
+\begin{equation}
+\label{e:x^abd}
+\left(x^{\frac{a}{b}}\right)^{\frac{1}{d}}=x^{\frac{a}{b}\cdot\frac{1}{d}}.
+\end{equation}
+By Proposition \ref{p:roots-exist}, for the right side to equal the $d$th root on the left, we need to show $(x^{\frac{a}{b}\frac{1}{d}})^{d} = x^{\frac{a}{b}}$:
+\[
+\left(x^{\frac{a}{b}\frac{1}{d}}\right)^{d} =\left(x^{\frac{a}{bd}}\right)^{d}
+\stackrel{\eqref{e:x^m/n}}{=}
+\left(\left(x^{\frac{1}{bd}}\right)^{a}\right)^{d}
+=\left(x^{\frac{1}{bd}}\right)^{ad}
+\stackrel{\eqref{e:x^m/n}}{=}x^{\frac{ad}{bd}}=x^{\frac{a}{b}},
+\]
+and so \eqref{e:x^abd} follows. 
+
+Now we prove the full case: if $p=\frac{a}{b}$ and $q=\frac{c}{d}$, then
+\[
+(x^{p})^{q} = \left(x^{\frac{a}{b}}\right)^{\frac{c}{d}}
+\stackrel{\eqref{e:x^m/n}}{=}\left( \left(x^{\frac{a}{b}}\right)^{\frac{1}{d}}\right)^{c}
+\stackrel{\eqref{e:x^abd}}{=}\left(x^{\frac{a}{bd}}\right)^{c}
+\stackrel{\eqref{e:x^m/n}}{=} x^{\frac{ac}{bd}}=x^{pq}.
+\]
+This proves (b). 
+
+\item Let's first consider trying to show $(xy)^{\frac{1}{b}}=x^{\frac{1}{b}}y^{\frac{1}{b}}$. By Proposition \ref{p:roots-exist}, we just need to show that $(x^{\frac{1}{b}}y^{\frac{1}{b}})^{b}=xy$. If we take $x^{\frac{1}{b}}y^{\frac{1}{b}}$ times itself $b$ times, and rearrange the terms so that all the $x^{\frac{1}{b}}$'s are on the left, we get
+\[
+(x^{\frac{1}{b}}y^{\frac{1}{b}})^{b}
+=x^{\frac{1}{b}}y^{\frac{1}{b}}  x^{\frac{1}{b}}y^{\frac{1}{b}}  \cdots x^{\frac{1}{b}}y^{\frac{1}{b}}   
+=\underbrace{x^{\frac{1}{b}}\cdots x^{\frac{1}{b}}}_{b\mbox{ times}}\underbrace{y^{\frac{1}{b}}\cdots y^{\frac{1}{b}}}_{b\mbox{ times}}
+=(x^{\frac{1}{b}})^{b}(y^{\frac{1}{b}})^{b}=x\cdot y.
+\]
+Now let's try the general case: If $p=\frac{a}{b}$, then by the case we just proved:
+\[
+(xy)^{\frac{a}{b}}
+\stackrel{\eqref{e:x^m/n}}{=} \left((xy)^{\frac{1}{b}}\right)^{a}
+=\left(x^{\frac{1}{b}}y^{\frac{1}{b}}\right)^{a}\]
+Just as before, if we take $x^{\frac{1}{b}}y^{\frac{1}{b}}$ times itself $a$ times and then move all the $x^{\frac{1}{b}}$'s to the left, we get that the above is
+\[
+=(x^{\frac{1}{b}})^{a}(y^{\frac{1}{b}})^{a}
+\stackrel{\eqref{e:x^m/n}}{=} x^{\frac{a}{b}}y^{\frac{a}{b}}=x^{p}y^{p}.
+\]
+
+%Let's first play around with a simple case: let's first try and show that 
+%\begin{equation}
+%\left(x^{\frac{1}{b}}\right)^{\frac{1}{d}}=x^{\frac{1}{bd}}.
+%\label{e:x^1/mn}
+%\end{equation}
+%Proposition \ref{p:roots-exist} tells us that, if we want to show some number $y$ is equal to $x^{\frac{1}{bd}}$, we need to show $y^{bd}=x$, so let's take the $mn$th power of the term on the left above (and recalling that for any $y>0$ and $k\in\mathbb{N}$, $(y^{\frac{1}{k}})^{k}=y$)
+%\[
+%\left(\left(x^{\frac{1}{b}}\right)^{\frac{1}{d}}\right)^{bd}
+%=\left(\left(\left(x^{\frac{1}{b}}\right)^{\frac{1}{d}}\right)^{d}\right)^{b}
+%=\left(x^{\frac{1}{b}}\right)^{b}=x.
+%\]
+
+\end{enumerate}
+\end{proof}
+
+
+
+\section{Exercises}
+
+The relevant exercises in Liebeck's book are at the end of Chapter 2.
+
+
+\begin{exercise}
+Prove $(-1)^2=1$.
+\begin{solution}
+By Proposition \ref{p:0x=0} and [M3]:
+\[
+(-1)^2=(-1)\cdot (-1) = 1\cdot 1=1.
+\]
+\end{solution}
+\end{exercise}
+
+
+
+\begin{exercise}
+Let $F=\{0,1\}$, and for $a,b\in F$, define $a\cdot b$ and $a+b$ to equal what they would under normal multiplication except that now we define $1+1=0$. Is this a field?
+\begin{solution}
+Yes. One can prove all the field properties on a case by case basis: for example, one can show $a+(b+c)=(a+b)+c$ by try all possible values for $a,b$ and $c$.
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise}
+Prove $\sqrt{6}$ is irrational.
+\begin{solution}
+Suppose $\sqrt{6}=\frac{p}{q}$ where $p,q>0$ are integers with no common factor. Then
+\[
+6=\frac{p^2}{q^2} \;\; \Longrightarrow \;\;  6q^2=p^2.
+\]
+Note that $p$ must be even, so $p=2k$ for some integer $k$, thus
+\[
+6q^2=p^2=4k^2  \;\; \Longrightarrow \;\;   3q^2=2k^2.
+\]
+Now $q$ must be divisible by $2$. Otherwise, $q=2j+1$ for some $j$, and so 
+\[
+2k^2=3q^2=3(2j+1)^2=12j^2+12j+3
+\]
+which is a contradiction since now we have an even number equal to an odd number. Hence, $q=2j$ for some integer $j$. But now $p$ and $q$ are both even, which contradicts our assumption that they had no common factor. 
+
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise}
+Is $\sqrt{1+\sqrt{2}}$ rational? Can you write a more general statement based on your proof?
+\begin{solution}
+No. Suppose it were, then so is$\sqrt{1+\sqrt{2}}^2=1+\sqrt{2}$, and hence so is $\sqrt{2}=1+\sqrt{2}-1$. 
+
+A more general statement is that if $x$ is irrational, then so is $\sqrt{x}$, since otherwise $\sqrt{x}^2=x$ is rational, a contradiction.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+Suppose $a+b\sqrt{2}=c+d\sqrt{2}$ where $a,b,c,d\in\mathbb{Q}$. Prove that $a=c$ and $b=d$. 
+\begin{solution}
+Homework question.
+%Suppose for the sake of a contradiction that $b\neq d$. If $a+b\sqrt{2}=c+d\sqrt{2}$, then rearranging, we get $a-c=(d-b)\sqrt{2}$, and dividing by $d-b$, we have
+%\[
+%\sqrt{2}=\frac{a-c}{d-b}\in\mathbb{Q},
+%\]
+%which is a contradiction since $\sqrt{2}$ is irrational. Thus, we must have that $b=d$. Then setting $b=d$ in $a+b\sqrt{2}=c+d\sqrt{2}$ implies $a=c$ as well.
+\end{solution}
+\end{exercise}
+
+
+
+\begin{exercise}
+Let 
+\[
+\mathbb{Q}[\sqrt{2}] = \{a+b\sqrt{2}\; |\; a,b\in\mathbb{Q}\}.
+\]
+Show that $\mathbb{Q}[\sqrt{2}] $ is a field using the usual rules of addition and multiplication. 
+\end{exercise}
+
+\begin{solution}
+The only difficult property to verify is (M4), so let's focus on this. Let $a+b\sqrt{2}\in \mathbb{Q}[\sqrt{2}]$ where $a,b\in\mathbb{Q}$. Note that 
+\[
+(a+b\sqrt{2})(a-b\sqrt{2})=a^2-2b^2. 
+\]
+Note that since $2$ is irrational, we cannot have $a^2-2b^2=0$. Thus,
+\[
+(a+b\sqrt{2}) \frac{a-b\sqrt{2}}{a^2-2b^2}=1
+\]
+and so we have 
+\[
+(a+b\sqrt{2})^{-1}
+=\frac{a-b\sqrt{2}}{a^2-2b^2}
+=\frac{a}{a^2-2b^2}-\frac{b}{a^2-2b^2}\sqrt{2} \in\mathbb{Q}[\sqrt{2}].\]
+Thus, we have verified (M4).
+\end{solution}
+
+
+\begin{exercise}
+Are there rational numbers $a$ and $b$ so that $a\sqrt{2}+b\sqrt{3}=\sqrt{6}$?
+\begin{solution}
+No. Suppose there were. They would both have to be non-zero. Then
+\[
+6=(a\sqrt{2}+b\sqrt{3})^2=2a^2+3b^2+12ab\sqrt{6}
+\]
+and so $\sqrt{6} = (6-(2a^2+3b^2))/(12ab)$, which is a rational number, but by an earlier exercise, $\sqrt{6}$ is not rational, which is a contradiction.
+\end{solution}
+\end{exercise}
+
+
+
+
+
+
+
+
+
+
+\end{document}

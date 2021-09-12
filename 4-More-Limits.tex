@@ -1,0 +1,1894 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.0 (9/2/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass[11pt,fleqn,dvipsnames]{book} % Default font size and left-justified equations
+\documentclass[11pt,dvipsnames]{book}
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+
+
+%%agregué
+
+
+
+
+%%%My stuff
+
+
+%\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+%\usepackage{due-dates}
+\usepackage[small]{eulervm}
+\usepackage{amsmath,amssymb,amstext,amsthm,amscd,mathrsfs,eucal,bm,xcolor}
+\usepackage{multicol}
+\usepackage{array,color,graphicx}
+%\usepackage{enumerate}
+
+
+\usepackage{epigraph}
+%\usepackage[colorlinks,citecolor=red,linkcolor=blue,pagebackref,hypertexnames=false]{hyperref}
+
+%\theoremstyle{remark} 
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{\bf Example}
+%\newtheorem*{solution}{Solution:}
+
+
+\usepackage{centernot}
+
+
+\usepackage{filecontents}
+
+\usepackage{tcolorbox} 
+
+
+
+
+
+% Ignore this part, this is the former way of hiding and unhiding solutions, new version is after this
+%
+%\begin{filecontents*}{MyPackage.sty}
+%\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{MyPackage}
+%\RequirePackage{environ}
+%\newif\if@hidden% \@hiddenfalse
+%\DeclareOption{hide}{\global\@hiddentrue}
+%\DeclareOption{unhide}{\global\@hiddenfalse}
+%\ProcessOptions\relax
+%\NewEnviron{solution}
+%  {\if@hidden\else \begin{tcolorbox}{\bf Solution: }\BODY \end{tcolorbox}\fi}
+%\end{filecontents*}
+%
+%
+%
+%\usepackage[hide]{MyPackage} % hides all solutions
+%\usepackage[unhide]{MyPackage} %shows all solutions
+
+
+
+
+
+%\usepackage[unhide,all]{hide-soln} %show all solutions
+\usepackage[unhide,odd]{hide-soln} %hide even number solutions
+%\usepackage[hide]{hide-soln} %hide all solutions
+
+
+
+
+
+
+\def\putgrid{\put(0,0){0}
+\put(0,25){25}
+\put(0,50){50}
+\put(0,75){75}
+\put(0,100){100}
+\put(0,125){125}
+\put(0,150){150}
+\put(0,175){175}
+\put(0,200){200}
+\put(25,0){25}
+\put(50,0){50}
+\put(75,0){75}
+\put(100,0){100}
+\put(125,0){125}
+\put(150,0){150}
+\put(175,0){175}
+\put(200,0){200}
+\put(225,0){225}
+\put(250,0){250}
+\put(275,0){275}
+\put(300,0){300}
+\put(325,0){325}
+\put(350,0){350}
+\put(375,0){375}
+\put(400,0){400}
+{\color{gray}\multiput(0,0)(25,0){16}{\line(0,1){200}}}
+{\color{gray}\multiput(0,0)(0,25){8}{\line(1,0){400}}}
+}
+
+
+
+%\usepackage{tikz}
+
+%\pagestyle{headandfoot}
+%\firstpageheader{\textbf{Proofs \& Problem Solving}}{\textbf{Homework 1}}{\textbf{\PSYear}}
+%\runningheader{}{}{}
+%\firstpagefooter{}{}{}
+%\runningfooter{}{}{}
+
+%\marksnotpoints
+%\pointsinrightmargin
+%\pointsdroppedatright
+%\bracketedpoints
+%\marginpointname{ \points}
+%\totalformat{[\totalpoints~\points]}
+
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\N{{\mathbb{N}}}
+\def\Q{{\mathbb{Q}}}
+\def\C{{\mathbb{C}}}
+\def\hcf{{\rm hcf}}
+
+
+%%end of my stuff
+
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+
+
+
+\usepackage{graphicx} % paquete que permite introducir imágenes
+
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%%hasta aquí
+
+
+\begin{document}
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=12cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{Figures/blank.png}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Proofs and Problem Solving \\[15pt] % Book title
+{\huge Week 4: More Limits}\\[20pt] % Subtitle
+{\Large Notes  based on Martin Liebeck's \\ \textit{A Concise Introduction to Pure Mathematics}}}}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+%\newpage
+%~\vfill
+%\thispagestyle{empty}
+
+%\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+
+%\noindent \textsc{Published by Publisher}\\ % Publisher
+
+%\noindent \textsc{book-website.com}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+%\noindent \textit{First printing, March 2013} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{Figures/blank.png} % Table of contents heading image
+
+%\chapterimage{chapter_head_1.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+ \tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+
+
+\part{Week 4: More Analysis}
+
+
+\chapterimage{Figures/blank.png} 
+
+
+\setcounter{chapter}{6}
+
+
+\chapter{The Monotone Convergence Theorem}
+
+\setcounter{page}{1}
+
+
+
+Last week we studied how to formally show that a sequence $(x_{n})$ converges to a specific limit $L$, and we developed various rules for manipulating limits. What if we are given a sequence $(x_{n})$ and want to show it converges but we {\it don't} know what the limit is? 
+
+This week we will talk about an important convergence theorem which gives us a sufficient condition for a sequence to  converge. This is the monotone convergence theorem, which says that any increasing sequence which is bounded above must converge to something. %The next theorem is the Bolzano–Weierstrass Theorem, which doesn't say that a sequence converges, but says that whenever we have a bounded sequence, we can throw out some of the terms so that it does converge. 
+We'll then give some examples illustrating how this result can be useful. Then we will see how this result can shed light on something we are already familiar with -- decimal expansions -- and lastly we'll introduce the notion of infinite series.
+
+%Before we begin, let's recall two facts which can be proved using induction, the binomial theorem and the formula for the sum of a geometric series. The binomial theorem states that for $a, b \in \mathbb{R}$ and $n \in \mathbb{N}$ we have
+%\[ \left( a + b\right)^n = \sum_{j=0}^n {n \choose j} a^{n-j} b^{j} = a^n + {n \choose 1}a^{n-1}b + \cdots + {n \choose j} a^{n-j}b^j + \cdots + {n \choose n-1 } a b^{n-1} + b^n,\] where the binomial coefficient is defined by 
+%\[ {n \choose j} = \frac{n!}{j! (n-j)!}.\]
+%The formula for the sum of a geometric series is
+%\[ a + ar + ar^2 + \cdots + ar^{n-1} = \frac{a(1-r^{n})}{1-r}\]
+%whenever $r \neq 1$. A consequence of this latter result is the useful formula
+%\[ a^n - b^n = (a-b)(a^{n-1} + a^{n-2}b + \cdots + ab^{n-2} + b^{n-1})\]
+%valid for $ a, b \in \mathbb{R}$ and $n \in \mathbb{N}$. These will all be helpful to us in our study of various examples.
+
+\section{The Monotone Convergence Theorem}
+
+\def\LUB{{\rm LUB}}
+\def\ve{\epsilon}
+\def\limn{\lim_{n\rightarrow\infty}}
+
+
+\begin{definition}
+A sequence $(a_{n})_{n=1}^{\infty}$ is {\it increasing} if $a_{n+1}\geq a_{n}$ for all $n$. It is {\it decreasing} if $a_{n+1}\leq a_{n}$ for all $n$. We say $(a_{n})$ is {\it monotonic} if it is either increasing or decreasing.
+\end{definition}
+
+\noindent
+{\bf Exercise:} Give an example of an increasing sequence. Give an example of a sequence which is not monotonic.
+Give an example of a sequence which is both increasing and decreasing.
+
+
+\medskip
+Monotonic sequences are especially important for us because we have:
+
+\begin{theorem}[Monotone Convergence Theorem (MCT)]
+Let $(a_{n})$ be an increasing sequence of real numbers that is bounded above (i.e. there is $M$ so that $a_{n}\leq M$ for all $n$). Then $(a_{n})$ converges to some limit. If $(a_{n})$ is decreasing sequence and is bounded below, then $(a_{n})$ converges to some limit.
+\end{theorem}
+
+
+\begin{proof}
+We begin with the first part. Assume that $(a_n)$ is increasing and bounded above. Notice that we are not told what its limit is going to be. This has to come out of our argument somehow, and the first job is to find a candidate for it. 
+
+Since $(a_{n})$ is bounded above, this means that the set\footnote{Note the distinction between the sequence $(a_n)$, in which the order of members is important, and the set $\{ a_n\}$, in which it isn't important or even recorded.} $\{a_{n}\; | \; n\in\mathbb{N}\}$ is bounded above. Thus, by the Completeness Axiom, the set has an LUB, call it $L$. We claim that
+\[
+\lim_{n\rightarrow\infty}a_{n}=L.
+\]
+We begin the proof of the claim. Let $\ve>0$, we wish to show there is $N\in\mathbb{N}$ so that 
+\[
+|a_{n}-L|<\ve
+\]
+for all $n> N$, or equivalently,
+\begin{equation}
+\label{e:L-e<a<L+e}
+L-\ve<a_{n}<L+\ve.
+\end{equation}
+Since $L$ is an upper bound for $\{a_{n}\; | \; n\in\mathbb{N}\}$, we know $a_{n}\leq L<L+\ve$ for all $n$, thus dealing with the second inequality in \eqref{e:L-e<a<L+e}. Therefore, it suffices to show that there is $N\in\mathbb{N}$ so that for all $n> N$,
+\[
+L-\ve<a_{n}.
+\]
+Since $L$ is the LUB for $\{a_{n}\; | \; n\in\mathbb{N}\}$, this means that $L-\ve$ is not an upper bound for this set, so there exists an integer $N$ so that $a_{N}>L-\ve$. Since the sequence is increasing, this means that for all $n> N$,
+\[
+a_{n} \geq a_N > L - \epsilon.
+\]
+This shows \eqref{e:L-e<a<L+e} holds for all $n>N$ and completes the proof.
+
+\medskip
+We leave the proof of the second part to the reader. (Why is it an easy consequence of the first part?)
+\end{proof}
+\noindent
+{\bf Question:} What if a sequence $(a_n)$ is bounded above but only satisfies $a_{n+1} \geq a_{n}$ for all $n > 100$. Can you still conclude that it converges?
+
+\medskip
+Thus, if you can show that a sequence is bounded and increasing, you can deduce that it has a limit, and in some cases this, together with the rules for limits that we discussed last week, allows you to figure out what the limit actually is.
+%
+%One nice thing about monotone sequences is that you can deduce their limit from a subsequence:
+%%
+%\begin{proposition}
+%\label{p:sub-monotone}
+%Let $(x_{n})$ be a monotone sequence and suppose there is a sequence of integers $(n_{k})$ so that $\lim_{k\rightarrow\infty} n_{k}=\infty$ and $\lim_{k\rightarrow\infty} x_{n_{k}}$ exists. Then $\limn x_{n}$ exists and has the same limit. 
+%\end{proposition}
+%
+%\begin{proof}
+%Let $L=\lim_{k\rightarrow\infty} x_{n_{k}}$. We claim $\limn x_{n}=L$. Let $\ve>0$. We need to show that there is $N$ so that if $n\geq N$, then $|x_{n}-L|<\ve$. Again, since $x_n$ is monotone, it suffices to show that there is $N$ so that $n\geq N$ implies 
+%\begin{equation}
+%L-\ve <x_{n}.
+%\end{equation}
+%Since $x_{n_{k}}\rightarrow L$, there is $K$ so that $k\geq K$ implies 
+%\[
+%L-\ve <x_{n_{k}}<L+\ve.
+%\]
+%Thus, for $n\geq n_{K}$, 
+%\[
+%L-\ve<x_{n_{K}}\leq x_{n}.
+%\]
+%Thus, (\theequation) holds for $N=n_{k}$. 
+%\end{proof}
+
+\medskip
+Let us look at some examples.
+\begin{example}
+Let $a_n= \frac{n-1}{n}$. Then $(a_n)$ is increasing since $\frac{n}{n+1} \geq \frac{n-1}{n} \iff n^2 \geq (n+1)(n-1) = n^2 -1$, which is true for all $n$. $(a_n)$ is also bounded above by $1$. The MCT tells us that $(a_n)$ converges to some $L \leq 1$. (In fact we don't need the MCT for this example because $ a_n = 1 - 1/n \to 1 - 0 = 1$ by the rules for limits, but it nevertheless illustrates the general point.)
+\end{example}
+The next example can also be done by bare hands, but we use it to introduce a general technique which will be very useful to us: {\em finding a simple equation which any potential limit {\bf must} satisfy.}
+
+\begin{example}
+\label{ex:power}
+If $0<a<1$, show that the sequence $(a^n)_{n=1}^\infty$ converges and $\lim_{n\rightarrow\infty} a^{n}=0$. \\
+
+\noindent
+{\bf Solution:} Since $a^n$ is a product of positive numbers, it is positive, so the sequence $(a^{n})_{n=1}^{\infty}$ is bounded below by $0$. Moreover, since $a<1$, $a^{n+1}=a\cdot a^{n}<a^{n}$, so the sequence is decreasing. By the MCT, it has a limit $L$. To find $L$, we will find a simple equation which $L$ must satisfy -- in this case $aL = L$. Recall that if $(a_{n})$ is a convergent sequence, then $(a_{n+1})$ also converges, and indeed converges to the same limit (see the exercises from last week). Thus, by the rules for limits,
+\[
+L=\limn a^{n} = \limn a^{n+1}=\limn a^{n} =a\limn a^{n}=aL,\]
+as we claimed. Therefore $L(a-1) =0$ and since $a \neq 1$ we must have $L =0$, and we are done.
+\end{example}
+In this example, we used the rules for limits, together with the fact that if $(x_n)$ converges, then $(x_{n+1})$
+also converges to the same limit. In the next example we instead use the fact that if $x_n \to L$, then $x_{2n} \to L$ too (see Exercise~\ref{four}).
+
+\begin{example}\label{2^{1/n}}
+Let $a_n = 2^{1/n}$. Show that $(a_n)$ converges and find its limit.\\
+
+\noindent
+{\bf Solution:} We notice that $2^{1/n} \geq 1$ for all $n$ (since this is equivalent to $2 \geq 1^n = 1$) and also that $2^{1/(n+1)} \leq 2^{1/n}$
+for all $n$ (since this is equivalent to 
+$2^n \leq 2^{n+1}$). Therefore $(a_n)$ is a decreasing sequence which is bounded below by $1$. Consequently, by the MCT, it converges to some number $L$ which satisfies $L\geq1$ (and $L< 2$). %Unfortunately in this case the rules for limits don't help us further and we need to do some more guesswork. There is no reason to suspect that $L$ is strictly bigger than $1$ so let's try to rule that out possibility. Indeed, if $L >1$, then we have $a_n \geq L$ for all $n$ (since $(a_n)$ is decreasing towards $L$), and therefore $2 \geq L^n$ for all $n$. But if $L>1$, $L^n \to \infty$ as $n \to \infty$, and therefore for all sufficiently large $n$ it will satisfy $L^n > 2$, which is a contradiction. The only remaining possibility is $L=1$. 
+Consider the sequence $b_n = 2^{1/2n}$. It runs through alternate values of $a_n$, and so $b_n \to L$ also as $n \to \infty$. But $b_n^2 = a_n$, so by the rules for limits we must have $L^2 = L$, or $L(L-1) =0$, meaning either $L=0$ or $L=1$. Since $1 \leq L < 2$ the only possibility is $L = 1$.
+\end{example}
+Sometimes it can be helpful to find the possible limits $L$ {\em before}
+establishing monotonicity and boundedness. Indeed, knowing possible values of $L$ can help us to know what we are looking for in seeking to establish monotonicity and boundedness.
+
+\section{Iteratively defined sequences}
+Iteratively or recursively defined sequences are those where the value of $x_{n+1}$ is specified in terms of previous values of the sequence $x_1, \dots, x_n$, (most usually just in terms of $x_n$). 
+\begin{example}
+In high school you may have met recursively defined sequences of the form $x_1 = c$, 
+\[ x_{n+1} = a x_n +b \; \mbox{ for } \; n \geq 1\]
+where $a, b, c \in \mathbb{R}$. Show that when $|a| < 1$, $(x_n)$ converges and find its limit. Show that when $|a|>1$, $(x_n)$ diverges. What happens when $a = \pm 1$? 
+\\
+
+\noindent
+{\bf Solution:} Let's first give ourselves a sneak preview of what $L$ might be in terms of $a,b$ and $c$. By the rules for limits, {\em if} the sequence $(x_n)$ converges to $L$, then $L$ {\em must} satisfy $L = aL + b$, or equivalently $L = \frac{b}{1-a}$. Since we cannot divide by $0$, this already shows us that the case $a=1$ is special. 
+
+\medskip
+Indeed, if $a = 1$, then $L = aL + b$ becomes $L = L + b$, and unless $b=0$ this cannot hold. So when $a =1$, the sequence diverges in the case that $b \neq 0$, and is the constant sequence $x_n = c$ in the case that $b = 0$. 
+
+\medskip
+Now suppose $a \neq 1$. Since we are guessing the limit to be $\frac{b}{1-a}$, it makes sense to set $y_n = x_n - \frac{b}{1-a}$ and to re-write the basic equation $x_{n+1} = a x_n +b$ in the equivalent form $y_{n+1} = a y_n$. This in turn the same as $y_n = (c - \frac{b}{1-a})a^{n-1}$, as is easily established by induction. If $|a|>1$, $|y_n|$ diverges to $+\infty$ and so $(x_n)$ also diverges; if $|a| < 1$, then $y_n \to 0$ as we have already seen in a previous example, and this is the same as $x_n \to 
+\frac{b}{1-a}$. The remaining case $a= -1$ we leave as an exercise.
+\end{example}
+
+The MCT is especially useful for proving convergence of some (but not all) iteratively or recursively defined sequences.
+\begin{example}
+In 60AD, the Greek mathematician Hero of Alexandria wanted to approximate $\sqrt{2}$ with rational numbers. %\footnote{This example is not too far off from how your calculator or computer is able to compute $\sqrt{2}$ to any degree of accuracy: it has pre-installed a recurrence relation that converges $\sqrt{2}$.}. 
+He came up with the following recurrence relation, now called {\it Heron's Method}, for computing $\sqrt{2}$. Let $x_{1}=2$ and for each $n\in\mathbb{N}$, let
+\[
+x_{n+1}=\frac{1}{2}\left(x_{n}+\frac{2}{x_{n}}\right).
+\]
+Let us imagine that we knew that $(x_n)$ converged to something, $L$. What must $L$ satisfy? Well, by the rules for limits, since $x_{n+1} \to L$ too, and assuming that $L \neq 0$, it must satisfy 
+\[
+L=\frac{1}{2}\left(L+\frac{2}{L}\right),
+\]
+or $2L =L + \frac{2}{L}$, or $L = \frac{L}{2}$, which is the same as $L^2 = 2$, or $L = \pm\sqrt{2}$. We want to narrow this down so that the only possibility is $L = + \sqrt{2}$, and also so that we do indeed know that $(x_n)$ converges. Given that $x_1 = 2 > \sqrt{2}$, it makes sense to try to show that $(x_n)$ is decreasing, and is bounded below by $\sqrt{2}$, which is the same thing as $x_n > 0$ and $x_n^2 \geq 2$ for all $n$. Once we have this, the MCT will imply that $(x_n)$ does indeed converge to some number $L$, which must then satisfy $L \geq 0$ and $L^2 = 2$, thus indeed $L = + \sqrt{2}$.
+
+Let's do a bit of experimentation to see whether $(x_n)$ is decreasing or not by computing a few values (which you can do on a calculator or writing a simple program):
+
+\[
+x_{1}=2,\;\; x_{2} = \frac{1}{2}\left(2+\frac{2}{2}\right) = \frac{3}{2}, \;\; x_{3}=\frac{1}{2}\left(\frac{3}{2}+\frac{2}{3/2}\right) = \frac{17}{12}, \;\; x_{4} = \frac{237}{408}.
+\]
+Since $ 2 > 3/2 > 17/12 > 237/408$, we see that 
+\[ x_1 > x_2 > x_3 > x_4, \]
+and this suggests that the sequence might indeed be decreasing. Let's try to prove this.
+This is the same thing as showing $x_{n}-x_{n+1}\geq 0$, so let's look at this difference:
+\[
+x_{n}-x_{n+1}=x_{n}-\frac{1}{2}\left(x_{n}+\frac{2}{x_{n}}\right) =\frac{x_{n}^{2}-2}{2x_{n}}.
+\]
+Thus, we just need to show that this last term is non-negative. The $x_{n}$ are always positive, this is established by induction: $x_1>0$, and if $x_n>0$, then we see that $x_{n+1}>0$ also straight from the definition. Hence, we just need to show that $x_{n}^{2}\geq 2$ for all $n\geq 1$. This we also prove by induction! If $n=1$ then $x_{1}=2$, and for $n>1$, it follows from the fact that for $x \neq 0$ 
+\[ 
+\left(\frac{1}{2}\left(x+\frac{2}{x}\right)\right)^2 \geq 2,
+\]
+which, finally, is something that we can just check directly:
+\[ 
+\left(\frac{1}{2}\left(x+\frac{2}{x}\right)\right)^2 \geq 2 \iff \left(x+\frac{2}{x}\right)^2 \geq 8 \iff x^2 + \frac{4}{x^2} + 4 \geq 8 \iff \frac{(x^2 - 2)^2}{x^2} \geq 0,
+\] 
+and the last statement is clearly true. Hence, we conclude that the sequence $(x_n)$ is decreasing. 
+
+Notice that in proving that $(x_n)$ is decreasing we have already established that $x_n > 0$ and $x_n^2 \geq 2$ for all $n$! Thus we immediately conclude from the earlier remarks that $(x_n)$ converges to $L= +\sqrt{2}$!
+\end{example}
+{\bf Point to ponder:} How might you modify Heron's formula to construct a sequence of rational numbers converging to $\sqrt{7}$? or to $\sqrt{51}$?
+
+Note from the above argument that induction is a really helpful tool to have at our disposal when we are dealing with recursively defined sequences. We see this again in the next example.
+
+The previous example had the feature that the relevant boundedness of the sequence was immediate: the terms were all positive (hence bounded below by zero). Let's do an example where the relevant boundedness is not so immediate:
+
+
+\begin{example}
+\label{ex:1+sqrt(x)}
+Let $x_{1}=1$ and $x_{n+1}=1+\sqrt{x_{n}}$ for $n \geq 1$. Prove that $(x_{n})$ converges and find its limit. \\
+
+As before we first give ourselves a sneak preview of what the limit $L$ must satisfy if we assume it exists. By the rules for limits we must have
+\begin{equation}
+\label{e:L=sqrtL+1}
+L=\lim_{n\rightarrow\infty}x_{n}
+=\lim_{n\rightarrow\infty}x_{n+1}=\lim_{n\rightarrow\infty}(1+\sqrt{x_{n}})=1+\sqrt{L}.
+\end{equation}
+So $L$ must satisfy $(L-1)^2 = L$, i.e. $L^2 -3L +1=0$, i.e. $(L-\frac{3}{2})^2 = \frac{5}{4}$, and this equation has solutions $L = \frac{3 \pm \sqrt{5}}{2}$. Both of these are positive but $ \frac{3 -\sqrt{5}}{2} < 1 < \frac{3 + \sqrt{5}}{2}$. Now $x_1 = 1$ and it's easily proved by induction that $x_n \geq 1$ for all $n$. So {\em if} $(x_n)$ converges, it {\em must} converge to $\frac{3 + \sqrt{5}}{2}$. 
+
+We hope that $(x_n)$is increasing, so if we prove it is also bounded, the MCT will imply it converges, and by what we have said above, the limit must be $\frac{3 + \sqrt{5}}{2}$.
+
+Let us prove it is increasing by using induction. We want that $x_{n+1}\geq x_{n}$ for all $n\in\mathbb{N}$. For the base case, we have $x_{2} = 1+\sqrt{1} > 1 = x_1$. For the inductive step, assume for a certain $n\in\mathbb{N}$ that $x_{n+1}\geq x_{n}$. Then
+\[
+x_{n+2}-x_{n+1}
+=1+\sqrt{x_{n+1}}-(1+\sqrt{x_{n}})
+=\sqrt{x_{n+1}}-\sqrt{x_{n}}
+\]
+and since $x_{n+1}\geq x_{n}$ by the inductive hypothesis, we then also have $\sqrt{x_{n+1}}\geq \sqrt{x_{n}}$ by Proposition 3.5. So the above displayed expression is non-negative, and thus $x_{n+2}\geq x_{n+1}$. This proves the inductive step and hence that $(x_n)$ is increasing. 
+
+Now we need show it is bounded above. Since we expect it to converge to $L = \frac{3 + \sqrt{5}}{2}$, it makes sense to try to show that this $L$ is an upper bound.
+Let us prove that $x_{n}\leq L$ for all $n\in\mathbb{N}$ by induction.
+We can verify the base case $x_{1}=1\leq L$ is already true. For the inductive step, it turns out that the actual value of $L$ won't be as useful as the identity $L=1+\sqrt{L}$ we derived in equation \eqref{e:L=sqrtL+1}. Assume we have proved $x_{n}\leq L$ for some $n$. Then
+\[
+x_{n+1}=1+\sqrt{x_{n}}\leq 1+\sqrt{L}=L. 
+\]
+This proves the inductive step, and hence proves that $x_{n}\leq L$ for all $n$. Hence, $(x_n)$ is bounded above and is increasing, so the MCT implies it converges. As we showed above, it must converge to $L = \frac{3 + \sqrt{5}}{2}$. 
+\end{example}
+
+\section{Exercises}
+
+The only relevant exercise from Liebeck's book is Problem 7 in Chapter 23, which we discussed as Heron's method already. 
+
+\begin{exercise} Suppose that $(x_{n})$ is increasing. Show that either $(x_{n})$ converges or else $(x_{n})$ tends to infinity. 
+
+\begin{solution}
+If $(x_{n})$ is bounded above, then it converges. Otherwise, it is unbounded above, so for all $M>0$ there is $N$ so that $x_{N}\geq M$. Since $x_{n}$ is increasing, we know that for all $n\geq N$, 
+\[
+x_{n}\geq x_{N}\geq M.
+\]
+Thus, we have shown that for all $M$, there is $N$ so that $n\geq N$ implies $x_{n}\geq M$, which means $x_{n}\rightarrow\infty$. 
+\end{solution}
+\end{exercise} 
+
+
+\begin{exercise}
+If $(x_n)$ is a bounded sequence and $(x_n+\frac{1}{n})$ is monotonic, does $(x_n)$ converge?
+\begin{solution}
+Yes. First note that $(x_n + \frac{1}{n})$ is bounded. By the MCT, the bounded monotonic sequence $(x_n+\frac{1}{n})$ converges. Since $\frac{1}{n}\rightarrow 0$, we know that $(x_{n}+\frac{1}{n})-\frac{1}{n}=x_{n}$ converges as well by the rules for limits.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+Let $(a_{n})$ be a sequence of numbers such that $0\leq a_{n}\leq 1$ and let $s_{n}$ denote the product $a_{1}\cdot a_{2}\cdots a_{n}$. Does $(s_{n})$ converge? 
+\begin{solution}
+Yes. Note that as $a_{n}\geq 0$ for all $n$, $s_{n}\geq 0$ as well. Moreover, $s_{n+1} = a_{n+1}s_{n}\leq s_{n}$ since $a_{n+1}\leq 1$ for all $n$. Thus, $s_{n}$ is decreasing and bounded below, and hence converges by the MCT.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}\label{four}
+Using the definition of convergence, show that if $a_n \to L$ as $n \to \infty$ and if $b_n = a_{2n}$, then $b_n \to L$ as $n \to \infty$.
+\begin{solution}
+Let $\epsilon > 0$. There there is an $N$ such that $n> N$ implies $| a_n - L|< \epsilon$.
+So $m > N/2$ implies $|a_{2m} - L|< \epsilon$.
+\end{solution}
+
+\end{exercise}
+
+\begin{exercise}
+Let $a_n = n^{1/n}$. Show that $(a_n)$ converges and find its limit. ({\bf Hint:} First prove that $(1+ \frac{1}{n})^n \leq 4$ for all $n$, and then try to use the MCT. Alternatively, use the formula for $a^n - b^n$ in Exercise~\ref{81} for well-chosen $a$ and $b$.)
+
+\begin{solution}
+We can establish the hint using the binomial theorem, see also the discussion of $e$ in Section 8. We try out whether $(a_n)$ is decreasing. We have
+\[ a_{n+1} \leq a_n \iff (n+1)^{1/(n+1)} \leq n^{1/n} 
+\iff (n+1)^n \leq n^{n+1} \iff \left(1 + \frac{1}{n}\right)^n \leq n.
+\]
+We saw earlier that $\left(1 + \frac{1}{n}\right)^n \leq 4$ for all $n$, so we have $a_{n+1} \leq a_n$ at least when $n \geq 4$. Since $a_n \geq 1$ we have that $(a_n)$
+is bounded below. This is enough for us to deduce from the MCT that it converges. Let $L = \limn n^{1/n} \geq 1$. Let $b_n = a_{2n} = (2n)^{1/2n} = 2^{1/2n} \sqrt{n^{1/n}}$. Since $b_n$ runs through alternate values of $a_n$ we have $b_n \to L$ too.
+But $2^{1/2n} \sqrt{n^{1/n}} \to 1^{1/2} \times L^{1/2} = L^{1/2}$ by the rules for limits, Example 6.3 and Example~\ref{2^{1/n}}. Thus $L = L^{1/2}$ and so $L = 1$.
+
+Alternatively, (assuming $n$ is even for simplicity)
+\[ n - 1 = (n^{1/n} - 1)(1 + n^{1/n} + n^{2/n} + \dots + n^{(n-1)/n}) \]
+\[\geq  (n^{1/n} - 1)(n^{n/2n} + n^{(n+2)/2n} + \dots + n^{(2n-2)/2n}) \geq (n^{1/n} - 1) \times \frac{n-1}{2} \times n^{1/2}\] so that 
+\[ 0 \leq  (n^{1/n} - 1) \leq \frac{2}{n^{1/2}}.\]
+Now use the squeeze theorem.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+ Let $x_{1}=1$ and $x_{n+1}=\sqrt{1+x_{n}}$ for $n \geq 1$. Show that $(x_n)$ converges and compute its limit.
+
+\begin{solution}
+We claim that $x_n$ converges. First, we show that it is increasing by induction, that is, that $x_{n+1}\geq x_{n}$ for all $n\geq 1$. For the base case, we have $x_{1}=1\leq \sqrt{1+1}=x_{2}$. Now suppose we have shown  $x_{n+1}\geq x_{n}$ for some integer $n\geq 1$. Then
+\begin{align*}
+x_{n+2} -x_{n+1} 
+& =\sqrt{1+x_{n+1}}-\sqrt{1+x_{n}}\\
+& = \left(\sqrt{1+x_{n+1}}-\sqrt{1+x_{n}}\right)\cdot\frac{\sqrt{1+x_{n+1}}+\sqrt{1+x_{n}}}{\sqrt{1+x_{n+1}}+\sqrt{1+x_{n}}}\\
+& = \frac{1+x_{n+1}-(1+x_{n})}{\sqrt{1+x_{n+1}}+\sqrt{1+x_{n}}}
+ = \frac{x_{n+1}-x_{n}}{\sqrt{1+x_{n+1}}+\sqrt{1+x_{n}}}
+\end{align*}
+Since the denominator is always positive, we just need to check that the numerator is positive, but $x_{n+1}-x_{n}\geq 0$ by the inductive hypothesis, and so we have $x_{n+2} -x_{n+1} \geq 0 $. This proves the inductive step and hence the claim. 
+
+Now we need to show $x_n$ is bounded above. Note that if $x_n$ did converge to some number $L$, then
+\begin{equation}
+\label{e:L=sqrt(1+L)}
+L=\lim_{n\rightarrow\infty}x_{n}
+=\lim_{n\rightarrow\infty}x_{n+1}
+=\lim_{n\rightarrow\infty}\sqrt{1+x_{n}}
+=\sqrt{1+L}
+\end{equation}
+and squaring both sides and moving everything to the left gives $L^2-L-1=0$, so the only possible values for $L$ are $\frac{1\pm\sqrt{5}}{2}$. Since $L=\sqrt{1+L}> 0$, we must have $L=\frac{1+\sqrt{5}}{2}$. Thus, since $x_n$ is increasing, it is natural to guess that $x_n$ is bounded above by $L$. Let's prove this by induction. For $n=1$, we have $1\leq L$ already, so the base case is true. For the induction step, assume $x_{n}\leq L$ for some $n$. Then
+\[
+x_{n+1}=\sqrt{1+x_{n}}\leq \sqrt{1+L}\stackrel{\eqref{e:L=sqrt(1+L)}}{=}L.\]
+This proves the induction step, and so $(x_n)$ is bounded above and is increasing, thus $(x_n)$ converges and its limit is $\frac{1+\sqrt{5}}{2}$. 
+\end{solution}
+
+\end{exercise}
+
+\begin{exercise}
+ Let $x_1=\frac{1}{4}$ and $x_{n+1} = \sqrt{x_{n}(1-x_{n})}$ for $n \geq 1$. Show that $(x_n)$ converges and compute its limit. (Hint: First show that $0< x_{n}\leq \frac{1}{2}$ for all $n$. The AM--GM inequality may come in useful.)
+
+\begin{solution}
+We first show by induction that $0 < x_n \leq 1/2$ for all $n$. The case $n=1$ is trivial. Suppose inductively that for some $n$ we have $0 < x_n \leq 1/2$. Then $x_{n+1} =\sqrt{x_{n}(1-x_{n})}>0$ and, by the AM-GM inequality,
+\[
+x_{n+1}=\sqrt{x_{n}(1-x_{n})}\leq \frac{x_{n}+1-x_{n}}{2} = \frac{1}{2}.
+\]
+thus $x_{n}\leq \frac{1}{2}$ too, establishing the inductive step. 
+
+Now we claim that $(x_{n})$ is increasing:
+\begin{align*}
+x_{n+1}-x_{n}
+& =\sqrt{x_{n}(1-x_{n})}-x_{n} 
+= \left(\sqrt{x_{n}(1-x_{n})}-x_{n}\right)\frac{\sqrt{x_{n}(1-x_{n})}+x_{n}}{\sqrt{x_{n}(1-x_{n})}+x_{n}}\\
+& = \frac{x_{n}(1-x_{n})-x_{n}^{2}}{\sqrt{x_{n}(1-x_{n})}+x_{n}} 
+= \frac{x_{n}(1-2x_{n})}{\sqrt{x_{n}(1-x_{n})}+x_{n}} \geq 0
+\end{align*}
+since we've already established that $0 < x_n \leq 1/2$ for all $n$. Thus, $(x_{n})$ is increasing and bounded, and thus convergent. Let $L$ be its limit. Then
+\[
+L=\lim_{n\rightarrow \infty}x_{n}
+=\lim_{n\rightarrow \infty}x_{n+1}
+=\lim_{n\rightarrow \infty}\sqrt{x_{n}(1-x_{n})}
+=\sqrt{L(1-L)}
+\]
+squaring both sides and moving everything to the left gives
+\[
+2L^2-L=0.
+\]
+The only solutions to this are $L=0$ and $L=\frac{1}{2}$. Since $(x_{n})$ is increasing, we have $x_{n}\geq x_{1} = \frac{1}{4}>0$, so $L\geq \frac{1}{4}$, so $x_{n}$ can't converge to zero, thus $L=\frac{1}{2}$. 
+\end{solution}
+\end{exercise}
+
+\begin{exercise} Let $x_{1}=\sqrt{2}$ and $x_{n+1}=\sqrt{2+\sqrt{x_{n}}}$ for $n \geq 1$. Show that $(x_n)$ converges and find the quartic equation of which the limit is a root. (When showing it is bounded above, you can try making an educated guess as to what an upper bound might be, try some values out!)
+
+\begin{solution}
+First we claim that $x_n >0$ for all $n$ (so that $\sqrt{x_n}$ makes sense). This is a simple exercise using induction. Next we claim that $(x_{n})$ is increasing. We prove this also by induction. For $n=1$, we clearly have $x_{1}=\sqrt{2}<\sqrt{2+\sqrt{2}}=x_{2}$. This proves the base case. Now suppose that $x_{n+1}\geq x_{n}$ for some integer $n\geq 1$. Then
+\begin{align*}
+x_{n+2}-x_{n+1}
+& =\sqrt{2+\sqrt{x_{n+1}}}-\sqrt{2+\sqrt{x_{n}}}\\
+& =\left(\sqrt{2+\sqrt{x_{n+1}}}-\sqrt{2+\sqrt{x_{n}}}\right)\cdot \frac{\sqrt{2+\sqrt{x_{n+1}}}+\sqrt{2+\sqrt{x_{n}}}}{\sqrt{2+\sqrt{x_{n+1}}}+\sqrt{2+\sqrt{x_{n}}}}\\
+& = \frac{2+\sqrt{x_{n+1}}-2+\sqrt{x_{n}}}{\sqrt{2+\sqrt{x_{n+1}}}+\sqrt{2+\sqrt{x_{n}}}}\\
+& = \frac{\sqrt{x_{n+1}}-\sqrt{x_{n}}}{\sqrt{2+\sqrt{x_{n+1}}}+\sqrt{2+\sqrt{x_{n}}}}\\
+& \geq \frac{0}{\sqrt{2+\sqrt{x_{n+1}}}+\sqrt{2+\sqrt{x_{n}}}}=0,\\
+\end{align*}
+where in the last line we used the inductive hypothesis that $x_{n+1}\geq x_{n}$, and so $\sqrt{x_{n+1}}-\sqrt{x_{n}}\geq 0$. Thus, $(x_{n})$ is increasing.
+
+Next, we need to show that it is bounded above. We claim that $x_{n}\leq 2$ for all $n$. We prove this by induction as well. For the base case, $x_{1}=\sqrt{2}\leq 2$. For the inductive step, suppose $x_{n}\leq 2$ for some $n$. Then
+\[
+x_{n+1}=\sqrt{2+\sqrt{x_{n}}}\leq \sqrt{2+\sqrt{2}}\leq \sqrt{2+2}=\sqrt{4}=2.
+\]
+This establishes the inductive step. Thus, $x_{n}$ is increasing and bounded above, so it converges. Let $L$ be the limit. Then, by the rules for limits,
+\[L = \sqrt{2+\sqrt{L}}\
+\]
+and therefore $L$ is a root of the equation $x^4 - 4x^2 -x + 4 = 0$.
+\end{solution}
+\end{exercise}
+
+%
+% \item $x_{1}=3$ and $x_{n+1}=\frac{2}{x_{n}}+\frac{x_{n}}{2}$. (Hint: a useful inequality from Week 2 might help...)
+%
+%
+%\begin{solution}
+%After trying out a few values, it seems like this sequence is decreasing, and by induction we can show the terms are always positive (since $x_n>0$ implies $x_{n+1}>0$), so let's try to verify it is decreasing, for then it will converge by the MCT: for $n\geq 1$
+%\[
+%x_n-x_{n+1}=x_n-\frac{2}{x_{n}}-\frac{x_{n}}{2}=\frac{x_{n}}{2}-\frac{2}{x_{n}} = \frac{x_n^2-4}{2x_n}.
+%\]
+%Since the values of $x_n$ are always positive, it , we just need to show that $x_n^2-4\geq 0$ for all $n$,  but $x_1=3$ and for $n\geq 2$, by the AM-GM inequality $\frac{a+b}{2}\geq \sqrt{ab}$,
+%\[
+%x_{n+1} = \frac{2}{x_{n}}+\frac{x_{n}}{2}
+%\geq 2\left(\sqrt{\frac{2}{x_{n}}}\sqrt{\frac{x_{n}}{2}}\right)^{\frac{1}{2}}
+%=2.\]
+%Thus $x_n$ is bounded below and decreasing and thus convergent. We can solve for the limit:
+%\[
+%L=\lim_{n\rightarrow\infty}x_{n}
+%=\lim_{n\rightarrow\infty}x_{n+1}
+%=\lim_{n\rightarrow\infty} \left(\frac{x_{2}}{2}+\frac{2}{x_n}\right)
+%=\frac{L}{2}+\frac{2}{L}.
+%\]
+%Thus, we can rearrange this to get the formula
+%\[
+%L^2=4\]
+%Since $x_n\geq 0$, $L\geq 0$, and so $L=2$. 
+%\end{solution}
+
+
+
+%\item Let $a>1$, $x_1=1$ and for $n>1$ set 
+%\[
+%x_{n+1}=\frac{2x_n^3+a}{3x_n^2}.
+%\]
+%%
+%\begin{solution}
+%Let's look at the differences to try and find out whether the sequence is increasing or decreasing:
+%\begin{align*}
+%x_{n+1}-x_{n} 
+%& = \frac{2x_n^3+a}{3x_n^2}=x_{n}\\
+%& = \frac{-x_{n}^{3}+a}{3_{x_{n}^{2}}.
+%\end{align*}
+%Thus, we can determine whether $x_n$ is increasing or decreasing by determining the sign of $-x_{n}^{3}+a$. Observe that since $x_1=1$, we have that $-x_{1}^{3}+a=-1+a>0$. Now suppose we have shown $-x_{n}^{3}+a>0$ for some $n\geq 1$, so $a>x_{n}^{3}$ which means $a^{\frac{1}{3}}>x_{n}$. Then
+%\[
+%x_{n+1} =\frac{2x_n^3+a}{3x_n^2}
+%<
+
+
+%
+%
+%
+%\begin{exercise}  Let $x_{n}=\sum_{i=1}^{n}\frac{1}{n+i}$. Show that $x_{n}$ converges. 
+%
+%\begin{solution}
+%Let's look at the differences:
+%\begin{align*}
+%x_{n+1}-x_{n}
+%& =\sum_{i=1}^{n+1}\frac{1}{n+1+i}-\sum_{i=1}^{n}\frac{1}{n+i}\\
+%& =\sum_{i=2}^{n+2}\frac{1}{n+i}-\sum_{i=1}^{n}\frac{1}{n+i}\\
+%& = \frac{1}{2n+1}+\frac{1}{2n+2} - \frac{1}{n+1}
+%=\frac{1}{2n+1}-\frac{1}{2n+2}
+%=\frac{1}{(2n+1)(2n+2)}
+%\end{align*}
+%Thus,
+%\[
+%|x_{n+1}-x_{n}|
+%\leq \frac{1}{(2n+1)(2n+2)}
+%\leq \frac{1}{n^2}
+%\]
+%Since the differences are summable, $\sum (x_{n}-x_{n-1})$ is absolutely convergence, and so
+%\[
+%x_{n}-x_{0}=\sum_{i=0}^{n-1}(x_{i+1}-x_{i})
+%\]
+%converges, and so does $x_n$. 
+%
+%
+%\end{solution}
+%
+%\end{exercise}
+
+
+\chapter{Decimals and Series}
+We are all familiar with decimal representation of numbers. For example, given a rational number $x = \frac{p}{q}$ with $p, q \in \mathbb{N}$ and $0 < p < q$, we can go through the process of dividing $q$ into $p$ to represent it as 
+\[ x = 0.a_1 a_2 \dots a_n \dots\]
+where each $a_n$ is an integer in the set $\{0,1,\dots, 9\}$. So we are used to writing \[ \frac{1}{2} = 0.5 = 0.50000\dots \mbox{
+and } \frac{2}{3} = 0.66666\dots\]
+and we are also familiar with such expressions as 
+\[ \sqrt{2} = 1.414\dots \mbox{ and } \pi = 3.14159 \dots. \]
+There are also more "random" looking examples such as $0.7264082793684301...$ which have no discernible pattern nor immediate purpose in life. But what exactly do we mean by these expansions? In this chapter we explore this question, and give a precise meaning to decimal expansions. We will show that {\em every} real number has a decimal expansion, and conversely, every decimal expansion gives rise to a real number. Thus, in some sense, decimal expansions provide a complete description of the real numbers. In order to do this, we use the study of sequences which we have already begun, and, in particular, we will make crucial use of the Completeness Axiom for $\mathbb{R}$ (as indeed we must).
+
+Then we will introduce infinite series and relate them to decimal expansions. You are probably familiar with certain infinite series already, such as the infinite geometric series
+\[ \sum_{n=1}^\infty \frac{1}{2^n} = 1,\]
+but we will examine series such as these from a more general perspective. Now is a good time to recall the formula for a finite geometric series: 
+\[ a + ar + ar^2 + \cdots + ar^{n-1} = \frac{a(1-r^{n})}{1-r}\]
+whenever $r \neq 1$. You will learn more about infinite series if you are taking the course Calculus and its Applications. Finally, we introduce the number $e$ and study some of its basic properties.
+
+\section{Decimals}
+Given a sequence $(a_n)$ with each $a_n \in \{0, 1, \dots , 9\}$, what exactly do we mean by the decimal 
+\[ 0.a_1 a_2 \dots a_n \dots?\]
+We all know the convention that the number $a_1$ gives the number of tenths, $a_2$ gives the number of hundredths, 
+$a_3$ gives the number of thousandths etc. But what do we mean by the "$\dots$" at the end of the expansion? A good way to make sense of this is to consider the {\em finite} decimal expansions
+\[ x_n := 0.a_1 a_2 \dots a_n = \frac{a_1}{10} + \frac{a_2}{100} + \dots + \frac{a_n}{10^n}\] 
+and declare the infinite decimal expansion
+\[ 0.a_1 a_2 \dots a_n \dots\]
+to be the limit of the sequence $(x_n)$ as $n \to \infty$. But this naturally poses the question of whether the limit must even exist. Fortunately this is easy: the sequence
+$(x_n)$ consists of positive numbers, and they satisfy $x_{n+1} \geq x_n$ so that $(x_n)$ is increasing. Finally, using the formula for a finite geometric progression, 
+\[ x_n = \frac{a_1}{10} + \frac{a_2}{100} + \dots + \frac{a_n}{10^n} \leq \frac{9}{10} + \frac{9}{100} + \dots + \frac{9}{10^n} =  \frac{9}{10}\frac{(1 - (\frac{1}{10})^{n+1})}{1 - \frac{1}{10}} \leq \frac{9}{10}\frac{1}{1 - \frac{1}{10}}=1,\]
+so that $(x_n)$ is bounded above by $1$. By the MCT, the sequence $(x_n)$ converges to some $x \in \R$ satisfying $0 \leq x \leq 1$.
+We have thus proved:
+\begin{theorem}
+Given a sequence $(a_n)$ with $a_n \in \{0,1, \dots ,9\}$ for all $n$, the decimal expansion $ x= 0.a_1 a_2 \dots a_n \dots$ given by the limit of the sequence  
+\[ x_n = \frac{a_1}{10} + \frac{a_2}{100} + \dots + \frac{a_n}{10^n} \]
+defines a real number $x$ satisfying $0 \leq x \leq 1$.
+\end{theorem}
+What about the converse -- does every real number $x$ with $0 \leq x <1$ have a decimal expansion? Our intuition and experience tells us that this is so, but now we prove it more formally.
+
+\begin{theorem}\label{decimal_existence}
+Let $x\in\mathbb{R}$ satisfy $0 \leq x <1$. Then there is a sequence of integers $(a_n)$, with $a_{n}\in \{0,1,\dots,9\}$ for all $n$, so that if we let
+\[ x_n = \frac{a_1}{10} + \frac{a_2}{100} + \dots + \frac{a_n}{10^n},\]
+then $x_n \to x$ as $n \to \infty$.
+\end{theorem}
+
+\begin{proof}
+We find the integers $a_{n}$ inductively. To find $a_1$, we split the interval $[0,1)$ into 10 equal subintervals
+\[ \left[0,\frac{1}{10}\right),  \; \left[\frac{1}{10}, \frac{2}{10}\right), \; \dots , \; \left[\frac{9}{10},\frac{10}{10}\right).\]
+Then $x$ must be in exactly one of these intervals, say $\left[\frac{a_1}{10}, \frac{a_1 +1}{10}\right)$, for a unique $a_1 \in \{0, 1, \dots , 9\}$.
+Notice that 
+\[ 0 \leq x - \frac{a_1}{10} < \frac{1}{10}.\]
+To find $a_2$, we split the interval $\left[\frac{a_1}{10}, \frac{a_1 +1}{10}\right)$ into 10 equal subintervals 
+\[
+\left[\frac{a_{1}}{10},\frac{a_{1}}{10}+\frac{1}{10^2}\right),\;
+\left[\frac{a_{1}}{10}+\frac{1}{10^2},\frac{a_{1}}{10}+\frac{2}{10^2}\right), \; \cdots \;
+,\left[\frac{a_{1}}{10}+\frac{9}{10^2},\frac{a_{1}+1}{10}\right).
+\]
+Then $x$ must be in exactly one of these intervals as well, which can be written as $\left[\frac{a_{1}}{10}+\frac{a_{2}}{10^2},\frac{a_{1}}{10}+\frac{a_2+1}{10^2}\right)$ for some unique $a_{2}\in \{0,1, \dots ,9\}$. Notice that
+\[ 0 \leq x - \left(\frac{a_1}{10} + \frac{a_2}{10^2}\right) < \frac{1}{100}.\]
+\noindent
+Continuing in this way, we find for each $n$ a unique integer $a_{n}\in \{0,1,\dots,9\}$ so that 
+\begin{equation*}
+\label{e:xininterval}
+x\in \left[\frac{a_{1}}{10}+\cdots +\frac{a_{n}}{10^{n}}, \frac{a_{1}}{10}+\cdots  +\frac{a_{n}+1}{10^{n}}\right)
+\end{equation*}
+and so that
+\[ 0 \leq x- \left( \frac{a_{1}}{10}+\cdots +\frac{a_{n}}{10^{n}} \right) < \frac{1}{10^n}.\]
+Then we have
+\[ 0 \leq x - x_n < \frac{1}{10^n},\]
+and since $1/10^{n} \to 0$ as $n \to \infty$, we have that $x_n \to x$ by the squeeze theorem.
+\end{proof}
+
+\medskip
+What about decimal expansions $x = a_0.a_1 a_2 \dots$ for real numbers outside the interval $[0,1)$? We look at this in the exercises. If $a_0 \in \mathbb{Z}$ and $a_n \in \{0,1,2, \dots , 9\}$ for $n\geq 1$ we write
+\[ x = a_0.a_1 a_2 \dots\]
+to mean that the sequence $(x_n)$ defined by
+\[x_n = a_0 + \frac{a_{1}}{10}+\cdots +\frac{a_{n}}{10^{n}}\] 
+converges to $x$.
+
+What about uniqueness of decimal expansions? Can a real number $x$ be represented by two distinct decimal expansions? Unfortunately, yes: for example
+\[ \frac{1}{2} = 0.5000000\ldots = 0.4999999\dots \]
+since, by the formula for finite geometric series, $0.499999 \dots 99$ (with $n$ $9$'s) 
+\[= \frac{4}{10} + \frac
+{\frac{9}{100}(1- (\frac{1}{10})^{n})}
+{1- \frac{1}{10}} \rightarrow \frac{4}{10} + \frac{1}{10} = \frac{1}{2}\]
+as $n \to \infty$. (Which of these two representations does the procedure of Theorem~\ref{decimal_existence} spit out?)
+It turns out that situations like this are essentially the only ones when this happens (one expansion trailing $0$'s and the other trailing $9$'s), and there are never more than two decimal expansions that give the same number. 
+
+\begin{theorem}\label{83}
+Let $0 \leq x <1$ and suppose that $x=0.a_{1}a_2\ldots =0.b_{1}b_{2}\dots$. Let $\ell$ be the smallest integer for which $a_{\ell}\neq b_{\ell}$ and suppose that $a_{\ell}<b_{\ell}$. Then $b_{\ell}=a_{\ell}+1$, and for all $k> \ell$ we have $b_{k}=0$ and $a_{k}=9$.
+\end{theorem}
+
+\begin{proof}
+We have 
+\[ 0.b_{1}b_{2}\dots b_{\ell -1}b_{\ell}000 \ldots \leq x \leq 0.a_1 a_2 \dots a_{\ell - 1} a_{\ell} 999 \dots , \]
+and since $a_j = b_j$ for $1 \leq j \leq \ell -1$ we have
+\[0.a_1 a_2 \dots a_{\ell-1} b_{\ell}000\ldots \leq x \leq 0.a_1 a_2 \dots a_{\ell - 1} a_{\ell} 999 \dots \]
+But 
+\[0.a_1 a_2 \dots a_{\ell - 1} a_{\ell} 999 \ldots = 0.a_1 a_2 \dots a_{\ell - 1} (a_{\ell} +1)000 \dots\]
+(once again by the formula for finite geometric series).
+Therefore $ b_{\ell} \leq a_{\ell} +1$. Since we are assuming $a_{\ell} < b_{\ell}$, this forces $b_{\ell} = a_{\ell} +1$.
+
+Now we have
+\[ 
+x = 0.a_1 a_2 \dots a_{\ell - 1} a_{\ell} a_{\ell + 1} \ldots = 0.a_1 a_2 \dots a_{\ell - 1} (a_{\ell} + 1) b_{\ell + 1} \ldots
+\]
+and if for some $k > \ell$ we had either $a_k < 9$ or $b_k > 0$, this would be violated (see Exercise~\ref{877}). Hence we conclude that for all $k > \ell$ we have $a_k = 9$ and $b_k = 0$.
+\end{proof}
+
+When we find a decimal expansion of a rational number, it begins to repeat. Why is this? Because when doing long division, eventually you obtain some remainder a second time, and then you know the division process will repeat what you did from the beginning. This holds for all rational numbers. 
+
+\begin{lemma}
+\label{l:rational->repeat}
+If $x\geq 0$ is rational, then it has a periodic decimal expansion, that is, 
+\[
+x=a_0.a_{1}a_{2}\dots a_{k} \overline{b_{1}b_{2}\dots b_{\ell}}.\]
+Here, this notation means that the digits $b_{1}, \dots b_{\ell}$ repeat, so 
+\[
+a_0.a_{1}a_{2}\ldots a_{k} \overline{b_{1}b_{2}\ldots b_{\ell}}
+=a_0.a_{1}a_{2}\dots a_{k} {b_{1}b_{2}\dots b_{\ell}} {b_{1}b_{2}\dots b_{\ell}}\ldots
+\]
+
+
+\end{lemma}
+\vspace{.5cm}
+Before proving this, we will introduce a technique which is very useful throughout mathematics.
+\vspace{.5cm}
+
+%
+\noindent
+
+\begin{definition} {\bf - Pigeonhole Principle}\\
+\begin{minipage}[c]{0.4\linewidth}
+Suppose $k>n$, and we have $a_1,\ldots, a_k \in S$, with $|S|=n$.  Then there exists $i\neq j$ with $a_i=a_j$.
+\end{minipage} 
+\hspace{.2\linewidth}
+% no space if you would like to put them side by side
+\begin{minipage}[c]{0.4\linewidth}
+\begin{center}
+\includegraphics[height=.8in]{Figures/pigeonhole.jpg}\\
+10 pigeons, 9 boxes.
+\end{center}
+\end{minipage}
+\end{definition}
+
+\vspace{.5cm}
+
+
+\begin{proof}[Proof of Lemma \ref{l:rational->repeat}]
+Write $x=p/q$ where $p$ and $q$ are positive integers. Each step of the long division algorithm $q\overline{)p.0000\ldots}$ returns remainders in $\{1,\ldots, q\}$.  By the \emph{pigeonhole principle}, one remainder, call it $k$, must occur twice.  Because $p.0000\ldots$ has trailing zeroes, the algorithm starts repeating at that point.
+\end{proof}
+
+We define the {\it period} of a decimal expansion to be the smallest number of digits in a repeating sequence in the decimal expansion. For example, $0.121212...$ has period $2$, $0.34\overline{345}$ has period 3. If there are no repeating sequences we say that the decimal expansion is {\it aperiodic}.
+
+\begin{corollary}[of the proof] If $p$ and $q$ are positive integers, the rational number $p/q$ has a decimal expansion with period at most $q$.\end{corollary}
+
+
+
+
+The converse to Lemma~\ref{l:rational->repeat} is also true:
+
+\begin{lemma}
+If $x\geq 0$ has a periodic decimal expansion, then $x$ is rational.
+\end{lemma}
+
+
+
+
+\begin{proof}
+Suppose that $x=a_{0}.a_{1}a_{2}\ldots a_{k} \overline{b_{1}b_{2}\ldots b_{\ell}}$. Let $
+ y= 0.\overline{b_{1}b_{2}\ldots b_{\ell}}$.
+ If we show that $y$ is rational, then so will $x$ be, because
+ \[x = a_0 + \frac{a_1}{10} + \dots + \frac{a_k}{10^k} + \frac{y}{10^{k}}.
+ \]
+ Let $z = 0.{b_{1}b_{2}\ldots b_{\ell}}000\ldots$, which is certainly rational. Now
+ $y = \limn y_n$ where
+ \[ y_n = z\left(1 + \frac{1}{10^{\ell}} + \frac{1}{10^{2\ell}} + \dots + \frac{1}{10^{n\ell}}\right) = \frac{z\left(1 - 10^{-(n+1)\ell}\right)}{1- 10^{-\ell}} \]
+ so that 
+ \[y = \frac{z}{1- 10^{-\ell}}\]
+which is indeed rational.
+ 
+% If we multiply this by $10^{\ell-1}$ this shifts the digits over by $\ell$ spaces, that is,\[10^{\ell} y = b_{1}b_{2}\cdots b_{\ell} . \overline{b_{1}b_{2}\cdots b_{\ell}}=b_{1}b_{2}\cdots b_{\ell} +y\]
+ % where by $b_{1}b_{2}\cdots b_{\ell}$ we mean the integer with digits $b_{1}b_{2}\cdots b_{\ell}$, not the product, let's call this integer $b_{0}$. Then we can solve and get $y=b_{0}/(10^{\ell}-1)$. 
+% 
+% \begin{align*}
+% 10^{\ell} y & =  10^{\ell} \left( \frac{b_{1}}{10}+\frac{b_{2}}{10}+ \cdots + \frac{b_{\ell}}{10^{\ell}} + \frac{b_{1}}{10^{\ell+1}}+ \frac{b_{2}}{10^{\ell+2}}+\cdots  \right) \\
+%&   = 10^{\ell-1}b_{1}+10^{\ell-2}b_{2}+ \cdots + b_{\ell}10^{0} + \frac{b_{1}}{10}+ \frac{b_{2}}{10^{2}}+\cdots \\ 
+% & = \underbrace{\left( 10^{\ell-1}b_{1}+10^{\ell-2}b_{2}+ \cdots + b_{\ell} \right)}_{\mbox{call this }b_{0}}. \overline{b_{1}b_{2}\cdots b_{\ell}}\\
+%& = b_{0}.\overline{b_{1}b_{2}\cdots b_{\ell}} = b_{0}+y.
+% \end{align*}
+% Solving for $y$ gives $y=\frac{b_{0}}{10^{\ell}-1}$, and so $y$ is rational. Thus,
+%Thus,
+%\begin{align*}
+%x & =a_{0}.a_{1}a_{2}\cdots a_{k} \overline{b_{1}b_{2}\cdots b\ell} 
+ %= a_{0}.a_{1}a_{2}\cdots a_{k} + 0.\underbrace{000....0}_{k {\mbox{ zeros}}} \overline{b_{1}b_{2}\cdots b_{\ell}} \\
+%& = a_{0}.a_{1}a_{2}\cdots a_{k} + 10^{-k}  \cdot 0.\overline{b_{1}b_{2}\cdots b_{\ell}}
+%= a_{0}.a_{1}a_{2}\cdots a_{k}  + 10^{-k}y,
+% \\
+%& = a_{0}.a_{1}a_{2}\cdots a_{k}  + 10^{-k}y,
+%\end{align*}
+%which is a sum of two rational numbers and is thus rational.
+
+%Note that $ a_{0}.a_{1}a_{2}\cdots a_{k}   = a_{0}+\frac{a_{1}}{10}+ \cdots + \frac{a_{k}}{10^{k}}$ and so this is rational. Since $y$ was rational, so is $10^{-\ell}y$, and thus $x$ is rational since it is the sum of these two, and so we're done. 
+
+
+ 
+\end{proof}
+
+
+We now summarise the results on rationality and periodicity:
+\begin{theorem}\label{87}
+A number $x  \geq 0$ is rational $\iff$ it has a periodic decimal expansion.
+\end{theorem}
+Noting that all the $x$ which have two distinct decimal expansions are necessarily rational, we obtain:
+\begin{corollary}\label{88}
+A number $x  \geq 0$ is irrational $\iff$ it has an aperiodic decimal expansion.
+\end{corollary}
+Note that we proved this without ever working with irrational numbers! This gives us a way of constructing many irrational numbers, not just ones that arise as roots like $\sqrt{2}$ or $3^{\frac{1}{2}}$.
+
+\begin{example}
+The number $0.10010001\cdots $ where the number of zeros between each $1$ is {\em strictly} increasing is irrational, because there is no way the decimal expansion can repeat. 
+\end{example}
+
+\section{Infinite Series}
+We know how to add up a finite set of numbers $a_1 + a_2 + \cdots + a_n$. But what does it mean to add up an infinite sequence of numbers
+\[ a_1 + a_2 + \cdots + a_j + \cdots ?\]
+A good way to make sense of this is to form the {\em new sequence} $(s_n)$ where
+\[ s_n := a_1 + a_2 + \dots + a_n\]
+and to define the infinite sum 
+$$a_1 + a_2 + \cdots + a_j + \cdots = \sum_{j=1}^\infty a_j := \limn s_n$$ 
+to be the limit of the sequence $(s_n)$ whenever it exists. The numbers $s_n$ are called the {\em partial sums} of $\sum_{j=1}^\infty a_j$. {\em If the sequence of partial sums $(s_n)$ does not converge, we assign no meaning to $\sum_{j=1}^\infty a_j$.} More formally:
+\begin{definition}
+Given a sequence $(a_{j})$, we say that the infinite series $\sum_{j=1}^\infty a_{j}$ {\it converges} if the sequence of partial sums
+\[
+s_{n}=\sum_{j=1}^{n}a_{j}
+\]
+converges as $n\rightarrow\infty$. When $(s_n)$ converges we denote its limit by $\sum_{j=1}^{\infty}a_{j}$. 
+\end{definition}
+Alternatively, given the sequence $(a_n)$, we can equivalently define the sequence $(s_n)$ recursively by
+$s_1 = a_1$ and
+$s_{n} = a_n + s_{n-1}$
+for $n \geq 2$. 
+
+\medskip
+\noindent
+{\bf Question:} Give an example of an infinite series $\sum_{n=1}^\infty a_n$ which converges, and an example of one which fails to converge.
+%Notice that we have used precisely this formalism in our study of decimals. We are also familiar with it in the context of geometric progressions -- for example if $a_n = 2^{-n}$, then $s_n = \frac{1}{2}{\frac{1 - 2^{-n-1}}{1- 2^{-1}}} = 1 - 2^{-n-1} \to 1$ as $n \to \infty$. Thus we evaluate the sum of the infinite geometric series\[ \left(\frac{1}{2}\right) + \left(\frac{1}{2}\right)^2 + \left(\frac{1}{2}\right)^3 + \dots = 1.\]
+
+\medskip
+Decimal expansions can be thought of as special cases of infinite series: given a sequence $(b_j)$ with each $b_j \in \{0, 1, \dots , 9\}$, we can interpret the decimal expansion $0.b_1b_2 \dots$ as the infinite series $\sum_{j=1}^\infty \frac{b_j}{10^j}$.
+
+\medskip
+\noindent
+{\em \bf \em A word of warning about a possible source of confusion.} Given a sequence $(a_n)$, we can consider two questions about it: convergence of the {\bf sequence} $(a_n)$, and convergence of the {\bf series} $\sum_{j=1}^\infty a_j$. {\bf It is important to realise that these are two completely different things.} Convergence of the sequence $(a_n)$ is just what it says, while convergence of the series $\sum_{j=1}^\infty a_j$
+is defined as convergence of the {\em auxiliary} sequence $(s_n)$. So it's always important to be clear whether we are talking about convergence of the sequence $(a_n)$ or convergence of the series $\sum_{j=1}^\infty a_j$. Some texts use the word "summable" to describe convergent series, and this goes some way towards relieving any potential confusion, but the term "convergent series" is just too ingrained in mathematical language to be eradicated. (See also Exercise~\ref{eleven}.)
+
+\medskip
+Sometimes we will also work with series which start from a different position, like $\sum_{j=2}^{\infty} \frac{1}{j(j-1)}$, and the definition is the same: we say this series is convergent if the partial sums $\sum_{j=2}^{n} \frac{1}{j(j-1)}$ converge. Whether we use the "dummy variable"
+$j$ or $k$ (or anything else) doesn't matter: $\sum_{j=2}^{\infty} \frac{1}{j(j-1)}$ has exactly the same meaning as $\sum_{k=2}^{\infty} \frac{1}{k(k-1)}$ or $\sum_{n=2}^{\infty} \frac{1}{n(n-1)}$.
+
+\begin{example}
+\label{ex:geometric-series}
+The quintessential example of a convergent series is the {\it geometric series}. Recall that for any real number $r \neq 1$, 
+\begin{equation}
+\label{e:gs}
+\sum_{j=0}^{n} ar ^{j}=\frac{a(1-r^{n+1})}{1-r}
+\end{equation}
+If $|r|<1$, then $|r^{n+1}|=|r|^{n+1}\rightarrow 0$ by Example \ref{ex:power}, and so $r^{n+1}\rightarrow 0$ as well. Thus,
+\[
+\limn \sum_{j=0}^{n}ar^{j} = \limn \frac{a(1-r^{n+1})}{1-r} = \frac{\limn a(1-r^{n+1})}{1-r}=\frac{a- a\limn r^{n+1}}{1-r}=\frac{a}{1-r}.\]
+Thus, when $|r|<1$, $\sum_{j=0}^\infty a r^{j}$ is convergent, and $\sum_{j=0}^{\infty} a r^{j}=\frac{a}{1-r}$. We'll see below that this series converges if and only if $|r|<1$.\\
+%
+%{\bf WARNING:} Even though the formula \eqref{e:gs} holds for any number $x$, the series converges only when $|x|<1$. Famously, Liebniz (that is, one of the founders of calculus, so clearly someone clever) thought that 
+%\[
+%\sum_{n=1}^{\infty}(-1)^{n} =-\frac{1}{2}.
+%\]
+%This is not true: the series $\sum (-1)^{n}$, and so the above equation is meaningless. This was part of the motivation for developing the $\epsilon$-$N$-style of analysis that we covered last week: to formalize what we mean by limits to prevent mathematicians from doing pseudomath. 
+\end{example}
+
+One useful necessary condition for a series to converge is the following:
+
+\begin{proposition}\label{divgcetest}
+Suppose the series $\sum_{j=1}^\infty a_j$ converges. Then the sequence $(a_j)$ satisfies $a_j \to 0$.
+\end{proposition}
+\begin{proof}
+Let $s_n = \sum_{j=1}^n a_j$. Then for some $s \in \mathbb{R}$, $s_n \to s$. Hence $a_n = s_n - s_{n-1} \to s-s =0$.  
+\end{proof}
+As a consequence of this we see that the geometric series of Example~\ref{ex:geometric-series} diverges when $|r| \geq 1$ since the sequence $(ar^j)_{j=1}^\infty$ does not converge to $0$ when $|r| \geq 1$.
+
+\medskip
+Just as we had rules for manipulating limits of sequences, we also have rules for manipulating infinite sums. The one
+which follows says that the operation of taking infinite sums is linear. Its proof  will use the rules for limits of sequences.
+
+\begin{proposition}
+\label{p:suman+bn}
+Let $(a_{j})$ and $(b_{j})$ be sequences. If $\sum_{j=1}^\infty a_{j}$ and $\sum_{j=1}^\infty b_{j}$ are convergent, then so is $\sum_{j=1}^\infty (a_{j}+b_{j})$, and 
+\[
+\sum_{j=1}^{\infty} (a_{j}+b_{j})=\sum_{j=1}^{\infty} a_{j}+\sum_{j=1}^{\infty} b_{j}.
+\]
+If $c\in\mathbb{R}$, then $\sum ca_{j}$ is convergent and 
+\[
+\sum_{j=1}^{\infty} ca_{j}=c
+\sum_{j=1}^{\infty} a_{j}.
+\]
+
+\end{proposition}
+
+\begin{proof}
+We observe that
+\begin{align*}
+\sum_{j=1}^{\infty} (a_{j}+b_{j}) & = \lim_{n\rightarrow\infty} \sum_{j=1}^{n}(a_{j}+b_{j})
+& =\lim_{n\rightarrow\infty} \left(\sum_{j=1}^{n} a_{j}+\sum_{j=1}^{n}b_{j}\right)
+=\lim_{n\rightarrow\infty} \sum_{j=1}^{n} a_{j}+\lim_{n\rightarrow\infty}\sum_{j=1}^{n}b_{j}\\
+& =\sum_{j=1}^{\infty} a_{j}+\sum_{j=1}^{\infty}b_{j}.
+\end{align*}
+Similarly,
+\[
+\sum_{j=1}^{\infty} ca_{j}
+=\lim_{n\rightarrow\infty}\sum_{j=1}^{n} ca_{j}
+=c\lim_{n\rightarrow\infty}\sum_{j=1}^{n} a_{j}
+=c\sum_{j=1}^{\infty} a_{j}.
+\]
+\end{proof}
+\noindent
+{\bf Point to ponder:} What about a rule for {\em products} of series?
+
+\medskip
+In Calculus and its Applications, you will learn about several tests for convergence of series. We will discuss only one here.
+
+\begin{theorem}[Comparison Test]
+If $b_j \geq 0$ for all $j$ and $\sum_{j=1}^\infty b_{j}$ is convergent, and if $|a_{j}|\leq b_{j}$ for all $j$, then $\sum_{j=1}^\infty a_{j}$ is also convergent, and
+moreover $ |\sum_{j=1}^\infty a_j| \leq \sum_{j=1}^\infty b_j.$ 
+\end{theorem}
+
+\begin{proof}
+The idea is to write $a_j = (a_j - b_j) + b_j$ and to use Proposition~\ref{p:suman+bn}. We know that $\sum_j b_j$ converges by hypothesis, and if we knew that $\sum_j(a_j - b_j)$ converged we would be in business.  
+
+Note first that, since $a_j \leq b_j$ for all $j$, we have $t_n \geq 0$ for all $n$, and moreover the sequence $(t_n)$ given by
+\[
+t_{n}=\sum_{j=1}^{n}(b_{j}-a_{j})
+\]
+is increasing. Next, note that $b_{j}-a_{j}\leq 2b_{j}$, and so
+\[
+t_{n}\leq \sum_{j=1}^{n}2b_{j}\leq \sum_{j=1}^{\infty}2b_{j}\]
+and since this latter sum converges by Proposition \ref{p:suman+bn}, this means that $(t_{n})$ is bounded above. Thus, by the MCT, $(t_{n})$ converges
+and $\limn t_n \geq 0$. Therefore, by Proposition~\ref{p:suman+bn}. $\sum_{j=1}^\infty(a_j - b_j)$
+converges to some nonpositive number. 
+We conclude that $\sum_{j=1}^\infty a_{j}$ converges, and the sum is $\sum_{j=1}^\infty b_j + \sum_{j=1}^\infty (a_j - b_j)$, whose value is at most $\sum_{j=1}^\infty b_j$. Finally, applying the same reasoning with $-a_j$ in place of $a_j$, we conclude that
+\[
+|\sum_{j=1}^\infty a_j| \leq \sum_{j=1}^\infty b_j.
+\]
+\end{proof}
+
+For example, since $\left|\frac{\sin j}{2^{j}}\right|\leq \frac{1}{2^{j}}$ and $\sum_{j=1}^\infty \frac{1}{2^{j}}$ converges by Example \ref{ex:geometric-series}, we can deduce that $\sum_{j=1}^\infty \frac{\sin j}{2^{j}}$ converges too.
+
+\section{The number $e$}
+The number $e$, together with $0,1$ and $\pi$, is perhaps the most important of all the real numbers.
+It arose in practical calculations in compound interest when one wants to calculate the interest on a "continuous" basis rather than on a discrete (annually, monthly, daily, hourly) basis. It is in this context that it arises as the limit of the sequence $(a_n)$, where
+\[ a_n = \left(1 + \frac{1}{n}\right)^n.\]
+In one of the exercises we shall establish that this sequence does indeed have a limit $L$ such that $2 < L < 4$. 
+
+It was also used as the base for natural logarithms. These were invented as early as 1618 by John Napier in the Merchiston area of Edinburgh.
+
+Finally, it arises as the infinite sum
+\[ e := \sum_{n=0}^\infty \frac{1}{n!}\]
+which converges by the comparison test since for $n \geq 1$
+\[
+\frac{1}{n!}=\frac{1}{n\cdot (n-1)\cdots 2\cdot 1}\leq \frac{1}{2\cdot 2\cdots 2\cdot 1 } = \frac{1}{2^{n-1}},
+\]
+and the geometric series $\sum_{n=1}^{\infty}\frac{1}{2^{n-1}}$ converges. This is the definition of $e$ which we adopt officially in mathematics. In one of the exercises (quite hard!) we establish that 
+\[ 
+\sum_{n=0}^\infty \frac{1}{n!} = \limn \left(1 + \frac{1}{n}\right)^n,\]
+showing that the two definitions of $e$ which we have proposed are in fact the same.
+
+What is not clear from either defintion of $e$ is whether it is rational or irrational: it is not clear whether $e$ has a repeating decimal expansion or not from its definition. In the Appendix below we establish that $e$ is in fact irrational.
+In the Honours Analysis course you will study the more general exponential function which gives a rigorous framework for raising the number $e$ to an arbitrary (not just rational) real power $x$, and much else besides.
+
+%
+%\begin{theorem}[The $p$-test]
+%The series $\sum \frac{1}{n^{p}}$ converges if and only if $p>1$. 
+%\end{theorem}
+%
+%\begin{proof}
+%You may know a proof using the integral test, but we have not developed the theory of integrals in this course, so we cannot use them as justification. However, there is a simpler proof. First, suppose $p>1$, then
+%\[
+%\sum_{n=1}^{2^{N}-1}\frac{1}{n^{p}}
+%=\sum_{j=0}^{N-1}\sum_{n=2^{j}}^{2^{j+1}-1}\frac{1}{n^{p}}
+%\leq \sum_{j=0}^{N-1}\sum_{n=2^{j}}^{2^{j+1}-1}\frac{1}{(2^{j})^{p}}
+%=  \sum_{j=0}^{N-1} \frac{2^{j+1}}{2^{jp}}
+%=\sum_{j=0}^{N-1} 2\cdot (2^{1-p})^{j}
+%\]
+%and this converges since $2^{1-p}<1$ as $1-p<0$. If $s_{N}=\sum_{n=1}^{N}\frac{1}{n^{p}}$, we have now shown that $s_{2^{N}}$ converges. Since $s_{n}$ is increasing, $s_{n}$ now converges because of Proposition \ref{p:sub-monotone}. 
+%
+%If $p\leq 1$, then 
+%\[
+%\sum_{n=1}^{2^{N}-1}\frac{1}{n^{p}}
+%=\sum_{j=0}^{N-1}\sum_{n=2^{j}}^{2^{j+1}-1}\frac{1}{n^{p}}
+%\geq \sum_{j=0}^{N-1}\sum_{n=2^{j}}^{2^{j+1}-1}\frac{1}{(2^{j+1})^{p}}
+%=  \sum_{j=0}^{N-1} \frac{2^{j+1}}{2^{(j+1)p}}
+%=\sum_{j=0}^{N-1} 2^{1-p}\cdot (2^{1-p})^{j}
+%\]
+%which diverges by because $2^{1-p}\geq 1$ as $1-p\geq 1$, and so $\sum \frac{1}{n^{p}}$ diverges as well.
+%\end{proof}
+%
+
+
+
+%
+%
+%\begin{definition}
+%A series $\sum a_{n}$ is {\it absolutely convergent} if $\sum |a_{n}|$ is convergent. 
+%\end{definition}
+%
+%\begin{theorem}[Absolute convergence theorem (ACT)]
+%If $\sum a_{n}$ is absolutely convergent, then it is convergent. 
+%\end{theorem}
+%
+%\begin{proof}
+%Consider the series $\sum (|a_{n}|-a_{n})$. Then the terms of this series are nonnegative, and the partial sums are monotone increasing satisfy
+%\[
+%\sum_{n=1}^{N} (|a_{n}|-a_{n})
+%\leq \sum_{n=1}^{N}|a_{n}|
+%\leq \sum_{n=1}^{\infty} |a_{n}|<\infty,
+%\]
+%and so $s_{N}=\sum_{n=1}^{N} (|a_{n}|-a_{n})$ is a monotone increasing and bounded sequence, so it converges. Thus, by Proposition \ref{p:suman+bn}, the series $\sum (|a_{n}|-(|a_{n}|-a_{n}))=\sum a_{n}$ converges as well. 
+%\end{proof}
+%
+%
+%
+%\begin{example}
+%The series $\sum \frac{(-1)^{n}}{n^2}$ is convergent because $\sum \left|\frac{(-1)^{n}}{n^2}\right|=\sum \frac{1}{n^2}$ is convergent by the $p$-test.
+%\end{example}
+%
+%As an immediate corollary, we get the following useful test:
+%
+%\begin{theorem}[Comparison Test]
+%If $|a_{n}|\leq b_{n}$ and $\sum b_{n}$ converges, then $\sum a_{n}$ converges. 
+%\end{theorem}
+%
+%\begin{proof}
+%Note that the partial sum $\sum_{n=1}^{N}|a_{n}|$ is increasing since the terms are nonnegative, and so we just need to show it is bounded from above. But
+%\[
+%\sum_{n=1}^{N}|a_{n}|\leq \sum_{n=1}^{N}b_{n}\leq \sum_{n=1}^{\infty} b_{n}<\infty
+%\]
+%and so $\sum|a_{n}|$ converges, thus $\sum a_{n}$ is absolutely convergent.
+%\end{proof}
+%
+%\begin{example}
+%$\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$ is convergent since $\frac{1}{n(n+1)}<\frac{1}{n^2}$ and $\sum_{n=1}^{\infty} \frac{1}{n^2}$ is convergent by the $p$-test.
+%\end{example}
+%
+%\begin{example}
+%If we consider $\sum_{n=2}^{\infty} \frac{1}{n(n-1)}$, we have to be a bit more careful using the comparison test, since $\frac{1}{n(n-1)}>\frac{1}{n^2}$. However, we can still try to bound it above by a multiple of $\frac{1}{n^2}$. Notice that for $n\geq 2$ that 
+%\[
+%n-1\geq \frac{n}{2}.
+%\]
+%Hence,
+%\[
+%\frac{1}{n(n-1)}\leq \frac{1}{n\cdot \frac{n}{2}}=\frac{2}{n^2}
+%\]
+%and since $\sum_{n=1}^{\infty}\frac{2}{n^2}$ converges, $\sum_{n=2}^{\infty} \frac{1}{n(n-1)}$ by the comparison test. 
+%\end{example}
+%
+%
+%
+%Not all convergent series are absolutely convergent.
+%
+%\begin{example}
+%Consider $s_{N}=\sum_{n=1}^{N}\frac{(-1)^{n}}{n}$. Then
+%\[
+%s_{2N}=\sum_{n=1}^{2N}\frac{(-1)^{n}}{n}
+%=-1+\frac{1}{2}-\frac{1}{3}+\frac{1}{4}-\cdots -\frac{1}{2N-1}+\frac{1}{2N}
+%=\sum_{n=1}^{N}\left(-\frac{1}{n}+\frac{1}{n+1}\right) 
+%=\sum_{n=1}^{N}\frac{1}{n(n+1)}
+%\]
+%We have already shown that $\lim_{N\rightarrow \infty} \sum_{n=1}^{N}\frac{1}{n(n+1)}$ converges in the previous example, so $\lim_{N\rightarrow\infty}s_{2N}$ exists. Moreover,
+%\[
+%\lim_{N\rightarrow\infty} s_{2N+1}=\lim_{N\rightarrow\infty} (s_{2N}-\frac{1}{2N+1})=\lim_{N\rightarrow\infty} s_{2N}+0,
+%\]
+%so $s_{2N+1}$ converges to the same limit. 
+%
+%\end{example}
+%
+%
+%Our study of series gives us another useful test for when a sequence converges:
+%
+%\begin{theorem}
+%Suppose $(x_n)$ is a sequence so that $\sum |x_{n}-x_{n+1}|$ converges. Then $(x_n)$ converges.
+%\end{theorem}
+%
+%\begin{proof}
+%Since $\sum |x_{n}-x_{n+1}|$ converges, so does $\sum (x_{n}-x_{n+1})$, so 
+%\begin{align*}
+%x_{n}
+%& =x_{n}-x_1+x_1=(x_n-x_{n-1}) + (x_{n-1}-x_{n-2})+\cdots + (x_{1}-x_{1})+x_1\\
+%& =\left(\sum_{k=1}^{n-1} (x_{k+1}-x_{k})\right) +x_{1}
+%\end{align*}
+%and since the sum converges, so does $x_n$.
+%\end{proof}
+%
+%\begin{example}
+%Suppose $x_1=1$ and $x_{n+1} = x_{n}  +(-1)^{n} \frac{x_{n}^{2}}{n^2}$. Show that $x_{n}$ converges. 
+%
+%Note that because of the $(-1)^{n}$, the sequence is neither increasing or decreasing, so we can't use the MCT in a straightforward way. But let's look at the differences:
+%\[
+%|x_{n}-x_{n+1}|=\frac{x_{n}^{2}}{n^{2}}.
+%\]
+%If we show $x_{n}$ is bounded by some number $C$, say, then $|x_{n}-x_{n+1}|\leq \frac{C^{2}}{n^{2}}$ and the previous theorem tells us that $x_n$ converges since $\sum \frac{C^{2}}{n^{2}}$ converges. 
+%\end{example}
+%
+%
+%
+%We could show that it is alternate increasing-decreasing (that is, that $x_{1}\leq x_{3}\leq \cdots $ and $x_{2}\geq x_{4}\geq \cdots$ and then use the MCT to conclude these sequences and hence the whole s
+%
+
+%
+%
+%\subsection{Non-uniqueness of decimal representations}
+%
+%One drawback of using decimal numbers is that they don't give {\it unique} representations of real numbers, that is, a real number could have two distinct decimal expansions. For example,
+%\[
+%1=1.0000
+%=.\overline{9}.
+%\]
+%
+%%More generally, 
+%%
+%%\[
+%%0.\underbrace{00.......0}_{ k  \mbox{ zeros}} \overline{9} = 0.\underbrace{00.......0}_{k-1  \mbox{ zeros}} 1.\]
+%
+%
+%
+%It turns out that having a trail of 9's is the only way you can have non-unique expansions.
+%
+%
+%\begin{theorem}
+%If a real number $x$ has two distinct decimal expansions $a_{0}.a_{1}\cdots $ and $b_{0}.b_{1}\cdots $, then one of them must terminate in $0$'s and the other must terminate in $9$'s.
+%\end{theorem}
+%
+%
+%
+%{\bf Note:} The proof given in Liebeck Proposition 3.3 is a little shorter, so you may want to read that proof first. If you'd like a bit more detail, you can read below.
+%
+%\begin{proof}
+%First, let's assume $a_{0}=b_{0}=0$. We leave the general case as an exercise. Since the decimal expansions are distinct, there is an integer $k\geq 1$ so that $a_{k}\neq b_{k}$. Let $k$ be the smallest of these, so that
+%\[
+%a_{i}=b_{i} \;\; \mbox{ for }\;\; 1\leq i<k.\]
+%We can also assume $a_{k}>b_{k}$ (since either this happens or $a_{k}<b_{k}$ and the proof will be similar). In particular, since $a_{k}$ and $b_{k}$ are integers, this means 
+%\[
+%a_{k}\geq b_{k}+1.\]
+%
+%So now we will show that $a_{i}=0$ for all $i>k$ and $b_{i}=9$ for all $i>k$. Because $x=0.b_{1}b_{2}\cdots $  and $b_{j}\leq 9$ for all $j$,
+%\begin{equation}
+%x= 0.b_{1}...b_{k-1} b_{k}b_{k+1}...
+%\leq 0.b_{1}...b_{k-1}b_{k}999...
+%\leq 0.b_{1}...b_{k-1}(b_{k}+1)
+%\label{e:x}
+%\end{equation}
+%In the last line, we used the fact that 
+%\[
+%0.\underbrace{00.......0}_{ k  \mbox{ zeros}} \overline{9} = 0.\underbrace{00.......0}_{k-1  \mbox{ zeros}} 1\]
+%so one gets added to $b_{k}$ term. Now recall that $a_{i}=b_{i}$ for $i<k$ and $b_{k}+1\leq a_{k}$. Applying this to the terms above, we get that $x\leq a_{1}...a_{k}$. Thus, now we know
+%\[
+%0.a_{1}\cdots \leq x\leq 0.a_{1}...a_{k}.
+%\]
+%The first equality is our main assumption (that $x$ has that decimal expansion) and the second is what we have just proved. If we subtract the last term from both ends of the inequality, we get
+%\[
+%0.{0...0}a_{k}a_{k+1}...\leq 0.
+%\]
+%Since the $a_i$ are nonnegative, this is only possible if $a_{i}=0$ for all $i\geq k$. Thus, $x=a_{0}.a_{1}\cdots ... a_{k}\bar{0}$. Similarly, from \eqref{e:x}, we have 
+%\[
+%x= 
+%\leq 0.b_{1}...b_{k-1}b_{k}999...
+% \leq 0.a_{1}...a_{k}=x=0.b_{1}\cdots b_{k-1}b_{k}b_{k+1}...
+%\]
+%and subtracting $0.b_{1}\cdots b_{k-1}b_{k}b_{k+1}$ from both ends of the inequality, we get 
+%\[
+%0.b_{1}...b_{k-1}b_{k}(9-b_{k+1})(9-b_{k+2})...\leq 0.
+%\]
+%Since $b_{i}\leq 9$, $9-b_{i}\geq 0$, so the only way this is possible is if $b_{i}=9$ for all $i>k$. 
+%
+%
+%\end{proof}
+% 
+%
+
+\section{Exercises}
+
+The relevant exercises in Liebeck are in Chapter 3. 
+
+\begin{exercise}\label{81}
+Use the formula for a finite geometric series to show that for $ a, b \in \mathbb{R}$ and $n \in \mathbb{N}$ we have 
+\[ a^n - b^n = (a-b)(a^{n-1} + a^{n-2}b + \cdots + ab^{n-2} + b^{n-1}).\]
+\end{exercise}
+
+\begin{exercise}
+Write each of the following decimal expansions in the form of a fraction $\frac{p}{q}$ with $p, q \in \mathbb{Z}$.
+\begin{enumerate}[label=(\alph*)]
+\item $0.\overline{123}$ .
+\item $0.\overline{2}$ .
+\item $0.\overline{2331}$ .
+\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+Prove that if $a_{n},b_{n}\in \{0,1,...,9\}$ are so that $a_{n}+b_{n}\leq 9$ for all $n$, then
+\[
+0.a_{1}a_{2}\cdots + 0.b_{1}b_{2}\cdots = 0.(a_{1}+b_{1})(a_{2}+b_{2})...\]
+\begin{solution}
+We use Proposition \ref{p:suman+bn} and the definition of a decimal expansion to get 
+\begin{align*}
+ 0.a_{1}a_{2}\cdots + 0.b_{1}b_{2}\cdots 
+&  =\sum_{n=1}^{\infty}\frac{a_{n}}{10^{n}} + \sum_{n=1}^{\infty}\frac{b_{n}}{10^{n}} \\
+& = \sum_{n=1}^{\infty}\left( \frac{a_{n}}{10^{n}} + \frac{b_{n}}{10^{n}} \right) \\
+& = \sum_{n=1}^{\infty} \frac{a_{n}+b_{n}}{10^{n}} 
+=0.(a_{1}+b_{1})(a_{2}+b_{2})...
+\end{align*}
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise}\label{877}
+Suppose that $0 \leq a_1 \leq 8$ and that $0.a_1 a_2 a_3\dots =
+0.(a_1 +1) b_2 b_3 \dots$. Show that $a_j = 9$ and $b_j = 0$ for all $j \geq 2$.
+\begin{solution}
+By assumption, \[\frac{a_1}{10} + \sum_{j=2}^\infty \frac{a_j}{10^j} = \frac{a_1 + 1}{10} + \sum_{j=1}^\infty \frac{b_j}{10^j},\] 
+so that
+\[ \sum_{j=2}^\infty \frac{a_j - b_j}{10^j} = \frac{1}{10}.\] 
+But if $a_j - b_j < 9$ for any $j$ we will have
+\[ \sum_{j=2}^\infty \frac{a_j - b_j}{10^j} < \sum_{j=2}^\infty \frac{9}{10^j} = \frac{1}{10},\]
+contradiction. So indeed $a_j = 9$ and $b_j = 0$ for all $j \geq 2$.
+
+\end{solution}
+
+\end{exercise}
+
+\begin{exercise}
+Suppose that $a_{n}\geq 0$ and the numbers $\sum_{j=1}^{n}a_{j}$ are bounded above.  Is $\sum_{j=1}^{\infty}a_{j}$ convergent?
+
+\begin{solution}
+Yes, note that $s_n=\sum_{j=1}^{n}a_{j}$ is an increasing sequence since
+\[
+s_{n+1}-s_{n}=\sum_{j=1}^{n+1}a_{j}-\sum_{j=1}^{n}a_{j} = a_{n+1}\geq 0.
+\]
+By assumption, $(s_{n})$ is bounded above, so it must converge by the MCT.
+\end{solution}
+\end{exercise}
+
+%
+%\begin{exercise} Show that $a_{n}\rightarrow L$ if and only if for all $k\in\mathbb{N}$ there is $N\in\mathbb{N}$ so that for all $n\geq N$, the first $k$ digits of the decimal expansions for $a_n$ and $a$ agree.
+%
+%\end{exercise}
+%
+%\begin{exercise} 
+% Show that $\sum_{n=1}^{N}\frac{1}{\sqrt{n}}-2\sqrt{N}$ converges as $N\rightarrow \infty$. Hint: Use monotone convergence theorem. 
+%\begin{solution}
+%In the Week 2 workshop, we showed that $\sum_{n=1}^{N}\frac{1}{\sqrt{n}}\leq 2\sqrt{N}$ for all $N$, so $s_{N}=\sum_{n=1}^{N}\frac{1}{\sqrt{n}}-2\sqrt{N}$ is bounded above. Thus, it suffices to show that this sequence is increasing, since then it will converge by the MCT: 
+%\begin{align*}
+%s_{N+1}-s_{N}
+%& =\sum_{n=1}^{N+1}\frac{1}{\sqrt{n}}-2\sqrt{N+1}-\sum_{n=1}^{N}\frac{1}{\sqrt{n}}+2\sqrt{N}\\
+%& = \frac{1}{\sqrt{N+1}}-2\sqrt{N+1}+2\sqrt{N}\\
+%& =\frac{1}{\sqrt{N+1}}-2\left(\sqrt{N+1}-\sqrt{N}\right) \\
+%& =\frac{1}{\sqrt{N+1}}-2\left(\sqrt{N+1}-\sqrt{N}\right)\frac{\sqrt{N+1}+\sqrt{N}}{\sqrt{N+1}+\sqrt{N}} \\
+%& =\frac{1}{\sqrt{N+1}}-2\frac{(N+1)-N}{\sqrt{N+1}+\sqrt{N}} \\
+%& =\frac{1}{\sqrt{N+1}}-2\frac{1}{\sqrt{N+1}+\sqrt{N}} \\
+%\end{align*}
+%
+%\end{solution}
+%\end{exercise}
+
+
+
+%
+%
+%\begin{exercise}  Show that $\sum_{n=1}^{\infty}9^{-n^2}$ is irrational. (Hint: think about how we proved $e$ is irrational). 
+%
+%\begin{solution}
+%Let $N$ be an integer and $x=\sum_{n=1}^{\infty}9^{-n^2}$. Then
+%\[
+%x-\sum_{n=1}^{N}9^{-n^2}
+%=\sum_{n=N+1}^{\infty}9^{-n^2}
+%=9^{-(N+1)^2}\sum_{n=N+1}^{\infty} 9^{(N+1)^2-n^2}\]
+%Note that this sum is of some negative powers of $9$, so it is at most the sum of {\it all} negative powers of $9$, and thus the above is 
+%\[
+%\leq 9^{-(N+1)^2}\sum_{n=0}^{\infty} 9^{-n}
+%= 9^{-(N+1)^{2}} \frac{1}{1-1/9}
+%=9^{-(N+1)^{2}}\frac{9}{8}.
+%\]
+%
+%Let $\frac{p}{9^{N^2}} = \sum_{n=1}^{N}9^{-n^2}$. Then,
+%\[
+%|x-\frac{p}{9^{N^2}}|
+%=\sum_{n=N+1}^{\infty}9^{-n^2}
+%\leq 9^{-(N+1)^{2}}\frac{9}{8}
+%=9^{-N^2-2N-1}\frac{9}{8}
+%=\frac{9^{-2N}}{9^{N^{2}}}
+%\]
+%and since $9^{-2N}\rightarrow 0$, we can pick $N$ so that this is at most $c$, so that $|x-\frac{p}{9^{N^2}}|<\frac{c}{9^{N^{2}}}$. 
+%\end{solution}
+%
+%\end{exercise}
+%
+%
+\begin{exercise}\label{eleven}
+In each case, either find a sequence $(a_n)$ such that $a_n \geq 0$ for all $n$ which has the desired property, or else explain why no such sequence exists. \\
+
+(i) the sequence $(a_n)$ and the series $\sum_{n=1}^\infty a_n$ both converge\\
+
+(ii) the sequence $(a_n)$ and the series $\sum_{n=1}^\infty a_n$ both fail to converge\\
+
+(iii) the sequence $(a_n)$ converges and the series $\sum_{n=1}^\infty a_n$ fails to converge\\ 
+
+(iv) the sequence $(a_n)$ fails to converge and the series $\sum_{n=1}^\infty a_n$ converges.\\
+
+\begin{solution}
+(i) $a_n = 2^{-n}$.
+
+(ii) $a_n = 2^n$.
+
+(iii) $a_n = 1/n$. Then $a_n \to 0$ but $\sum_{n=1}^\infty \frac{1}{n}$ diverges -- see his week's Lecture Quiz.
+
+(iv) Not possible: by Proposition~\ref{divgcetest}, if $\sum_{n=1}^\infty a_n$ converges, then the sequence $(a_n)$ converges (in fact it converges to $0$).
+\end{solution}
+
+\end{exercise}
+
+\begin{exercise}
+If $\sum_n |a_n|$ converges, show that $\sum_n a_n$ converges. {\bf Harder:} Does the converse hold?
+\begin{solution}
+This follows directly from the comparison test. The converse is not true: take $a_n = \frac{(-1)^n}{n}$. The convergence of $\sum_{n=1}^\infty a_n$ for this case is treated in Calculus and its Applications. 
+\end{solution}
+\end{exercise}
+
+\begin{exercise} If $a_n \to 0$,
+does $\sum_n a_n$ necessarily converge? 
+\begin{solution}
+No: take $a_n = 1/n$.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+Suppose that $|a_n - a_{n-1}| \leq 2^{-n}$ for all $n \in \mathbb{N}$. Show that the sequence $(a_n)$ converges. ({\bf Hint:} Consider the {\em series} $\sum_{n=1}^\infty (a_n - a_{n-1})$.)
+\begin{solution}
+By the comparison test and the geometric series, we have that $\sum_{n=1}^\infty (a_n - a_{n-1})$ converges.
+But the partial sums for this series are
+\[ s_n = \sum_{j=1}^n (a_j - a_{j-1}) = a_n - a_0.\]
+Since $(s_n)$ converges, so does $(a_n)$.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+ A fun fact you'll learn how to prove if you take the 4th year course {\it Fourier Analysis} is that
+\[
+\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^{2}}{6}.
+\]
+Given this fact, compute $\sum_{n=1}^{\infty}\frac{1}{(2n+1)^2}$. 
+
+\begin{solution}
+Note that  for any integer $N$,
+\begin{align*}
+\sum_{n=1}^{2N+1}\frac{1}{n^{2}}
+& =
+\sum_{n=1}^{2N+1}\frac{1}{n^{2}}
+=\frac{1}{1^{2}}+\frac{1}{2^{2}}+\frac{1}{3^{2}}+\cdots + \frac{1}{(2N+1)^2}\\
+& =\left(\frac{1}{1^{2}}+\frac{1}{3^{2}}+\cdots + \frac{1}{(2N+1)^2}\right)
++\left(\frac{1}{2^{2}}+\frac{1}{4^{2}}+\cdots + \frac{1}{(2N)^2}\right)\\
+& =\sum_{n=1}^{N}\frac{1}{(2n+1)^{2}}+ \sum_{n=1}^{N}\frac{1}{(2n)^{2}}
+= \sum_{n=1}^{N}\frac{1}{(2n+1)^{2}}+\frac{1}{2^2} \sum_{n=1}^{N}\frac{1}{n^{2}}\\
+\end{align*}
+Now taking limits of both sides gives
+\begin{align*}
+\frac{\pi^{2}}{6} = 
+& \sum_{n=1}^{\infty}\frac{1}{n^2}
+=\lim_{N\rightarrow\infty}\sum_{n=1}^{2N+1}\frac{1}{n^{2}}
+ =\lim_{N\rightarrow\infty} \left(\sum_{n=1}^{N}\frac{1}{(2n+1)^{2}}+\frac{1}{2^2} \sum_{n=1}^{N}\frac{1}{n^{2}}\right) \\
+& =\sum_{n=1}^{\infty}\frac{1}{(2n+1)^{2}}+ \frac{1}{2^2} \sum_{n=1}^{\infty}\frac{1}{n^{2}}
+ = \sum_{n=1}^{\infty}\frac{1}{(2n+1)^{2}}+ \frac{1}{4} \cdot \frac{\pi^{2}}{6}
+\end{align*}
+and solving for the sum on the right gives
+\[
+\sum_{n=1}^{\infty}\frac{1}{(2n+1)^{2}}= \frac{\pi^{2}}{6} - \frac{1}{4} \cdot \frac{\pi^{2}}{6}=\frac{\pi^{2}}{8}.
+\]
+
+
+
+
+\end{solution}
+\end{exercise}
+
+
+%begin{exercise}
+%Let $a_n = \left(1 + \frac{1}{n}\right)^n$. 
+
+%(i) Show that $a_{n+1} \geq a_n$ if and only if %$\left(1-\frac{1}{(n+1)^2}\right)^{n+1} \geq %\frac{n}{n+1}$.
+
+%(ii) Use Bernoulli's inequality to show that $\left(1-\frac{1}{(n+1)^2}\right)^{n+1} \geq \frac{n}{n+1}$, and deduce that $(a_n)$ is increasing. 
+
+%(iii) Use the binomial theorem and finite geometric series to show that $a_n \leq 4$ for all $n$. 
+
+%(iv) Deduce that $(a_n)$ converges to some number $L$ satisfying $2 < L \leq 4$.
+
+
+%\begin{solution}
+%(i) We have
+%\[ \left(1 + \frac{1}{n+1}\right)^{n+1} \geq \left(1 + \frac{1}{n}\right)^n\]
+%if and only if
+%\[ \left(\frac{(n+2)n}{(n+1)^2}\right)^{n+1} \geq %\frac{n}{n+1}
+%\]
+%if and only if 
+%\[\left(1-\frac{1}{(n+1)^2}\right)^{n+1} \geq \frac{n}{n+1}.\]
+
+%(ii) By Bernoulli's inequality with $h = -1/(n+1)^2$ we %have \[\left(1-\frac{1}{(n+1)^2}\right)^{n+1} \geq 1 - %\frac{n+1}{(n+1)^2} = \frac{n}{n+1},\]
+%and so $a_{n+1} \geq a_n$ for all $n$.
+
+%(iii) By the binomial theorem,
+%\[\left(1 + \frac{1}{n}\right)^n = \sum_{j=0}^n %{{n}\choose{j}} \frac{1}{n^j},\]
+%and the definition of the binomial coefficients shows that
+%\[{{n}\choose{j}} \frac{1}{n^j} \leq \frac{1}{j!} =\frac{1}{j\cdot (j-1)\cdots 2\cdot 1}\leq \frac{1}{2\cdot 2\cdots 2\cdot 1 } = \frac{1}{2^{j-1}}.\]
+%Therefore
+%\[\left(1 + \frac{1}{n}\right)^n \leq \sum_{j=0}^n \frac{1}{2^{j-1}} < 4.\]
+
+%(iv) We conclude that $(a_n)$ is increasing and bounded above by $4$, and so by the MCT converges to a limit $L$ satisfying $ 2 < L \leq 4$.
+
+%\end{solution}
+%\end{exercise}
+
+\begin{exercise}(Quite challenging.) 
+Let $a_n = \left(1 + \frac{1}{n}\right)^n$, and let $b_n = 1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!}$. Show that $(a_n)$ and $(b_n)$ both converge to the same limit. (You may assume that $(a_n)$ is convergent.) 
+
+\begin{solution}
+We have already seen in the previous exercise that 
+\[ \left(1 + \frac{1}{n}\right)^n \leq 1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!}\]
+so by the rules for limits we have
+$\limn a_n \leq \limn b_n$. (Note that $\lim_n b_n$ exists by our discussion of the number $e$.) To show that $\limn b_n \leq \limn a_n$ we must control $1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!}$ by $\left(1 + \frac{1}{m}\right)^m$ for some $m$ (which will probably satisfy $m \gg n$). Indeed, note that for $m \geq n$ we have
+\[ \left(1 + \frac{1}{m}\right)^m =
+1 + 1 + \frac{m(m-1)}{2!m^2} + \frac{m(m-1)(m-2)}{3!m^3} + \dots
++\]
+\[+ \dots
++ \frac{m(m-1) \dots (m-n+1)}{n! m^n} + \dots + \frac{m!}{m!m^m}
+\]
+\[ \geq 1 + 1 + \frac{1}{2!}\frac{m(m-1)}{m^2} + \frac{1}{3!}\frac{m(m-1)(m-2)}{m^3} + \dots
++ \frac{1}{n!}\frac{m(m-1) \dots (m-n+1)}{m^n}.
+\]
+The hope is that by taking $m$ sufficiently large we should be able to take all of the terms
+\[
+\frac{m(m-1)}{m^2}, \frac{m(m-1)(m-2)}{m^3}, \dots, \frac{m(m-1) \dots (m-n+1)}{m^n}
+\]
+very close to $1$.
+
+Fix $n$ and fix $\epsilon>0$. Since 
+$\frac{m(m-1)}{m^2} \to 1$ as $m \to \infty$ there is an $M_1$ such that 
+for $m > M_1$ we have
+\[ \frac{m(m-1)}{m^2} > 1- \epsilon.\]
+Since 
+$ \frac{m(m-1)(m-2)}{m^3}\to 1$ as $m \to \infty$ there is an $M_2$ such that 
+for $m > M_2$ we have
+\[ \frac{m(m-1)(m-2)}{m^3} > 1- \epsilon.\]
+Continuing in the same way, we eventually obtain an $M_{n-1}$ such that for $m > M_{n-1}$ we have 
+\[\frac{m(m-1) \dots (m-n+1)}{m^n} > 1-\epsilon. \]
+So for $m > M :=\max\{M_1, \dots, M_{n-1}\}$ we have
+\[ \frac{m(m-1) \dots (m-j+1)}{m^j}
+>1-\epsilon\]
+for all $2\leq j \leq n$. 
+Hence, for $m >M$ we have
+\[ \left(1 + \frac{1}{m}\right)^m \geq 1 + 1 +(1 - \epsilon)\left(
+\frac{1}{2!} + \cdots + \frac{1}{n!}\right) \geq (1 - \epsilon)\left(1 + \frac{1}{1!} +
+\frac{1}{2!} + \cdots + \frac{1}{n!}\right).\]
+Therefore 
+\[ \lim_{m \to \infty} \left(1 + \frac{1}{m}\right)^m \geq (1 - \epsilon) \limn \left(1 + \frac{1}{1!} +
+\frac{1}{2!} + \cdots + \frac{1}{n!} \right).
+\]
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+Show that for every real number $x$ there is a unique integer $a_0 \in \mathbb{Z}$ such that $a_0 \leq x < a_0 +1$. (We sometimes call $a_0$ the {\em integer part} of $x$, or the "floor" or "staircase" of $x$, denoted by $a_0 = \lfloor x \rfloor$.) Deduce that every real number $x$ has a decimal expansion 
+$x = a_0.a_1 a_2 \dots a_n \dots$
+where $a_0 \in \mathbb{Z}$ and $a_n \in \{0,1,2, \dots, 9\}$.
+\begin{solution}
+Let $x \in \mathbb{R}$. If $x \in \mathbb{Z}$ we simply take $a_0 = x$ and we are finished. So assume $x \notin \mathbb{Z}$. Let $A= \{ n \in \mathbb{Z} \; | \; n > x\}$. Then $A \neq \emptyset$ by the Archimedean property, and $x$ is a lower bound for $A$. Then $A$ has a minimum member $n_0$. Therefore $x < n_0$ and $ n_0 - 1 \leq x$. Take $a_0 = n_0 -1$. (Note that this argument works if and only if we are in the setting of an ordered field with the Archimedean property.)
+%(because $x \neq n_0$ and if $x > n_0$, $x$ would be a lower bound greater than the GLB, contradiction). Moreover $x \geq n_0 -1$ (because if $x < n_0 -1$, then $n_0 -1$ would be in $A$, and so would have to be at least as big as the lower bound $n_0$, contradiction). Furthermore, $n_0 \in \mathbb{Z}$ (because if not, there will be a sequence $(x_n)$ with $x_n \in A \subseteq \mathbb{Z}$ for all $n$, such that $x_n \to a_0$, so $ x_n - x_{n-1} \to 0$, and this forces $x_n - x_{n-1}$ to be equal to zero for all sufficiently large $n$, i.e. $x_n$ is the constant $a_0$ for all sufficiently large $n$, and since $x_n \in \mathbb{Z}$ we must have $a_0 \in \mathbb{Z}$). [See also Workshop 3, Question 8.] Now take $a_0 = n_0 -1$. 
+The uniqueness of $a_0$ is easy. 
+
+(The fact that $A$ actually has a minimum member deserves more discussion. $A$ is nonempty and has some lower bound. By the Archimedean property we can assert that it has a lower bound in $\mathbb{Z}$. The well-ordering principle -- which states that a nonempty subset of $\mathbb{N}$ has a least member, and which follows from the principle of induction -- allows us to conclude that the minimum exists.)
+
+\medskip
+For the second assertion, let $a_{0}$ be the integer part of $x$. Then
+$a_{0}\leq x<a_{0}+1$.
+So $x\in [a_{0},a_{0}+1)$, i.e. $x - a_0 \in [0,1)$. Now apply Theorem~\ref{decimal_existence} to $x - a_0$.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+
+\end{exercise} Formulate and prove results analogous to Theorems~\ref{83} and \ref{87} for arbitrary $x \in \mathbb{R}$.
+\pagebreak
+
+\section{*Appendix: irrationality of $e$}
+This section is optional, and is here to give you a taste of {\it analytic number theory}.
+
+\medskip
+In addition to Corollary~\ref{88}, there is another method for proving irrationality which involves this rather simple-looking lemma.
+
+\begin{lemma}\label{irrattest}
+Let $x \in \R$. Suppose that for every $c>0$ there is a rational number $\frac{p}{q}\neq x$ so that 
+\begin{equation}
+\label{e:x-p/q}
+\left|x-\frac{p}{q}\right| < \frac{c}{q}.
+\end{equation}
+Then $x$ is irrational.
+\end{lemma}
+
+\begin{proof}
+We prove this using the contrapositive. Suppose $x$ is rational. Then $x=\frac{a}{b}$ for some integers $a$ and $b$ with $b >0$. Hence if $\frac{p}{q}$ is any other rational number not equal to $x$,
+\[
+\left|x-\frac{p}{q}\right| 
+=\left|\frac{a}{b}-\frac{p}{q}\right| 
+=\left|\frac{aq-pb}{bq}\right| 
+=\frac{|aq-pb|}{bq}.
+\]
+Note that  $aq-pb$ is an integer. Moreover $aq-pb\neq0$, since otherwise we would have $ x = p/q$.
+Hence, $|aq-pb|\geq 1$, and if we set 
+\[
+c=\frac{1}{b},
+\]
+then we have that for any rational number $\frac{p}{q}$,
+\[
+\left|x-\frac{p}{q}\right| \geq \frac{|aq-pb|}{bq}\geq \frac{1}{bq}=\frac{c}{q}.
+\]
+We have shown that, supposing $x$ is rational, there exists a $c>0$ such that for all rational numbers $\frac{p}{q}$ we have $\left|x-\frac{p}{q}\right| \geq \frac{c}{q}$ and we are done.
+\end{proof}
+
+As a corollary, we get the following:
+
+\begin{corollary}
+Suppose that $p_n, q_n \in \Z, q_n \neq 0$, and %$x=\lim_{n\rightarrow\infty}\frac{p_{n}}{q_{n}}$ and 
+$\left|x-\frac{p_{n}}{q_{n}}\right|q_n\rightarrow 0$. Then $x$ is irrational.
+\end{corollary}
+
+\begin{proof}
+Let $c>0$. By assumption,
+there is an $N$ so that $n> N$ implies 
+\[
+\left|x-\frac{p_{n}}{q_{n}}\right|q_n<c \]
+or equivalently
+\[\left|x-\frac{p_{n}}{q_{n}}\right| < \frac{c}{q_n}.
+\]
+Thus, for all $c>0$, we can find $\frac{p_n}{q_n}$ rational so that \eqref{e:x-p/q} holds. Thus $x$ is irrational.
+\end{proof}
+
+\begin{theorem}
+The number $e$ is irrational. 
+\end{theorem}
+
+\begin{proof}
+Let $x = e-1$. We aim to show that for every $c>0$, we can find a rational number $\frac{p}{q}$ so that \eqref{e:x-p/q} holds. Lemma~\ref{irrattest} will then imply that $e-1$, and hence $e$, is irrational.
+
+So let $c>0$. Let $N\in\mathbb{N}$. Then
+\[
+x=\sum_{n=1}^{\infty} \frac{1}{n!}
+=\sum_{n=1}^{N}\frac{1}{n!} + \sum_{n=N+1}^{\infty}\frac{1}{n!}
+\]
+Note that 
+\begin{align*}
+\sum_{n=1}^{N}\frac{1}{n!} 
+& =1+\frac{1}{2!}+\frac{1}{3!}+\cdots + \frac{1}{N!}\\
+& = \frac{N!}{N!}+\frac{N!/2!}{N!}+\frac{N!/3!}{N!}+\cdots + \frac{1}{N!}\\
+& = \frac{N!+\frac{N!}{2!}+\frac{N!}{3!}+\cdots + 1}{N!} = \frac{p}{N!}
+\end{align*}
+where $p$ is an integer since $N!/k!$ is an integer for $k=0,1,...,N$. We will now show, for $N$ large enough, that 
+\[
+\left| x-\frac{p}{N!}\right|<\frac{c}{N!}.\]
+We know exactly what $x-\frac{p}{N!}$ is:
+
+\[
+x-\frac{p}{N!}
+=x-\sum_{n=1}^{N}\frac{1}{n!} 
+=\sum_{n=N+1}^{\infty}\frac{1}{n!}
+=\frac{1}{(N+1)!}\sum_{n=N+1}^{\infty}\frac{(N+1)!}{n!}
+\]
+If we can show that there is some constant $C$ such that \[\sum_{n=N+1}^{\infty}\frac{(N+1)!}{n!} \leq C\]
+for all $N$, we are done, since then
+\[
+\left|x-\frac{p}{N!}\right|
+=\frac{1}{(N+1)!}\sum_{n=N+1}^{\infty}\frac{(N+1)!}{n!}
+\leq \frac{C}{(N+1)!}=\frac{C/(N+1)}{N!}
+\]
+and so if $\frac{C}{N+1}<c$ (which happens if we pick $N>\frac{C}{c}-1$), the above gives $\left|x-\frac{p}{N!}\right|<\frac{c}{N!}$. 
+
+\medskip
+For the missing step, we have that for $n \geq N+1$,
+\[ \frac{(N+1)!}{n!} =
+\frac{1}{{n\choose N+1}}
+\frac{1}{(n-N-1)!}
+\leq \frac{1}{(n-N-1)!}
+\]
+since the binomial coefficients are all nonnegative integers, and we have already seen that 
+\[ \sum_{n = N+1}^\infty \frac{1}{(n-N-1)!} = \sum_{n=0}^\infty\frac{1}{n!}\] 
+converges.
+
+To recap, for every $c>0$, we have shown that we can pick $N$ so that $\left|x-\frac{p}{N!}\right|<\frac{c}{N!}$, which implies that $e$ is irrational by Lemma~\ref{irrattest}.
+\end{proof}
+
+\end{document}
+
+\section{Subsequences}
+
+Consider the sequence $x_n=(-1)^{n}$, the simplest example of a bounded divergent sequence. Note that, while this sequence doesn't approach one value as $n\rightarrow\infty$, it concentrates on two values, and if you throw out all the odd numbered terms of the sequence, you get the new sequence $x_{2n}=(-1)^{2n}=1$, which does converge. This was quite a simple sequence, but it turns out this is more than just coincidence: for any bounded sequence, we can throw out some terms so that the sequence becomes convergent. Below we make more precise what we mean by "throwing out" terms.
+
+\begin{definition}
+Given a sequence $(x_{n})$, a {\it subsequence} is a sequence of the form $(x_{n_{k}})$ where $n_{1}<n_{2}<\cdots $ are positive integers. A real number $x$ is a {\it limit point} of a sequence $(x_{n})$ if there is a subsequence $(x_{n_{k}})$ so that $x_{n_{k}}\rightarrow x$. 
+\end{definition}
+
+\begin{exercise}
+Show that if $n_{1}<n_{2}<\cdots $ is a strictly increasing sequence of positive integers, then $n_k\geq k$ for all $k\in\mathbb{N}$. 
+\end{exercise}
+
+The following gives a criterion for detecting limit points:
+
+\begin{proposition}
+\label{p:lim-points}
+Given a sequence $(x_n)$ and a number $L$, $L$ is a limit point if and only if for all $\epsilon>0$ and for all integers $N$, we can find $n> N$ so that $|x_n-L|<\epsilon$. 
+\end{proposition}
+
+\begin{proof}
+If $L$ is a limit point, we will show  that for all $\epsilon>0$ and for all integers $N$, we can find $n> N$ so that $|x_n-L|<\epsilon$. Let $\epsilon>0$ and $N\in\mathbb{N}$. Since $L$ is a limit point, there is a subsequence $(x_{n_{k}})$ converging to $L$ with $n_{1}<n_{2}<\cdots$, so there is $K\in\mathbb{N}$ so that $k> K$ implies $|x_{n_{k}}-L|<\epsilon$. By the previous exercise, $n_{k}\geq  k$, so if $k> \max\{N,K\}$, then  $n_k$ is an integer bigger than  $N$ so that $|x_{n_{k}}-L|<\epsilon$. This proves the forward implication of the proposition. 
+
+Now we prove the converse. Assume $L$ is a number so that for all $\epsilon>0$ and for all integers $N$, we can find $n> N$ so that $|x_n-L|<\epsilon$. We will show $L$ is a limit point. \\
+
+By our assumption (with $\epsilon=1$ and $N=1$), we can find $n_1\in\mathbb{N}$ so that 
+\[
+|x_{n_{1}}-L|<1.
+\]
+By our assumption again (now with $\epsilon=\frac{1}{2}$ and $N=n_{1}+1$) we can find $n_2>n_1$ so that 
+\[
+|x_{n_{2}}-L|<\frac{1}{2}.
+\]
+Now suppose we have picked $n_{k-1}$ for some integer $k\geq 2$. Using the same logic, we can find $n_{k}>n_{k-1}$ so that 
+\begin{equation}
+\label{e:xn-L<1/k}
+|x_{n_{k}}-L|<\frac{1}{k}.
+\end{equation}
+If we continue in this way, we get a sequence of integers $n_1<n_2<\cdots $ so that \eqref{e:xn-L<1/k} holds for all $k$. This means $x_{n_k}\rightarrow L$: For $\epsilon>0$, if $N=\frac{1}{\epsilon}$, then for $k> N$,
+\[
+|x_{n_{k}}-L|<\frac{1}{k}< \frac{1}{N}=\epsilon,
+\]
+which implies $x_{n_k}\rightarrow L$.
+\end{proof}
+
+
+
+\begin{example}
+We have already seen that $x_n=(-1)^{n}$ has a subsequence $x_{2k}=1$ that converges to $1$. Also, $x_{2k+1}=(-1)^{2k+1}=-1$ is a subsequence that converges to $-1$. We claim that $\{-1,1\}$ are the only limit points:
+
+Suppose $L$ is a limit point not equal to $-1$ or $1$. Then for all $n\geq 1$, $|x_{n}-L|=|(-1)^{n}-L|$ is either $|1-L|$ or $|-1-L|=|1+L|$, hence 
+\[
+|x_{n}-L|\geq \min\{|1-L|,|1+L|\}.
+\]
+Let $\epsilon=\min\{|1-L|,|1+L|\}$ and $N=1$.Note $\epsilon>0$ since $L\neq \pm 1$. Then $\epsilon>0$ and $N$ so that for all $n\geq N$, $|x_{n}-L|\geq \epsilon$. This is the negation of Proposition \ref{p:lim-points}, and so $L$ is not a limit point. Thus, the only limit points are $\pm 1$.
+
+%
+%Suppose there is a subsequence $(x_{n_{k}})$ that converges to some number $L$. Thus, for all $\epsilon>0$, there is $N$ so that $k\geq N$ implies $|x_{n_{k}}-L|<\epsilon$. Note that $x_{n_{k}}$ equals $-1$ or $1$, but if $\epsilon$ is at most than half the distance between $1$ and $-1$ (so $\epsilon=1$, say), we can't have $x_{n_{k}}=1$  and $x_{n_{\ell}}=-1$ for some $k,\ell\geq N$, because otherwise the distance between $x_{n_{k}}$ and $x_{n_{\ell}}$ is  
+%\[
+%|x_{n_{k}}-x_{n_{\ell}}|=|1-(-1)|=2,
+%\]
+%whereas since $|x_{n_{k}}-L|<\epsilon=1$ and $|x_{n_{\ell}}-L|<1$ (since $k,\ell\geq N$), we have 
+%\[
+%2=|x_{n_{k}}-x_{n_{\ell}}|
+%=|x_{n_{k}}-L+L-x_{n_{\ell}}| 
+%\leq |x_{n_{k}}-L|+|L-x_{n_{\ell}}| <1+1=2
+%\]
+%which is a contradiction. Thus, either $x_{n_{k}}=1$ for all $k\geq N$ or $x_{n_{k}}=-1$ for all $k\geq N$, which implies $\lim_{k\rightarrow\infty} x_{n_{k}}=1$ or $\lim_{k\rightarrow\infty} x_{n_{k}}=-1$. 
+\end{example}
+
+Our next convergence theorem says that, while a sequence does not need to converge, if it is {\it bounded} then we can always find a convergent {\it subsequence}, no matter how wild the original sequence is. 
+
+%\begin{lemma}
+%\label{l:x<y-lim}
+%If $(x_{n})$ and $(y_{n})$ are both convergent sequences and $x_{n}\leq y_{n}$ for all $n\in\mathbb{N}$, then $\lim_{n\rightarrow\infty} x_{n}\leq \lim_{n\rightarrow\infty} x_{n}$. In particular, if $M$ is a number so that $x_{n}\leq M$ for all $n$, then $\lim_{n\rightarrow\infty} x_{n}\leq M$.
+%\end{lemma}
+
+
+
+
+\def\putgrid{\put(0,0){0}
+\put(0,25){25}
+\put(0,50){50}
+\put(0,75){75}
+\put(0,100){100}
+\put(0,125){125}
+\put(0,150){150}
+\put(0,175){175}
+\put(0,200){200}
+\put(25,0){25}
+\put(50,0){50}
+\put(75,0){75}
+\put(100,0){100}
+\put(125,0){125}
+\put(150,0){150}
+\put(175,0){175}
+\put(200,0){200}
+\put(225,0){225}
+\put(250,0){250}
+\put(275,0){275}
+\put(300,0){300}
+\put(325,0){325}
+\put(350,0){350}
+\put(375,0){375}
+\put(400,0){400}
+{\color{gray}\multiput(0,0)(25,0){16}{\line(0,1){200}}}
+{\color{gray}\multiput(0,0)(0,25){8}{\line(1,0){400}}}
+}
+
+
+
+\begin{theorem}[Bolzano–Weierstrass Theorem]
+If $(x_{n})$ is a bounded sequence, then it has a limit point, that is, it has a convergent subsequence. 
+\end{theorem}
+
+\begin{center}
+\begin{figure}[h]
+\includegraphics[width=420pt]{Figures/subsequence.pdf}
+\begin{picture}(0,0)(420,0)
+%\putgrid
+\put(5,75){$x_{n}$}
+\put(196,30){$n$}
+\put(246,20){\color{red} $n_{1}$}
+\put(265,20){\color{red} $n_{2}$}
+\put(280,20){\color{red} $n_{3}$}
+\put(305,20){\color{red} $n_{4}$}
+\put(346,20){\color{red} $n_{5}$}
+\put(380,20){\color{red} $n_{6}$}
+\end{picture}
+\caption{Above we have the graph of some bounded sequence, where the values $1,2,...$ are marked on the $x$ axis and the values $x_{1},x_{2},...$ are indicated by the dots. This sequence doesn't have any discernible pattern and is not converging. However, by the Bolzano–Weierstrass Theorem there is a subsequence $(x_{n_{k}})$ (denoted by the red points above the values $n_{1},n_{2},...$) that does converge.}
+\end{figure}
+\end{center}
+
+\def\LUB{{\rm LUB}}
+\begin{proof}
+Let 
+\[
+S=\{x \; | \; \mbox{ there are infinitely many $n\in\mathbb{N}$ so that }x_n\geq x\}\]
+and set $L=\LUB (S)$. Since $(x_n)$ is bounded, $\LUB(S)$ exists. By Proposition \ref{p:lim-points}, $L$ is a limit point if we can verify the following:
+
+{\bf Claim:} For all $\epsilon>0$ and $N\in\mathbb{N}$ there is $n>N$ so that $|x_{n}-L|<\epsilon$. 
+
+We prove by contradiction. Suppose instead that there exists $\epsilon>0$ and $N\in\mathbb{N}$ so that  $|x_{n}-L|\geq \epsilon$ for all $n> N$. In other words, there are at most $N$ many integers $n$ (hence only finitely many) for which $|x_{n}-L|<\epsilon$, or equivalently
+\begin{equation}
+\label{e:finitely-many-betweenL-eL+e}
+L-\epsilon<x_n<L+\epsilon. 
+\end{equation}
+Since $L+\epsilon>L=\LUB(S)$ and $\LUB(S)$ is an upper bound for $S$, we can't have $L+\epsilon\in S$, so by the definition of $S$, there are only finitely many $n\in\mathbb{N}$ so that 
+\begin{equation}
+\label{e:finitely-many-aboveL+e}
+x_n\geq L+\epsilon
+\end{equation}
+Thus, there are only finitely many $n$ satisfying \eqref{e:finitely-many-betweenL-eL+e} or \eqref{e:finitely-many-aboveL+e}, so there can only be finitely many $n$ so that $x_n>L-\epsilon$. But then 
+$L-\epsilon\geq \LUB(S)$, since if $L-\epsilon<\LUB(S)$, by definition of the LUB, $L-\epsilon$ is not an upper bound for $S$, so there is $t>L-\epsilon$ so that there are infinitely many $x_n\geq t$, which is impossible since there are only finitely many $x_n>\epsilon$. Thus, $L-\epsilon\geq \LUB(S)=L$, which is a contradiction. This proves the claim, and thus $L$ is a limit point.
+\end{proof}

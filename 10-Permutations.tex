@@ -1,0 +1,1673 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.0 (9/2/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass[11pt,fleqn,dvipsnames]{book} % Default font size and left-justified equations
+\documentclass[11pt,dvipsnames]{book}
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+%%%My stuff
+
+%\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+%\usepackage{due-dates}
+\usepackage[small]{eulervm}
+\usepackage{amsmath,amssymb,amstext,amsthm,amscd,mathrsfs,eucal,bm,xcolor}
+\usepackage{multicol}
+\usepackage{array,color,graphicx}
+%\usepackage{enumerate}
+
+
+\usepackage{epigraph}
+%\usepackage[colorlinks,citecolor=red,linkcolor=blue,pagebackref,hypertexnames=false]{hyperref}
+
+%\theoremstyle{remark} 
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{\bf Example}
+%\newtheorem*{solution}{Solution:}
+
+
+\usepackage{centernot}
+
+
+\usepackage{filecontents}
+
+\usepackage{tcolorbox} 
+
+
+% Ignore this part, this is the former way of hiding and unhiding solutions, new version is after this
+%
+%\begin{filecontents*}{MyPackage.sty}
+%\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{MyPackage}
+%\RequirePackage{environ}
+%\newif\if@hidden% \@hiddenfalse
+%\DeclareOption{hide}{\global\@hiddentrue}
+%\DeclareOption{unhide}{\global\@hiddenfalse}
+%\ProcessOptions\relax
+%\NewEnviron{solution}
+%  {\if@hidden\else \begin{tcolorbox}{\bf Solution: }\BODY \end{tcolorbox}\fi}
+%\end{filecontents*}
+%
+%
+%
+%\usepackage[hide]{MyPackage} % hides all solutions
+%\usepackage[unhide]{MyPackage} %shows all solutions
+
+
+
+
+
+%\usepackage[unhide,all]{hide-soln} %show all solutions
+%\usepackage[unhide,odd]{hide-soln} %hide even number solutions
+\usepackage[hide]{hide-soln} %hide all solutions
+
+
+
+
+
+
+\def\putgrid{\put(0,0){0}
+\put(0,25){25}
+\put(0,50){50}
+\put(0,75){75}
+\put(0,100){100}
+\put(0,125){125}
+\put(0,150){150}
+\put(0,175){175}
+\put(0,200){200}
+\put(25,0){25}
+\put(50,0){50}
+\put(75,0){75}
+\put(100,0){100}
+\put(125,0){125}
+\put(150,0){150}
+\put(175,0){175}
+\put(200,0){200}
+\put(225,0){225}
+\put(250,0){250}
+\put(275,0){275}
+\put(300,0){300}
+\put(325,0){325}
+\put(350,0){350}
+\put(375,0){375}
+\put(400,0){400}
+{\color{gray}\multiput(0,0)(25,0){16}{\line(0,1){200}}}
+{\color{gray}\multiput(0,0)(0,25){8}{\line(1,0){400}}}
+}
+
+
+
+%\usepackage{tikz}
+
+%\pagestyle{headandfoot}
+%\firstpageheader{\textbf{Proofs \& Problem Solving}}{\textbf{Homework 1}}{\textbf{\PSYear}}
+%\runningheader{}{}{}
+%\firstpagefooter{}{}{}
+%\runningfooter{}{}{}
+
+%\marksnotpoints
+%\pointsinrightmargin
+%\pointsdroppedatright
+%\bracketedpoints
+%\marginpointname{ \points}
+%\totalformat{[\totalpoints~\points]}
+
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\N{{\mathbb{N}}}
+\def\Q{{\mathbb{Q}}}
+\def\C{{\mathbb{C}}}
+\def\hcf{{\rm hcf}}
+
+
+%%end of my stuff
+
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+\usepackage{graphicx} % paquete que permite introducir imágenes
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%%hasta aquí
+
+
+\begin{document}
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=12cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{Figures/blank.png}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Proofs and Problem Solving \\[15pt] % Book title
+{\huge Week 10: Permutations}%\\[20pt] % Subtitle
+%{\Large Notes  based on Martin Liebeck's \\ \textit{A Concise Introduction to Pure Mathematics}}
+}
+}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+%\newpage
+%~\vfill
+%\thispagestyle{empty}
+
+%\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+
+%\noindent \textsc{Published by Publisher}\\ % Publisher
+
+%\noindent \textsc{book-website.com}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+%\noindent \textit{First printing, March 2013} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{Figures/blank.png} % Table of contents heading image
+
+%\chapterimage{chapter_head_1.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+ \tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+
+
+\part{Week 10: Permutations}
+
+
+\chapterimage{Figures/blank.png} 
+
+
+\setcounter{chapter}{6}
+
+
+\chapter{Permutations}
+
+\setcounter{page}{1}
+
+\section{Permutations}
+
+This week we combine the techniques of the last two weeks to study a particular class of functions called permutations. 
+
+\begin{definition}
+Given $n\in\mathbb{N}$, denote by $\mathrm{S}_{n}$ the set of all bijections
+$$
+\big\{1,2,3,4,\ldots,n\big\}\longrightarrow\big\{1,2,3,4,\ldots,n\big\}.
+$$
+ We call elements in $\mathrm{S}_{n}$ \textcolor[rgb]{0.98,0.00,0.00}{permutations} of the set $\{1,2,3,4,\ldots,n\}$.
+\end{definition}
+
+As we saw last week, permutations are important for combinatorics and counting. They are also interesting from an algebraic perspective: as we'll see below.
+
+
+ \begin{example}  
+The set $\mathrm{S}_{1}$ consists of one
+bijection $f:\mathrm{S}_{1}\rightarrow\mathrm{S}_{1}$ defined by $f(1)=1$.\\
+
+The set $\mathrm{S}_{2}$ consists of two
+bijections:
+\begin{itemize}%
+\item a function $f$ such that $f(1)=1$ and $f(2)=2$,%
+\item a function $g$ such that $g(1)=2$ and $g(2)=1$.%
+\end{itemize}
+\end{example}
+
+We know exactly how many permutations there are on $S_{n}$.
+
+\begin{lemma}%[Proposition~20.1 in Liebeck]
+ The set $\mathrm{S}_n$ consists of exactly $n!$ permutations.
+\end{lemma}
+\begin{proof}
+Permutations in $S_{n}$ are just ways of rearranging the numbers $\{1,2,...,n\}$ written in order. That is, we can identify each rearrangement of numbers $\{1,2,...,n\}$ written in order with the unique function which maps $\{1,2,...,n\}$ onto that rearrangement. 
+\end{proof}
+
+Notice that each element $f\in S_{n}$ is actually a function.
+So, we are dealing with the whole function itself, \(f\) and not just with the value of the function \(f(n)\) for some number \(n\).
+
+\section{Table Notation}
+
+Here we will introduce some useful notation for denoting permutations. To represent a permutation $f\in S_n$,  we just need to remember where each integer $k\in \{1,2,...,n\}$ gets sent to under $f$ and then write out a chart using a matrix:
+ $$
+\left(\begin{matrix} %
+1 & 2 & 3 & \cdots & n \cr%
+f(1) & f(2) & f(3) & \cdots & f(n) \cr%
+\end{matrix}\right)
+$$
+where the first row represents the domain of $f$ and the bottom row represents where each value is sent to under $f$. For example,
+ $$
+\left(\begin{matrix} %
+1 & 2 & 3  \\
+3 & 1 & 2
+\end{matrix}\right)
+$$
+is the permutation in $S_{3}$ so that $f(1)=3$, $f(2)=1$, and $f(3)=2$. 
+
+\begin{exercise}
+$$
+\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 & 6 & 7  & 8 & 9 & 10 \cr%
+7 & 5 & 1 & \textcolor[rgb]{1.00,0.00,0.00}{\bigstar} & 9 & 2 & 10 & 4 & 3 & 8\cr%
+\end{matrix}\right)
+$$
+denotes a permutation in $\mathrm{S}_{10}$.  What is
+$\textcolor[rgb]{1.00,0.00,0.00}{\bigstar}$?
+
+\begin{solution}
+Recall that permutations are bijective, which means that every number must appear \emph{exactly once} in the second row. The only number missing is $6$, so the number under $\textcolor[rgb]{1.00,0.00,0.00}{\bigstar}$ must be 6. 
+\end{solution}
+\end{exercise}
+
+\section{Composition and identity}
+
+For any two permutations $f\in\mathrm{S}_n$ and
+$g\in\mathrm{S}_n$,  the composition
+$$
+f\circ g\colon \{1,2,3,\ldots,n\}\to \{1,2,3,\ldots,n\}
+$$
+is defined by $f\circ g(k)=f(g(k))$ for every
+$k\in\{1,2,3,\ldots,n\}$. 
+
+Since we will be working with compositions of many functions below, we will often drop the $\circ$ all together and just  write $fg$ instead of $f\circ g$.
+
+\begin{example}
+Let 
+$$
+f= \left(\begin{matrix} %
+1 & 2 & 3 & 4  \cr%
+2 & 3 & 1 & 4  \cr%
+\end{matrix}\right), \;\;\; \mbox{ and } \;\;\; 
+g= \left(\begin{matrix} %
+1 & 2 & 3 & 4  \cr%
+4 & 3 & 2 & 1 \cr%
+\end{matrix}\right)
+$$
+We can determine $fg$ by plugging in each number $k\in \{1,2,3,4\}$ and see what $g(k)$ and then $f(g(k))$ is:
+\[
+ \left(\begin{array}{c|cccc} %
+k & 1 & 2 & 3 & 4  \\  %
+g(k)  & 4 & 3 & 2 & 1   \cr%
+f(g(k)) & 4 & 1 & 3 & 2  \\%
+\end{array}\right)
+\]
+Thus, taking the top and bottom rows, we see that
+\[
+fg = \left(\begin{matrix} %
+1 & 2 & 3 & 4  \cr%
+4 & 1 & 3 & 2 \cr%
+\end{matrix}\right)
+\]
+\end{example}
+
+We use symbol $\iota$ (the Greek letter "iota") to denote the  {\it identity permutation}
+$$
+\iota =  \left(\begin{matrix} %
+1 & 2 & 3 & 4 & \ldots & n \cr%
+1 & 2 & 3 & 4 & \ldots & n\cr%
+\end{matrix}\right), \;\;\; \iota(x) =x \;\;\mbox{ for all } x\in \{1,2,...,n\}.
+$$
+
+In particular, for every $f\in\mathrm{S}_{n}$,  we have $\iota\circ f=f\circ\iota=f$, that is, $\iota f=f\iota=f$.\\
+
+%
+
+
+
+%
+% \begin{exercise}    Let $f=\left(\begin{matrix} %
+%1 & 2 & 3 & 4 \cr%
+%2 & 1 & 4 & 3 \cr%
+%\end{matrix}\right)\in\mathrm{S}_4$. What is $f\circ f$?
+%\begin{solution}
+%For $f\circ f$, we have
+%$$
+%f\circ f(1)= f(f(1)) = f(2) = 1,\  f\circ f(2) = f(f(2)) = f(1) = 2,
+%$$\vspace{-.2in}
+%$$
+%f\circ f(3)= f(f(3)) = f(4) = 3,\   f\circ f(4)= f(f(4))= f(3) = 4,
+%$$
+% which implies that $f\circ f$ is the identity permutation in $\mathrm{S}_4$.
+%\end{solution}
+%\end{exercise}
+
+Another reason we drop the $\circ$ from the above notation is so that we can think of composing functions as if we are multiplying elements together, and the function $\iota$ is playing the role of the number $1$ in that, when you multiply it by anything other element, you get the same element back.  However, unlike multiplication for integers, compositions of functions is not commutative. 
+
+
+
+ \begin{example}
+  Let us consider composition of two permutations in $\mathrm{S}_5$.
+  \[
+  f= \left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 \cr%
+2 & 3 & 4 & 5 & 1\cr%
+\end{matrix}\right)\;\;\;\mbox{ and } \;\;\; g=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 \cr%
+2 & 1 & 3 & 4 & 5\cr%
+\end{matrix}\right).
+\]
+Then
+\[
+fg= \left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 \cr%
+3 & 2 & 4 & 5 & 1\cr%
+\end{matrix}\right), \;\;\; \mbox{ and }\;\;\; gf = \left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 \cr%
+1 & 3 & 4 & 5 & 2\cr%
+\end{matrix}\right).
+\]
+That is, $fg\neq gf$.
+\end{example}
+
+This doesn't mean we don't always have $fg\neq gf$--in particular, $fg=gf$ for all $f\in S_{2}$...exercise!--it just means that we can't assume $fg=gf$ in general, that is, $\forall n\geqslant 3$,  $\exists$ $f$ and $g$ in $\mathrm{S}_n$  such that  $fg\ne gf$. 
+
+%
+%
+% Let us denote permutations in $\mathrm{S}_3$ as follows:
+%
+%$$ \iota=\left(
+%\begin{array}{ccc}
+%1 & 2 & 3 \\
+%1 & 2 & 3
+%\end{array}
+%\right),\  \textbf{a}=\left(
+%\begin{array}{ccc}
+%1 & 2 & 3 \\
+%2 & 3 & 1
+%\end{array}
+%\right),\  \textbf{b}=\left(
+%\begin{array}{ccc}
+%1 & 2 & 3 \\
+%3 & 1 & 2
+%\end{array}
+%\right),
+%$$
+%
+%$$
+%\textbf{c}=\left(
+%\begin{array}{ccc}
+%1 & 2 & 3 \\
+%2 & 1 & 3
+%\end{array}
+%\right),\  \textbf{d}=\left(
+%\begin{array}{ccc}
+%1 & 2 & 3 \\
+%3 & 2 & 1
+%\end{array}
+%\right),\  \textbf{e}=\left(
+%\begin{array}{ccc}
+%1 & 2 & 3 \\
+%1 & 3 & 2
+%\end{array}
+%\right).
+%$$\vspace{-.1in}
+%
+% The table below gives $f\circ g$ for any
+%$f\in\mathbb{S}_{3}$ and $g\in\mathbb{S}_3$.
+%
+%\renewcommand\arraystretch{1.1}
+%\begin{center}
+%\begin{tabular}{|c||c|c|c|c|c|c|}
+%\hline
+%$\circ$& $\iota$ & $\textbf{a}$ & $\textbf{b}$ & $\textbf{c}$ & $\textbf{d}$ & $\textbf{e}$ \\
+%\hline\hline
+%$\iota$ & $\iota$ & $\textbf{a}$ & $\textbf{b}$ & $\textbf{c}$ & $\textbf{d}$ & $\textbf{e}$ \\
+%\hline
+%$\textbf{a}$ & $\textbf{a}$ & $\textbf{b}$ & $\iota$ & $\textbf{d}$ & $\textbf{e}$ & $\textbf{c}$ \\
+%\hline
+%$\textbf{b}$ & $\textbf{b}$ & $\iota$ & $\textbf{a}$ & $\textbf{e}$ & $\textbf{c}$ & $\textbf{d}$ \\
+%\hline
+%$\textbf{c}$ & $\textbf{c}$ & $\textcolor[rgb]{1.00,0.00,0.00}{\bigstar}$ & $\textbf{d}$ & $\iota$ & $\textbf{b}$ & $\textbf{a}$ \\
+%\hline
+%$\textbf{d}$ & $\textbf{d}$ & $\textbf{c}$ & $\textbf{e}$ & $\textbf{a}$ & $\iota$ & $\textbf{b}$ \\
+%\hline $\textbf{e}$ & $\textbf{e}$ & $\textbf{d}$ & $\textbf{c}$ & $\textbf{b}$ & $\textbf{a}$ & $\iota$\\
+%\hline
+%\end{tabular}
+%\end{center}
+%
+% What is $\textcolor[rgb]{1.00,0.00,0.00}{\bigstar}$? 
+%Since $\textbf{c}\circ\textbf{a}=\textbf{e}$,  we see that
+%$\textcolor[rgb]{1.00,0.00,0.00}{\bigstar}=\textbf{e}$.
+%
+%
+%
+
+\section{Inverse permutations}
+
+Let $f$ be any permutation in $\mathrm{S}_n$.  Then
+$$
+1\mapsto f(1),\  2\mapsto f(2),\  3\mapsto f(3),  \ldots,\  n\mapsto f(n),%
+$$
+where all numbers $f(1), f(2), f(3),\ldots, f(n)$ are different (here $x\mapsto y$ means that $f(x)=y$, or that "$x$ is mapped to $y$ under $f$".
+
+Given $f\in S_{n}$, the inverse permutation $f^{-1}$ always exists since $f$ is bijection and
+$$
+f f^{-1}=f^{-1} f=\iota.
+$$
+
+To figure out what $f^{-1}$ is given $f$, just note that the permutation $f^{-1}$ maps
+$$
+f(1)\mapsto 1,\  f(2)\mapsto 2,\  f(3)\mapsto 3,  \ldots,\  f(n)\mapsto n.%
+$$
+Thus, if we have our matrix representing $f$, 
+\[
+f=\left(\begin{matrix} %
+1 & 2 & 3 & ... & n\cr%
+f(1) & f(2) & f(3) & ... & f(n)\cr%
+\end{matrix}\right).
+\]
+Then the inverse is 
+\[
+f^{-1}=\left(\begin{matrix} %
+f(1) & f(2) & f(3) & ... & f(n)\cr%
+1 & 2 & 3 & ... & n\cr%
+\end{matrix}\right).
+\]
+Since $f(1),...$ runs through each integer $1,2,...,n$ exactly once, the top row is just a rearrangement of $\{1,2,...,n\}$, so if we rearrange the columns so that the top row is in order, then we will get the chart
+\[
+f^{-1}=\left(\begin{matrix} %
+1 & 2 & 3 & ... & n\cr%
+f^{-1}(1) & f^{-1}(2) & f^{-1}(3) & ... & f^{-1}(n)\cr%
+\end{matrix}\right).
+\]
+
+\begin{example}  Let $f=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5\cr%
+2 & 3 & 4 & 5 & 1\cr%
+\end{matrix}\right)\in\mathrm{S}_5$.   Find $f^{-1}$.
+
+First flip the matrix (switching the bottom and top rows) and then reorder the columns so that the top is ordered from 1 to 5:
+\[
+f^{-1} = \left(\begin{matrix} %
+2 & 3 & 4 & 5 & 1\cr%
+1 & 2 & 3 & 4 & 5\cr%
+\end{matrix}\right)
+=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5\cr%
+5 & 1 & 2 & 3 & 4\cr%
+\end{matrix}\right).
+\]
+\end{example}
+
+
+
+%
+%\section{Inverse permutations practice}
+%
+% \begin{example}  Put $f=\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%5 & 4 & 3 & 2 & 1\cr%
+%\end{matrix}\right)\in\mathrm{S}_5$.  What is $f^{-1}$?
+%\begin{enumerate}
+%\item $\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%4 & 3 & 2 & 1 & 5\cr%
+%\end{matrix}\right)$.
+%
+%\item $\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%5 & 4 & 3 & 2 & 1\cr%
+%\end{matrix}\right)$.
+%
+%\item $\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%2 & 3 & 4 & 5 & 1\cr%
+%\end{matrix}\right)$.
+%
+%\item None of the above.
+%\end{enumerate}
+%\end{example}
+%
+% The correct answer is $f^{-1}=f=\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%5 & 4 & 3 & 2 & 1\cr%
+%\end{matrix}\right)$.   Check that
+%$$
+%f\circ f = \left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%5 & 4 & 3 & 2 & 1\cr%
+%\end{matrix}\right)\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%5 & 4 & 3 & 2 & 1\cr%
+%\end{matrix}\right) = \left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%1 & 2 & 3 & 4 & 5\cr%
+%\end{matrix}\right)  =  \iota.
+%$$
+
+
+
+
+
+\section{Powers}
+
+ Let $f$ be any permutation in $\mathrm{S}_n$,  let
+$m$ be any positive integer.  Let
+$$
+f^{m}=\underbrace{f\circ f\circ f\circ\cdots\circ f\circ f}_{m\ \mathrm{times}}.%
+$$
+We also let $f^{-m}=(f^{-1})^m$,  and $f^{0}=\iota$. Then we have the familiar power rules for compositions as we do for multiplication: for $r,s\in\mathbb{Z}$,
+$$
+f^{r}f^{s}=f^{r+s}\  \text{and}\  \Big(f^{r}\Big)^{s}=f^{rs}.
+$$
+
+ \begin{example}
+Let $f=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5\cr%
+2 & 3 & 4 & 5 & 1\cr%
+\end{matrix}\right)\in\mathrm{S}_5$.  Then, one can check
+$$f^{-1}=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5\cr%
+5 & 1 & 2 & 3 & 4\cr%
+\end{matrix}\right),\  f^{0}=\iota,\  f^{1}= f,\  f^{2}=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5\cr%
+3 & 4 & 5 & 1 & 2\cr%
+\end{matrix}\right),
+$$
+
+$$
+f^{3}=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5\cr%
+4 & 5 & 1 & 2 & 3\cr%
+\end{matrix}\right),\ 
+f^{4}= f^{-1},\ 
+f^{5} = \iota,  f^{6}= f,  f^{7}= f^2,  \ldots.
+$$
+\end{example}
+
+\begin{exercise}  Let $f=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5\cr%
+2 & 1 & 3 & 4 & 5\cr%
+\end{matrix}\right)\in\mathrm{S}_5$. What is $f^{2019}$?
+\begin{solution}
+ Since $f^{2}=\iota$,  we have
+$$
+\underbrace{f\circ f\circ f\circ\cdots\circ f\circ f}_{2019\ \mathrm{times}}=\underbrace{f\circ f\circ f\circ\cdots\circ f\circ f}_{1009\times 2\ \mathrm{times}}\circ f$$
+$$=\Big(f\circ f\Big)^{1009}\circ f=\iota^{1009}\circ f= f.%
+$$
+\end{solution}
+\end{exercise}
+
+Let us summarize some of the properties about permutations in $\mathrm{S}_{n}$  we have proved.
+
+\begin{lemma}%[Proposition 20.2 in Liebeck]
+The set $\mathrm{S}_n$ equipped with the composition rule $\circ$ has the following
+properties:
+\begin{itemize}
+\item {\bf Closure}: for any $f$ and $g$ in $\mathrm{S}_n$,  one has $f\circ g\in\mathrm{S}_n$, %
+
+\item {\bf Associativity}: for any $f$, $g$, and $h$ in $\mathrm{S}_n$, one has
+$$f\circ \Big(g\circ h\Big)=\Big(f\circ g\Big)\circ h,$$
+
+\item {\bf Identity element}: there is unique permutation $\iota\in\mathrm{S}_n$ such that
+$$ f\circ\iota=\iota\circ f=f$$
+for any $f\in\mathrm{S}_n$ (and we call $\iota$ the identity permutation),%
+
+\item {\bf Inverse}: for any $f\in\mathrm{S}_n$,  there is unique $f^{-1}\in\mathrm{S}_n$~ such~that
+$$
+f\circ f^{-1}=f^{-1}\circ f=\iota.
+$$
+\end{itemize}
+\end{lemma}
+
+In {\it Fundamentals of Pure Math} (FPM), you will learn more about {\it groups}, which are sets equipped with the above structure, that is, a way of composing elements that satisfies the above properties. We have seen several examples so far: 
+
+\begin{itemize}
+\item  real numbers equipped with $+$, %
+
+\item  non-zero real numbers equipped with $\cdot$ (i.e. multiplication), %
+
+\item  complex numbers equipped with $+$, %
+
+\item  non-zero complex numbers equipped with $\cdot$, %
+
+\item  $n$-th root of unity equipped with $\cdot$, %
+
+\item  $\mathbb{Z}_n$ equipped with $+$, %
+
+\item  $\mathbb{Z}_n$ equipped with $\cdot$ if $n$ is prime (in which case every element has an inverse),
+\end{itemize}
+
+%We won't go into group theory much in this class, but we bring it up for a few reasons: one is that some of the topics we will cover this week for permutations will be topics you will cover in more generality for general groups (like the order of an element). Secondly, $S_{n}$ (which will be called the {\it permutation group} when you study algebra) is an important example in group theory whose properties will be useful to know starting Week 1 of FPM. 
+
+
+\section{Cycles}
+
+\begin{definition} 
+ Let $\{a_{1},a_{2},\ldots,a_{r}\}$ be a~non-empty subset of
+the~set $\{1,2,\ldots,n\}$. The permutation
+$f\in\mathrm{S}_{n}$ such that $$
+f\big(a_{1}\big)=a_{2},\ f\big(a_{2}\big)=a_{3}, \ldots,\  f\big(a_{r-1}\big)=a_{r},\  f\big(a_{r}\big)=a_{1}%
+$$
+and 
+  $$f(k)=k\iff k\not\in\{a_{1},a_{2},\ldots,a_{r}\}$$
+ is denoted by
+$$
+\big(a_{1}\ a_{2}\ \cdots\ a_{r}\big)
+$$
+ and is called a \emph{cycle}   or \emph{cyclic
+permutation}   (of length $r$).
+\end{definition}
+
+We call these "cycles" since, if you imagine arranging the numbers $a_{1},...,a_{r}$ around a circle, $f$ just rotates these numbers. In other words, this is the permutation that sends $a_{1}$ to $a_{2}$, $a_{2}$ to $a_{3}$,..., and $a_{r}$ to $a_{1}$, and leaves everything else alone. 
+
+Notice that if $j\in \{1,2,...n\}$, then $(j)=\iota$, so $\iota$ is a cycle of length 1.
+
+
+ \begin{example}
+To find the matrix representation of the cycle $f=\big(2\ 5\ 4\ 7\big)$, observe that for $k\not\in \{2,5,4,7\}$, $f(k)=k$. Moreover, the cycle notation tells us that $f(2)=5$, $f(5)=4$, $f(4)=7$ and $f(7)=2$. Thus, $f$ has matrix representation $f=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 & 6 & 7 \cr%
+1 & 5 & 3 & 7 & 4 & 6 & 2 \cr%
+\end{matrix}\right)\in\mathrm{S}_{7}$. 
+
+\end{example}
+
+
+
+
+ \begin{example}
+Let $f=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 & 6\cr%
+1 & 5 & 3 & 2 & 4 & 6 \cr%
+\end{matrix}\right)\in\mathrm{S}_6$.  If we are given that $f$ is a cycle, then we can figure out its cycle notation by first finding the values $a_{1},...,a_{r}$ that $f$ cycles through, that is, the values $k$ for which $f(k)\neq k$. These are $2,5,$ and $4$, and $f$ leaves all other elements of $\{1,2,3,4,5,6\}$
+fixed (that is $f(k)=k$ for $k\not\in \{2,5,4\}$). Then we just look at where $f$ sends these numbers in succession:
+$$
+f\big(2\big)=5,\  f\big(5\big)=4,\  f\big(4\big)=2,
+$$
+Thus, $f=(2\ 5\ 4)$.
+\end{example}
+
+
+%
+%
+%\section{TopHat question (cycles)}
+%
+% \begin{exercise}  Which one of the following
+%permutations in $\mathrm{S}_5$ is a cycle?
+%
+%\begin{enumerate}[label=\alph*]
+%\item
+%$\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%2 & 3 & 1 & 5 & 4\cr%
+%\end{matrix}\right)$.
+%
+%\item
+%$\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%3 & 2 & 4 & 5 & 1\cr%
+%\end{matrix}\right)$.
+%
+%\item
+%$\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%3 & 5 & 4 & 1 & 2\cr%
+%\end{matrix}\right)$.
+%
+%\item None of the above.%
+%\end{enumerate}
+%\end{exercise}
+%
+%\begin{itemize}
+%\item
+%$\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%2 & 3 & 1 & 5 & 4\cr%
+%\end{matrix}\right)=(1\ 2\ 3)\circ (4\ 5)$,
+%
+%\item $\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%3 & 2 & 4 & 5 & 1\cr%
+%\end{matrix}\right)=(1\ 3\ 4\ 5)$,
+%
+%\item
+%$\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5\cr%
+%3 & 5 & 4 & 1 & 2\cr%
+%\end{matrix}\right)=(1\ 3\ 4)\circ (2\ 5)$.
+%\end{itemize}
+%
+
+Notice that the notation of a cycle is not unique:
+
+
+ Indeed, for a cycle $(a_{1}\ a_{2}\ \cdots\
+a_{r})\in\mathrm{S}_n$, we have:
+\begin{equation}
+\label{e:rotations}
+\big(a_{1}\ a_{2}\ \cdots\ a_{r}\big)=\big(a_{2}\ \cdots\ a_{r}\ a_{1}\big)=\big(a_{3}\cdots\ a_{r}\ a_{1}\ a_{2}\big)=\cdots%
+\end{equation}
+
+
+\begin{example}
+Let $f=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \cr%
+1 & 5 & 3 & 7 & 4 & 6 & 8 & 2 \cr%
+\end{matrix}\right)\in\mathrm{S}_{9}$.  Then
+$$
+f=\big(2\ 5\ 4\ 7\ 8\big)=\big(5\ 4\ 7\ 8\ 2\big)=\big(4\ 7\ 8\ 2\ 5\big)=\big(7\ 8\ 2\ 5\ 4\big)=\big(8\ 2\ 5\ 4\ 7\big).%
+$$
+\end{example}
+
+
+
+Note that if $f$ is a cycle of length $r$ in $\mathrm{S}_n$, 
+ then the powers follow the following pattern:
+$$
+\ldots f^{-1}=f^{r-1},\  \underbrace{\iota=f^{0},\ f^{1},\ f^{2},\ f^{3},\ldots,\ f^{r-1}},\  f^{r}=\iota,\  f^{r+1}=f,  \ldots%
+$$
+where the permutations $f^{0},f^{1},...,f^{r-1}$ are all distinct. This is because, if $f=(a_{1}\; \cdots \; a_{r})$ and $0\leq  k < r$, then $f^{k}(a_{1})=a_{1+k}$, which ranges through $a_{1},a_{2},...,a_{r}$ as $k=0,1,...,r-1$ and these are all distinct numbers. Moreover, $f^{r}(a_{1})=f\circ f^{r-1}(a_{1})=f(a_{r})=a_{1}$, and recalling \eqref{e:rotations}, we can also show that $f^{r}(a_{i})=a_{i}$ for $i=1,...,r$. Since $f(k)=k$ for all $k\not\in \{a_{1},...a_{r}\}$ anyway, this means $f^{r}(k)$ for those $k$, and thus $f^{r}=\iota$. We have thus shown the following.
+
+ \begin{corollary}  If $a_{1},...,a_{r}$ are distinct numbers in $\{1,2,...n\}$ and $f=(a_{1}\; a_{2} \; \cdots \; a_{r})$, then $r$ is the smallest positive integer such
+that $f^r=\iota$.
+\end{corollary}
+
+In particular, this implies that $\iota=f^{2r}=f^{3r}=f^{4r}=\ldots$, and that  $f^{kr+m}=f^{m}$ for all $k,m\in\mathbb{Z}$.
+
+Recall that $S_{n}$ is not commutative for $n\geq 3$, that is, we can find $f,g\in S_{n}$ so that $fg\neq gf$. However, if $f$ and $g$ are cycles that cycle through disjoint sets of numbers, then we do have $fg=gf$. We make this more precise below:
+
+\begin{definition}  If $f=(a_{1}\; a_{2}\; \cdots \; a_{r})$ and $g=(b_{1}\; b_{2}\; \cdots \; b_{s})$ where $\{a_{1},...,a_{r}\}$ and $\{b_{1},...,b_{s}\}$ are disjoint sets, we say that $f$ and $g$ are {\it disjoint} in $\mathrm{S}_{n}$.
+\end{definition}
+
+\begin{proposition}
+If $f$ and $g$ are disjoint cycles in $S_{n}$, then $fg=gf$. 
+\end{proposition}
+
+\begin{proof}
+Let $f=(a_{1}\; a_{2}\; \cdots \; a_{r}\}$ and $g=(b_{1}\; b_{2}\; \cdots \; b_{s}\}$ where $\{a_{1},...,a_{r}\}$ and $\{b_{1},...,b_{s}\}$ are disjoint sets in $\{1,2,...,n\}$. Let us look at the charts for $f$ and $f\circ g$, but ordering the first row so that they begin with $a_{1},...,a_{r},b_{1},...,b_{s}$:
+
+\[
+ \left(\begin{array}{c|ccccccccccc} %
+k & a_1 & a_2 & \cdots  &  a_{r-1} &  a_r & b_{1} & b_{2} & ...  & b_{s-1} &  b_{s} & ... \\  %
+g(k) & a_1 & a_2 & \cdots  &  a_{r-1} &  a_r & b_{2} & b_{3} & ...  & b_{s} &  b_{1} & ... \\  %
+f(g(k)) & a_2 & a_3 & \cdots  &  a_{r} &  a_1 & b_{2} & b_{3} & ...  & b_{s} &  b_{1} & ... \\  %
+\end{array}\right)
+\]
+Above, the final numbers in "$...$" are the remaining integers $\{1,2,...,n\}$ not in either $\{a_{1},...,a_{r}\}$ or $\{b_{1},...,b_{s}\}$, and for $k$ in this range, we have $f(k)=g(k)=k$. Notice that since the $a$'s are not in  $\{b_{1},...,b_{s}\}$, $g$ fixes the numbers $a_{1},...,a_{r}$ (that is, $g(a_{i})=a_{i}$ for $i=1,...,r$) and then cycles through the $b$'s. Similarly,  since the $b$'s are not in  $\{a_{1},...,a_{r}\}$, $f$ fixes the numbers $b_{1},...,b_{s}$ (that is, $f(b_{i})=b_{i}$ for $i=1,...,s$) and then cycles through the $a$'s. Thus, we get that
+\[
+fg=  \left(\begin{array}{c|cccccccccc} %
+ a_1 & a_2 & \cdots  &  a_{r-1} &  a_r & b_{1} & b_{2} & ...  & b_{r-1} &  b_{r} & ... \\  %
+ a_2 & a_3 & \cdots  &  a_{r} &  a_1 & b_{2} & b_{3} & ...  & b_{r} &  b_{1} & ... \\  %
+\end{array}\right).
+\]
+Notice that if we did the exact same computation but with $gf$ instead of $fg$, we would get the same chart, thus $fg=gf$. 
+
+\end{proof}
+
+
+\section{Cycle Notation}
+Of course, not every permutation is a cycle. However, we do have the following theorem.
+
+\begin{theorem}%[Proposition 20.3 in the book]  
+Any permutation $f\in \mathrm{S}_{n}$ is a~composition of disjoint
+cycles, that is, $f=f_{1}\cdots f_{k}$ where $f_{1},...,f_{k}$ are disjoint cycles.
+\end{theorem}
+
+When $f$ is written in such a way, we say it is written in {\it cycle notation} or {\it cycle decomposition}. Note that we consider the identity $\iota$ to be a product of $n$ $1$-cycles $\iota = (1)(2) \cdots (n)$. 
+
+\begin{proof}
+We prove by strong induction that for $k=0,1,...,n$, if $f\in S_n$ and $n-k$ is the number of integers $j\in \{1,2,...,n\}$ for which $f(j)=j$, then $f$ can be written in cycle notation. 
+
+If $k=0$, then we see that if $f$ is a permutation so that $f(j)=j$ for $n-0=n$ distinct integers in $\{1,2,...,n\}$, then $f=\iota$, which is a product of disjoint $1$-cycles. This proves the base case. 
+
+Now suppose we have show that for some $K<n$ and $k=0,1,...,K$, any cycle for which $f(j)=j$ for $n-k$ distinct integers $j\in \{1,2,...,n\}$ can be written as a product of disjoint cycles. Note that the sequence $1,f(1),f(2),...$ must eventually repeat by the pigeonhole principle, that is, since $f(j)$ only takes on values $\{1,2,...n\}$, we must have that $f^i(1)=f^j(1)$ for some $0\leq i<j\leq n$. Thus,
+\[
+1= f^{-i}f^{i}(1) = f^{-i}f^{j}(1) = f^{j-i}(1).
+\]
+and so if we let $\ell=j-i-1$ and $a_{r}=f^{r}(1)$ for $r=0,...,\ell$, we then get that 
+\[
+f=(a_{1}\; a_{2}\;\cdots \; a_{\ell}) g
+\]
+where $g(k)=k$ for $k\in \{a_{1},...,a_{\ell}\}$ and $g(k)=f(k)$ for every other $k\in \{1,2,...,n\}$. By the strong induction hypothesis, we can decompose $g$ as a product of disjoint cycles, and since $g(k)=k$ for $k\in \{a_{1},...,a_{\ell}\}$, they will also be disjoint from the cycle $(a_{1}\; a_{2}\;\cdots \; a_{\ell})$. Composing all these cycles gives us $f$. This proves the induction step.
+
+Thus the theorem holds by the principle of mathematical induction.
+\end{proof}
+
+
+How do we find the cycle decomposition in practice? The proof above gives us a roadmap: given a permutation $f$, we know there is an integer $r$ so that if $a_{i}= f^{i}(1)$, then $a_{r}=1$, and we know that one of the cycles in the decomposition for $f$ is $(1 \; a_{1}\; \cdots \; a_{r-1})$. To find another cycle, pick $k\not\in \{1,a_{1},...,a_{r-1}\}$ and repeat the process: there is $s$ so that if $b_{i}=f^{i}(k)$, then $b_{s}=k$, and another cycle in the decomposition is $(k,b_{1},...,b_{s-1})$. Repeat this process until each integer is in one of the cycles you've found. 
+
+
+
+ \begin{example}  Let
+$f=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 & 6\cr%
+4 & 6 & 1 & 5 & 3 & 2 \cr%
+\end{matrix}\right)\in\mathrm{S}_{6}$.  Then
+\[
+f(1)=4,\  f(4)=5,\  f(5)=3,\  f(3)=1,
+\]
+so one of the cycles in the cycle decomposition of $f$ is $(1\; 4 \; 5 \; 3)$. Now we look at the cylce that contains $2$ (where we picked $2$ because it is not one of the integers we have placed in a cycle so far), we see
+\[
+f(2)=6,\  f(6)=2,
+\]
+ which implies that $f=(1\ 4\ 5\ 3)(2\ 6)$. Recall that disjoint cycles commute, so we could also write $f$ as $=(2\
+6)(1\ 4\ 5\ 3)$.
+\end{example}
+
+
+If the cycle decomposition consists of some $1$-cycles like $(j)$, note that these are just the identity mapping, so we can omit them when writing a permutation in cycle notation. For example, the permutation on $S_{10}$ that just switches the numbers $1$ and $2$ can be written succinctly as $(1\; 2)$ instead of $(1 \; 2 ) (3)(4)(5)(6)(7)(8)(9)(10)$. 
+%
+%\begin{example}
+%What happens if instead we have $f=\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5 & 6 & 7 \cr%
+%4 & 6 & 1 & 5 & 3 & 2 & 7 \cr%
+%\end{matrix}\right)\in\mathrm{S}_{7}$? If we repeat the above process, we get the cycle decomposition $f=(1\ 4\ 5\ 3)(2\ 6)(7)$. Notice that any one-cycle is just the identity, so we can also just write $f=(1\ 4\ 5\ 3)(2\ 6)$. That is, $f$ has the same cycle decomposition as in the previous example, but these are still different functions: in the previous example, $f$ was a permutation on $\{1,2,...,6\}$, and in this example, it is a permutation on $\{1,2,...,7\}$. 
+%\end{example}
+
+Recall that disjoint cycles commute, but compositions of cycles that aren't disjoint in general won't commute. 
+
+\begin{example}
+Let $f=(1 \; 2 \; 3)(4 \; 5)$ and $g=(1 \; 2 \; 3 \; 4)$ be permutaitons in $S_{5}$. To find the cycle notation for $fg$, we do as before: start with $1$ and look at the values we get by repeatedly plugging into $fg$:
+\begin{align*}
+fg(1) = f(g(1)) = f(2) = 3, \\
+fg(3) = f(g(3))=f(4)=5,\\
+  fg(5) = f(g(5)) = f(5) = 4,\\
+  fg(4) = f(g(4)) = f(1) = 2, \\
+  fg(2) = f(g(2)) = f(3) = 1.
+\end{align*}
+So the first cycle is $(1 \; 3 \; 5 \; 4 \; 2)$. Note that all numbers in $\{1,2,...,5\}$ have been used, and so $fg = (1 \; 3 \; 5 \; 4 \; 2)$. Now we do the same for $gf$, starting with $1$ again:
+\begin{align*}
+gf(1) = g(f(1)) = g(2) = 3, \\  gf(3) = g(f(3)) = g(1) = 2,  \\ gf(2) = g(f(2)) = g(3) = 4,  \\ gf(4) = g(f(4)) = g(5) = 5,  \\ gf(5) =  g(f(5))  = g(4) = 1
+\end{align*}
+and since this uses up all numbers from 1 to 5, we get $gf = (1\; 3 \; 2 \; 4 \; 5)\neq fg$. 
+\end{example}
+
+
+
+For $f\in S_{n}$, the {\it cycle shape} of $f$ is the sequence of numbers we get by listing the orders of the cycle decomposition in decreasing order. If a number appears several times in the sequence, we replace it with that number to the power of how many times it appears.
+
+\begin{example}
+\begin{itemize}
+\item 
+The permutation $f=(1\ 4\ 5\ 3)(2\ 6)(7)\in S_{7}$ has cycle shape $(4,2,1)$. 
+\item The permutation $g=(1 \; 2) (3 \; 4) \in S_{4}$ has cycle shape $(2,2)$, or more succinctly, $(2^2)$. 
+\item The permutation $h = (1 \; 4)(2\; 3) (\;5 \; 7)(8 \; 9 \;11)$ in $S_{11}$ has cycle shape $(3,2^3,1^2)$. Why the $1^2$? Recall that $6$ and $10$ don't appear in any of the cycles in $h$, so $h(6)=6$ and $h(10)=10$, so really the full cycle decomposition of $h$ is $(1 \; 4)(2\; 3) (\;5 \; 7)(8 \; 9 \;11)(6)(10)$. 
+\end{itemize}
+\end{example}
+
+
+
+
+
+
+%
+% \begin{example}  For $f=(1\ 2\ 4\ 5)\in\mathrm{S}_5$,
+% we have 
+%$$
+%f^0=\iota,\  f^1=(1\ 2\ 4\ 5),\  f^2=(1\ 4)(2\ 5),\  f^3=(1\ 5\ 4\ 2),%
+%$$
+% and \textcolor[rgb]{0.00,0.40,0.29}{all other powers} are
+%among these four permutations.
+%\end{example}
+
+
+
+%
+%
+%\section{TopHat question (interlacing $12$ cards)}
+%
+% Let $m$ be a positive integer. Put $n=2m$.
+%
+% Consider a permutation $f\in\mathrm{S}_{n}$ such that
+%$$
+%f=\left(\begin{matrix} %
+%1 & 2   & 3 & 4   & 5 & 6   & 7 &  \cdots & 2m-1 & 2m \cr%
+%1 & m+1 & 2 & m+2 & 3 & m+3 & 4 & \cdots &  m   & 2m \cr%
+%\end{matrix}\right).
+%$$
+%
+%
+%\begin{exercise}
+% Suppose that $m=6$.  What is the smallest
+%$r\in\mathbb{N}$ such that $f^r=\iota$?
+%\end{exercise}
+%
+% If $m=6$, then $f$ is given by
+%$$
+%\left(
+%\begin{array}{cccccccccccc}
+%1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \cr%
+%1 & 7 & 2 & 8 & 3 & 9 & 4 & 10 & 5&  11 & 6 & 12 \cr%
+%\end{array}
+%\right)=(2\ 7\ 4\ 8\ 10\ 11\ 6\ 9\ 5\ 3),
+%$$
+% which implies that the smallest $r$ such that $f^r=\iota$
+%is $10$.
+%
+
+
+
+
+
+% \begin{remark}  Decomposition into a product of
+%disjoint cycles is \emph{almost unique}.
+%\end{remark}
+
+
+
+\section{Order of a permutation}
+
+Recall that $S_{n}$ has $n!$ elements. In particular, this means that if we look at the sequence $f,f^{2},f^{3},...$, eventually this must repeat on itself (otherwise we would have infinitely many distinct permutations on $n$ integers, whereas we know there are only $n!$ many). In other words, if we have a deck of $n$ cards, and we shuffle the cards according to some permutation $f$, then no matter how random the shuffle is, so long as we use the {\it same} shuffle $f$, eventually the cards will return to their original order. 
+
+In this section we'll show how to compute how soon powers of a permutation repeat. 
+
+ \begin{definition}  Let $f$ be a permutation in $\mathrm{S}_n$.  The smallest positive integer
+$m$ such that 
+$$
+f^m=\iota
+$$
+ is called the \emph{order} of the permutation $f$.
+\end{definition}
+
+The order of a cycle of length $r$ is just $r$, which we saw earlier. In a few steps we will show how to compute the order of a permutation in general. 
+
+\begin{lemma}  Let $f\in\mathrm{S}_n$ have order $m$.   If $f^k=\iota$ for some integer $k\in\mathbb{N}$, then $m$ divides $k$.\end{lemma}
+
+\begin{proof}
+If $m$ is the order of $f\in\mathrm{S}_n$ and $f^k=\iota$, then by definition of $m$, $m\leq k$. By the remainder theorem, there are $q\geq 0$ and $0\leq r<m$ so that $k=qm+r$, and so
+\[
+f^{k} = f^{qm+r} = (f^{m})^{q} f^{r} = (\iota)^{q}f^{r} = \iota f^{r}= f^{r}.
+\]
+Recall that $m$ is the smallest positive integer for which $f^{m}=\iota$, but now we have $r\in \{0,1,...,m-1\}$ (and so $r<m$) for which $f^{r}=\iota$. This is only possible if $r$ is not positive, i.e. if $r=0$. Thus, $k=qm+0=qm$ so $m|k$.
+\end{proof}
+
+
+
+\begin{lemma}%[Proposition 20.4 in Liebeck]  
+Let $f\in\mathrm{S}_n$ and let $m$ be its order. Write
+$$
+f=\sigma_{1}\sigma_{2}\cdots\sigma_{s}
+$$
+ where $\sigma_{1},\ldots,\sigma_{s}$ are disjoint cycles of
+lengths $r_{1},\ldots,r_{s}$ respectively. Then 
+$$
+m=\mathrm{lcm}\big(r_{1},r_{2},\ldots,r_{s}\big),
+$$
+ where $\mathrm{lcm}$ stands for
+\textcolor[rgb]{0.00,0.50,0.50}{the~least common multiple}, that is, the smallest positive integer that is divisible by $\sigma_{i}$ for each $i=1,...,s$.
+\end{lemma}
+
+\begin{proof}
+Recall that the order of a cycle is just its length, so we know that $\sigma_i^{r_i}=\iota$. 
+Notice that if $d= \mathrm{lcm}\big(r_{1},r_{2},\ldots,r_{s}\big)$, then $r_i|d$ for all $i$. Also recall that disjoint cycles commute, so we can split the following product:
+\[
+f^{d} = (\sigma_{1}\sigma_{2}\cdots\sigma_{s})^{d}
+=\sigma_{1}^{d}\sigma_{2}^{d}\cdots \sigma_{s}^{d} 
+=(\sigma_{1}^{r_{1}})^{d/r_{1}}(\sigma_{2}^{r_{2}})^{d/r_{2}}\cdots(\sigma_{s}^{r_{s}})^{d/r_{s}} =
+(\iota)^{d/r_{1}}(\iota)^{d/r_{2}}\cdots (\iota)^{d/r_{s}}=\iota. 
+\]
+By the previous lemma, this means $m|d$. However, note that since $m$ is the order of $f$,
+\[
+\iota = f^{m} = (\sigma_{1}\sigma_{2}\cdots\sigma_{s})^{m}
+=\sigma_{1}^{m}\sigma_{2}^{m}\cdots \sigma_{s}^{m} 
+\]
+and since these cycles are disjoint, we must have that $\sigma_{i}^{m}=\iota$ for each $i$. By the previous lemma again, this means $r_i|m$ (since $r_i$ is the order of $\sigma_i$). By the definition of the least common multiple, this means $d|m$. Finally, $m|d$ and $d|m$ (and both being positive integers) imply $d=m$.
+\end{proof}
+
+Using this Lemma, you can now always compute $m$ by finding the cycle decomposition.
+
+ \begin{example} The~order of the~permutation
+$$
+\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\cr%
+3 & 4 & 6 & 1 & 5 & 2 & 8 & 7\cr%
+\end{matrix}\right) = \big(1\ 3\ 6\ 2\ 4\big)\big(7\ 8\big)\in\mathrm{S}_{8},%
+$$
+ is $\mathrm{lcm}(2, 5, 1)=\mathrm{lcm}(2, 5)=10$, while the order of 
+ $$
+\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\cr%
+5 & 6 & 7 & 8 & 1 & 2 & 3 & 4\cr%
+\end{matrix}\right) =  (1 \; 5)(2 \; 6)(3\; 7)(4\; 8) \in\mathrm{S}_{8},%
+$$
+is $\mathrm{lcm}(2,2,2,2)=2$.
+ \end{example}
+
+
+%
+%
+%\section{Tophat question (interlacing $16$ cards)}
+%
+% Let $m$ be a positive integer.  Put $n=2m$ and put
+%
+%$$
+%f=\left(\begin{matrix} %
+%1 & 2   & 3 & 4   & 5 & 6  & \cdots& 2m-1 & 2m \cr%
+%1 & m+1 & 2 & m+2 & 3 & m+3& \cdots&  m & 2m \cr%
+%\end{matrix}\right)\in\mathrm{S}_{n}.
+%$$
+%
+%
+%\begin{exercise}
+%Suppose that $m=8$.   What is the order of $f$?
+%\end{exercise}
+%
+% If $m=8$,  then $f=(2\ 9\ 5\ 3)(4\ 10\ 13\ 7)(6\
+%11)(8\ 12\ 14\ 15)$ is 
+%$$\left(
+%\begin{array}{cccccccccccccccc} %
+%1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12& 13& 14& 15 & 16\cr%
+%1 & 9 & 2 & 10 & 3 & 11 & 4 & 12 & 5&  13 & 6 & 14 & 7& 15& 8 & 16\cr%
+%\end{array}\right),
+%$$
+% which implies that the order of the permutation $f$ is $4$.
+%
+
+
+\section{Even and Odd permutations}
+
+The content of this section will be a little easier to talk about with a motivating example. Recall the {\it 9-puzzle}: this is a puzzle that involves a table with 9 numbers and a missing space in a 3 by 3 grid, like so.
+
+$$
+\begin{matrix} %
+ \Box  & 2  & 3  \cr%
+1 & 4& 5 \cr%
+7 & 8 & 6 \cr%
+\end{matrix}
+$$
+where the box represents an empty space. The objective is to put all the numbers in order by sliding numbers into the empty space, creating a new empty space, and so on.  So for example, the above puzzle can be solved using the following moves:
+\[
+\begin{matrix} %
+ \Box  & 2  & 3  \cr%
+1 & 4& 5 \cr%
+7 & 8 & 6 \cr%
+\end{matrix}
+\longrightarrow
+\begin{matrix} %
+1 & 2  & 3  \cr%
+ \Box  & 4& 5 \cr%
+7 & 8 & 6 \cr%
+\end{matrix}
+\longrightarrow
+\begin{matrix} %
+1 & 2  & 3  \cr%
+4 &  \Box  & 5 \cr%
+7 & 8 & 6 \cr%
+\end{matrix}
+\longrightarrow 
+\begin{matrix} %
+1 & 2  & 3  \cr%
+4 & 5 & \Box  \cr%
+7 & 8 & 6 \cr%
+\end{matrix}
+\longrightarrow 
+\begin{matrix} %
+1 & 2  & 3  \cr%
+4 & 5 & 6  \cr%
+7 & 8 & \Box \cr%
+\end{matrix}
+\]
+
+This puzzle is a 3 by 3 variant of the {\it 15-puzzle} (on a 4 by 4 grid) that was famous in the late 1800s. 
+
+Not every arrangement of numbers can be solved. For example, there is no way of solving the puzzle below
+\[
+\begin{matrix} %
+ \Box  & 3  & 2  \cr%
+1 & 4& 5 \cr%
+7 & 8 & 6 \cr%
+\end{matrix}.
+\]
+How do we know that a given arrangement of numbers and a space can be solved? The math in this section will give us a way of figuring this out.
+
+
+We start with the following lemma.
+
+ \begin{lemma}
+ \label{l:prodof2cycles}
+Every permutation in $\mathrm{S}_n$ is
+a product of cycles of length $2$.
+\end{lemma}
+
+\begin{proof}  Let $f$ be a permutation in
+$\mathrm{S}_n$. We can also assume that $f$ is a cycle of length $r$ since otherwise, any permutation in $\mathrm{S}_n$ is a product of
+disjoint cycles, and we can just multiply together the respective products of 2-cycles we get.
+
+So suppose $f=(a_1\ a_2\ a_3\ \ldots a_{r-1}\ a_r)$. 
+Then
+$$
+f=\big(a_1\ a_2\ a_3\ \ldots a_{r-1}\ a_r\big)=\big(a_1\ a_{r}\big)\big(a_1\ a_{r-1}\big)\big(a_1\ a_{r-2}\big)\cdots \big(a_1\ a_{3}\big)\big(a_1\ a_{2}\big).%
+$$
+One can check this by plugging in various values $a_i$. If we plug in $a_3$, for example, remember that when plugging a number into a composition $f_{1}...f_{n}$, we plug the number into $f_n$ first, then the resulting value into $f_{n-1}$, and so on. So in the above product for $f$, we first plug $a_3$ into $(a_{1}\; a_{2})$, which just returns $a_{3}$. Then we plug that into $(a_{1}\; a_{3})$, which gives $a_{1}$. Then we plug that into $(a_{1}\; a_{4})$ ad we get $a_{4}$. But now $a_{4}$ does not appear in any other $2$-cycle, and so they all return $a_{4}$. Hence, $f(a_{3})=a_{4}$, and we can show similarly that $f(a_{i})=a_{i+1}$ for all $i$ except $r$ where $f(a_{r})=a_{1}$.
+\end{proof}
+
+Note that the product of cycles in this Lemma is far from being
+unique, and the cycles of order $2$ in this Lemma are not necessary
+disjoint.
+
+
+
+%
+%\section{Tophat question (simple interchanges)}
+%
+% Every permutation in $\mathrm{S}_n$ is a product of cycles
+%of length $2$.
+%
+% Consider the following permutation
+% $$f=\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5 \cr%
+%2 & 3 & 1 & 5 & 4 \cr%
+%\end{matrix}\right)\in\mathrm{S}_{5}.
+%$$
+%
+%\begin{exercise}  Which one of the following
+%assertions is true?
+%
+%\begin{enumerate}
+%\item $f$ is a product of two cycles of order $2$.
+%
+%\item $f$ is a product of four cycles of order $2$.
+%
+%\item $f$ is a product of five cycles of order $2$.
+%
+%\item None of the above.
+%\end{enumerate}
+%\end{exercise}
+%
+%\vspace{-0.2in}$$f=\left(\begin{matrix} %
+%1 & 2 & 3 & 4 & 5 \cr%
+%2 & 3 & 1 & 5 & 4 \cr%
+%\end{matrix}\right)=\big(1\ 2\ 3\big)\big(4\ 5\big)=\big(1\ 3\big)\big(1\ 2\big)\big(4\
+%5\big),$$
+%which implies that $f$ is a product of
+%\textcolor[rgb]{0.98,0.00,0.00}{five} cycles of order $2$.
+%
+%
+
+
+We would like to define a permutation to be {\it even} if it is
+a product of even number of cycles of order $2$, and {\it odd} if it is a
+product of odd number of cycles of order $2$. However, it is not clear from this definition whether or not a permutation can be both even and odd at the same time. Hence, we will actually define the properties of being even and odd slightly differently, and then later deduce that even and odd permutations can be written as an even or odd number of $2$-cycles.
+
+Our ad-hoc definition of even and odd permutations in $S_{n}$ will rely on the following function of $n$ variables $x_{1},...,x_{n}$:
+\[\Delta (x_{1},...,x_{n}) = \prod_{1\leq i<j\leq n} (x_{i}-x_{j}),\]
+that is, the product of all pairs $(x_{i}-x_{j})$ where $1\leq i<j\leq n$. So for example, in $S_{3}$, we have 
+\[\Delta (x_{1},...,x_{n}) = (x_{1}-x_{2})(x_{2}-x_{3})(x_{1}-x_{3}).\]
+Given a permutation $f\in S_{n}$, we will define $f(\Delta)$ to be the function 
+\[f(\Delta)(x_{1},...,x_{n})  = \prod_{1\leq i<j\leq n} (x_{f(i)}-x_{f(j)}).\]
+Notice that $f(\Delta)$ is actually just $\pm \Delta$, since all the permutation does is change some of the $(x_{i}-x_{j})$ to either $(x_{i}-x_{j})$ or $(x_{j}-x_{i})$. We define the {\it signature} of $f$ to be
+\[
+\mbox{sgn}(f) = \frac{f(\Delta)}{\Delta},
+\]
+that is, $\mbox{sgn}(f) =1$ if $f(\Delta)=\Delta$ and $\mbox{sgn}(f) =-1$ if $f(\Delta)=-\Delta$. 
+
+\begin{definition}
+We say a permutation $f\in S_{n}$ is {\it even} if $\mbox{sgn}(f) =1$ and {\it odd} if  $\mbox{sgn}(f) =-1$.
+\end{definition}
+
+The above definition of even and odd and the signature may seem really technical to work with, but the lemma below will provide us with some short-cuts so that we never actually have to refer to $n$-variable polynomials:
+
+
+\begin{lemma}%[Propositions 20.5, 20.6, and 20.7 in the book]
+Let $n\in\mathbb{N}$.
+\begin{enumerate}[label=(\alph*)]
+\item The signature of $\iota$ is $1$ and any $2$-cycle is $-1$. 
+\item For any $f$ and $g$ in $\mathrm{S}_n$,  we have
+$\mathrm{sgn}(fg)=\mathrm{sgn}(f)\mathrm{sgn}(g)$.
+\item The signature of a cycle of length $r$ is $(-1)^{r-1}$.%
+\item For every permutation $f\in\mathrm{S}_n$,  let $f=\sigma_{1}\sigma_{2}\cdots\sigma_{s}$
+ where $\sigma_{1},\ldots,\sigma_{s}$ are disjoint cycles of
+lengths $r_{1},\ldots,r_{s}$.  Then
+$$
+\mathrm{sgn}(f)=(-1)^{r_1-1}(-1)^{r_2-1}(-1)^{r_3-1}\cdots (-1)^{r_s-1}.%
+$$
+
+\item If $f\in S_{n}$, then $\mathrm{sgn}(f)=\mathrm{sgn}(f^{-1})$. 
+
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item First, $\mbox{sgn}(\iota)=\frac{\Delta}{\Delta}=1$. Next, let $(a\; b)$ be a $2$-cycle with $a<b$. Then the only terms $(x_{i}-x_{j})$ in the polynomial $\Delta$ that change sign (i.e. are reversed) when we compute $(a\; b)(\Delta)$ are the terms
+\[
+\Big((x_{a}-x_{a+1})(x_{a}-x_{a+2})\cdots (x_{a}-x_{b})\Big)
+\Big((x_{a+1}-x_{b})(x_{a+2}-x_{b})\cdots (x_{b-1}-x_{b})\Big)
+\]
+There are $b-a$ terms in the first set of big parentheses and $b-a-1$ in the second set, for a total of $2(b-a)-1$, an odd number, hence 
+\[
+(a\; b)(\Delta) = (-1)^{2(b-a)-1} \Delta = -\Delta,
+\]
+so $\mbox{sgn}((a\; b))=-1$. 
+\item Let $f$ and $g$ be two permutations. Notice that $f(-\Delta)=-f(\Delta)$, and so
+\[
+fg(\Delta)
+=f(g(\Delta)) = f(\mbox{sgn}(g)\Delta) =  \mbox{sgn}(g) f(\Delta)
+=\mbox{sgn}(g)\mbox{sgn}(f)\Delta
+\]
+and this implies $\mathrm{sgn}(fg)=\mathrm{sgn}(f)\mathrm{sgn}(g)$
+
+\item Now things get a lot easier: If $f$ is an $r$-cycle, then by the proof of Lemma \ref{l:prodof2cycles}, it is a product of $r-1$ many $2$-cycles $\sigma_{1},...,\sigma_{r}$, so by (a) and (b),
+\[
+\mbox{sgn}(f) = \mbox{sgn}(\sigma_{1})\cdots  \mbox{sgn}(\sigma_{r})  =(-1)^{r-1}.\]
+\item The same proof as in (c) proves this one. 
+\item Finally, 
+\[
+1= \mbox{sgn}(\iota)  = \mbox{sgn}(ff^{-1})=\mbox{sgn}(f)\mbox{sgn}(f^{-1})
+\]
+and since the signature is always $\pm 1$, we can divide both sides by $\mbox{sgn}(f^{-1})$ to get 
+\[
+\mbox{sgn}(f)=\mbox{sgn}(f^{-1})^{-1} = \mbox{sgn}(f^{-1}).
+\]
+\end{enumerate}
+
+\end{proof}
+
+As a corollary of the above lemma, we get the following.
+
+\begin{corollary}
+Let $f$ be a permutation in $\mathrm{S}_n$.
+\begin{enumerate}
+\item $f$ is \textcolor[rgb]{0.98,0.00,0.00}{even} if and only if it is
+a product of even number of cycles of order $2$.
+
+\item $f$ is \textcolor[rgb]{0.98,0.00,0.00}{odd} if and only if it is a
+product of odd number of cycles of order $2$.
+\end{enumerate}
+\end{corollary}
+
+
+
+\begin{example}  The permutation
+$$
+\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 \cr%
+2 & 3 & 1 & 5 & 4 \cr%
+\end{matrix}\right)=\big(1\ 2\ 3\big)\big(4\ 5\big)=\big(1\ 3\big)\big(1\ 2\big)\big(4\ 5\big)
+$$
+ is odd,  because it is a product of $3$ cycles of
+length $2$.
+
+
+$\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 \cr%
+2 & 3 & 4 & 5 & 1 \cr%
+\end{matrix}\right)=\big(1\ 2\ 3\ 4\ 5\big)=\big(1\ 5\big)\big(1\ 4\big)\big(1\ 3\big)\big(1\ 2\big)
+$  is even.
+\end{example}
+
+
+
+\begin{example}
+Let's revisit the $9$-puzzle and start with the one we solved earlier, that is, where we wanted to rearrange 
+\[\begin{matrix} %
+ \Box  & 2  & 3  \cr%
+1 & 4& 5 \cr%
+7 & 8 & 6 \cr%
+\end{matrix} \;\;\;\; \mbox{ into } \;\;\;\; \begin{matrix} %
+1 & 2  & 3  \cr%
+4 & 5 & 6  \cr%
+7 & 8 & \Box \cr%
+\end{matrix}.\]
+If we consider the $\Box$ as being $9$, the above arrangement on the left corresponds to applying the permutation 
+\[
+f=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \cr%
+4 & 2 & 3 & 5 & 6 & 9 & 7 & 8 & 1\cr%
+\end{matrix}\right)
+=(1 \; 4 \; 5 \; 6 \; 9 )(2)(3)(7)(8)=(1 \; 4 \; 5 \; 6 \; 9 )
+\]
+to the grid on the right. Performing a move by moving a number into the $\Box$ corresponds to applying a $2$-cycle. Let's revisit the moves we did earlier to solve this puzzle and indicate what $2$-cycles we are using:
+\[
+\begin{matrix} %
+ \Box  & 2  & 3  \cr%
+1 & 4& 5 \cr%
+7 & 8 & 6 \cr%
+\end{matrix}
+\;\;
+\stackrel{(1 \; 4)}{\longrightarrow}
+\;\;
+\begin{matrix} %
+1 & 2  & 3  \cr%
+ \Box  & 4& 5 \cr%
+7 & 8 & 6 \cr%
+\end{matrix}
+\;\;
+\stackrel{(4 \; 5)}{\longrightarrow}
+\;\;
+\begin{matrix} %
+1 & 2  & 3  \cr%
+4 &  \Box  & 5 \cr%
+7 & 8 & 6 \cr%
+\end{matrix}
+\;\;
+\stackrel{(5 \; 6)}{\longrightarrow}
+\;\;
+\begin{matrix} %
+1 & 2  & 3  \cr%
+4 & 5 & \Box  \cr%
+7 & 8 & 6 \cr%
+\end{matrix}
+\;\;
+\stackrel{(6 \; 9)}{\longrightarrow}
+\;\;
+\begin{matrix} %
+1 & 2  & 3  \cr%
+4 & 5 & 6  \cr%
+7 & 8 & \Box \cr%
+\end{matrix}
+\]
+
+Thus, applying the permutation $(6 \; 9)(5 \; 6)(4 \; 5)(1 \; 4) $ returns the board to the original order, that is, it inverts the permutation $(1 \; 4 \; 5 \; 6 \; 9 )$. 
+
+Now let's look at the following puzzle:
+
+\[
+\begin{matrix} %
+ \Box  & 3  & 2  \cr%
+1 & 4& 5 \cr%
+7 & 8 & 6 \cr%
+\end{matrix} \;\;\;\; \mbox{ into } \;\;\;\; \begin{matrix} %
+1 & 2  & 3  \cr%
+4 & 5 & 6  \cr%
+7 & 8 & \Box \cr%
+\end{matrix}.\]
+The permutation corresponding to this arrangement is
+\[
+g=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \cr%
+4 & 3 & 2 & 5 & 6 & 9 & 7 & 8 & 1\cr%
+\end{matrix}\right)
+=(1 \; 4 \; 5 \; 6 \; 9 )(2\; 3)(7)(8)=(1 \; 4 \; 5 \; 6 \; 9 )(2 \; 3)
+\]
+Notice that if the puzzle can be solved, that requires moving the square up or down an even number of times, and left and right an even number of times. Thus, the puzzle must take an even number of moves, and since each move is a $2$-cycle, that implies that the inverse of the above permutation must be even, and hence the permutation itself must also be even (this uses Lemma 7.10 (a),(d) and (e)). However, the signature of the above permutation (using Lemma 7.10 (b) and (c)) is 
+\[
+\mbox{sgn}\Big((1 \; 4 \; 5 \; 6 \; 9)(2 \; 3)\Big)
+=\mbox{sgn}\Big((1 \; 4 \; 5 \; 6 \; 9)\Big)\mbox{sgn}\Big((2 \; 3)\Big)
+=(-1)^{5-1}(-1)^{2-1} = -1.
+\]
+and so this is an odd permutation, and this gives a contradiction. Thus, the original puzzle is not solvable.
+
+\end{example}
+
+
+\section{Exercises}
+The relevant exercises to this section are in Chapter 20 of Liebeck.
+
+
+\begin{exercise}
+Consider the permutation
+\[f=\left(\begin{matrix} %
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \cr%
+3  &  5 &   4   & 8  &  7  &  6  &  2  &  1
+\end{matrix}\right)
+\]
+Write $f, f^{2}$, $f^{-1}$, and $f^{146}$ in cycle notation. 
+
+\begin{solution}
+\[
+f=(1 \; 3 \; 4 \; 8 )(2 \; 5 \;7 ) ,\;\; f^2 = (1 \; 4)(2 \; 7 \; 5)(3 \; 8 ),\;\; f^{-1} = (8 \; 4 \; 3 \; 1)(7 \; 5 \; 2)
+\]
+To compute $f^{146}$, note thatthe order of $f$ is $lcm(4,3)=12$, and $146  = 12\cdot 12 + 2$, thus
+\[
+f^{146} = (f^{12})^{12}\cdot f^2 = f^2 = (1 \; 4)(2 \; 7 \; 5)(3 \; 8 ).
+\]
+\end{solution}
+
+
+\end{exercise}
+
+\begin{exercise}
+Given $2\leq k\leq n$, how many $k$-cycles are there in $S_{n}$?
+
+\begin{solution}
+There are ${n \choose k}$ ways of picking numbers $\{a_{1},...,a_{k}\}$ in $\{1,2,...,n\}$. Now we count how many cycles there are on these numbers via the multiplication principle. For a cycle $f=(f_{1} \; \cdots  f_{k})$ with $f_{i}\in  \{a_{1},...,a_{k}\}$, remember that we also have 
+\[
+f=(f_{2} \; f_{3}\cdots f_{k} \; f_{1}) 
+=(f_{3} \; f_{4} \cdots f_{k} \; f_{1} \; f_{2})\cdots
+\]
+and so we can assume that $f_{1} = a_{1}$, otherwise we can shift the numbers in the cycle as above until the first term in parentheses is $a_{1}$. Then there are $k-1$ choices for what $f_{2}$ can be, and after picking that there are $k-2$ choices for what $f_{3}$ can be, and so on. Thus, by the multiplication principle, there are $k(k-1)(k-2)\cdots 1=(k-1)!$ many cycles using the numbers  $\{a_{1},...,a_{k}\}$, and thus there are
+\[
+{n \choose k} (k-1)!
+\]
+many $k$ cylces in $S_{n}$. 
+\end{solution}
+
+\end{exercise}
+
+
+\begin{exercise}
+How many order $3$ permutations are there in $S_{4}$?
+\begin{solution}
+The only way a permutation in $S_{4}$ can have order $3$ is if it is a $3$-cycle, so by the previous exercise, the number of such cycles is ${4 \choose 3}(3-1)!$.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+How many order $3$ permutations are there in $S_{6}$?
+
+
+\begin{solution}
+By looking at the cycle notation for a permutation $f\in S_{6}$, the only way it can have order $3$ is if it is either a $3$-cycle or a product of two disjoint $3$-cycles. As in one of the previous exercises, there are ${6\choose 3}\cdot 2$ $3$-cycles. To count disjoint products of $3$-cycles, notice that for each $3$-cycle $p$ there are $(3-1)!=2$ $3$-cycles $q$ we can have on the remaining $3$ numbers in $\{1,...,6\}$ not appearing in $p$. If we count them in this way though, each product of two disjoint $3$-cycles is counted twice (once as $pq$ and then as $qp$), so we have to divide our answer by $2$, so the number of products of disjoint $3$ cycles is 
+\[
+\left( {6\choose 3} \cdot 2\right) \cdot 2\cdot\frac{1}{2} = {6\choose 3} \cdot 2.
+\]
+\end{solution}
+Thus, the total number of order $3$ permutations is ${6\choose 3} \cdot 2+ {6\choose 3} \cdot 2= {6\choose 3} \cdot 4$.
+\end{exercise}
+
+\begin{exercise} We say a set $S\subseteq S_n$ {\it generates} $f\in S_{n}$ there are $f_{1},...,f_{k}\in S$ so that $f=f_{1}\cdots f_{k}$ (where we could have $k=1$, that is, this could just be a composition of just one function), and $S$ {\it generates} $S_{n}$ if it generates $f$ for every $f\in S_{n}$.
+
+\begin{enumerate}
+\item Show that if $f\in S$, then $S$ generates $\iota$ and $f^{-1}$.
+\begin{solution}
+Recall that each permutation has an order $r$, and so $\iota = f^{r}$ and $f^{-1} = f^{r-1}$ are both products of elements of $S$ (in particular, just products of $f$ with itself over and over). 
+\end{solution}
+\item Show that $S=\{ (1\; 2), (2 \; 3),...,(n-1 \; n)\}$ generates $S_{n}$. 
+\begin{solution}
+Let $f\in S_{n}$. Since $f$ is a composition of cycles by Proposition 20.3, we just need to show that each cycle is a composition of functions in $S$. So let $(a_{1}....a_{r})$ be one of the cycles. The claim will follow from the following subclaim:
+
+{\bf Subclaim:} If $(a_{1}...a_{r})$ is an $r$-cycle, then it is a composition of functions from $S$.
+ 
+Note that by the proof of Lemma \ref{l:prodof2cycles} (Proposition 20.6 in the book),
+\[
+(a_{1}\; \cdots \; a_{r}) = (a_{1} \; a_{r})\cdots (a_{1}\; a_{2}),
+\]
+Thus, it suffices to show that the cycles $(1 \; j)$ where $1<j\leq n$ are compositions of functions from $S$. We will prove this by induction on $j=2,...,n$.
+
+If $j=2$, then this is immediate since $(1\;2)\in S$ already. This proves the base case. Now we prove the induction step. Assume we have shown that $(1\; j)$ is a composition of functions from $S$ for some $1<j<n$. Then
+\[
+(1 \; j+1) = (1 \; j)(j\; j+1)(1 \; j).
+\]
+We already have $(j\; j+1)\in S$, and $(1\; j)$ is a composition of functions from $S$ by the induction hypothesis, hence so is $(1 \; j+1)$, which proves the induction step. 
+\end{solution}
+\item Show that $T=\{(1\; 2),(1\; 2 \; 3),..., (1 \; 2 \; ...\; n)\}$ generates $S_{n}$.
+
+
+
+
+\begin{solution}
+Note that since $(1 \; 2 \; \cdots \; k-1 )\in T$, $T$ generates $(1 \; 2 \; \cdots \; k-1 )^{-1}$, and so it also generates
+\[
+(1 \; 2 \; \cdots \; k-1 )^{-1} (1 \; 2 \; \cdots \; k-1 \; k)  
+=(k-1 \; k)
+\]
+for every $k$. We have already shown that every $f$ is a product of elements in $S_{n}$ is a product of permutations of the form $(k-1\; k)$, and now we have shown that each such permutation is a product of elements in $T$, thus $T$ generates $S_n$.
+\end{solution}
+
+
+\end{enumerate}
+\end{exercise}
+
+
+
+
+\begin{exercise}
+ Given $x,y\in S_{n}$, we call $z=xyx^{-1}$ the {\it conjugate of $y$ by $x$}. If $z=xyx^{-1}$ for some $x\in S_{n}$, we say $z$ is a {\it conjugate} of $y$. 
+
+(a) Show that the relation $y\sim z$ if $y$ is conjugate to $z$ is an equivalence relation on $S_{n}$. 
+
+(b) Fix $x\in S_{n}$. Show that the function sending $y\in S_{n}$ to $xyx^{-1}$ is a bijection on $S_{n}$. 
+
+(c) If $c=(a_{1} \; a_{2}...a_{k})$ is a cycle in $S_{n}$ and $x\in S_{n}$, prove that 
+\[
+xcx^{-1}=(x(a_{1})...x(a_{k})). 
+\]
+(d) If $y,z$ are conjugates, what can you say about their cycle shapes? Is the converse also true?
+
+
+
+\begin{solution}
+(a) Clearly $y\sim y$ since $y=\iota y\iota^{-1}$, so $\sim$ is reflexive. If $y\sim z$, then $y=xzx^{-1}$ for some $x\in S_{n}$. Composing both sides on the left with $x^{-1}$, we get $x^{-1}y=zx^{-1}$, and then composing again on the right gives $x^{-1}yx=z$, and so $z$ is a conjugate of $y$, hence $z\sim y$ and we have reflexivity. Finally, if $y\sim z$ and $z\sim w$, then $y=xzx^{-1}$ and $z=sws^{-1}$ for some $x,s\in S_{n}$. Then $y=xzx^{-1} = xswx^{-1}s^{-1} = xsw(xs)^{-1}$, so $y\sim w$. This proves transitivity.
+
+(b) Let $F(y)=xyx^{-1}$. Then $F$ is surjective since, for every $y\in S_{n}$, $y=F(x^{-1}yx)$. It is injective since, if $xyx^{-1}=xzx^{-1}$, then we can compose both sides on the left with $x^{-1}$ to get $yx^{-1}=zx^{-1}$, and then compose with $x$ on the right to get $y=z$. 
+
+(c) If we plug in $x(a_{i})$ (this is the function $x$ evaluated at $a_{i}$), we get $xcx^{-1}(x(a_{i}))=xc(a_{i})=x(a_{i+1})$ if $i<k$ and when $i=k$, $xcx^{-1}(x(a_{k}))=xc(a_{k})=x(a_{1})$. Thus, $xcx^{-1}=(x(a_{1})...x(a_{k}))$. 
+
+In particular, $xcx^{-1}$ is a cycle of the same length.
+
+(d) If $y,z$ are conjugates, then they have the same cycle-shape. If $z=xyx^{-1}$, and $y\in S_{n}$ decomposes into disjoint cycles $y=c_{1}\cdots c_{k}$, then 
+\[
+xyx^{-1}=xc_{1}x^{-1} xc_{2}x^{-1}\cdots xc_{k}x^{-1}, \]
+so $xyx^{-1}$ is also a composition of cycles of the same lengths, and so it has the same cycle-shape as $y$. 
+
+If $y$ and $z$ have the same cycle shape, then they are also conjugate. To see this, note that if $y=c_1...c_{r}$ is a product of disjoint cycles, we can write $z=d_{1}...d_{r}$ as a product of cycles so that $d_{i}$ has the same length as $c_{i}$. If $c_{i}=(a_{i,1}...a_{i,k_i})$ and $d_{i}=(b_{i,j},...,b_{i,k_{i}})$, define $x\in S_{n}$ so that $x(a_{i,j})=b_{i,j}$. Then $xc_ix^{-1}=(x(a_{i,1})...x(a_{i,k_i}))=(b_{i,1},...,b_{i,k_{i}})=d_i$, and so $xyx^{-1}=z$. 
+\end{solution}
+
+
+
+
+
+
+
+\end{exercise}
+
+
+
+
+
+ 
+\begin{exercise}
+{\bf Landau's function} $L(n)$ is defined for every $n\in\mathbb{N}$ to be the largest order of an element of $S_{n}$. This has no convenient formula, but we will prove some simple bounds on it in the next two exercises. \\
+
+(a) Show that  for all $n\in\mathbb{N}$, $L(n)<2^{n}$. {\it Hint: it may help to show $n<2^{n}$ for all $n\in\mathbb{N}$.}
+
+\begin{solution}
+{\bf Claim:}
+For all $n\in \mathbb{N}$, the order of any cycle $f\in S_{n}$ is at most $2^{n}$. 
+
+{\bf Proof:}
+We first need to show that for all natural numbers $n$,
+\begin{equation}
+\label{e:n<2^n}
+n<2^{n}.
+\end{equation}
+(I have shown this in class, so students may also just cite the lectures for this fact.) This is true for the base case $n=1$, so suppose $n\geq 1$ is an integer so that $2^{n}>n$. Then
+\[
+n+1<2^{n}+1<2^{n}+2^{n}=2^{n+1}. 
+\]
+This proves the induction step and hence (1).
+
+Let $n\in\mathbb{N}$ and let $f\in S_{n}$. Then $f$ can be written as a product of cycles of lengths $r_{1},....,r_{k}$ where $r_{i}\in \mathbb{N}$ and $r_{1}+\cdots  + r_{k}=n$. Then the order is the least common multiple of these numbers, which is at most 
+\[
+r_{1}\cdots r_{k}<2^{r_{1}}\cdots 2^{r_{k}}=2^{r_{1}+\cdots + r_{k}}=2^{n}.
+\]
+\end{solution}
+
+(b)  Show that $L(n)\geq\frac{n}{2}\cdot \left(\frac{n}{2}-1\right)$ for every $n\in \mathbb{N}$.  {\it Hint: Remember that $L(n)$ is the maximum order of an element in $S_{n}$, so to prove the above claim, you just need to find one element of $S_{n}$ with order at least $\frac{n}{2}\cdot \left(\frac{n}{2}-1\right)$. Try playing around with different products of cycles to see how big you can make their order.}
+
+
+
+\begin{solution}
+{\bf Claim:}
+$L(n)\geq\frac{n}{2}\cdot \left(\frac{n}{2}-1\right)$ for $n\in \mathbb{N}$.
+
+\begin{proof}
+We split into two cases depending on if $n$ is even or odd. If $n$ is even, then $n/2$ and $n/2-1$ are coprime. Let $f$ have cycle decomposition 
+\[
+f=(1\; 2\cdots n/2)(n/2+1 \;\; n/2+2...n-1).
+\]
+Then these two cycles have lengths $n/2$ and $n/2-1$ respectively, and the order of $f$ is the least common multiple of these two numbers by Proposition 20.4, and since they are comprime, this must be $\frac{n}{2}\left(\frac{n}{2}-1\right)$. 
+
+If $n$ is odd, then $\frac{n-1}{2}$ and $\frac{n+1}{2}$ are coprime. Let $g$ have cycle decomposition 
+\[
+g=(1\; 2\cdots (n-1)/2)((n+1)/2  ... n)
+\]
+then the lengths of the cycles in this decomposition are $\frac{n-1}{2}$ and $\frac{n+1}{2}$, and so the order of the cycle is the least common multiple of these numbers by Proposition 20.4 which (because they are coprime) is just their product: $\frac{n-1}{2}\frac{n+1}{2}= \frac{n^2-1}{4}$. 
+
+Taking the minimum of this and $\frac{n}{2}\left(\frac{n}{2}-1\right)$, we see that $L(n)\geq \frac{n}{2}\left(\frac{n}{2}-1\right) $ for all $n\in\mathbb{N}$.
+\end{proof}
+\end{solution}
+\end{exercise}
+
+
+\end{document}

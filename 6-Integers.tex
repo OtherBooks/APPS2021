@@ -1,0 +1,1879 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.0 (9/2/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass[11pt,fleqn,dvipsnames]{book} % Default font size and left-justified equations
+\documentclass[11pt,dvipsnames]{book} 
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+
+
+%%agregué
+
+
+
+
+%%%My stuff
+
+
+%\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+%\usepackage{due-dates}
+\usepackage[small]{eulervm}
+\usepackage{amsmath,amssymb,amstext,amsthm,amscd,mathrsfs,eucal,bm,xcolor}
+\usepackage{multicol}
+\usepackage{array,color,graphicx}
+
+
+
+\usepackage{epigraph}
+%\usepackage[colorlinks,citecolor=red,linkcolor=blue,pagebackref,hypertexnames=false]{hyperref}
+
+%\theoremstyle{remark} 
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{\bf Example}
+%\newtheorem*{solution}{Solution:}
+
+
+\usepackage{centernot}
+
+
+\usepackage{filecontents}
+
+
+\usepackage{tcolorbox} 
+
+
+
+
+
+% Ignore this part, this is the former way of hiding and unhiding solutions, new version is after this
+%
+%\begin{filecontents*}{MyPackage.sty}
+%\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{MyPackage}
+%\RequirePackage{environ}
+%\newif\if@hidden% \@hiddenfalse
+%\DeclareOption{hide}{\global\@hiddentrue}
+%\DeclareOption{unhide}{\global\@hiddenfalse}
+%\ProcessOptions\relax
+%\NewEnviron{solution}
+%  {\if@hidden\else \begin{tcolorbox}{\bf Solution: }\BODY \end{tcolorbox}\fi}
+%\end{filecontents*}
+%
+%
+%
+%\usepackage[hide]{MyPackage} % hides all solutions
+%\usepackage[unhide]{MyPackage} %shows all solutions
+
+
+
+
+%\usepackage[unhide,all]{hide-soln} %show all solutions
+\usepackage[unhide,odd]{hide-soln} %hide even number solutions
+%\usepackage[hide]{hide-soln} %hide all solutions
+
+
+
+
+
+
+
+\def\putgrid{\put(0,0){0}
+\put(0,25){25}
+\put(0,50){50}
+\put(0,75){75}
+\put(0,100){100}
+\put(0,125){125}
+\put(0,150){150}
+\put(0,175){175}
+\put(0,200){200}
+\put(25,0){25}
+\put(50,0){50}
+\put(75,0){75}
+\put(100,0){100}
+\put(125,0){125}
+\put(150,0){150}
+\put(175,0){175}
+\put(200,0){200}
+\put(225,0){225}
+\put(250,0){250}
+\put(275,0){275}
+\put(300,0){300}
+\put(325,0){325}
+\put(350,0){350}
+\put(375,0){375}
+\put(400,0){400}
+{\color{gray}\multiput(0,0)(25,0){16}{\line(0,1){200}}}
+{\color{gray}\multiput(0,0)(0,25){8}{\line(1,0){400}}}
+}
+
+
+
+%\usepackage{tikz}
+
+%\pagestyle{headandfoot}
+%\firstpageheader{\textbf{Proofs \& Problem Solving}}{\textbf{Homework 1}}{\textbf{\PSYear}}
+%\runningheader{}{}{}
+%\firstpagefooter{}{}{}
+%\runningfooter{}{}{}
+
+%\marksnotpoints
+%\pointsinrightmargin
+%\pointsdroppedatright
+%\bracketedpoints
+%\marginpointname{ \points}
+%\totalformat{[\totalpoints~\points]}
+
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\N{{\mathbb{N}}}
+\def\Q{{\mathbb{Q}}}
+\def\C{{\mathbb{C}}}
+
+
+%%end of my stuff
+
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+
+
+
+\usepackage{graphicx} % paquete que permite introducir imágenes
+
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%%hasta aquí
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=12cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{Figures/blank.png}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Proofs and Problem Solving \\[15pt] % Book title
+{\huge Week 6: The Integers}\\[20pt] % Subtitle
+{\Large Notes  based on Martin Liebeck's \\ \textit{A Concise Introduction to Pure Mathematics}}}}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+%\newpage
+%~\vfill
+%\thispagestyle{empty}
+
+%\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+
+%\noindent \textsc{Published by Publisher}\\ % Publisher
+
+%\noindent \textsc{book-website.com}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+%\noindent \textit{First printing, March 2013} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{Figures/blank.png} % Table of contents heading image
+
+%\chapterimage{chapter_head_1.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+ \tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+
+
+
+
+\chapterimage{Figures/blank.png} 
+
+
+
+
+
+
+\part{Week 5: Integers}
+\setcounter{page}{1}
+\setcounter{chapter}{10}
+
+\chapter{Integers}
+
+%\epigraph{\it It is impossible to separate a cube into two cubes, or a fourth power into two fourth powers, or in general, any power higher than the second, into two like powers. I have discovered a truly marvelous proof of this, which this margin is too narrow to contain.}{Pierre de Fermat, {\it Arithmetica}, 1637...\\ Proof not found until 1994.} 
+
+%\epigraph{\it God may not play dice with the universe, but something strange is going on with the prime numbers.}{Paul Erd\"{o}s} 
+
+
+This week we will study the integers, particularly the techniques of studying divisibility, the highest common factor, and prime factorization. 
+
+These techniques are especially useful for solving {\it diophantine equations}, which are polynomial equations where we seek {\it integer} solutions. The most famous diophantine equation is 
+\[
+x^{n}+y^{n}=z^{n}\]
+It was famously claimed by Fermat (without proof) that there are solutions  $x,y,z,n\in\mathbb{N}$ only if $n=1$ or $n=2$. It wasn't until 1994 when Andrew Wiles actually gave a proof. 
+
+This week's set of tools are also useful when we are trying to show at a diophantine {\it can't} be solved. You have seen one such proof before: that $\sqrt{2}$ is irrational. Let's recall the proof briefly:
+
+Suppose there was a rational number $\frac{m}{n}$ (where $m$ and $n$ are reduced in the sense that they have no common divisors apart from $1$) so that $\left(\frac{m}{n}\right)^2=2$, then $m^2=2n^2$. This means that $m^2$ is even. Then $m$ must be even since, if instead $m=2k+1$ for some integer $k$, then $m^2=(2k+1)^2=4(k^2+k)+1$, which is odd, a contradiction. Hence, $m=2k$ for some integer $k$, and so
+\[
+2n^2=m^2=(2k)^2=4k^2\]
+and so $n^2=2k^2$, and using a similar reasoning, we get that $n$ must also be even, which is a contradiction since we assumed $m$ and $n$ had no common factors, but now we have shown they are both divisible by $2$. 
+
+The important feature of the proof was to use the {\it coprimality} of $m$ and $n$, that is, that they share no common divisors, as well as the fact that if $m^2$ is divisible by $2$ (that is, if $m^2$ was even, then so was $m$). If we want to generalize this proof, we will need to develop  these tools about divisibility and coprimality. Later, we will in fact show that $\sqrt{n}$ is rational exactly when $n=m^2$ for some integer $m$. 
+
+
+
+As motivation for the techniques we develop along the way, we will show how they can be used to solve various diophantine equations. As a special final application of these techniques, we'll also classify all {\it Pythagorean Triples}, that is, integers $x,y,z$ so that 
+\[
+x^2+y^2=z^2.\]
+
+
+If you like the material from this week, you might enjoy taking {\it Introduction to Number Theory} (4th year).
+
+\section{Remainders and divisibility }
+
+
+The following theorem is the starting point for our studies on divisibility. 
+
+\begin{theorem}[The Remainder Theorem]
+Let  $a\in\mathbb{N}$ and $b\in\mathbb{Z}$. There are unique integers $q\in \mathbb{Z}$ and $0\leq r<a$ such that
+\[
+b=qa+r.
+\]
+\end{theorem}
+
+\begin{proof}
+We prove existence and uniqueness separately. \\
+
+\noindent {\bf Existence:} Let $q$ be the largest integer for which $qa\leq b$. Let $r=b-qa\geq 0$. Then we must also have $r<a$, since if $r\geq a$, then $b-qa\geq a$, and so $b-(q+1)a\geq 0$, which contradicts $q$ being the largest integer for which $qa\leq b$. This shows the existence of a pair $(q,r)$ satisfying the theorem. \\
+
+\noindent {\bf Uniqueness:} Assume that $(q',r')$ is a pair of integers such that $b=q'a+r'$ and $0\leq r'<a$.
+Then
+\[
+0=b-b=q'a+r'-qa-r = (q'-q)a+(r'-r),
+\]
+and so 
+\[
+r'-r=(q-q')a.
+\]
+Since $0\leq r,r'<a$, we know $|r-r'|<a$. Thus
+\[
+a>|r-r'|=|(q-q')a|=|q-q'|\cdot a,
+\]
+which implies that $1>|q-q'|$.
+Since $|q-q'|$ is a nonnegative integer, it therefore follows that $q=q'$.
+\end{proof}
+
+\begin{definition}
+For two integers $a$ and $b$ we say {\it $a$ divides $b$} if there is an integer $c$ so that $b=ac$.
+
+Some authors will write $a | b$ for the sentence ``$a$ divides $b$.''
+(This isn't great notation.)
+\end{definition}
+
+\noindent So for example, $2$ divides $4$, but $2$ does not divide $3$. 
+
+
+\begin{lemma}
+\label{l:abba}
+If $a$ divides $b$ and $b$ divides $a$, then $a=\pm b$. 
+\end{lemma}
+
+\begin{proof}
+Exercise.
+\end{proof}
+
+%\begin{proof}
+%Since $a|b$, we know $b=na$ for some integer $n$, and similarly, since $b|a$, we know $a=mb$ for some integer $m$. Hence, $a=mb=mna$, and so $1=mn$. The only way this can happen is if either $m=n=1$ or $m=n=-1$. 
+%\end{proof}
+
+\section{The GCD and the Euclidean Algorithm}
+
+\begin{definition}
+Let $a$ and $b$ be two nonzero integers.
+A \emph{common divisor} or \emph{common factor} of $a$ and $b$ is an integer $d \in \N$ such that $d$ divides both $a$ and $b$.
+The {\it greatest common divisor} (AKA the {\it highest common factor}) of $a$ and $b$ is the \emph{largest} common divisor of $a$ and $b$.
+We denote this integer $d$ by $\gcd(a,b)$ (you may also see the notation $\mathrm{hcf}(a,b)$.
+
+If $\gcd(a,b)=1$, then we say that $a$ and $b$ are said to be {\it coprime} or {\it relatively prime}.
+\end{definition}
+
+Thus $a$ and $b$ are coprime if and only if their only (positive) common divisor is $1$.
+
+\begin{example} $\gcd(15,45)=15$, 
+$\gcd(6,15)=3$, and $\gcd(17,91)=1$.
+\end{example}
+
+\begin{example}
+We allow ourselves the flexibility to speak of the gcd of negative integers as well as positive ones, but we notice that
+\[
+\gcd(a,b) = \gcd(a,-b) = \gcd(-a,b) = \gcd(-a,-b).
+\]
+(So for instance $\gcd(-6,-27) = \gcd(6, 27) = 3$.)
+As a result, we will mostly focus on the gcd of natural numbers.
+\end{example}
+
+For a prime $p>1$ and any integer $n$, we have:
+$$
+\gcd(p,n) = \left\{\aligned%
+&1\ \text{if $p$ does not divide $n$},\\
+&p\ \text{if $p$  divides $n$}.\\
+\endaligned
+\right.
+$$
+
+\begin{definition}
+Let $a$ and $b$ be integers.
+An \emph{integer linear combination} of $a$ and $b$ is an integer of the form $ma + nb$ for some $m,n \in \Z$.
+\end{definition}
+
+Notice that a linear combination of linear combinations is a linear combination.
+That is, if $c$ and $b$ are each linear combinations of $a$ and $b$, then for some integers $m$, $n$, $p$, and $q$, we have $c = m a + n b$ and $d = p a + q b$.
+If we form a linear combination of $c$ and $d$, we get
+\[
+r c + s d = (rm+sp)a + (rn+sq)b,
+\]
+which is a linear combination of $a$ and $b$.
+
+A little trick that we will use repeatedly is the observation that common divisors of two integers are also divisors of linear combinations of those integers:
+
+\begin{lemma}[Linear Combination Lemma]
+\label{l:easy-lemma}
+Let $a$, $b$, and $d$ be integers. If $d$ divides both $a$ and $b$, then $d$ divides every integer linear combination of $a$ and $b$.
+In other words, for every pair of integers $m,n\in\mathbb{Z}$, the integer $d$ also divides $ma + nb$.
+\end{lemma}
+
+\begin{proof}
+Since $d$ divides $a$ and $d$ divides $b$, there are integers $s$ and $t$ so that $a=sd$ and $b=td$.
+Hence
+\[
+ma+nb=msd+ntd=(ms+nt)d\]
+and so $d$ divides $ma+nb$.
+\end{proof}
+
+\def\easylemma{\hyperref[l:easy-lemma]{the Linear Combination Lemma}}
+
+\begin{example}
+Let $a, b \in \Z$.
+If there is a linear combination of $a$ and $b$ that gives $1$, then $a$ and $b$ are coprime.
+Indeed, if $m,n \in \Z$ have the property that $ma+nb = 1$, then any common divisor $d$ of $a$ and $b$ must also divide $1$. But then $d=1$, so $\gcd(a,b)=1$.
+
+Here we'll show $n$ and $n+1$ are coprime: By \easylemma, $\gcd(n,n+1)$ divides $(n+1)-n=1$, so $\gcd(n,n+1)$ divides $1$. Thus $\gcd(n,n+1)=1$. 
+\end{example}
+
+We can also use it to narrow down the gcd of two numbers:
+
+\begin{example}
+For $n\in\mathbb{N}$, what is $\gcd(4n^2-2,2n)?$ Observe that by \easylemma, $\gcd(4n^2-2,2n)$ divides $(2n)(2n)-(4n^2-2)=2$, so the highest common factor of these numbers is either $1$ or $2$. Since $2$ divides both $4n^2-2$ and $2n$, it also divides the $\gcd$, so Lemma \ref{l:abba} implies $\gcd(4n^2-2,2n)=2$.
+\end{example}
+
+How do we find the gcd for very large numbers? For this we use the {\it Euclidean Algorithm} which exploits the Remainder Theorem and \easylemma.
+
+Let $a,b\in\N$. Let us also assume $a<b$. 
+We are going to construct a sequence of nonnegative integers
+\[
+0 = r_{n+1} < r_n < \cdots < r_2 < r_1 = a < r_0 = b
+\]
+such that for each $k \in \N$, if $k\leq n$, then:
+\begin{enumerate}
+    \item $r_{k-1}$ is an integer linear combination of $r_k$ and $r_{k+1}$, and
+    \item $r_{k+1}$ is an integer linear combination of $r_k$ and $r_{k-1}$.
+\end{enumerate}
+
+If we manage to construct a sequence with these properties, then $\gcd(a,b)$ will be the natural number $r_n$.
+Before we perform the construction, let's understand why.
+The key is \easylemma.
+\begin{itemize}
+\item We first claim that $\gcd(a,b)$ divides $r_{n}$.
+Note that $r_0=b$ and $r_1=a$ are certainly linear combinations of $a$ and $b$.
+Let $k\in \N$ with $1\leq k \leq n$.
+If $r_{k-1}$ and $r_k$ are each integer linear combinations of $a$ and $b$, so is $r_{k+1}$.
+By induction, we conclude that $r_n$ is a integer linear combination of $a$ and $b$.
+Hence it follows from \easylemma\ that $\gcd(a,b)$ divides $r_n$.
+\item On the other hand, we claim that $r_{n}$ divides $\gcd(a,b)$.
+This is equivalent to the claim that $r_n$ is a common divisor of $a$ and $b$.
+Note that since $r_{n+1}=0$, it follows that $r_{n-1}=q_{n+1}r_{n}$ for some $q_{n+1}\in\Z$, so $r_{n}$ divides $r_{n-1}$.
+Let $k\in \N$ with $k \leq n$.
+Assume that $r_n$ divides $r_k$ and $r_{k+1}$; since $r_{k-1}$ is a linear combination of $r_k$ and $r_{k+1}$, it follows from \easylemma\ that $r_n$ divides $r_{k-1}$ as well.
+By induction, we conclude that $r_n$ divides $r_1=a$ and $r_0=b$. 
+\end{itemize}
+This proves (using Lemma \ref{l:abba}) that $\gcd(a,b)=r_n$.
+
+So our goal now is to present an iterative construction of a sequence of nonnegative integers
+\[
+0 = r_{n+1} < r_n < \cdots < r_2 < r_1 = a < r_0 = b
+\]
+such that for each $k \in \N$, if $k\leq n$, then
+\begin{enumerate}
+    \item $r_{k-1}$ is an integer linear combination of $r_k$ and $r_{k+1}$, and
+    \item $r_{k+1}$ is an integer linear combination of $r_k$ and $r_{k-1}$.
+\end{enumerate}
+
+To begin the iteration, we set $r_0 = b$ and $r_1 = a$.
+To construct the rest of the sequence, assume that for some $k\in\N$ we have constructed nonnegative integers $r_k < r_{k-1} < \dots < r_1 < r_0$ with the two properties above.
+Now use the Remainder Theorem to find an integers $q_{k+1}$ and $r_{k+1}$ such that
+\[
+r_{k-1} = q_{k+1}r_k + r_{k+1}.
+\]
+Thus $r_{k-1}$ is a linear combination of $r_k$ and $r_{k+1}$, but also $r_{k+1} = r_{k-1} - q_{k+1} r_k$ so $r_{k+1}$ is a linear combination of $r_k$ and $r_{k-1}$.
+
+This process must terminate with $r_{n+1}=0$ for some $n$, since the $r_{j}$ are nonnegative and strictly decreasing.
+This completes the construction of the sequence
+\[
+0 = r_{n+1} < r_n < \cdots < r_2 < r_1 = a < r_0 = b
+\]
+with the desired properties.
+
+Let's watch this algorithm in action.
+\begin{example}
+Let $a = r_1 = 6$ and $b = r_0 = 15$.
+\begin{itemize}
+    \item We divide $15$ by $6$ to get $2$ with a remainder of $r_2=3$.
+    \item We divide $6$ by $3$ to get $2$ with a remainder of $r_3 = 0$.
+\end{itemize}
+Thus $r_2 = 3$ is the gcd of $6$ and $15$.
+\end{example}
+
+\begin{example}
+Let $a = r_1 = 48$ and $b = r_0 = 66$.
+\begin{itemize}
+    \item We divide $66$ by $48$ to get $1$ with a remainder of $r_2=18$.
+    \item We divide $48$ by $18$ to get $2$ with a remainder of $r_3 = 12$.
+    \item We divide $18$ by $12$ to get $1$ with a remainder of $r_4 = 6$.
+    \item We divide $12$ by $6$ to get $2$ with a remainder of $r_5 = 0$.
+\end{itemize}
+Thus $r_4 = 6$ is the gcd of $48$ and $66$.
+\end{example}
+
+\begin{example}
+Let $a = r_1 = 120$ and $b = r_0 = 214$.
+\begin{itemize}
+    \item We divide $214$ by $120$ to get $1$ with a remainder of $r_2=94$.
+    \item We divide $120$ by $94$ to get $1$ with a remainder of $r_3 = 26$.
+    \item We divide $94$ by $26$ to get $3$ with a remainder of $r_4 = 16$.
+    \item We divide $26$ by $16$ to get $1$ with a remainder of $r_5 = 10$.
+    \item We divide $16$ by $10$ to get $1$ with a remainder of $r_6 = 6$.
+    \item We divide $10$ by $6$ to get $1$ with a remainder of $r_7 = 4$.
+    \item We divide $6$ by $4$ to get $1$ with a remainder of $r_8 = 2$.
+    \item We divide $4$ by $2$ to get $2$ with a remainder of $r_9 = 0$.
+\end{itemize}
+Thus $r_8 = 2$ is the gcd of $120$ and $214$.
+\end{example}
+
+\begin{example}
+Let $a = r_1 = 14$ and $b = r_0 = 348$.
+\begin{itemize}
+    \item We divide $348$ by $14$ to get $24$ with a remainder of $r_2=12$.
+    \item We divide $14$ by $12$ to get $1$ with a remainder of $r_3 = 2$.
+    \item We divide $12$ by $2$ to get $6$ with a remainder of $r_4 = 0$.
+\end{itemize}
+Thus $r_3 = 2$ is the gcd of $14$ and $348$.
+\end{example}
+
+\begin{example}
+Let $a = r_1 = 2059$ and $b = r_0 = 6744$.
+\begin{itemize}
+    \item We divide $6744$ by $2059$ to get $3$ with a remainder of $r_2=567$.
+    \item We divide $2059$ by $567$ to get $3$ with a remainder of $r_3 = 358$.
+    \item We divide $567$ by $358$ to get $1$ with a remainder of $r_4 = 209$.
+    \item We divide $358$ by $209$ to get $1$ with a remainder of $r_5 = 149$.
+    \item We divide $209$ by $149$ to get $1$ with a remainder of $r_6 = 60$.
+    \item We divide $149$ by $60$ to get $2$ with a remainder of $r_7 = 29$.
+    \item We divide $60$ by $29$ to get $2$ with a remainder of $r_8 = 2$.
+    \item We divide $29$ by $2$ to get $14$ with a remainder of $r_9 = 1$.
+    \item We divide $2$ by $1$ to get $2$ with a remainder of $r_{10} = 0$.
+\end{itemize}
+Thus $r_9 = 1$ is the gcd of $2059$ and $6744$.
+In particular, $2059$ and $6744$ are coprime.
+\end{example}
+
+One important corollary of the Euclidean Algorithm is the following.
+\begin{theorem}[Bezout’s  Identity]
+\label{t:lincombgcd}
+ Let $a$ and $b$ be integers.
+ Then $\gcd(a,b)$ is an integer linear combination of $a$ and $b$.
+ That is, there are integers $s$ and $t$ so that $\gcd(a,b)=sa+tb$. 
+\end{theorem}
+
+Let's revisit some of the examples above to find the $s$ and $t$.
+\begin{example}
+Let $a = r_1 = 6$ and $b = r_0 = 15$.
+\begin{itemize}
+    \item We divide $15$ by $6$ to get $2$ with a remainder of $r_2=3$.
+    \item We divide $6$ by $3$ to get $2$ with a remainder of $r_3 = 0$.
+\end{itemize}
+Thus $\gcd(6,15) = 3 = 15-2\cdot 6$.
+\end{example}
+
+\begin{example}
+Let $a = r_1 = 48$ and $b = r_0 = 66$.
+\begin{itemize}
+    \item We divide $66$ by $48$ to get $1$ with a remainder of $r_2=18$.
+    \item We divide $48$ by $18$ to get $2$ with a remainder of $r_3 = 12$.
+    \item We divide $18$ by $12$ to get $1$ with a remainder of $r_4 = 6$.
+    \item We divide $12$ by $6$ to get $2$ with a remainder of $r_5 = 0$.
+\end{itemize}
+Thus $\gcd(48,66) = 6 = 18-12 = 3\cdot 18-48 = 3\cdot 66 -4\cdot 48$.
+\end{example}
+
+\begin{example}
+Let $a = r_1 = 2059$ and $b = r_0 = 6744$.
+\begin{itemize}
+    \item We divide $6744$ by $2059$ to get $3$ with a remainder of $r_2=567$.
+    \item We divide $2059$ by $567$ to get $3$ with a remainder of $r_3 = 358$.
+    \item We divide $567$ by $358$ to get $1$ with a remainder of $r_4 = 209$.
+    \item We divide $358$ by $209$ to get $1$ with a remainder of $r_5 = 149$.
+    \item We divide $209$ by $149$ to get $1$ with a remainder of $r_6 = 60$.
+    \item We divide $149$ by $60$ to get $2$ with a remainder of $r_7 = 29$.
+    \item We divide $60$ by $29$ to get $2$ with a remainder of $r_8 = 2$.
+    \item We divide $29$ by $2$ to get $14$ with a remainder of $r_9 = 1$.
+    \item We divide $2$ by $1$ to get $2$ with a remainder of $r_{10} = 0$.
+\end{itemize}
+Thus
+\begin{align*}
+    \gcd(6744, 2059) = 1 &= 29 - 14\cdot 2 \\
+    &= 29\cdot 29 - 14 \cdot 60 \\
+    &= 29\cdot 149-72\cdot 60 \\
+    &= 101\cdot 149-72\cdot 209 \\
+    &= 101\cdot 358-173\cdot 209 \\
+    &= 274\cdot 358-173\cdot 567 \\
+    &= 274\cdot 2059-995\cdot 567 \\
+    &= 3259\cdot 2059-995\cdot 6744 \\
+\end{align*}
+\end{example}
+
+Bezout's Identity is incredibly useful, even in examples that seem to have nothing to do with the gcd:
+
+\begin{exercise}
+Let $a$ and $b$ be coprime integers. Show that
+\begin{description}
+\item[(i)] If  $a$ divides $c$ and $b$ divides $c$ then $ab$ divides $c$.
+\item[(ii)] If $a$ divides $bc$ then $a$ divides $c$.
+\end{description}
+Show that both parts of this result can fail if $a$ and $b$ are not coprime.
+\end{exercise}
+
+\begin{solution}
+\begin{description}
+\item[(i)] Since $a$ and $b$ are coprime, we can find integers $s$ and $t$ so that $sa + tb = 1$. If $a$ divides $c$ then we can write $c = ax$, and if $b$ divides $c$ then we can write $c = by$ for some $x,y \in \Z$. Then $c = csa + ctb = (by)sa + (ax)tb = (ab)sy + (ab)xt$, so $ab $ divides $ c$.
+\item[(ii)] As in (i), $c = csa + ctb$. If $a $ divides $bc$ then write $az = bc$ for some integer $z$, and then we have $c = csa + t(az) = a(cs + tz)$, so $a$ divides $c$.
+\end{description}
+\end{solution}
+
+\begin{exercise}
+Show that if $a, b$ are postive integers, and $d=gcd(a,b)$ then there exist positive integers $s, t$ such that $d=sa-tb$. {\bf Note:} that this exercise differs from Bezout’s  Identity, in that we ask $s, t$ to be \underline{positive}.
+
+
+\begin{solution}
+{\bf Claim}: If $a,b$ are positive integers and $d=gcd(a,b)$, we can find positive integers $s, t \in\mathbb{Z}$ such that $d=sa-tb$.
+
+\begin{proof}  By the Euclidean algorithm, we can find integers $s,t\in\mathbb{Z}$, such that
+\begin{equation}d=sa+tb\label{gcdeqn}\end{equation}
+Since $0<d\leq a,b$, at most one of $s$ and $t$ can be positive, and at most one can be non-positive (i.e. zero or negative).  If it happens that $t$ is negative, then we will have produced the desired expression for $d$ (by writing $d=sa - (-t)b$).
+
+In case $t$ is non-negative, we can apply the following observation:
+\begin{lemma} The integers $s$ and $t$ satisfy Equation \eqref{gcdeqn} if, and only if, the integers $s+kb$ and $t-ka$ do as well, for any integer $k$.\end{lemma}
+\begin{proof} We have $(s+kb)a + (t-ka)b = sa+tb$, simply by expanding the LHS, so one finds the same condition for both pairs.\end{proof}
+
+Choosing $k$ sufficiently large, we can replace $t$ by $t-ka$ so that it is negative.  It follows then that $s+kb$ is positive.
+\end{proof}
+
+\end{solution}
+
+
+\end{exercise}
+%\item Find such positive integers $s, t$ in the following examples (from Exercise 10.1):
+%\begin{itemize}
+%\item $a=17, b=29$.
+%\item $a=552, b=713$.
+%\item $a=345, b=299$.
+%\end{itemize}
+%\end{itemize}
+
+
+
+
+
+
+%
+
+
+
+
+
+
+%\begin{solution}
+%\begin{description}
+%\item[(i)] Since $a$ and $b$ are coprime, we can find integers $s$ and $t$ so that $sa + tb = 1$. If $a$ divides $c$ then we can write $c = ax$, and if $b$ divides $c$ then we can write $c = by$ for some $x,y \in \Z$. Then $c = csa + ctb = (by)sa + (ax)tb = (ab)sy + (ab)xt$, so $ab $ divides $ c$.
+%\item[(ii)] As in (i), $c = csa + ctb$. If $a $ divides $bc$ then write $az = bc$ for some integer $z$, and then we have $c = csa + t(az) = a(cs + tz)$, so $a$ divides $c$.
+%\end{description}
+%\end{solution}
+
+\section{Corollaries of Bezout's Identity and the Linear Combination Lemma}
+
+Below we prove some useful corollaries using  \hyperref[t:lincombgcd]{ Bezout's Identity} (Theorem \ref{t:lincombgcd}) and \easylemma.
+
+ \begin{corollary} 
+ \label{c:c|abc|b}
+ Let $a,b,c\in\Z$. Suppose $c\neq
+0$, $c$ divides $ab$ and $\gcd(a,c)=1$. Then $c$ divides $b$. 
+\end{corollary}
+
+\begin{proof}
+There are integers $s$ and $t$ such that $1=\gcd(c,a)=sa+tc$. This gives $b=sab+tcb$.  Then $c$ divides $b$ by \easylemma . 
+ \end{proof}
+ 
+\begin{corollary} Let $a,c\in\Z$ and let $d\in\mathbb{Z}$ be so that $d$ divides $a$ and $d$ divides $c$.  Then $d$ divides $\gcd(a,c)$. 
+\end{corollary}
+
+\begin{proof}
+By  \hyperref[t:lincombgcd]{ Bezout's Identity}, there are integers $s$ and $t$ such that
+$\gcd(a,c)=sa+tc$.
+ Then as $d$ divides $a$ and $d$ divides $b$, we have $d$ divides $\gcd(a,c)$ by \easylemma. 
+\end{proof}
+
+\begin{corollary} Let $d$ be a common divisor of
+ $a$ and $c$, which is divisible by all divisors of $a$ and $c$. Then $d = \pm gcd(a,c)$.
+\end{corollary}
+
+\begin{proof}
+By the previous corollary, $d$ divides $\gcd(a,c)$, and since $d$ is divisible by all divisors, it is divisible by $\gcd(a,b)$, so now we apply Corollary \ref{l:abba}.
+\end{proof}
+
+
+Here are some versions of the above corollaries when some of the numbers involved are primes:
+
+\begin{corollary}
+\label{c:p|ab}
+If $a,b\in\mathbb{Z}$, $p$ is prime, and $p$ divides $ab$, then either $p$ divides $a$ or $p$ divides $b$ (or both).
+\end{corollary}
+
+This just follows from Corollary \ref{c:c|abc|b} by letting $c=p$. 
+
+
+
+
+
+
+
+%\begin{claim}
+%If there are integers $m,n$ so that $ma+nb=1$, then $\gcd(a,b)=1$. 
+%\end{claim}
+%  
+%\begin{proof}
+%Recall $ma+nb=1$ for some $m,n$.   By Easy Lemma, $\gcd(a,b)$ divides $ma+nb=1$, only possible if $\gcd(a,b)=1$.
+%\end{proof}
+%This is an application of the Euclidean algorithm to get gcd as a linear combination, and then \easylemma .
+ \begin{corollary}
+ \label{c:p|p...p}
+If $n=p_1^{m_1}\cdots p_k^{m_k}$, where each of $p_1,\dots,p_k$ is \emph{prime}, and if $p$ is a prime number that divides $n$, then $p=p_i$ for some $i=1,\ldots, k$.
+\end{corollary}
+ 
+\begin{proof}
+We prove this by induction.
+If $k=1$, then $p$ divides ${p_1}^{m_1}$, so by the previous corollary, $p=p_1$.
+Assume that the theorem is true for $k=r$; let us prove it for $k=r+1$.
+Assume that $p$ divides $p_{1}^{m_1}\cdots p_{r+1}^{m_{r+1}}$.
+Again by the previous corollary, either $p$ divides $p_{k+1}^{m_{r+1}}$ or $p$ divides $p_1^{m_1}\cdots p_r^{m_r}$.
+Thus, either $p=p_{r+1}$, or, by the induction hypothesis, $p=p_i$ for some $i=1,2,...,r$. This completes the proof.
+\end{proof}
+ 
+ 
+ Let's use these results to solve a simple diophantine equation. 
+ 
+ \begin{example}
+ \label{ex:2x=5y}
+ Find all integer solutions to $2x=5y$. \\
+
+ 
+ Suppose $(x,y)$ are integers solving $2x=5y$. Then Corollary \ref{c:p|ab} implies $2$ divides $y$ and $5$ divides $x$, so $y=2z$ and $x=5w$ for some integers $z$ and $w$. Inserting these into the original equation, we get a new equation 
+ \[
+ 10w = 2(5w)=5(2z) = 10z.
+ \]
+ Thus, $w=z$. Hence, any solution $(x,y)$ must be of the form $(x,y)=(5w,2w)$ for some integer $w$. We can also see that each pair of integers of the form $(5w,2w)$ is a solution. Thus, the solutions to $2x=5y$ are exactly all pairs of integers $\{(5w,2w) :  w\in\mathbb{Z}\}$. 
+ 
+ \end{example}
+
+
+
+\section{The Fundamental Theorem of Arithmetic (FTA)}
+
+
+
+The fundamental theorem of arithmetic says that all integers have a \emph{unique} factorization as a product of powers of prime numbers. 
+
+\begin{theorem}[The Fundamental Theorem of Arithmetic (FTA)] \label{t:FTA} Let $n\geq 2$ be an integer.
+\begin{itemize}
+\item (Existence) Then $n$ is equal to a product $n=p_1^{r_{1}}\cdots p_k^{r_{k}}$ of powers of prime numbers, where $p_1< \ldots < p_k$ and $r_{i}>0$ for all $i$.
+\item (Uniqueness) The factorization is unique: If we also have
+$$ p_1^{r_{1}}\cdots p_k^{r_{k}} = n = q_1^{s_1}\cdots q_\ell^{s_{\ell}}$$
+where  $q_{1}<\cdots < q_{\ell}$ are primes and $s_{i}> 0$, then $k=\ell$, $p_i=q_i$, and $r_{i}=s_{i}$ for all $i$.
+\end{itemize}
+\end{theorem}
+%If some of the $p_i$'s are repeated, we can collect them into powers, and write instead,
+%$$n=p_1^{a_1}\cdots p_l^{a_l},$$
+%with $p_1<\cdots < p_l$ all prime, and $a_i$ positive integers.
+
+
+%
+%\begin{frame}
+%\frametitle{Match the claim to its proof (note: they are out order)}
+% \begin{claim}[1 - existence of prime decomposition] Every integer $n$ can be written as a product of primes $n=p_1\cdots p_n$.\end{claim}
+%
+% \begin{claim}[2 -uniqueness of prime decomposition] Every integer $n$ can be written as a product of primes $n=p_1\cdots p_n$ in a \emph{unique} way.
+%\end{claim}
+%
+% \begin{claim}[3]
+%The $\operatorname{gcd}(a,b)$ is divisible by any common factor of $a$ and $b$.
+%\end{claim}
+%
+% \begin{claim}[4]
+%If $n=p_1\cdots p_n$ is a product of \emph{prime} numbers, and if $p$ prime divides $n$, then $p=p_i$ for some $i=1,\ldots, n$.
+%\end{claim}
+%
+% \begin{claim}[5]
+%If $a,b\in\mathbb{Z}$ are coprime, $p$ is prime, and divides $ab$, then either $p$ divides $a$ or $p$ divides $b$ (or both).
+%\end{claim}
+%
+%
+%\end{frame}
+
+
+
+We will split the proof into three lemmas:
+
+
+\begin{lemma}[Existence of prime decomposition, Part I]
+Every integer $n\geq 2$ can be written as a product of primes $n=p_{1}\cdots p_{k}$. 
+\end{lemma}
+
+{\bf Remark:} If $n$ is prime, this statement still makes sense: we just interpret $n$ as being the product of just one number, $n$ itself. 
+
+
+\begin{proof}
+We prove by strong induction on $n$. The case $n=2$ immediately holds (taking into account the previous remark). For the induction step, suppose the theorem holds for all integers $n<N$.  If $N$ is prime, there is nothing to prove; otherwise, if $N$ is not prime, then $N=a\cdot b$ for some positive integers $a$ and $b$, both greater than $1$ and less than $N$. Both $a$ and $b$ can be  decomposed by the strong induction hypothesis, thus so can $n=ab$.
+\end{proof}
+
+\begin{lemma}[Existence of prime decomposition, Part II]
+Every integer $n\geq 2$ can be written as a product of powers of primes $n=p_{1}^{r_{1}}\cdots p_{k}^{r_{k}}$ where $p_{1}<\cdots < p_{k}$ and $r_{i}\geq 0$. 
+\end{lemma}
+
+\begin{proof}
+By the previous lemma, $n=q_{1}\cdots q_\ell$ for some primes $q_{1}\cdots q_{\ell}$ that are not necessarily distinct. If $p_{1}<p_{2}<\cdots < p_{k}$ are the {\it distinct} primes that appear in the list $q_{1},...,q_{\ell}$, let $r_{i}$ denote the number of times that $p_{i}$ appears in the list. Then
+\[
+n=q_{1}\cdots q_{\ell} = p_{1}^{r_{1}}\cdots p_{k}^{r_{k}}\]
+which proves the lemma.
+\end{proof}
+
+
+
+\begin{lemma}[Uniqueness of prime decomposition] Every integer $n$ can be written as a {\it unique} product of powers of primes $n=p_1^{r_{1}}\cdots p_k^{r_{k}}$.
+\end{lemma}
+  
+  \begin{proof}
+  Suppose $p_1^{r_{1}}\cdots p_k^{r_{k}} = n = q_1^{s_{1}}\cdots q_\ell^{s_{\ell}}$ are two decompositions. By cancelling any common factors, we can assume that no $p_i$ equals any $q_j$. If there are  any $p_i's$ and $q_j's$ remaining,  Corollary \ref{c:p|p...p} implies each $p_{i}$ equals some $q_j$, which is a contradiction, thus there can be no terms remaining, so the two factorizations must have been equal.
+  \end{proof}
+
+
+
+Let's use the FTA to solve another simple-looking diophantine equation. 
+
+
+
+\begin{exercise}
+Find all integer solutions to $x^{2}=y^{5}$. \\
+
+\begin{solution}
+We want to apply the FTA to $x$ and $y$, but this only works when $x,y\geq 2$. Note that if $(x,y)$ is a solution, then so is $(-x,y)$, so we just need to find all solutions with $x\geq 0$. The only solutions with $x=0$ is $(0,0)$ and the only solution with $x=1$ or $y=1$ is $(1,1)$. Thus, we have narrowed things down to just finding all solutions $(x,y)$ with $x,y\geq 2$.
+
+By the FTA, there are primes $p_{1}<\cdots <p_{k}$ and $q_{1}<\cdots <q_{\ell}$ and $r_{i},s_{j}\in \mathbb{N}$ so that
+\[
+x=p_{1}^{r_{1}}\cdots p_{k}^{r_{k}}\;\;\; \mbox{ and } \;\;\; y= q_1^{s_{1}}\cdots q_\ell^{s_{\ell}}.\]
+Plugging this into $x^2=y^5$, we get 
+\[
+p_{1}^{2r_{1}}\cdots p_{k}^{2r_{k}} = q_1^{5s_{1}}\cdots q_\ell^{5s_{\ell}}.
+\]
+The FTA says these two factorizations must equal, so $k=\ell$, $p_i=q_i$, and $2r_{i}=5s_{i}$ for $1\leq i\leq k$. By Example \ref{ex:2x=5y}, this means $r_{i}=5w_{i}$ and $s_{i}=2w_{i}$ for some integer $w_{i}$. Thus,
+\[
+x=p_{1}^{5w_{1}}\cdots p_{k}^{5w_{k}}= \left(p_{1}^{w_{1}}\cdots p_{k}^{w_{k}}\right)^{5} \;\;\; \mbox{ and } \;\;\; 
+y
+=p_1^{2w_{1}}\cdots p_\ell^{2w_{\ell}} = \left(p_1^{w_{1}}\cdots p_\ell^{w_{\ell}}\right)^2.
+\]
+If we let $z=p_1^{w_{1}}\cdots p_\ell^{w_{\ell}}$, we see that $(x,y)=(z^{5},z^{2})$. Thus, we have shown that all integer solutions $x,y\geq 2$ are of the form $(x,y)=(z^{5},z^{2})$ for some $z\in\mathbb{N}$. Recalling our reductions, all solutions are either $(0,0)$, $(\pm 1,1)$, and $(\pm z^5,z^2)$ for $z\in\mathbb{N}$. More succinctly, all solutions must be of the form $( z^5,z^2)$ for some $z\in\mathbb{Z}$. One can also easily check that every pair in this set is also a solution to $x^2=y^5$, thus $S$ is {\it exactly} the set of solutions. 
+\end{solution}
+\end{exercise}
+
+
+
+\begin{protip}
+{\bf Reductions:} Look for ways of simplifying your problem from the start by reducing the number of cases you have to investigate. The next problem is a good example of how to find reductions.
+\end{protip}
+
+\begin{example}
+Find all integer solutions to $x^2-y^2=91$. \\
+
+
+\noindent {\bf Reductions:} Let's make a few observations first to narrow down what to solve for.
+\begin{itemize}
+\item Notice that if $(x,y)$ is a solution, then so is $(\pm x,\pm y)$, and so we can assume that $x,y\geq 0$, since then the other solutions will be of the form $(\pm x,\pm y)$. 
+\item Moreover, we can't have $x=y$ since then the equation is not satisfied, so assume $x\neq y$. We can also assume $x>y$, since $x<y$ would imply $x^2<y^2$, so $x^2-y^2<0<51$. 
+\item Finally, we can't have either $x$ or $y$ equal to zero, since $91$ is not a perfect square. 
+\end{itemize}
+Thus, after these reductions, we can assume $x>y>0$.\\
+
+Note that $91$ has prime factorization $91=7\cdot 13 $, and so 
+\[
+91=7\cdot 13 = x^2-y^2=(x-y)(x+y).\] 
+Since $x+y>x-y$, there are two cases to consider:
+\begin{itemize}
+\item If $x+y=91$ and $x-y=1$, solving these linear equations simultaneously  gives $x=46$ and $y=45$. 
+\item If $x+y=13$ and $x-y=7$, solving these two equations gives $x=10$ and $y=3$. 
+\end{itemize}
+Thus, all the {\it positive} solutions $(x,y)$ are $(46,45)$ and $(10,3)$. Thus, recalling our reductions, {\it all} solutions are just $(\pm 46, \pm 45),$ and $(\pm 10,\pm 3)$ (where we range over all possible combinations of $\pm$ for a total of $8$ solutions).
+
+
+
+\end{example}
+
+
+
+\section{Finding divisors via FTA}
+If we know the prime decompositions of two integers $m$ and $n$, it is easy to tell whether $m$ divides $n$:
+
+\begin{theorem}
+Let $n=p_1^{a_1}\cdots p_k^{a_k}$ be a prime decomposition (i.e. $p_i$s are prime, $p_1<\cdots <p_k$, and $a_i>0$). Then $m$ divides $n$ if, and only if:
+\begin{equation}
+\label{e:m=p1...pk}
+m = p_1^{b_1}\cdots p_k^{b_k}, \quad \textrm{with each $0\leq b_i\leq a_i$}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+\begin{itemize}
+\item  ($\impliedby$): If \eqref{e:m=p1...pk} holds, then
+\[
+n=m \cdot  p_1^{b_1-a_{1}}\cdots p_k^{b_k-a_{k}} \;\;\; \Longrightarrow \;\;\; m \text{ divides }n.
+\]
+ \item ($\implies$): Suppose $m$ divides $n$, then $n=mc$ fr some positive integer $c$.  Then $m$ and $n$ have prime decompositions whose product is the prime decomposition for $n$ as shown below:
+$$\underbrace{p_1^{a_1}\cdots p_k^{a_k}}_n = \underbrace{q_1^{c_1}\cdots q_l^{c_l}}_m\underbrace{r_1^{d_1}\cdots r_s^{d_s}}_c.$$
+The FTA implies each $q_i$ and $r_i$ equals to some $p_j$. To ease notation, we'll assume $q_{i}=r_{i}=p_{i}$ for all $i$, but that $c_{i}=0$ if $p_{i}$ didn't appear as one of the primes $q_{i}$ originally, and similarly for the $d_{i}$. Then the product above is in fact 
+$$\underbrace{p_1^{a_1}\cdots p_k^{a_k}}_n = {q_1^{c_1}\cdots q_l^{c_l}}{r_1^{d_1}\cdots r_s^{d_s}} 
+=p_{1}^{c_{1}+d_{1}}\cdots p_{k}^{c_{k}+d_{k}}.
+$$
+
+The FTA now implies each power $c_i+d_i$ equals to $a_j$. In particular, this means $m=p_{1}^{c_{1}}\cdots p_{k}^{c_{k}}$ where $0\leq c_{k}\leq a_{k}$. 
+  \end{itemize}
+\end{proof}
+
+
+\begin{example}
+What are all the divisors of $360$?\\
+
+
+First, we find the prime factorization of $360$: we can see that $36=4\cdot 9=2^2\cdot 3^2$, and so $360 = 10\cdot 2^2\cdot 3^2 = 2^3\cdot 3^2\cdot 5$. To list all the divisors, we just have to look at the values $2^j\cdot 3^{k}\cdot 5^{\ell}$ where $0\leq j\leq 3$, $0\leq k\leq 2$, and $0\leq \ell\leq 1$. The possible powers of $2$ are $1, \; 2, \; 4, \; 8,$ and the possible powers of $3$ are $1,3,9$, so we multiply the powers of two by these to get 
+
+\[
+\begin{array}{cccc}
+1, &  2, &  4, &  8, \\
+3, & 6, &  12, &  24, \\
+ 9, &  18, &  36, &  72.
+ \end{array}
+ \]
+ 
+ The possible powers of $5$ are just $1$ and $5$, so we can just multiply these numbers by $1$ and $5$ to get 
+ \[
+ \begin{array}{cccccccccccc}
+1, &  2, &  4, &  8, 
+& 3, & 6, &  12, &  24, 
+&  9, &  18, &  36, &  72, \\ 
+5, &  10, &  20, &  40,
+& 15, & 30, & 60,  &  120, 
+&  45, &  90, &  180, &  360. 
+ \end{array}
+ \]
+\end{example}
+
+\section{LCM and GCD via prime factorizations}
+
+
+\def\lcm{\rm lcm}
+\begin{definition}
+The least common multiple $\lcm(a,b)$ of positive integers $a$ and $b$ is the smallest positive integer divisible by both $a$ and $b$.   
+\end{definition}
+
+For example, $\lcm(15,12)=60$.
+
+ \begin{theorem}
+ \label{t:lcm}
+Let $a$ and $b$ have prime factorizations,
+$$a=p_1^{r_1}\cdots p_m^{r_m}, \;\; b=p_1^{s_1}\cdots p_m^{s_m}.$$  Here $p_i$'s are distinct, but $r_i$ and $s_i$ are allowed to be zero.  Then:
+\begin{itemize}
+ \item $\gcd(a,b) = p_1^{min(r_1,s_1)}\cdots p_m^{min(r_m,s_m)}$.
+ \item $\lcm(a,b) = p_1^{max(r_1,s_1)}\cdots p_m^{max(r_m,s_m)}$.
+ \item $\lcm(a,b) = ab/\gcd(a,b)$.
+\end{itemize}
+\end{theorem}
+
+We leave the proof of this as an exercise. 
+
+\begin{example}
+If $a=120=2^3\cdot 3\cdot 5$ and $b=36=2^2\cdot 3^2$, then 
+$\gcd=2^2\cdot 3=12$ and $\lcm=2^3\cdot 3^2 \cdot 5=360=\frac{120\cdot 36}{12}$,
+\end{example}
+
+\begin{lemma}
+\label{lem:rationalsascoprimefractions}
+Let $r \in \mathbb{Q}$.
+Then there exist unique coprime integers $a$ and $b$ such that $r = \frac{a}{b}$ and $b \geq 1$.
+\end{lemma}
+
+\begin{proof}
+Since $r$ is rational, there are integers $a'$ and $b'$ such that $r = \frac{a'}{b'}$, with $b' \neq 0$.
+Without loss of generality, we may assume that $b'>0$.
+If we find $-r = \frac{a}{b}$ with $a$ and $b$ coprime, then $r = \frac{-a}{b}$ with $-a$ and $b$ coprime, so we may assume that $r\geq 0$.
+
+Now let $p_1, \cdots, p_k$ be the prime numbers that divide either $a'$ or $b'$. We may therefore write
+\[
+a' = p_1^{m_1}\cdots p_k^{m_k} \text{\quad and \quad} b' = q_1^{n_1}\cdots q_k^{n_k},
+\]
+where each exponent $m_i$ and $n_i$ is nonnegative.
+Now for each $i$, let
+\[
+s_i = \max(m_i-n_i, 0)\text{\quad and \quad}t_i = \max(n_i-m_i, 0).
+\]
+Thus for each $i$, at most one of $s_i$ and $t_i$ is nonzero, and
+\[
+\frac{p_i^{m_i}}{q_i^{n_i}} = \frac{p_i^{s_i}}{q_i^{t_i}}.
+\]
+Thus we set
+\[
+a = p_1^{s_1}\cdots p_r^{s_k} \text{\quad and \quad} b = q_1^{t_1}\cdots q_k^{t_k},
+\]
+and we find that
+\[
+r = \frac{a'}{b'} = \frac{a}{b}.
+\]
+Now
+\[
+\gcd(a,b) = p_1^{\min(s_1,t_1)}\cdots p_r^{\min(s_k,t_k)} = p_1^0\cdots p_r^0 = 1. \qedhere
+\]
+
+Now let us prove that $a$ and $b$ are unique with this property.
+If $c$ and $d$ are coprime integers with $d \geq 1$, and if $r = \frac{c}{d}$, then $ad = bc$. Since $a$ and $b$ are coprime, it follows that $b$ divides $d$, and since $c$ and $d$ are coprime, it follows that $d$ divides $b$. Thus $d=b$, and so $a=c$ as well.
+\end{proof}
+
+%
+%
+%\begin{example} What is the smallest positive integer that can be written in the form $375a + 147b$ where $a$ and $b$ are integers?
+%\end{example}
+%
+%This was a question on University Challenge \href{https://www.youtube.com/watch?v=YoVvcMAV2YU#t=703}{(S43E28 Queen's, Belfast vs Southampton)}. As you can see from the video, no one got it right. But now you'll be ready! 
+%
+%Let's find the prime factorizations of $375$ and $147$. We can just keep dividing by numbers we think divide:
+%\[
+%375 = 3\cdot 125=3\cdot 5^{3}, \;\; 147 = 7\cdot 21 = 7^2\cdot 3.
+%\]
+%Now we can see that $\gcd(375,147)=3$. By Bezout’s  Identity, we can find $a,b\in\mathbb{Z}$ so that $375a+147b=3$. We cannot make this number any smaller with different choices of $a,b$ by \easylemma, thus $3$ is the smallest such number I can express as $375a+147b$.
+%
+%
+
+\section{Powers}
+
+\begin{theorem}
+\label{t:perfectsquare}
+ Let $n$ be a positive integer.  Then $\sqrt{n}\in\mathbb{Q}$ if and only if $n$ is a perfect square, that is, $n=m^2$ for some integer $m$.
+ \end{theorem}
+ 
+\begin{proof}
+Suppose $\sqrt{n}\in\mathbb{Q}$.
+Thus $\sqrt{n} = \frac{a}{b}$, and $\frac{a^2}{b^2} = n$.
+By Lemma \ref{lem:rationalsascoprimefractions}, we may assume that $a$ and $b$ are coprime and positive.
+Now since $n = \frac{n}{1}$, the uniqueness of Lemma \ref{lem:rationalsascoprimefractions} implies that $b^2=1$.
+Since $b$ is positive, it follows that $b = 1$.
+\end{proof}
+
+Below, we say an integer $a$ is an {\it $n$th power} if $a=b^n$ for some integer $b$. 
+
+\begin{theorem}
+\label{t:abn}
+If $a,b\in\mathbb{N}$ are coprime, and $ab$ is an $n$th power, then so are $a$ and $b$.
+\end{theorem}
+
+\begin{proof}
+ If $a=1$, then we have $ab=b$ is an $n$th power, so the theorem is trivial in this case, and similarly if $b=1$, so we can assume $a,b \geq  2$, so we can apply the FTA.
+
+
+Let $a=p_{1}^{r_{1}}\cdots p_{k}^{r_{k}}$ and $b=q_{1}^{s_{1}}\cdots q_{\ell}^{s_{\ell}}$ be the prime factorizations of $a$ and $b$. Since $a$ and $b$ are coprime, they share no common prime factors, so $p_{i}\neq q_{j}$ for all $j$.  By assumption $ab=c^n$ for some $c$. Let $w_{1}^{t_{1}}\cdots w_{j}^{t_{j}}$ be the prime facorization for $c$, then 
+\[
+ab = p_{1}^{r_{1}}\cdots p_{k}^{r_{k}}q_{1}^{s_{1}}\cdots q_{\ell}^{s_{\ell}}
+=c^n=w_{1}^{nt_{1}}\cdots w_{j}^{nt_{j}}.
+\]
+By the FTA,  these prime factorizations are equal, which means for each $i$,  $p_{i}=w_{j}$ for some $j$, and $r_{i}=nt_{j}$. In particular, $n$ divides $r_{i}$ for all $i$, and so $a$ is an $n$th power. The same holds for $b$. 
+\end{proof}
+
+
+Let's do an example of another diophantine equation. This one is from Liebeck (but is not proven correctly there).
+
+\begin{example}
+Find all integer solutions to  $4x^2=y^3+1$. \\
+
+\noindent {\bf Reductions:} If $(x,y)$ is a solution,  then $(-x,y)$ is also a solution, so we can assume $x\geq 0$. If $x=0$, then $y^3=-1$, which is only possible if $y=-1$. So now we can assume $x>0$. But then $y^3+1=4x^2\geq 4$, so we must have $y>0$ as well.\\
+
+\noindent We are now left to finding all integer solutions $x,y>0$. Observe that
+\[
+y^3=4x^2-1=(2x-1)(2x+1).
+\]
+By The Linear Combination Lemma, the gcd of $2x-1$ and $2x+1$ must divide $2x+1-(2x-1)=2$, so the gcd is either $1$ or $2$. However, since both of these numbers are odd, the gcd must actually be $1$. Hence, $2x\pm 1$ are coprime.  
+
+By Theorem \ref{t:abn}, $2x\pm 1$ are both cubes. Thus, there are $m,n\in\mathbb{Z}$ so that $m^3=2x+1$ and $n^3=2x-1$. Since $x$ is a positive integer, so are $m^3$ and $n^3$, and thus so are $m $ and $n$.  Then 
+\[
+2=2x+1-(2x-1)=m^3-n^3=(m-n)(m^2+mn+n^2),\]
+so $m-n$ divides $2$, hence it is either $1$ or $2$ (since $m>n$). If it is $1$, then $m=n+1$, and so by the above equation
+\[
+2=m^3-n^3=(n+1)^3-n^3=3n^2+3n+1\geq 3\cdot 1^2+3\cdot 1 + 1 = 7\]
+which is a contradiction. The case that $m-n=1$ can be handled similarly. Thus, there are {\it no integer solutions} to $4x^2=y^3+1$ when $x>0$. Thus, the only integer solution is $(x,y)=(0,-1)$.
+
+\end{example}
+
+
+
+ \section{Application: Pythagorean Triples*}
+ 
+In this section we will classify all Pythagorean Triples, that is, all positive integer solutions to 
+
+\[
+x^2+y^2=z^2.
+\]
+
+
+This is a bit more involved than other diophantine problems and harder to figure out on your own on a homework problem (so it is not required reading), but we'll give a proof here since it's a neat application of what we've learned and can test your knowledge of the material in this chapter. \\
+
+We narrow down the solutions in a few steps:
+
+\begin{itemize}
+\item If $x=0$, then we must have $y^2=z^2$, and so $y=\pm z$. Thus, we know all solutions if $x=0$, so let's assume $x> 0$. Similarly, we can assume $y,z> 0$.
+\item We can assume that $x,y$ and $z$ are coprime (that is, no two of them share a common factor other than $1$). To see this, suppose $d=\gcd(x,y)$. Then $a=x/d$ and $b=y/d$ are coprime, and then
+\[
+z^2= x^2+y^2 = d^2(a^2+b^2).
+\]
+By Theorem \ref{t:abn}, $a^2+b^2=c^2$ for some integer $c$, and so $z^2=d^2 c^2=(cd)^2$. Hence, $(x,y,z)=(da,db,dc)$ for some other Pythagorean Triple $(a,b,c)$ where $a$ and $b$ are coprime.  Thus, if we find all solutions $(x,y,z)$ where $x$ and $y$ are coprime, then all other solutions are multiples of these. A similar proof shows that all solutions will be multiples of solutions where $x$ and $z$ are coprime and where $y$ and $z$ are coprime. 
+\item Thus, assume $x,y,$ and $z$ are coprime and positive solutions to $x^2+y^2=z^2$. Then either $x$ or $y$ is odd, assume it is $x$. 
+\item We now claim $z+y$ and $z-y$ are coprime. Suppose not. Then there is a prime $q$ that divides them both. But then
+\[
+q\text{ divides }(z+y)-(z-y) = 2y,\;\; q\text{ divides } (z+y)+(z-y) = 2z.
+\]
+Since $y$ and $z$ are coprime, $q=2$. But then
+\[
+2\text{ divides }(z-y)(z+y)=z^{2}-y^{2}=x^{2}
+\]
+which implies $x$ is even, a contradiction.
+\item Since $z\pm y$ are coprime and $x^{2}=(z+y)(z-y)$, we know that $z+y=s^{2}$ and $z-y=t^{2}$ for some integers $s$ and $t$ by Theorem \ref{t:abn}. Hence, 
+\[
+z=\frac{z+y+z-y}{2} = \frac{s^{2}+t^{2}}{2}
+\]
+Similarly, $y=\frac{s^{2}-t^{2}}{2}$, and finally,
+\[
+x^{2} =(z-y)(z+y) = s^{2}t^{2}. 
+\]
+Thus, all positive coprime solutions with $x$ odd are of the form
+\[
+(x,y,z) = \left( st, \frac{s^2-t^2}{2}, \frac{s^{2}+t^{2}}{2}\right).
+\]
+\item Finally, we now recall that all solutions are multiples of these soluitions, thus all Pythagorean Triples are of the form
+\[
+(x,y,z) = \left( as t, a\frac{s^2-t^2}{2}, a\frac{s^{2}+t^{2}}{2}\right)
+\]
+where $a,s,t$ are integers. 
+\end{itemize}
+
+
+
+\section{Exercises}
+
+The relevant exercises in Liebeck's book are in Chapters 10 and 11.
+
+
+
+
+
+\begin{exercise} Show that $n$ and $n^2+n+1$ are coprime. 
+
+\begin{solution}
+Let $d=\gcd(n,n^2+n+1)$. By The Linear Combination Lemma,
+\[
+d\text{ divides} n^2+n+1 - n\cdot n = n+1 
+\]
+and so we also have $d$ divides $ n+1 - n =1$, thus $n$ and $n^2+n+1$ are coprime.
+\end{solution}
+\end{exercise}
+
+
+
+
+\begin{exercise} Find all $n\in\mathbb{N}$ so that $n-2$ divides $n^2-2$. 
+
+\begin{solution}
+Note that $n-2$ divides $n^2-4$, so The Linear Combination Lemma implies 
+\[
+n-2\text{ divides } (n^2-2-(n^2-4))=2.
+\]
+Thus $n-2$ must be $\pm 1$ or $\pm 2$, and this is only possible if $n=1,3$ or $4$.
+\end{solution}
+
+ 
+\end{exercise}
+
+
+
+\begin{exercise} Show that $\gcd(n!+1,(n+1)!)$ is either $1$ or $n+1$ for all $n\in\mathbb{N}$.
+
+\begin{solution}
+Let $d=\gcd(n!+1,(n+1)!)$. By The Linear Combination Lemma,
+\[
+d \text{ divides } (n+1)(n!+1)-(n+1)! = n+1
+\]
+If $d>1$ and $k<n+1$ is such that $d|k$, then  by The Linear Combination Lemma
+\[
+d \text{ divides } n!+1- k\cdot \frac{n!}{k} =1
+\]
+a contradiction, thus $d$ cannot divide any number less than $n+1$ bigger than $1$, so $d$ is either $1$ or $n+1$. 
+\end{solution}
+
+
+\end{exercise}
+
+
+Below, if an exercise just states an equation, find all integer solutions to that equation.
+
+
+
+\begin{exercise}
+ $x^2=16y^2+8y+2$
+
+\begin{solution}
+First note that if $(x,y)$ is a solution, so is $(-x,y)$, so we can assume first that $x\geq 0$.Note that $x^2=16y^2+8y+2$ implies
+\[
+x^2-1 =16y^2+8y+1=(4y+1)^2
+\]
+Note that this implies $x\neq 0$, thus $x>0$. Note that $x^2-1=(x-1)(x+1)$, so their gcd is at most $2$, but $x^2-1=(4y+1)^2$ which is odd, thus $x\pm 1$ are coprime. Thus, they are perfect squares that differ by $2$, so $x+1=m^2$ and $x-1=n^2$ (since $x>0$, both $x\pm 1\geq 0$). We can assume  $m>n\geq 0$. But then
+\[
+2= x+1-(x-1) = m^2-n^2 = (m-n)(m+n),
+\]
+so we must have that $m-n=1$ and $m+n=2$ (since $m-n\leq m+n$), which has no integer solutions. 
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise}
+ $x^2+2y^2=8z+5$. 
+
+
+\begin{solution}
+
+{\bf Claim:} There are no integer solutions to $x^2+2y^2=8z+5$. 
+
+\begin{proof}
+Suppose $(x,y,z)$ was an integer solution. Notice that $8z+5$ is odd, so $x^2+2y^2$ is odd as well, thus $x^2$ is odd, and so $x$ is odd. Thus, $x=2n+1$ for some integer $n$. Plugging that back into the above, we get 
+\[
+8z+5 =x^2+2y^2 = (2n+1)^2 +2y^2 = 4n^2 +4n+1 + 2y^2\]
+and so
+\[
+8z+4 = 4n^2+4n+2y^2.\]
+Dividing both sides by $2$, we get
+\[
+4z+2=2n^2+2n+y^3.\]
+In particular, $y^3$ must be even, so $y$ is even, hence $y=2m$ for some $m$, so we get
+\[
+4z+2-2n^2-2n=y^3=8m^3
+\]
+and dividing through by $2$ gives
+\[
+2z+1-n^2-n = 4m^3.\]
+But notice that $2z+1-n^2-n = 2z-n(n+1)+1$ is odd, because $n(n+1)$ is even and so is $2z$, but $4m^3$ is even, and we get a contradiction. Thus, there are no solutions.
+\end{proof}
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+$x^2 = y^3$.
+
+
+\begin{solution}
+
+{\bf Claim:} We have the following:
+The integer solutions of $x^2=y^3$ are of the form $x=n^3$, $y=n^2$ for some integer $n$.
+
+
+\begin{proof}
+ It is clear to see that letting $x=n^3, y=n^2$ for any integer $n$ solves the equation.  So we need to show that this is in fact necessary, not only sufficient.
+
+Let $(x,y)$ be a solution to $x^2=y^3$. Note that if $(x,y)$ is a solution, then so is $(-x,y)$, and moreover, $y\geq 0$ since $y^3=x^2\geq 0$. Thus, we can assume for the moment that $x,y\geq 0$, since if  $(x,y)$ is a solution with $x<0$, then $(-x,y)$ will be a positive solution. 
+
+Since $x,y\geq 0$, we can look at their prime factorizations. Let us write $x=p_1^{k_1}\cdots p_n^{k_n}$ and $y=q_1^{l_1}\cdots q_m^{l_m}$ for the prime factorizations for $x$ and $y$ respectively, (so we assume $p_i<p_j$ for $i<j$, and $q_r<q_s$ for $r<s$).  Then we have:
+$$p_1^{2k_1}\cdots p_n^{2k_n} = x^2=y^3 = q_1^{3l_1}\cdots q_m^{3l_m}.$$
+Hence, applying the Fundamental Theorem of Arithmetic to $x^2$, we have $m=n$, $p_i=q_i$, for each $i$, and moreover,
+$$2k_i=3l_i,$$
+for each $i$.  Since 2 and 3 are coprime, Proposition 10.5 implies that $k_i$ is divisible by 3 and $l_i$ is divisible by 2.  Let $k_i'=\frac{k_i}{3}$.  Let $n:= p_1^{k_1'}\cdots p_n^{k_n'}.$  Then $x=n^3$ and $y=n^2$, as claimed. That is, if $(x,y)$ is a solution with $x,y\geq 0$, then $(x,y)=(n^3,n^2)$ for some $n\geq 0$. Thus, if $(x,y)$ is {\it any } solution, then $(x,y)=(\pm n^3,n^2)$ for some $n\geq 0$, or alternatively, $(x,y)=(n^3,n^2)$ for some $n\in \mathbb{Z}$. 
+\end{proof}
+
+
+\end{solution}
+
+\end{exercise}
+%
+%\begin{exercise}
+%$x^2-x=y^3$.
+%
+%
+%\begin{solution}
+%
+%
+%{\bf Claim:} The integer solutions of $x^2-x=y^3$ are $x=0,y=0$ and $x=1,y=0$.
+%
+%\begin{proof}
+%We may factorize the right hand side as $x(x-1)$.  As $1 = x - (x-1)$ we have $gcd(x,x-1)\leq 1$, hence equals one, and so they are coprime.  Their product is the cube $y^3$ of an integer, and hence by Proposition 11.4, both $x$ and $x-1$ must be cubes.  This happens if and only if $x=0$ or $x=1$; in either case, the equation then implies $y=0$.
+%\end{proof}
+%\end{solution}
+%\end{exercise}
+
+%
+%\begin{exercise}
+%$x^2=y^4-77$.
+%
+%
+%
+%\begin{solution}
+%
+%  {\bf Claim:} The integer solutions of $x^2=y^4-77$ are $x=\pm 2, y=\pm 3$ (all four possible combinations are solutions). 
+%
+%
+%\begin{proof}
+% We may rewrite the equation as:
+%$$77=y^4-x^2 = (y^2-x)(y^2+x).$$
+%As 77 has a prime factorization $77=7\cdot 11$, we know that exactly one of the following eight situations is true:
+%$$y^2-x = 7, \textrm{ and } y^2+x=11,$$
+%$$y^2-x = -7, \textrm{ and } y^2+x=-11,$$
+%$$y^2-x = 11, \textrm{ and } y^2+x=7,$$
+%$$y^2-x = -11, \textrm{ and } y^2+x=-7.$$
+%
+%$$y^2-x = 1, \textrm{ and } y^2+x=77,$$
+%$$y^2-x = -1, \textrm{ and } y^2+x=-77,$$
+%$$y^2-x = 77, \textrm{ and } y^2+x=1,$$
+%$$y^2-x = -77, \textrm{ and } y^2+x=-1.$$
+%
+%In the second and fourth cases, we can add the two necessary equations to find $y^2=-18$, which clearly has no real, let alone integer solutions.  In the first case, we solve for $x$ to find $x=2$, hence $y=\pm 3$, and in the third case we find $x=-2, y=\pm3$.  Combining these cases gives the claimed result. 
+%
+%In any of the situations 5-8, we can see that $y^2 = 78$ or $y^2=76$, neither of which have integer solutions in $y$.
+%\end{proof}
+%
+%\end{solution}
+%\end{exercise}
+
+
+\begin{exercise}
+ $x^3-y^3=7$. 
+
+
+\begin{solution}
+{\bf Claim:} The only solutions $(x,y)$ are $(2,1)$ and $(-1,-2)$. 
+
+\begin{proof}
+Suppose $(x,y)$ is a solution. First note that this implies $x^3>y^3$, and so $x>y$. Furthermore, we immediately see that $x=0$ and $y=0$ don't lead to solutions, so we can assume that $x\neq 0 \neq y$ as well. 
+
+Factoring, we see that 
+\[
+7 = x^3-y^3= (x-y)(x^2+xy+y^2)
+\]
+Thus, $x-y$ divides $ 7$, and since $x>y$, this means $x-y>0$, so the only possibilities then are $x-y=1$ or $x-y=7$. We split into two cases:
+
+\begin{enumerate}[label=(\alph*)]
+\item $x-y=1$. Then we have that $x=y+1$, and so
+\[
+7=x^3-y^3= (y+1)^3-y^3 = 3y^2+3y+1,\]
+thus $6=3y^2+y$, so $2=y^2+y=y(y+1)$, so we see that $y$ divides $2$ and $y+1$ divides $2$. The only way this is possible is if either $y=1$ or $y=-2$. By plugging these values into the original equation, we see that the solutions are in this case $(x,y)=(2,1)$ and $(-1,-2)$.
+\item Suppose $x-y=7$. Then
+\[
+7=(x-y)(x^2+xy+y^2)=7(x^2+xy+y^2)
+\]
+implies
+\[
+1=(x^2+xy+y^2).
+\]
+Note that if $|x|\geq |y|$, then $xy\geq -|x|\cdot |y|\geq -|x|^2=-x^2$, and so the above is at least
+\[
+1\geq x^2-x^2=y^2>0\]
+since we are assuming $y\neq 0$. Hence, $y^2=1$, so $y=\pm 1$. Again, we can plug these into our original equation $7=x^3-y^3$ and we find that $y=-1$ leads to no solution and $y=1$ leads to $(x,y)=(2,1)$, which we already found.
+
+Thus, the solutions are just $(x,y)=(2,1)$ and $(-1,-2)$.
+\end{enumerate}
+
+
+\end{proof}
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+$xy= x+y+2y^2-1$.
+
+\begin{solution}
+
+{\bf Claim:} The only solutions $(x,y)$ are $(1,0)$, $(0,-1)$, $(9,2)$, and $(10,3)$.
+
+
+\begin{proof}
+
+
+First, let's rearrange and factor:
+\[
+2y^2=xy-x-y+1 = (x-1)(y-1)
+\]
+and since $\gcd(y,y-1)=1$, we know $y-1$ divides $2$, thus $y-1=-1,1,-2,$ or $2$, that is, $y=0,2,-1, $ or $3$. We can now just try al these values out to see what $x$ should be:
+\begin{itemize}
+\item[$y=0$:] In this case, $0=(x-1)(0-1)=1-x$, i.e. $x=1$.
+\item[$y=-1$:] In this case, $2=2y^2=(x-1)(y-1)=-2(x-1)$, so $x=0$.
+\item[$y=2$:] We see that $8=2y^2 = (x-1)(y-1)=x-1$, and so $x=9$, and the solution in this case is $(x,y)=(9,2)$. 
+\item[$y=3$:] We see that $18=2y^2 = (x-1)(y-1)=2(x-1)$, and so $x=10$, and the solution in this case is $(x,y)=(10,3)$. 
+\end{itemize}
+\end{proof}
+\end{solution}
+
+\end{exercise}
+
+
+
+\begin{exercise}
+ $x^3-x=12y+6$. 
+
+\begin{solution}
+
+
+
+\begin{proof}
+Suppose $(x,y)$ is a solution, then 
+\[
+6(2y+1) = x^3-x = (x+1)x(x-1).
+\]
+Note that $\gcd(x+1,x)=\gcd(x,x-1)=1$, and $\gcd(x-1,x+1)$ divides $2$, so it is either $1$ or $2$. Note that since $2$ does not divide $2y+1$, the prime factorization of $(x+1)x(x-1)$ contains exactly one $2$. In particular, $x-1$ and $x+1$ can't both be even, so the only even number is $x$, hence $\gcd(x-1,x+1)=1$. Since $x$ only has one 2 in its prime factorization, $\frac{x}{2}$ is an integer and $x\pm 1$ and $\frac{x}{2}$ are all mutually coprime and
+\[
+3(2y+1)=(x+1)\frac{x}{2}(x-1).
+\]
+
+
+Thus, by Theorem \ref{t:abn}, 
+
+
+\end{proof}
+
+\end{solution}
+
+\end{exercise}
+
+
+
+
+
+
+
+\begin{exercise}
+$xy+2x+3y=4$.
+
+
+  
+  
+
+\begin{solution}
+Write
+\[
+4=xy+2x+3y =(x+3)(y+2)-6
+\]
+So now we have 
+\[
+(x+3)(y+2)=10=2\cdot 5=10\cdot 1\]
+and so the only way this can happen is if either 
+\begin{itemize}
+\item $y+2=2$, $x+3=5$ (which implies $y=0$ and $x=2$)
+\item $y+2=-2$, $x+3=-5$ (so $y=-4$ and $x=-8$)
+\item $y+2=5$, $x+3=2$ (so $y=3$ and $x=-1$)
+\item $y+2=-5$, $x+3=-2$ (so $y=-7)$ and $x=-5$.
+\item $y+2=10$ and $x+3=1$ (so $(x,y)=(-2,8))$
+\item $y+2=-10$ and $x+3=-1$ (so $(x,y)=(-4,-12))$
+\item $y+2=1$ and $x+3=10$ (so $(x,y)=(7,-1)$)
+\item $y+2=-1$ and $x+3=-10$ (so $(x,y)=(-13,-3)$)
+\end{itemize}
+So the above pairs of $(x,y)$ are the only solutions.
+\end{solution}
+
+\end{exercise}
+
+\begin{exercise}
+ $6x^2=5x^3$.
+
+
+
+
+\end{exercise}
+
+
+
+
+\begin{exercise} {\bf Challenging:} Find all integer solutions to the equation $x^3+3y^3+9z^3= 0$.
+
+\begin{solution}
+{\bf Claim:} $x^3+3y^3+9z^3= 0$ does not have any solutions in positive integers.
+
+\begin{proof}
+Assume that $(x, y, z)$ is a solution in positive integers. Clearly, $x$ is divisible by $3$, so $x= 3x_1$ for some positive integer $x_1$. But then $27x_{1}^{3}+3y^3+9z^3= 0$,hence $9x_1^3+y^3+3z^3= 0$. Now $y= 3y_1$, and we find $3x_1^3+9y^{3}_{1}+z^3= 0$. Finally, $z= 3z_1$ for some positive integer $z_1$, and $x_{1}^{3}+ 3y_{1}^{3}+ 9z_{1}^{3}= 0$.Thus if $(x, y, z)$ is a, integer solution of the equation $x^3+3y^3+9z^3= 0$, then so is $(x/3,y/3,z/3)$. Repeating this argument we find that for every positive solution there is a smaller solution in positive integers: but this is nonsense, thus there is no solution in positive integers.
+\end{proof}
+\end{solution}
+
+
+\end{exercise}
+
+
+
+
+
+%
+%\item $x^3=4y^2+4y-3$.
+%
+%\begin{solution}
+%{\bf Claim:} There are no integer solutions of $x^3=4y^2+4y-3$.
+%
+%
+%\begin{proof}
+%
+%
+% We can factorize the RHS as $(2y+3)(2y-1)$.  As the two factors differ by four, their highest common factor is a divisor of four.  However, they are both odd, so their highest common factor is odd, hence their highest common factor is one, and they are coprime.  Now applying Proposition 11.4, we have that each must be a perfect cube.  However, there are no pairs of perfect cubes which differ by four: 
+% 
+% 
+%%
+%%{\bf Claim:} For any integers $m,n$, $m^3-n^3\neq 4$.
+%%
+%%
+%%\begin{proof}
+%%Suppose for the sake of contradiction that $m^3-n^3=1$ for some integers $m$ and $n$. Note that $m>n$, since if $n\geq m$, then $n^3\geq m^3=n^3+1$, which is a contradiction. Then 
+%%\[
+%%4=m^3-n^3= (m-n)(m^2+mn+n^2)
+%%\]
+%%hence $m-n$ divides $4$, so $m-n=\pm 1,\pm 2,$ or $\pm 4$. Since $m>n$, this means $m-n= 1,2,$ or $4$. Suppose first that $m-n=1$. Then
+%%\[
+%%4=m^3-n^3=(n+1)^3-n^2 = 3n^2+3n+1.
+%%\]
+%%This implies $3=3n^2+3n=3n(n+1)$, so $n(n+1)=1$, which is impossible. 
+%%
+%%If $m-n=2$, then 
+%%\[
+%%4=m^3-n^3=(n+2)^3-n^2 = 6n^2+12n+8.
+%%\]
+%%Then this implies $-4=6n^2+12n$, but this is impossible since $4$ is not divisible by 3. 
+%%
+%%Finally, if $m-n=4$, then 
+%%\[
+%%4=m^3-n^3=(n+4)^3-n^2 = 12n^2+48n+64.
+%%\]
+%%so $-60=12n^2+48n=12n(n+4)$, so $-5 = n(n+4)$. For this to be possible, either $n=\pm 1$ or $\pm 5$, but by checking all 4 values, we see that this equation cannot be satisfied,. 
+%%\end{proof}
+%%\end{proof}
+%%\end{solution}
+
+
+
+
+
+%
+%Homework
+%\begin{exercise} Find all integer solutions to $x^2-2y^2=1$ given that $y$ is prime. 
+%
+%
+%\end{exercise}
+%
+
+\begin{exercise} Find all primes $p$ and integers $a,b\in\N$ so that $p^{a}-p^{b}=24$.
+
+
+\begin{solution}
+ If $b=0$, then the above equation implies $p^{a}=25$, so $p=5$ and $a=2$. 
+ 
+ If $b> 0$, then $p$ divides $24$, so $p=2$ or $p=3$ and as $a>b$,
+ \[
+ 24 = p^{a}-p^{b} = (p^{a-b}-1)p^{b}
+ \]
+ so $p^{b}$ divides $24$.
+ \begin{enumerate}[label=(\alph*)]
+ \item If $p=2$, then $b=1$ or $2$, and checking both of these cases turns up no solutions for $a$.
+ \item If $p=3$, then $b=1$, and we find that $p^{a} = 24+3^{1}=27=3^3$ so $a=3$. 
+ \end{enumerate}
+ 
+ Thus, the only solutions $(a,b,p)$ are $(2,0,5)$ and $(3,1,3)$.
+ 
+ \end{solution}
+
+ 
+ 
+ 
+ 
+
+
+
+\end{exercise}
+
+%Exam problem 2020
+%\begin{exercise} Show that if $f_{n}$ denotes the $n$th Fibonacci number, then $f_{n}$ and $f_{n+1}$ are coprime. 
+%
+%
+%
+%\begin{solution}
+%We prove this by induction. Clearly, $f_{1}=f_{2}=1$ are coprime. For the induction step, let $n\geq 2$, we wish to show $d=\gcd(f_{n},f_{n+1})$ are coprime. By The Linear Combination Lemma,
+%\[
+%d$ divides $f_{n+1}-f_{n} = f_{n-1},
+%\]
+%so $d$ divides $f_{n-1}$ and $d$ divides $f_{n}$, so $d$ divides $\gcd(f_{n},f_{n-1})=1$ by the induction hypothesis. Thus, $d=1$, as desired. 
+%\end{solution}
+%
+%\end{exercise}
+
+%Workshop problem
+%\begin{exercise} Determine whether the following statement is true or false: if $a,b,k\in\mathbb{N}$ and $a^k$ divides $b^k$, then $a$ divides $b$. 
+%
+%\begin{solution}
+%Our plan is to use Theorem \ref{t:lcm}, so we just need to show that if $p$ is a prime in the decomposition of $a$ and $n$ is its power, then $p^n$ divides $b$ (so $p$ appears in the prime decomposition of $b$ and if $m$ is its power, then $n\leq m$).
+%
+%Note that if $p$ divides $a$, then $p$ divides $a^k$ so $p$ divides $b^k$, hence $p$ divides $b$. In particular, any prime appearing in the prime decomposition of $a$ appears in the prime decomposition of $b$. Let $n$ be the power of $p$ in the prime decomposition of $a$ and $m$ the power of $p$ in the decomposition for $b$. Then $p^{kn}$ divides $p^{km}$, so $p^n$ divides $p^m$. Thus, $n\leq m$. The claim now follows from Theorem \ref{t:lcm}. 
+%\end{solution}
+%
+%
+%\end{exercise}
+
+
+\begin{exercise} Is there a rational number $q$ so that $q^{5}-q^{3}+39=0$?
+
+\begin{solution}
+ The answer is no: Suppose such rational number $q$ exists. Then $q=\frac{m}{n}$ for some {\it coprime} integers $m$ and $n$. Then
+\[
+n^5-n^3m^3 + 39m^5 = 0,\]
+which implies that $m$ divides $n^5$. Since $m$ and $n$ are coprime, this implies
+that $m$ divides $n$ by Corollary \ref{c:c|abc|b}. Then $m = 1$, because $m$ and $n$ are coprime. Then
+\[
+n^5-n^3+39=0,
+\]
+which implies that $n$ divides $ 39$, so $n\in \{1,-1, 3,-3, 13,-13\}$. Since
+$n^5-n^3 =-39$  is divisible by $n^3$, we see that either $n=1$ or $n=-1$. But
+\[1^{5}-1^3+39=39\neq 37 = (-1)^{5}-(-1)^{3}+39\]
+which is a contradiction. Suppose such rational number $q$ exists. Then $q=\frac{m}{n}$ for some {\it coprime} integers $m$ and $n$. Then
+\[
+n^5-n^3m^3 + 39m^5 = 0,\]
+which implies that $m$ divides $n^5$. Since $m$ and $n$ are coprime, this implies
+that $m$ divides $n$ by Corollary \ref{c:c|abc|b}. Then $m=1$, because $m$ and $n$ are coprime. Then
+\[
+n^5-n^3 +39=0,
+\]
+which implies that $n$ divides $ 39$, so $n\in \{1, -1, 3, -3, 13, -13\}$. Since
+$n^5-n^3 =-39$  is divisible by $n^3$, we see that either $n=1$ or $n=-1$. But
+\[1^{5}-1^3+39=39\neq 37 = (-1)^{5}-(-1)^{3}+39\]
+which is a contradiction.
+\end{solution}
+
+\end{exercise}
+
+
+\begin{exercise} Recall that a natural number $n$ is {\it perfect} if it is the sum of all its proper divisors (that is, all positive divisors other than $n$). For example, $1 + 2 + 3 = 6$, so $6$ is perfect. If $p$ is a prime and $n\in\mathbb{N}$, when is $p^{n}$ perfect? 
+
+\begin{solution}
+Suppose $p^{n}$ is perfect. Then
+\[
+p^{n} = 1+p+\cdots + p^{n-1} = \frac{p^{n}-1}{p-1}<p^{n}-1<p^{n},
+\]
+a contradiction. Thus, $p^{n}$ is {\it never} perfect.
+\end{solution}
+
+\end{exercise}
+
+
+\begin{exercise} Show that $x^{n}+y^{n}=z^{n}$ has integer solutions if and only if it has rational solutions. 
+\begin{solution}
+Since integer solutions are also rational, we just need to show that rational solutions imply integer solutions. Suppose $(x,y,z)$ satisfy the above equation, so $x=\frac{a}{b}$, $y=\frac{c}{d}$ and $z=\frac{e}{f}$ for some integers $a,b,c,d,e,f$, so 
+\[
+\frac{a^n}{b^n} + \frac{c^n}{d^n}=\frac{e^{n}}{f^{n}}.
+\]
+Multiplying both sides by all the denominators, we get
+\[
+a^{n}d^{n}f^{n} + c^{n}b^{n}f^{n} = e^{n} b^{n}d^{n}
+\]
+an so $(adf,cbf,ebd)$ is an integer solution to the original equation.
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise}
+Recall that there are infinitely many pythagorean triples, i.e. triples of positive integers $(x,y,z)$ so that $x^2+y^2=z^2$. Using this, show that there are infinitely many integer solutions to $x^2+y^2=z^3$. 
+
+\begin{solution}
+Given $(x,y,z)$ a pythagorean triple, so
+\[
+x^2+y^2=z^2\]
+then
+\[
+x^2z^4+ y^2 z^4 = z^2 z^4
+\]
+hence
+\[
+(xz^2)^2+(yz^2)^2 = (z^2)^3.
+\]
+\end{solution}
+\end{exercise}
+
+\begin{exercise} Let 
+\[
+\Z[\sqrt{-5}]=\{a+b\sqrt{-5}: a,b\in\Z\} = \{a+bi\sqrt{5}: a,b\in\Z\}\subseteq \C.
+\]
+We say that $p\in \Z[\sqrt{-5}]$ is {\it primo} if the only solutions to $p=ab$ wtih $a,b\in \Z[\sqrt{-5}]$ have either $a$ or $b$ equal to $\pm 1$. 
+
+ \begin{enumerate}[label=(\alph*)]
+\item Prove that $|a+b\sqrt{-5}|=\sqrt{a^2+5b^2}$. Conclude that if $|z|=1$, then $z=\pm 1$. 
+\item Assuming (a), prove that every nonzero $z\in\Z[\sqrt{-5}]$ can be written as a product of primos. 
+\item Show that $2,3,1\pm\sqrt{-5}$ are all primo. 
+
+\end{enumerate}
+
+\begin{solution}
+For part (a), the fact that $|a+b\sqrt{-5}|=\sqrt{a^{2}+5b^{2}}$ juts follows from the definition of the modulus of a complex number. In particular, if $z=a+b\sqrt{-5}$ has modulus 1, then $1=|z|^{2}=a^{2}+5b^{2}$, and the only way this can happen is if $b=0$ and $a=1$ (since a and b are integers).
+
+
+For part b, we can prove this by strong induction on $|z|^2$. If $|z|^2=1$, then $z$ must be $\pm 1$, which is a primo (since if we have $xy=z$, then $1=|z|=|xy|=|x||y|$, so $|x|=|y|=1$, and hence $x,y=\pm 1$, that is, they are both equal to plus or minus z).
+
+
+Now suppose we know that claim b holds for all $z$ with $|z|^2\leq n$ for some integer $n$. Let $z$ now be an element with $|z|^2=n+1$. If it is not primo, then there is a way of writing z as $xy$ where neither x or y are equal to plus or  minus z, so in particular, neither of them are $\pm 1$ either. By part (a), since neither of them are 1, then $|x|,|y|>1$, and $|z|=|xy|=|x||y|$, so $1<|x|^2=|z|^2/|y|^2<|z|^2=n+1$. Thus, $x$ can be factored into a product of primos by the induction hypothesis, and y can be similarly. This proves the induction step.
+
+
+For c, note that 2 is primo since otherwise 2 can be written as a product of two numbers with modulus less than 2, but then they must have modulus 1, and so they must be $\pm1$, which is impossible.
+
+
+3 is primo since if it were the product of two numbers xy with modulus less than 3, then they would have to either be $\pm 1$ or $\pm 2$, which don't multiply up to 3.
+
+
+$1+\sqrt{-5}$ is primo since, if it were written as a product $xy$ with neither of x or y equal to 1 or $1+\sqrt{-5}$, notice that $|x|\cdot |y|=|xy|=|1+\sqrt{-5}|=\sqrt{1+5}=\sqrt{6}$, so $|x|,|y|\leq \sqrt{6}$, and the only numbers for which this holds are $\pm 1$ and $\pm 2$.
+\end{solution}
+
+
+\end{exercise}
+
+
+
+%
+%\begin{exercise} Suppose $f$ is a degree $n>5$ polynomial so that for some distinct integers $a<b<c<d$ we have $f(a)=f(b)=f(c)=f(d)=0$. Show that there is no integer $k$ so that $f(k)=3$. 
+%
+%\begin{solution}
+%We can factor $f$ as 
+%\[
+%f(x) = (x-a)(x-b)(x-c)(x-d)g(x)
+%\]
+%for some polynomial $g$. If $f(x)=3$ for some integer $x$, then
+%\[
+%3=(x-a)(x-b)(x-c)(x-d)g(x),\]
+%so $3$ is a product of at least 4 distinct integers, but this is impossible: the FTA implies that exactly one of these integers must be $\pm 3$, in which case the other integers must be either $\pm 1$, but that means $3$ can only be written as a product of 3 distinct integers.
+%\end{solution}
+%
+%\end{exercise}
+
+%
+\begin{exercise} Show that if $n> 4$ is an integer that is {\it not} prime, then $n$ divides $(n-1)!$.
+
+\begin{solution}
+
+Since $n$ is not prime, $n=ab$ for some integers $1<a,b<n$. 
+\begin{enumerate}[label=(\alph*]
+\item If $a<b$, then
+\[
+(n-1)!=1\cdot 2 \cdots a\cdots b\cdots (n-1).
+\]
+so $n=ab$ divides $(n-1)!$.
+\item if $a=b$, then $n=a^2$ and $a>2$, so $2a\leq a^2-1$, and 
+\[
+(n-1)!=1\cdot 2 \cdots a\cdots 2a\cdots (a^2-1)
+\]
+so we see that $a^2$ divides $(n-1)!$. 
+\end{enumerate}
+\end{solution}
+%
+\end{exercise}
+
+
+\begin{exercise} Recall that the Fermat numbers $F_{n}=2^{2^{n}}+1$ satisfy the recurrence relation
+\[
+F_{n} = F_{n-1}\cdots F_{0}+2.
+\]
+Show that the Fermat numbers are mutually relatively prime, that is, $\gcd(F_{n},F_{m})=1$ whenever $m\neq n$. 
+
+
+
+
+
+
+
+
+\end{exercise}
+
+
+\subsection{  Challenging Exercise: A special case of Fermat's last theorem*}
+
+
+
+
+In this exercise we will show that $x^4 + y^4 = z^4$ (the Fermat quartic) has no {\it nontrivial solutions}, that is, no integer solutions apart from $(x,y,z)=0$. The method we will use is known as ``infinite descent": we suppose there is a solution $(x,y,z)$ with $z>0$, then we assume $(x,y,z)$ has $z$ smallest among all such solutions, then we show that we can find another solution $(u,v,w)$ with $w<z$, contradicting that $z$ was the smallest integer appearing in a solution to $x^4+y^4=z^4$. This is quite difficult and wouldn't be expected of you on a homework or exam, it's just a bit of fun.
+\begin{itemize}
+\item Explain why it suffices to only find positive solutions?
+\item Why does it suffice to show $x^4+y^4=z^2$ has no nontrivial integer solutions?
+\item Suppose there is a non-trivial solution positive solution to  $x^4 + y^4 = z^2$. Then there is a solution $(x,y,z)$ with smallest $z>0$ among all solutions. Show that $x,y,z$ have no common factors. 
+\item Show that exactly one of $x$ or $y$ is odd. Now assume $x$ is odd and $y$ is even. 
+\item Note that $a=x^2$ and $b=y^2$ along with $c=z$ form a Pythagorean triple, $a$ is odd, and $x,y,z$ are coprime.  Hence, by our work on classifying Pythagorean triples, we must have 
+
+\[
+(a,b,c) = \left( as^2 t^2, a\frac{s^2-t^2}{2}, a\frac{s^{2}+t^{2}}{2}\right)
+\]
+for some $s>t$. Show that $4$ divides $s-t$. 
+\item Using that $(s-t)(s+t)=2b=2y^2$, show that there are integers $u$ and $v$ with $s+t = 2u^2$ and $s-t=4v^2$, and $u$ and $2v$ are relatively prime. solving for $s$ and $t$, verify that $x^2+4v^4 = u^4$.
+\item Let $A = x$, $B = 2v^2$ and $C = u^2$. Show that this is another Pythagorean triple of the form described in the parametrization theorem. So they can be expressed as above for $(a,b,c)$, but with parameters $S$ and $T$ instead of $s$ and $t$.
+\item Arguing in a similar fashion to (d), show that $S$ and $T$ satisfy $S+T = 2X^2$ and $S-T=2Y^2$ for some positive integers$ X$ and $Y$.
+\item Solve for $S$ and $T$ and verify that $u^2 = X^4 + Y^4$. Finally show that $uXY\neq 0$ and that $0 < u < z$, leading to a contradiction.
+\end{itemize}  
+
+
+
+
+
+
+
+
+
+
+%Interesting open problems:
+%
+%
+%\begin{question}[Bocard's problem]
+%Are there infinitely many $n\in\mathbb{N}$ so that $n!+1$ is a square? Only 3 integers are known: $4!+1=5^2$, $5!+1=11^2$, and $7!=71^2$. 
+%\end{question}
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3
+%----------------------------------------------------------------------------------------
+
+%\chapterimage{ima2} % Chapter heading image
+
+
+%----------------
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+%
+%\chapter*{Bibliografía}
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliografía}}
+%\section*{Books}
+%\addcontentsline{toc}{section}{Books}
+%\printbibliography[heading=bibempty,type=book]
+%
+%\begin{itemize}
+%	\item GREENE, W.H. (2003) “Econometric Analysis”5ª edición. Prentice Hall N.J. Capítulo 21
+%\\\\
+%    \item WOOLDRIDGE, J.M. (2010) “Introducción a la Econometría: Un Enfoque Moderno". 4ª edición. Cengage Learning. Capítulo 17
+%
+%\end{itemize}
+
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage
+\phantomsection
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Índice Alfabético}}
+\printindex
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
