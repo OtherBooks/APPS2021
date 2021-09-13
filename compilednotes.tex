@@ -231,7 +231,8 @@
 
 \chapterimage{Figures/blank.png}
 
-\chapter{Logic}
+\chapter{Logic}%
+\label{logic}
 
 %
 %\title{Week 1: Sets, Logic, and the Real Numbers}
@@ -252,7 +253,8 @@
 
 %This course will cover a diverse range of topics, some weeks having no relation to the previous week. However, this week we introduce some fundamental objects and tools that will be required for every week: logic, sets, and the real numbers.
 
-\section{Sets}
+\section{Sets}%
+\label{sets}
 
 A set $S$ is a collection of objects, which we call the \emph{elements} of $S$. Those elements can be anything: numbers, letters, animals, other sets. For example:
 \begin{itemize}
@@ -329,7 +331,8 @@ and all these containments are proper.
 Similarly, $\{1,2\}\subseteq \{1,2,3\}$ since $1\in \{1,2,3\}$ and $2\in \{1,2,3\}$. However, $\{1,2,3\}\not\subseteq \{1,2\}$  since $3\in \{1,2,3\}$ but $3\not\in \{1,2\}$.
 \end{example}
 
-\section{Logical Statements}
+\section{Logical Statements}%
+\label{logicalstatements}
 
 By a \emph{statement}, we mean a sentence that asserts that something is the case.
 Here are some statements:
@@ -366,7 +369,7 @@ here's how we write it:
 \]
 This reads ``$S$ is the set of integers $n$ such that $n$ is divisible by $5$.''
 This is called \emph{set-builder notation}.
-The colon $:$ reads as "such that";
+The colon $:$ reads as ``such that'';
 some authors use a vertical bar $|$ for this, so that the sentence above could be rewritten
 \[
 S=\{n\; |\; n \text{ is divisible by 5}\}.
@@ -420,7 +423,8 @@ For example, if $S$ is the set of all trees, then the set
 doesn't make any sense, because we don't know how to take the square of a tree, or what it means for such a square to be equal to $1$.
 That may seem like a silly point, but this basic error leads to lots of mistakes!
 
-\section{Conjunction}
+\section{Conjunction}%
+\label{conjunction}
 One can combine statements together to get new statements.
 
 \begin{definition}
@@ -450,7 +454,8 @@ Here is the truth table for the conjunction:
 From our truth table, we can see that the truth-value of ``$2$ is even and $57$ is prime'' is False.
 \end{example}
 
-\section{Intersection}
+\section{Intersection}%
+\label{intersection}
 
 \begin{definition}
 Let $S$ and $T$ be two sets.
@@ -523,7 +528,8 @@ Then the intersection is
 \]
 \end{example}
 
-\section{Disjunction}
+\section{Disjunction}%
+\label{disjunction}
 
 \begin{definition}
 The \emph{disjunction} of two statements $A$ and $B$ is the statement $A\text{ or } B$.
@@ -613,7 +619,8 @@ notice the differences from the truth table for $(A \vee B) \wedge C$ above:
 \end{center}
 \end{example}
 
-\section{Union}
+\section{Union}%
+\label{union}
 
 \begin{definition}
 Let $S$ and $T$ be two sets.
@@ -685,16 +692,17 @@ Then the union is
 the set of real numbers that are either at least as big as $1$, or no greater than $0$.
 \end{example}
 
-\section{Negation}
+\section{Negation}%
+\label{negation}
 
 The \emph{negation} of a statement $A$ (which we denote $\overline{A}$ or $\neg A$) is the statement ``$A$ is false.''
 For example, the negation of the statement ``$57$ is prime'' is ``$57$ is not prime.''
 The negation of the statement ``$57$ is not prime'' is ``$57$ is prime.''
-Depending on the statement, its negation can be written differently from just inserting a "not":
+Depending on the statement, its negation can be written differently from just inserting a ``not'':
 \begin{enumerate}[label=(\alph*)]
 \item If $S$ is a set, and $s$ is not an element of $S$, then the sentence ``$s \notin S$'' is the negation of the sentence ``$s \in S$.''
 \item If $B$ is the statement ``$x = y$,'' then the negation $\overline{B}$ is the sentence ``$x \neq y$.''
-\item If $C="a=b"$, then $\bar{C}="a\neq b"$.
+\item If $C=``a=b''$, then $\bar{C}=``a\neq b''$.
 \end{enumerate}
 
 The negation of a statement has the opposite truth value: if $A$ is true, then $\overline{A}$ is false; if $A$ is false, then $\overline{A}$ is true.
@@ -738,7 +746,8 @@ That means that $A \wedge \overline{A}$ is always false, no matter what the trut
 This statement is sometimes just called a \emph{Contradiction}.
 \end{example}
 
-\section{Complements}
+\section{Complements}%
+\label{complements}
 
 \begin{definition}
 Let $S$ be a set, and let $T \subseteq S$ be a subset.
@@ -781,7 +790,8 @@ Its complement in $\mathbb{R}$ is
 the set of real numbers less than $0$.
 \end{example}
 
-\section{Conditionals}
+\section{Conditionals}%
+\label{conditionals}
 
 A \emph{conditional} is a statement of the form ``if $A$ then $B$,'' or ``$A$ only if $B$,'' or ``$A$ implies $B$.''
 We write this symbolically as
@@ -834,7 +844,7 @@ Consider the following statement
 \[
 \text{``If $n$ is an odd integer, then $n^2$ is odd.''}
 \]
-The premise in this example is ``$n$ is an odd integer" and the conclusion is ``$n^2$ is odd".
+The premise in this example is ``$n$ is an odd integer'' and the conclusion is ``$n^2$ is odd.''
 So to prove it, we need to assume the premise and then deduce the conclusion.
 \begin{proof}
 Assume $n$ is an odd number.
@@ -902,7 +912,8 @@ It has exactly the same truth table:
     \end{tabular}
 \end{center}
 
-\section{Logical equivalence}
+\section{Logical equivalence}%
+\label{logicalequivalence}
 
 This idea of ``repackaging'' a sentence in another way is called \emph{logical equivalence}.
 
@@ -924,7 +935,7 @@ Here is the truth table for this connective:
 
 In other words, $A \iff B$ is the same statement as $(A\implies B) \wedge (B \implies A)$.
 
-Equivalence behaves like "=" does in algebra: you are free to swap one statement for another equivalent statement.
+Equivalence behaves like ``='' does in algebra: you are free to swap one statement for another equivalent statement.
 For example, if $A\iff B$, then the statement $A \vee C$ is equivalent to the statement $B \vee C$.
 
 \begin{example}
@@ -998,7 +1009,8 @@ Since $A$ is true, $\overline{A}$ is false, and so the only option remaining is 
 Thus we have shown that $A \implies B$.
 \end{proof}
 
-\section{Proof by Contradiction}
+\section{Proof by Contradiction}%
+\label{proofbycontradiction}
 
 Suppose we have a statement $A$ that we suspect is false.
 How can we prove that?
@@ -1074,7 +1086,8 @@ if $A$ is the statement ``$\sqrt{3}< 1+\sqrt{2}$'' and $B$ is the statement ``$3
 In our proof of $A$ by contradiction, we assumed first that $A$ is \emph{false}, and then we deduce the statement $C$: ``$3>3$,'' which we know perfectly well is false.
 Since $C$ is false, the implication $\overline{A} \implies C$ ensures that $\overline{A}$ has to be false as well; in other words, $A$ is true.
 
-\section{Quantifiers}
+\section{Quantifiers}%
+\label{quantifiers}
 
 Sometimes a statement tells us about a number of things satisfying a certain property.
 For example, consider the two statements ``$x^2=4$'' and ``there is an integer $x$ so that $x^2=4$.''
@@ -1228,7 +1241,8 @@ In this case, we can note that $1^2 = 1 < 2$, and for any natural number $m \geq
 
 \noindent {\bf All this work to negate quantifiers! Do we need to show the above individual steps when negating in our homework?} No! Don't worry, in your homework you won't be expected to give the full justification of why the negation of some statement is what it is. But, especially for complicated statements, it's important to get keep this straight!
 
-\section{Exercises}
+\section{Exercises}%
+\label{logicexercises}
 
 The relevant exercises in Liebeck's book are at the end of Chapter 1.
 
@@ -1241,8 +1255,8 @@ Find statements $A$ and $B$ so that $A\Rightarrow B$ is true but
 \begin{solution}
 \begin{enumerate}[label=(\alph*)]
 \item
-Recall that $A\Rightarrow B$ is equivalent to $\bar{A}$ or $B$, so we just need to find a statement so that $A$ is false (so $\bar{A}$ is true) and $B$ is true. This could be $A$="2 is odd" and $B$="2 is even".
-\item Recall that $A\Rightarrow B$ is equivalent to $\bar{A}$ or $B$, so if $B$ is false, then $\bar{A}$ must be true (i.e. $A$ is false). We  can  let $A=B$="2 is odd", for example.
+Recall that $A\Rightarrow B$ is equivalent to $\bar{A}$ or $B$, so we just need to find a statement so that $A$ is false (so $\bar{A}$ is true) and $B$ is true. This could be $A$=``2 is odd'' and $B$=``2 is even.''
+\item Recall that $A\Rightarrow B$ is equivalent to $\bar{A}$ or $B$, so if $B$ is false, then $\bar{A}$ must be true (i.e. $A$ is false). We  can  let $A=B$=``2 is odd'', for example.
 \end{enumerate}
 \end{solution}
 \end{exercise}
@@ -1250,9 +1264,9 @@ Recall that $A\Rightarrow B$ is equivalent to $\bar{A}$ or $B$, so we just need 
 \begin{exercise}
 Show that $A\Rightarrow B$ is not equivalent to $A\Leftarrow B$, either by finding examples or using their truth tables.
 \begin{solution}
-One could have A="$n$ is a prime bigger than 2" and B="$n$ is odd".
+One could have A=``$n$ is a prime bigger than 2'' and B=``$n$ is odd.''
 
-Recall that $A\Rightarrow B$ is equivalent to "$\bar{A}$ or $B$", and  $B\Rightarrow A$ is equivalent to "$\bar{B}$ or $A$", which have truth tables
+Recall that $A\Rightarrow B$ is equivalent to ``$\bar{A}$ or $B$,'' and  $B\Rightarrow A$ is equivalent to ``$\bar{B}$ or $A$,'' which have truth tables
 \begin{center}
 \begin{multicols}{2}
 \begin{tabular}{ c|c|c|c}
@@ -1330,9 +1344,11 @@ Negate the following statements
 
 \chapterimage{Figures/blank.png}
 
-\chapter{The Real Line}
+\chapter{The Real Line}%
+\label{realline}
 
-\section{The Reals}
+\section{The Reals}%
+\label{realnumbers}
 
 In this course, our aim is to derive as many useful tools and theorems as we can from the fewest assumptions. We could spend a whole year (or years!) on the foundations of mathematics, and try to make sense of, for example, what the number 2 is, but instead we will take for granted the existence the {\it real} numbers $\mathbb{R}$ that you are all familiar with from school. We assume that, if an expression contains a term $x$ and $x=y$, we can replace $x$ with $y$ in that expression.  For example, $3+(5-1)=3+4$ since $5-1=4$.
 
@@ -1365,11 +1381,11 @@ A {\it field} is a set $F$ along with operations $+$ and $\cdot$ so that the fol
 \end{description}
 \end{definition}
 
-We will frequently write $ab$ for $a\cdot b$ when there is no chance of ambiguity, so for example, "$a$ times $b$" can be write $ab$ or $a\cdot b$, but "$2$ times $3$" must be written $2\cdot 3$ to avoid confusion with the number $23$.
+We will frequently write $ab$ for $a\cdot b$ when there is no chance of ambiguity, so for example, ``$a$ times $b$'' can be write $ab$ or $a\cdot b$, but ``$2$ times $3$'' must be written $2\cdot 3$ to avoid confusion with the number $23$.
 
 We will take as an {\it axiom} that the real numbers $\mathbb{R}$ form a field with the usual addition and multiplication operations, that is, we assume they hold without proof.  There are many other fields apart from the reals, and we will see a few more in this class (you will learn about more interesting ones in future algebra classes).
 
-Without these rules it would be hard to solve any equations. For example, if we want to solve $3x+2=2x+5$, what rules do we need? Below we prove some propositions using only the axioms above that list the "moves" we would usually make in solving such an equation.
+Without these rules it would be hard to solve any equations. For example, if we want to solve $3x+2=2x+5$, what rules do we need? Below we prove some propositions using only the axioms above that list the ``moves'' we would usually make in solving such an equation.
 
 \begin{proposition}
 \label{p:field-consequences}
@@ -1448,7 +1464,8 @@ For $x,y\in \mathbb{R}$,
 %
 %\end{proof}
 
-\section{The integers and the Archimedean Property}
+\section{The integers and the Archimedean Property}%
+\label{archimedeanproperty}
 
 An important subset of the reals is the {\it integers }
 \[
@@ -1465,11 +1482,12 @@ An important result about the reals and integers is the following:
 \item[Archimedean property:] For every $x, y \in \mathbb{R}$ with $x,y>0$, there is an integer $n\in \mathbb{N}$ so that $ny>x$. \\
 \end{description}
 
-This might seem like it should be obvious, but how would you prove it? Consider just finding an integer $n>x$. If $x$ was an integer, we could simply let $n=x+1$, but if $x$ is not an integer what would we do? You might think "round up to the nearest integer," but that this number exists {\it is} what we are trying to show! {\it Why not look at the decimal expansion $x=a_{0}.a_{1}...$ and let $n=a_0+1$?} Firstly, we haven't proven that decimal expansions even exist for any real number yet (we will in a few weeks), and second, the proof that each number has a decimal expansion {\it requires} the Archimedean property.
+This might seem like it should be obvious, but how would you prove it? Consider just finding an integer $n>x$. If $x$ was an integer, we could simply let $n=x+1$, but if $x$ is not an integer what would we do? You might think ``round up to the nearest integer,'' but that this number exists {\it is} what we are trying to show! {\it Why not look at the decimal expansion $x=a_{0}.a_{1}...$ and let $n=a_0+1$?} Firstly, we haven't proven that decimal expansions even exist for any real number yet (we will in a few weeks), and second, the proof that each number has a decimal expansion {\it requires} the Archimedean property.
 
 In a couple of weeks' time, we will prove the Archimedean property, as a consequence of the completeness axiom for the real numbers, which we shall study in Section 5.\footnote{It is perhaps disconcerting that it's {\em not} possible to prove the Archimedean property only using the rules (A0-A4) and (M0-M5), together with (R1-R5) which are introduced in Section 3. Indeed, it can be established that, in the terminology of Section 3, there are ordered fields which do not satisfy the Archimedean property. It is precisely because of pitfalls such as this that we are adopting a careful axiomatic perspective for the real numbers.}
 
-\section{The rationals and irrationals}
+\section{The rationals and irrationals}%
+\label{rationals}
 
 The next important subset of the reals is the {\it rationals}:
 \[
@@ -1549,7 +1567,8 @@ There are of course many other irrational numbers out there like $e$ and $\pi$. 
 
 We will discuss how to construct many irrational numbers not involving $e$, $\pi$, in the coming weeks when we discuss decimals.
 
-\section{Roots}
+\section{Roots}%
+\label{roots}
 
 In this class we will be working a lot with roots of numbers like $\sqrt{2}$, but like $\sqrt{2}$, that they exist at all takes justification. This is given in the following proposition whose proof we postpone until Week 3. Recall that $y^n=y\cdot y\cdots y$ with $n$ $y$'s in the product.
 
@@ -1653,7 +1672,8 @@ Just as before, if we take $x^{\frac{1}{b}}y^{\frac{1}{b}}$ times itself $a$ tim
 \end{enumerate}
 \end{proof}
 
-\section{Exercises}
+\section{Exercises}%
+\label{realexercises}
 
 The relevant exercises in Liebeck's book are at the end of Chapter 2.
 
@@ -1758,17 +1778,19 @@ and so $\sqrt{6} = (6-(2a^2+3b^2))/(12ab)$, which is a rational number, but by a
 \part{Week 2: Inequalities and Induction}
 
 \chapterimage{Figures/blank.png}
-\chapter{Inequalities}
+\chapter{Inequalities}%
+\label{inequalities}
 
 This week we will examine inequalities more closely, and describe them formally in terms of just a few rules or {\it axioms}.
 
-\section{The axioms for "<"}
+\section{The axioms for order}%
+\label{orderaxioms}
 
 An inequality is a relation on pairs of real numbers.
 We use the symbols $\leq,\geq,<,>$ to denote these relationships.
-E.g.~we write $x < y$, spoken as "$x$ is less than $y$".
-The informal idea is that $x<y$ exactly when "$x$ is strictly to the left of $y$ on the number line".
-$x < y$ means exactly the same thing as $y > x$ (spoken as "$y$ is greater than $x$").
+E.g.~we write $x < y$, spoken as ``$x$ is less than $y$.''
+The informal idea is that $x<y$ exactly when ``$x$ is strictly to the left of $y$ on the number line.''
+$x < y$ means exactly the same thing as $y > x$ (spoken as ``$y$ is greater than $x$'').
 When we write $x \leq y$ we mean that either $x < y$ or $x=y$.
 Hence it is true that $2 \leq 3$.
 We prefer to list the formal properties that $<$ possesses which, together with the rules of addition and rules of multiplication from Section 2, make $\mathbb{R}$ into what is called an {\em ordered field}.
@@ -1816,7 +1838,7 @@ This follows from the last proposition with $x=1$, since $0<1^2=1\cdot 1=1$.
 \end{solution}
 \end{exercise}
 
-Pause for thought: why are we "wasting our time" proving things like $1 > 0$, which we have all known and understood since the early years of primary school?
+Pause for thought: why are we wasting our time proving things like $1 > 0$, which we have all known and understood since the early years of primary school?
 Mathematics is not just to establish what is true and what is false, but also to understand, in a critical way, the relationships between statements.
 What we learn from this exercise is that the statement $1 > 0$ can be logically derived from the basic axioms (A0-A4), (M0-M5) and (R1-R5).
 The same applies to most other true statements of elementary arithmetic.
@@ -1862,7 +1884,8 @@ u^2>v^2 \;\;\;   \stackrel{[R3]}{ \Longleftrightarrow} \;\;\;  u^2-v^2>v^2-v^2=0
 and by (R4), this last inequality is true if and only if $u-v>0$ (since $u+v>0$ by assumption), which by (R3) is true if and only if $0+v<u-v+v$, that is, if and only if $v<u$.
 \end{proof}
 
-\section{Separating products}
+\section{Separating products}%
+\label{separatingproducts}
 
 In this section we cover some very useful inequalities that allow us to essentially separate terms in a product. They all stem from the following lemma:
 
@@ -1969,7 +1992,8 @@ Which of our above inequalities should we try using? Lemma \ref{l:little-amgm} a
 =\left(\frac{a^2+b^2}{2}\right)^{\frac{1}{2}}.
 \]
 \end{example}
-\section{Absolute Values}
+\section{Absolute Values}%
+\label{absolutevalues}
 
 \begin{definition}
 For $x\in \mathbb{R}$, we define the {\it absolute value} or {\it modulus} of $x$ to be
@@ -2075,52 +2099,54 @@ In particular,
 
 \end{corollary}
 
-%
-%\section{Homogeneity and inequalities}
-%
-%Here we discuss a technique for proving a certain class of inequalities. Let's consider first the Cauchy-Schwartz inequality:
-%\[
-%ax+by \leq \sqrt{a^2+b^2}\sqrt{x^2+y^2}.
-%\]
-%Notice what happens if I replace $(x,y)$ with $(tx,ty)$ where $t>0$. On the left, I get
-%\[
-%a(tx)+a(ty)=t(ax+by)
-%\]
-%and on the right,
-%\[
-%\sqrt{a^2+b^2}\sqrt{(tx)^2+(ty)^2}
-%=\sqrt{a^2+b^2}\sqrt{t^2(x^2+y^2)}
-%=t \sqrt{a^2+b^2}\sqrt{x^2+y^2}.
-%\]
-%That is, when I replace $(x,y)$ with $(tx,ty)$, then a $t$ can be factored out from both ends, or in other words, the ratio of both sides of the inequality is unchanged if I replace $(x,y)$ with $(tx,ty)$. The same holds if I replace $(a,b)$ with $(sa,sb)$ for some $s>0$.
-%
-%Thus, if I can prove the inequality for some $(tx,ty)$ and $(sa,sb)$ in place of $(x,y)$ and $(a,b)$, then it will also hold for $(x,y)$ and $(a,b)$.
-%
-%How do I pick such an $s$ and $t$? Let's pick them so that they eliminate one side of our inequality. That is, let's pick them so that
-%\begin{equation}
-%\label{e:txty}
-%\sqrt{(tx)^2+(ty)^2}=\sqrt{(sa)^2+(sb)^2}=1.
-%\end{equation}
-%That is, we pick
-%\[
-%t=\frac{1}{\sqrt{x^2+y^{2}}}, \;\; s= \frac{1}{\sqrt{a^2+b^2}}.
-%\]
-%Let $(a',b')=(sa,sb)$ and $(x',y')=(tx,ty)$. We are now left to show
-%\[
-%a'x'+b'y'\leq 1.
-%\]
-%But notice that by Lemma \ref{l:little-cs},
-%\[
-%a'x'+b'y'\leq \frac{(a')^2 +(x')^2 + (b')^2 + (y')^2 }{2}
-%=\frac{(sa)^2+(sb)^2 + (tx)^2+(ty)^2}{2} \stackrel{\eqref{e:txty}}{=}\frac{1+1}{2}=1.
-%\]
-%
-%Thus,
-%\[
-%ax+by =s^{-1}t^{-1} (a'x'+b'y')\leq s^{-1} t^{-1}=\sqrt{a^2+b^2}\sqrt{x^2+y^2}.
-%\]
 
-\section{Exercises}
+\section{Homogeneity and inequalities}%
+\label{homogeneity}
+
+Here we discuss a technique for proving a certain class of inequalities. Let's consider first the Cauchy-Schwartz inequality:
+\[
+ax+by \leq \sqrt{a^2+b^2}\sqrt{x^2+y^2}.
+\]
+Notice what happens if I replace $(x,y)$ with $(tx,ty)$ where $t>0$. On the left, I get
+\[
+a(tx)+a(ty)=t(ax+by)
+\]
+and on the right,
+\[
+\sqrt{a^2+b^2}\sqrt{(tx)^2+(ty)^2}
+=\sqrt{a^2+b^2}\sqrt{t^2(x^2+y^2)}
+=t \sqrt{a^2+b^2}\sqrt{x^2+y^2}.
+\]
+That is, when I replace $(x,y)$ with $(tx,ty)$, then a $t$ can be factored out from both ends, or in other words, the ratio of both sides of the inequality is unchanged if I replace $(x,y)$ with $(tx,ty)$. The same holds if I replace $(a,b)$ with $(sa,sb)$ for some $s>0$.
+
+Thus, if I can prove the inequality for some $(tx,ty)$ and $(sa,sb)$ in place of $(x,y)$ and $(a,b)$, then it will also hold for $(x,y)$ and $(a,b)$.
+
+How do I pick such an $s$ and $t$? Let's pick them so that they eliminate one side of our inequality. That is, let's pick them so that
+\begin{equation}
+\label{e:txty}
+\sqrt{(tx)^2+(ty)^2}=\sqrt{(sa)^2+(sb)^2}=1.
+\end{equation}
+That is, we pick
+\[
+t=\frac{1}{\sqrt{x^2+y^{2}}}, \;\; s= \frac{1}{\sqrt{a^2+b^2}}.
+\]
+Let $(a',b')=(sa,sb)$ and $(x',y')=(tx,ty)$. We are now left to show
+\[
+a'x'+b'y'\leq 1.
+\]
+But notice that by Lemma \ref{l:little-cs},
+\[
+a'x'+b'y'\leq \frac{(a')^2 +(x')^2 + (b')^2 + (y')^2 }{2}
+=\frac{(sa)^2+(sb)^2 + (tx)^2+(ty)^2}{2} \stackrel{\eqref{e:txty}}{=}\frac{1+1}{2}=1.
+\]
+
+Thus,
+\[
+ax+by =s^{-1}t^{-1} (a'x'+b'y')\leq s^{-1} t^{-1}=\sqrt{a^2+b^2}\sqrt{x^2+y^2}.
+\]
+
+\section{Exercises}%
+\label{inequalitiesexercises}
 
 See Liebeck Chapter 5 and also Exercises 15, 16 and 17 in Chapter 8.
 %Many of the exercises below are from Beckenbach and Bellman's {\it Introduction to inequalities}.\\
@@ -2361,12 +2387,14 @@ $$\left(1+\frac1y\right)\left(1+\frac1z\right)=2$$ and we conclude $1+\frac1y\ge
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Induction}
+\chapter{Induction}%
+\label{induction}
 
 Mathematical induction is a particular form of proof.
 The goal of a proof by induction is to show that each member of an infinite family of statements is true.
 
-\section{Preliminaries on $\Sigma$ notation}
+\section{Preliminaries on $\Sigma$ notation}%
+\label{summationnotation}
 
 Before getting into induction, it will be useful to review $\Sigma$ notation.
 $\Sigma$ notation is spoken as ``sigma notation'' after the Greek letter $\Sigma$.
@@ -2408,7 +2436,8 @@ For example,
 \]
 \end{enumerate}
 
-\section{Induction}
+\section{Induction}%
+\label{inductionsection}
 
 The main topic of this chapter is the following fundamental property of the natural numbers/axiom of mathematics called the Principle of Mathematical Induction.
 
@@ -2416,8 +2445,8 @@ The main topic of this chapter is the following fundamental property of the natu
 Given a list of statements $P(k),P(k+1),...$, we may conclude that $P(n)$ is true for every integer $n\geqslant k$ {\em provided that}
 
 \begin{itemize}
-\item we know that $P(k)$ is true ("base case")
-\item and we can prove that $P(n)\Rightarrow P(n+1)$ for any integer $n\geqslant k$ ("induction step").
+	\item we know that $P(k)$ is true (base case)
+\item and we can prove that $P(n)\Rightarrow P(n+1)$ for any integer $n\geqslant k$ (induction step).
 \end{itemize}
 \end{definition}
 
@@ -2577,8 +2606,9 @@ The second equation follows from the first (just by adding $1$), so we just need
 %\end{enumerate}
 %
 
-\section{Strong Mathematical Induction}
-Sometimes it's not enough to know that $P(n)$ is true in order to prove that $P(n+1)$ is true; we might additionally need to use that some of the "previous" statements $P(k), P(k+1), \dots , P(n-1)$ are true.  \\
+\section{Strong Mathematical Induction}%
+\label{stronginduction}
+Sometimes it's not enough to know that $P(n)$ is true in order to prove that $P(n+1)$ is true; we might additionally need to use that some of the previous statements $P(k), P(k+1), \dots , P(n-1)$ are true.  \\
 %
 %\fbox{%
 %    \parbox{\textwidth}{
@@ -2586,10 +2616,10 @@ Sometimes it's not enough to know that $P(n)$ is true in order to prove that $P(
 %\item[Principle of Strong Mathematical Induction]
 %  Let $k\in \mathbb{N}$ and let $P(k),P(k+1),...$ are statements. Suppose that\
 %  \begin{itemize}
-%  \item $P(k)$ is true,  (``base case")\
+%  \item $P(k)$ is true,  (``base case)\
 %  \item for any integer
 %$n\geqslant k$:   $$ P(k),P(k+1),P(k+2),\ldots,P(n)\Longrightarrow
-%P(n+1).$$ (``induction step").
+%P(n+1).$$ (``induction step).
 %
 %\end{itemize}
 %
@@ -2602,12 +2632,12 @@ Sometimes it's not enough to know that $P(n)$ is true in order to prove that $P(
 \begin{definition}[Principle of Strong Mathematical Induction]
   Let $k\in \mathbb{N}$ and let $P(k),P(k+1),...$ be statements. Suppose that\
   \begin{itemize}
-  \item $P(k)$ is true,  (``base case")\
+  \item $P(k)$ is true,  (base case)\
   \item for any integer
 $n\geqslant k$, statements
 \[ P(k),P(k+1),P(k+2),\ldots,P(n)\mbox{{\color{blue} (all taken together)}}\Longrightarrow
 P(n+1)\]
-("induction step").
+(induction step).
 \end{itemize}
 Then $P(n)$ is true for every positive integer $n\geqslant k$.
 \end{definition}
@@ -2637,7 +2667,7 @@ Let's try and find a general pattern for what $x_{n}$ is. If we test the first f
 \[
 x_{1} = 1, \;\; x_{2} = 3 , \;\; x_{3} = 4\cdot 3-3\cdot 1 = 9, \;\; x_{4} = 4\cdot 9 - 3\cdot 3 = 27
 \]
-so it seems like $x_{n} = 3^{n-1}$. We will prove this by strong induction. Let $P(n)$ be the statement "$x_{n} = 3^{n-1}$". Let's first prove the first two base cases: $x_{1}=1=3^{1-1}$ and $x_{2}=3=3^{2-1}$, so $P(1)$ and $P(2)$ are true. Now  suppose $P(k)$ is true for $k=1,2,...,n$ for some $n\geq 2$. Then
+so it seems like $x_{n} = 3^{n-1}$. We will prove this by strong induction. Let $P(n)$ be the statement ``$x_{n} = 3^{n-1}$.'' Let's first prove the first two base cases: $x_{1}=1=3^{1-1}$ and $x_{2}=3=3^{2-1}$, so $P(1)$ and $P(2)$ are true. Now  suppose $P(k)$ is true for $k=1,2,...,n$ for some $n\geq 2$. Then
 \[
 x_{n+1} =4x_{n}-3x_{n-1} = 4\cdot 3^{n-1} -3x_{n-1} = 4\cdot 3^{n-1} - 3\cdot 3^{n-2} = 3^{n} = 3^{(n+1)-1}.
 \]
@@ -2652,7 +2682,8 @@ This proves the induction step, and thus $x_n=3^{n-1}$ for all $n$ by strong ind
 {\it How do I know when to use induction vs. strong induction?} One way is to first try proving the induction step to see how many previous cases you need, then that will tell you how many base cases you need as well: if it is more than one, then you need strong induction.
 \end{protip}
 
-\section{Inequalities revisited}
+\section{Inequalities revisited}%
+\label{inequalitiesredux}
 
 Powered with induction, we can now prove some more useful inequalities.
 
@@ -2706,7 +2737,8 @@ x_{1}y_{1}+\cdots + x_{N}y_{N}+x_{N+1}y_{N+1}
 This proves the induction step, and thus proves the Cauchy-Schwarz inequality.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Exercises}
+\section{Exercises}%
+\label{inductionexercises}
 
 The relevant exercises in Liebeck are in Chapter 8.
 
@@ -2948,7 +2980,8 @@ Now moving the $A$ from the left side to the right, we get
 
 \chapterimage{Figures/blank.png}
 
-\chapter{Upper Bounds and Least Upper Bounds}
+\chapter{Upper Bounds and Least Upper Bounds}%
+\label{upperbounds}
 
 For the next two weeks, we'll learn about the basics of {\it analysis}. This branch of mathematics studies limits and approximations, and you may have already met these when studying calculus. If you end up enjoying this topic, you might also like the following courses in subsequent years:
 
@@ -2967,9 +3000,10 @@ To give an idea about what he was talking about, Leibniz (that is, together with
 \[
 \sum_{n=1}^{\infty} (-1)^{n} = \frac{1}{2},
 \]
-but with modern rigour we now understand that this is sadly not true. In fact, this sum is meaningless, as we shall see later. Making analysis rigorous was a big problem since it is the foundation of calculus:  many of the computations you perform in calculus, such as taking derivatives and evaluating integrals, in fact rely on analysis "under the bonnet". More shockingly, we need tools from analysis even to just take $n$'th roots, as we shall see later as well. Before getting into limits, however, we will need to discuss upper and lower bounds for sets, and to introduce a final axiom for the real numbers.
+but with modern rigour we now understand that this is sadly not true. In fact, this sum is meaningless, as we shall see later. Making analysis rigorous was a big problem since it is the foundation of calculus:  many of the computations you perform in calculus, such as taking derivatives and evaluating integrals, in fact rely on analysis under the bonnet. More shockingly, we need tools from analysis even to just take $n$'th roots, as we shall see later as well. Before getting into limits, however, we will need to discuss upper and lower bounds for sets, and to introduce a final axiom for the real numbers.
 
-\section{Upper and Lower Bounds}
+\section{Upper and Lower Bounds}%
+\label{upperlowerbounds}
 
 \def\LUB{{\rm LUB}}
 \def\GLB{{\rm GLB}}
@@ -3057,7 +3091,8 @@ and one can show similarly $-1$ is a lower bound.\\
 \end{enumerate}
 \end{example}
 
-\section{Least Upper Bounds}
+\section{Least Upper Bounds}%
+\label{sups}
 
 Note that a nonempty set which is bounded above will have many upper bounds: if $M$ is an upper bound for a set $A$, so is every $t\geq M$. It is often useful to know what is the best or {\it least} upper bound for a set.
 
@@ -3075,7 +3110,7 @@ Similarly, we say $L$ is a {\it greatest lower bound} (GLB) or {\it infimum} for
 If an LUB exists for a set $A$, we denote it by $\LUB(A)$. Similarly, we denote a GLB for $A$ by $\GLB(A)$.
 \end{definition}
 
-In other words, $L$ is a least upper bound for a set $A$ if and only if it is the mimimum of all upper bounds for $A$. This allows us to speak of "the" LUB of a set rather than "an" LUB. When proving that a number is the LUB for some set, we follow a two-step process of verifying conditions (a) and (b) in the definition.
+In other words, $L$ is a least upper bound for a set $A$ if and only if it is the mimimum of all upper bounds for $A$. This allows us to speak of \emph{the} LUB of a set rather than \emph{an} LUB. When proving that a number is the LUB for some set, we follow a two-step process of verifying conditions (a) and (b) in the definition.
 
 \begin{example}
 Consider the set $[0,1)$. The least upper bound is $1$ since (a) $1$ is clearly an upper bound for the set by the definition of $[0,1)$ and (b) if $t<1$, then $t$ is not an upper bound, since we can find $x\in [0,1)$ bigger than $t$: if $t<0$, we can just take $x=0$; otherwise, if $0\leq t<1$, then $\frac{1+t}{2}\in [0,1)$ is larger than $t$.
@@ -3127,7 +3162,8 @@ An important consequence of the Completeness Axiom is the existence of $n$'th ro
 % Or: ETS $\mathbb{N}$ not bounded above. If it were, there would be a least upper bound $L$. Then there would be $N \in \mathbb{N}$ with $N > L-1/2$. But then $N+1$ > L + 1/2$.
 %\end{proof}
 
-\section{Exercises}
+\section{Exercises}%
+\label{upperboundsexercises}
 
 The exercises in Liebeck's book relevant to this section are in Chapter 22.
 
@@ -3253,9 +3289,11 @@ We claim the least upper bound is $\sqrt{2}$: clearly $\sqrt{2}$ is an upper bou
 
 \end{exercise}
 
-\chapter{Limits}
+\chapter{Limits}%
+\label{limits}
 
-\section{Motivation and the $\epsilon-N$ definition of a limit}
+\section{Motivation and the $\epsilon-N$ definition of a limit}%
+\label{epsilondefinitionoflimit}
 
 How does a computer compute $\sqrt{51}$? A computer can't possibly memorise all possible square roots, so it must compute it from scratch. Moreover, it can't possibly compute the entire decimal expansion (next week we will see that, because $\sqrt{51}$ is irrational, the decimal expansion never repeats), so it can only come up with an approximation. Thus, your computer requires an algorithm for computing $\sqrt{51}$ (or any root) to any degree of accuracy. But before implementing such an algorithm, we need to {\it justify} that it can indeed approximate $\sqrt{51}$ to any degree of accuracy. That is, if my algorithm spits out a sequence of numbers $x_1,x_2,...$, and I want an approximation that is within $10^{-10}$ of $\sqrt{51}$, I need to show that for all large enough $n$, $x_n$ is at most $10^{-10}$ away from $\sqrt{51}$, and I need this to happen for {\it every} degree of accuracy $\epsilon>0$ that I may require (not just $10^{-10}$). All this motivates the following:
 
@@ -3320,7 +3358,7 @@ This is looking good because all we need to do to make this small is to make bot
 \]
 which is exactly what we need. What do we need $n$ to satisfy for this to be true? Well, for $\frac{2}{n} < \frac{\epsilon}{2}$ we need $n > \frac{4}{\epsilon}$, and for $\frac{20}{n^2} < \frac{\epsilon}{2}$ we need $n > \sqrt{\frac{40}{\epsilon}}$. To ensure both of these hold, we need $n$ to satisfy $n > \max\left\{\frac{4}{\epsilon}, \sqrt{\frac{40}{\epsilon}}\right\}.$ So we take $N = \max\left\{\frac{4}{\epsilon}, \sqrt{\frac{40}{\epsilon}}\right\}.$
 
-(All the above was just rough work to help me formulate and write my formal proof. Below is what you want to do when writing your work for marking (and not the rough work). It's fine not to show how you chose your $N$, so long as it works. And there is no "single answer" for $N$ -- if $N$ works, then so does $N'$ for any $N'>N$.)\\
+(All the above was just rough work to help me formulate and write my formal proof. Below is what you want to do when writing your work for marking (and not the rough work). It's fine not to show how you chose your $N$, so long as it works. And there is no single answer for $N$ -- if $N$ works, then so does $N'$ for any $N'>N$.)\\
 
 {\bf Now for the actual proof:} \\
 
@@ -3354,7 +3392,7 @@ where in the last step we used the facts that $\sqrt{x_n} \geq 0$ and $x > 0$. T
 $\frac{|x_{n}-x|}{\sqrt{x}}$ small by taking $n$ large enough. Indeed, now let's bring in $\epsilon > 0$. Since $x_n \rightarrow x$, we know that there is some $N \in \mathbb{R}$ such that whenever $n > N$,
 we have
 \[ |x_n - x| <\epsilon\sqrt{x}.\]
-(This maybe requires a pause for thought. The definition of $x_n \rightarrow x$ talks about "$|x_n - x| < \epsilon$" for all large $n$, it doesn't say anything about "$ |x_n - x| <\epsilon\sqrt{x}$". But the definition of $x_n \rightarrow x$ applies to {\em every} positive $\epsilon$ -- and thus it applies just equally well to $\epsilon\sqrt{x}$
+(This maybe requires a pause for thought. The definition of $x_n \rightarrow x$ talks about ``$|x_n - x| < \epsilon$'' for all large $n$, it doesn't say anything about ``$ |x_n - x| <\epsilon\sqrt{x}$.'' But the definition of $x_n \rightarrow x$ applies to {\em every} positive $\epsilon$ -- and thus it applies just equally well to $\epsilon\sqrt{x}$
 in place of $\epsilon$. Remember that $x$ is fixed in this discussion. The $N$ coming out depends on $x$ as well as $\epsilon$, but this is not a problem, as $x$ is fixed.)
 So if $n > N$, we have
 \[|x_n - x| \leq \frac{|x_n - x|}{\sqrt{x}} < \frac{\epsilon\sqrt{x}}{\sqrt{x}} = \epsilon
@@ -3376,7 +3414,8 @@ Let $\epsilon>0$. Since $x_n\rightarrow x$, there is $N$ so that $n> N$ implies 
 \end{example}
 {\bf Point to ponder:} What happens if $x = 0$ in this example?
 
-\section{Rules for Limits}
+\section{Rules for Limits}%
+\label{rulesforlimits}
 \begin{definition} We say that a sequence $(a_n)$ is {\it bounded} if the set of values $\{a_{1},a_{2},...\}$ is a bounded set, i.e. there are $m,M$ so that $m\leq a_n\leq M$ for all $n$.
 \end{definition}
 
@@ -3552,7 +3591,7 @@ which gives the desired contradiction.
 \end{enumerate}
 \end{proof}
 
-There is another important rule for limits, often called the "squeeze theorem":
+There is another important rule for limits, often called the ``Squeeze Theorem'':
 
 \begin{proposition}\label{squeeze}
 Suppose that $x_n \leq y_n \leq z_n$ for all $n$, and that $x_n \to L$ and $z_n \to L$. Then $y_n \to L$.
@@ -3568,7 +3607,8 @@ Take $N = \max\{N_1, N_2\}$. For $n > N$ we have
 Therefore for $n > N$ we have $|y_n - L| < \epsilon$.
 \end{proof}
 
-\section{Application: the existence of roots.}
+\section{Application: the existence of roots.}%
+\label{existenceofroots}
 
 Recall that in Week 1 we asserted the existence of roots; now we can now prove it.
 
@@ -3610,7 +3650,8 @@ Thus, $y^k=x$. Finally, if $0 < y_1 < y_2$, then $y_1^k < y_2^k$ (see Propositio
 
 \end{proof}
 
-\section{Infinite limits}
+\section{Infinite limits}%
+\label{infinitelimits}
 
 \begin{definition}
 Let $(x_{n})$ be a sequence of real numbers.
@@ -3656,7 +3697,8 @@ n^2-n-1 \geq n-1> N-1=M+1-1=M.
 %and then try and show that there is $N\geq N_{0}$ so that $n\geq N$ implies $\frac{a_{n}}{2}\geq M$.
 %\end{protip}
 
-\section{Exercises}
+\section{Exercises}%
+\label{limitsexercises}
 
 The exercises in Liebeck's book relevant to this section are in Chapter 23.
 
@@ -3943,7 +3985,8 @@ By the argument for the previous exercise, $b_n \to 1/L$ (since $L \geq 1$).
 
 \chapterimage{Figures/blank.png}
 
-\chapter{The Monotone Convergence Theorem}
+\chapter{The Monotone Convergence Theorem}%
+\label{monotoneconvergence}
 
 Last week we studied how to formally show that a sequence $(x_{n})$ converges to a specific limit $L$, and we developed various rules for manipulating limits. What if we are given a sequence $(x_{n})$ and want to show it converges but we {\it don't} know what the limit is?
 
@@ -3959,7 +4002,8 @@ We'll then give some examples illustrating how this result can be useful. Then w
 %\[ a^n - b^n = (a-b)(a^{n-1} + a^{n-2}b + \cdots + ab^{n-2} + b^{n-1})\]
 %valid for $ a, b \in \mathbb{R}$ and $n \in \mathbb{N}$. These will all be helpful to us in our study of various examples.
 
-\section{The Monotone Convergence Theorem}
+\section{The Monotone Convergence Theorem}%
+\label{monotoneconvergencesection}
 
 \def\LUB{{\rm LUB}}
 \def\ve{\epsilon}
@@ -4070,7 +4114,8 @@ Consider the sequence $b_n = 2^{1/2n}$. It runs through alternate values of $a_n
 Sometimes it can be helpful to find the possible limits $L$ {\em before}
 establishing monotonicity and boundedness. Indeed, knowing possible values of $L$ can help us to know what we are looking for in seeking to establish monotonicity and boundedness.
 
-\section{Iteratively defined sequences}
+\section{Iteratively defined sequences}%
+\label{iterativelydefinedsequences}
 Iteratively or recursively defined sequences are those where the value of $x_{n+1}$ is specified in terms of previous values of the sequence $x_1, \dots, x_n$, (most usually just in terms of $x_n$).
 \begin{example}
 In high school you may have met recursively defined sequences of the form $x_1 = c$,
@@ -4163,7 +4208,8 @@ x_{n+1}=1+\sqrt{x_{n}}\leq 1+\sqrt{L}=L.
 This proves the inductive step, and hence proves that $x_{n}\leq L$ for all $n$. Hence, $(x_n)$ is bounded above and is increasing, so the MCT implies it converges. As we showed above, it must converge to $L = \frac{3 + \sqrt{5}}{2}$.
 \end{example}
 
-\section{Exercises}
+\section{Exercises}%
+\label{monotoneexercises}
 
 The only relevant exercise from Liebeck's book is Problem 7 in Chapter 23, which we discussed as Heron's method already.
 
@@ -4385,14 +4431,15 @@ and therefore $L$ is a root of the equation $x^4 - 4x^2 -x + 4 = 0$.
 %
 %\end{exercise}
 
-\chapter{Decimals and Series}
+\chapter{Decimals and Series}%
+\label{decimalsseries}
 We are all familiar with decimal representation of numbers. For example, given a rational number $x = \frac{p}{q}$ with $p, q \in \mathbb{N}$ and $0 < p < q$, we can go through the process of dividing $q$ into $p$ to represent it as
 \[ x = 0.a_1 a_2 \dots a_n \dots\]
 where each $a_n$ is an integer in the set $\{0,1,\dots, 9\}$. So we are used to writing \[ \frac{1}{2} = 0.5 = 0.50000\dots \mbox{
 and } \frac{2}{3} = 0.66666\dots\]
 and we are also familiar with such expressions as
 \[ \sqrt{2} = 1.414\dots \mbox{ and } \pi = 3.14159 \dots. \]
-There are also more "random" looking examples such as $0.7264082793684301...$ which have no discernible pattern nor immediate purpose in life. But what exactly do we mean by these expansions? In this chapter we explore this question, and give a precise meaning to decimal expansions. We will show that {\em every} real number has a decimal expansion, and conversely, every decimal expansion gives rise to a real number. Thus, in some sense, decimal expansions provide a complete description of the real numbers. In order to do this, we use the study of sequences which we have already begun, and, in particular, we will make crucial use of the Completeness Axiom for $\mathbb{R}$ (as indeed we must).
+There are also more random looking examples such as $0.7264082793684301...$ which have no discernible pattern nor immediate purpose in life. But what exactly do we mean by these expansions? In this chapter we explore this question, and give a precise meaning to decimal expansions. We will show that {\em every} real number has a decimal expansion, and conversely, every decimal expansion gives rise to a real number. Thus, in some sense, decimal expansions provide a complete description of the real numbers. In order to do this, we use the study of sequences which we have already begun, and, in particular, we will make crucial use of the Completeness Axiom for $\mathbb{R}$ (as indeed we must).
 
 Then we will introduce infinite series and relate them to decimal expansions. You are probably familiar with certain infinite series already, such as the infinite geometric series
 \[ \sum_{n=1}^\infty \frac{1}{2^n} = 1,\]
@@ -4400,11 +4447,13 @@ but we will examine series such as these from a more general perspective. Now is
 \[ a + ar + ar^2 + \cdots + ar^{n-1} = \frac{a(1-r^{n})}{1-r}\]
 whenever $r \neq 1$. You will learn more about infinite series if you are taking the course Calculus and its Applications. Finally, we introduce the number $e$ and study some of its basic properties.
 
-\section{Decimals}
+\section{Decimals}%
+\label{decimals}
+
 Given a sequence $(a_n)$ with each $a_n \in \{0, 1, \dots , 9\}$, what exactly do we mean by the decimal
 \[ 0.a_1 a_2 \dots a_n \dots?\]
 We all know the convention that the number $a_1$ gives the number of tenths, $a_2$ gives the number of hundredths,
-$a_3$ gives the number of thousandths etc. But what do we mean by the "$\dots$" at the end of the expansion? A good way to make sense of this is to consider the {\em finite} decimal expansions
+$a_3$ gives the number of thousandths etc. But what do we mean by the ellipses at the end of the expansion? A good way to make sense of this is to consider the {\em finite} decimal expansions
 \[ x_n := 0.a_1 a_2 \dots a_n = \frac{a_1}{10} + \frac{a_2}{100} + \dots + \frac{a_n}{10^n}\]
 and declare the infinite decimal expansion
 \[ 0.a_1 a_2 \dots a_n \dots\]
@@ -4593,7 +4642,8 @@ Note that we proved this without ever working with irrational numbers! This give
 The number $0.10010001\cdots $ where the number of zeros between each $1$ is {\em strictly} increasing is irrational, because there is no way the decimal expansion can repeat.
 \end{example}
 
-\section{Infinite Series}
+\section{Infinite Series}%
+\label{series}
 We know how to add up a finite set of numbers $a_1 + a_2 + \cdots + a_n$. But what does it mean to add up an infinite sequence of numbers
 \[ a_1 + a_2 + \cdots + a_j + \cdots ?\]
 A good way to make sense of this is to form the {\em new sequence} $(s_n)$ where
@@ -4624,17 +4674,16 @@ Decimal expansions can be thought of as special cases of infinite series: given 
 \medskip
 \noindent
 {\em \bf \em A word of warning about a possible source of confusion.} Given a sequence $(a_n)$, we can consider two questions about it: convergence of the {\bf sequence} $(a_n)$, and convergence of the {\bf series} $\sum_{j=1}^\infty a_j$. {\bf It is important to realise that these are two completely different things.} Convergence of the sequence $(a_n)$ is just what it says, while convergence of the series $\sum_{j=1}^\infty a_j$
-is defined as convergence of the {\em auxiliary} sequence $(s_n)$. So it's always important to be clear whether we are talking about convergence of the sequence $(a_n)$ or convergence of the series $\sum_{j=1}^\infty a_j$. Some texts use the word "summable" to describe convergent series, and this goes some way towards relieving any potential confusion, but the term "convergent series" is just too ingrained in mathematical language to be eradicated. (See also Exercise~\ref{eleven}.)
+is defined as convergence of the {\em auxiliary} sequence $(s_n)$. So it's always important to be clear whether we are talking about convergence of the sequence $(a_n)$ or convergence of the series $\sum_{j=1}^\infty a_j$. Some texts use the word \emph{summable} to describe convergent series, and this goes some way towards relieving any potential confusion, but the term \emph{convergent series} is just too ingrained in mathematical language to be eradicated. (See also Exercise~\ref{eleven}.)
 
 \medskip
-Sometimes we will also work with series which start from a different position, like $\sum_{j=2}^{\infty} \frac{1}{j(j-1)}$, and the definition is the same: we say this series is convergent if the partial sums $\sum_{j=2}^{n} \frac{1}{j(j-1)}$ converge. Whether we use the "dummy variable"
+Sometimes we will also work with series which start from a different position, like $\sum_{j=2}^{\infty} \frac{1}{j(j-1)}$, and the definition is the same: we say this series is convergent if the partial sums $\sum_{j=2}^{n} \frac{1}{j(j-1)}$ converge. Whether we use the dummy variable
 $j$ or $k$ (or anything else) doesn't matter: $\sum_{j=2}^{\infty} \frac{1}{j(j-1)}$ has exactly the same meaning as $\sum_{k=2}^{\infty} \frac{1}{k(k-1)}$ or $\sum_{n=2}^{\infty} \frac{1}{n(n-1)}$.
 
 \begin{example}
 \label{ex:geometric-series}
 The quintessential example of a convergent series is the {\it geometric series}. Recall that for any real number $r \neq 1$,
 \begin{equation}
-\label{e:gs}
 \sum_{j=0}^{n} ar ^{j}=\frac{a(1-r^{n+1})}{1-r}
 \end{equation}
 If $|r|<1$, then $|r^{n+1}|=|r|^{n+1}\rightarrow 0$ by Example \ref{ex:power}, and so $r^{n+1}\rightarrow 0$ as well. Thus,
@@ -4725,9 +4774,10 @@ We conclude that $\sum_{j=1}^\infty a_{j}$ converges, and the sum is $\sum_{j=1}
 
 For example, since $\left|\frac{\sin j}{2^{j}}\right|\leq \frac{1}{2^{j}}$ and $\sum_{j=1}^\infty \frac{1}{2^{j}}$ converges by Example \ref{ex:geometric-series}, we can deduce that $\sum_{j=1}^\infty \frac{\sin j}{2^{j}}$ converges too.
 
-\section{The number $e$}
+\section{The number $e$}%
+\label{numbere}
 The number $e$, together with $0,1$ and $\pi$, is perhaps the most important of all the real numbers.
-It arose in practical calculations in compound interest when one wants to calculate the interest on a "continuous" basis rather than on a discrete (annually, monthly, daily, hourly) basis. It is in this context that it arises as the limit of the sequence $(a_n)$, where
+It arose in practical calculations in compound interest when one wants to calculate the interest on a ``continuous'' basis rather than on a discrete (annually, monthly, daily, hourly) basis. It is in this context that it arises as the limit of the sequence $(a_n)$, where
 \[ a_n = \left(1 + \frac{1}{n}\right)^n.\]
 In one of the exercises we shall establish that this sequence does indeed have a limit $L$ such that $2 < L < 4$.
 
@@ -4954,7 +5004,8 @@ In the Honours Analysis course you will study the more general exponential funct
 %
 %
 
-\section{Exercises}
+\section{Exercises}%
+\label{decimalsseriesexercises}
 
 The relevant exercises in Liebeck are in Chapter 3.
 
@@ -5236,7 +5287,7 @@ Therefore
 \end{exercise}
 
 \begin{exercise}
-Show that for every real number $x$ there is a unique integer $a_0 \in \mathbb{Z}$ such that $a_0 \leq x < a_0 +1$. (We sometimes call $a_0$ the {\em integer part} of $x$, or the "floor" or "staircase" of $x$, denoted by $a_0 = \lfloor x \rfloor$.) Deduce that every real number $x$ has a decimal expansion
+Show that for every real number $x$ there is a unique integer $a_0 \in \mathbb{Z}$ such that $a_0 \leq x < a_0 +1$. (We sometimes call $a_0$ the {\em integer part} of $x$, or the ``floor'' or ``staircase'' of $x$, denoted by $a_0 = \lfloor x \rfloor$.) Deduce that every real number $x$ has a decimal expansion
 $x = a_0.a_1 a_2 \dots a_n \dots$
 where $a_0 \in \mathbb{Z}$ and $a_n \in \{0,1,2, \dots, 9\}$.
 \begin{solution}
@@ -5258,7 +5309,8 @@ So $x\in [a_{0},a_{0}+1)$, i.e. $x - a_0 \in [0,1)$. Now apply Theorem~\ref{deci
 \end{exercise} Formulate and prove results analogous to Theorems~\ref{83} and \ref{87} for arbitrary $x \in \mathbb{R}$.
 \pagebreak
 
-\section{*Appendix: irrationality of $e$}
+\section{*Appendix: irrationality of $e$}%
+\label{eisirrational}
 This section is optional, and is here to give you a taste of {\it analytic number theory}.
 
 \medskip
@@ -5364,9 +5416,10 @@ converges.
 To recap, for every $c>0$, we have shown that we can pick $N$ so that $\left|x-\frac{p}{N!}\right|<\frac{c}{N!}$, which implies that $e$ is irrational by Lemma~\ref{irrattest}.
 \end{proof}
 
-\section{Subsequences}
+\section{Subsequences}%
+\label{subsequences}
 
-Consider the sequence $x_n=(-1)^{n}$, the simplest example of a bounded divergent sequence. Note that, while this sequence doesn't approach one value as $n\rightarrow\infty$, it concentrates on two values, and if you throw out all the odd numbered terms of the sequence, you get the new sequence $x_{2n}=(-1)^{2n}=1$, which does converge. This was quite a simple sequence, but it turns out this is more than just coincidence: for any bounded sequence, we can throw out some terms so that the sequence becomes convergent. Below we make more precise what we mean by "throwing out" terms.
+Consider the sequence $x_n=(-1)^{n}$, the simplest example of a bounded divergent sequence. Note that, while this sequence doesn't approach one value as $n\rightarrow\infty$, it concentrates on two values, and if you throw out all the odd numbered terms of the sequence, you get the new sequence $x_{2n}=(-1)^{2n}=1$, which does converge. This was quite a simple sequence, but it turns out this is more than just coincidence: for any bounded sequence, we can throw out some terms so that the sequence becomes convergent. Below we make more precise what we mean by ``throwing out'' terms.
 
 \begin{definition}
 Given a sequence $(x_{n})$, a {\it subsequence} is a sequence of the form $(x_{n_{k}})$ where $n_{1}<n_{2}<\cdots $ are positive integers. A real number $x$ is a {\it limit point} of a sequence $(x_{n})$ if there is a subsequence $(x_{n_{k}})$ so that $x_{n_{k}}\rightarrow x$.
@@ -5519,7 +5572,8 @@ $L-\epsilon\geq \LUB(S)$, since if $L-\epsilon<\LUB(S)$, by definition of the LU
 \part{Week 5: Complex Numbers and Polynomials}
 
 \chapterimage{Figures/blank.png}
-\chapter{Complex Numbers}
+\chapter{Complex Numbers}%
+\label{complexnumbers}
 
 %
 %
@@ -5542,7 +5596,8 @@ $L-\epsilon\geq \LUB(S)$, since if $L-\epsilon<\LUB(S)$, by definition of the LU
 %
 %We can think of $(\mathrm{Re}(z),\mathrm{Im}(z))$ as a point on a plane using Cartesian coordinates.
 
-\section{Complex Numbers}
+\section{Complex Numbers}%
+\label{complexnumberssection}
 
 Complex numbers are an extension of the real numbers, defined by introducing a new special number called $i$ whose square is defined to be $-1$.
 
@@ -5731,7 +5786,8 @@ where we have used (b) and (c) above.  Since both sides of the final equality ar
 Hence, we have established each of the four equalities.\end{proof}
 \end{solution}
 
-\section{Cartesian and Polar form}
+\section{Cartesian and Polar form}%
+\label{cartesianandpolar}
 
 Another useful representation of a complex number \(z=x+iy\) is {\it polar form}.  In polar form we represent a complex number by specifying an angle $\theta$ from the $x$ axis, and a distance from the origin which, recall, is $|z|$.
 
@@ -5762,7 +5818,8 @@ Other books and resources sometimes choose $\theta\in (-\pi,\pi]$.
 Mathematicians are free to ``cut'' the complex plane where we choose, but be clear about which choice you make and stick to it.
 For PPS only take $\theta\in [0,2\pi)$, unless otherwise stated clearly.
 
-\section{Geometry and arithmetic in \(\mathbb{C}\)}
+\section{Geometry and arithmetic in \(\mathbb{C}\)}%
+\label{geometryandarithmeticofC}
 
 There are at least three ways to treat complex numbers
 \begin{enumerate}
@@ -5848,7 +5905,8 @@ z^{-n}=(z^{n})^{-1} = (r^{n}(\cos n\theta + i\sin n\theta))^{-1} = r^{-n} (\cos 
 
 \end{proof}
 
-\section{Exponential form}
+\section{Exponential form}%
+\label{exponentialform}
 
 De Moivre's Theorem allows us to calculate powers \(z^n\) for \(n\in\mathbb{N}\), but what about more a general exponential such as \(e^z\) when \(z\in\mathbb{C}\). Euler's formula provides the answer.
 \begin{theorem}[Euler's formula]
@@ -5904,7 +5962,8 @@ Finally,
 \]
 \end{example}
 
-\section{Roots of Unity}
+\section{Roots of Unity}%
+\label{rootsof1}
 
 \begin{center}
 {\it How do we find all solutions to $z^{n}=1$?
@@ -5993,7 +6052,8 @@ or equivalently
 \[ 2e^{i\frac{\pi}{8}},2e^{i\frac{5\pi}{8}},2e^{i\frac{-7\pi}{8}},2e^{i\frac{-3\pi}{8}}\]
 \end{example}
 
-\section{Exercises}
+\section{Exercises}%
+\label{complexnumbersexercises}
 
 The relevant exercises in Liebeck's book are in Chapter 6.
 
@@ -6173,14 +6233,16 @@ But this inequality is true since $|z|<1$, so
 
 \end{exercise}
 
-\chapter{Polynomials}
+\chapter{Polynomials}%
+\label{polynomials}
 %
 %
 %\epigraph{\it  The mathematicians have been very much absorbed with finding the general solution of algebraic equations, and several of them have tried to prove the impossibility of it. However, if I am not mistaken, they have not as yet succeeded. I therefore dare hope that the mathematicians will receive this memoir with good will, for its purpose is to fill this gap in the theory of algebraic equations.}{Niels Henrik Abel, 1824, having shown there are no formulas for roots to polynomials degree $5$ and higher.}
 %
 %
 
-\section{Introduction}
+\section{Introduction}%
+\label{introtopolynomials}
 
 \begin{definition}
 For $n\in\mathbb{N}$, an {\it $n$-degree complex polynomial} \(p\) is a function of the form
@@ -6207,7 +6269,8 @@ There are also formulae for the roots of cubic or quartic (i.e. degree 3 or 4) p
 
 This doesn't mean degree $5$ polynomials don't have roots, we will see below that they must have at least one root. This also doesn't mean it is impossible to solve higher order polynomials for their roots, it just means we do not have an expression (i.e. formula) for the roots of the polynomial in terms of the coefficients.
 
-\section{Factorizing Polynomials}
+\section{Factoring Polynomials}%
+\label{factoringpolynomials}
 
 The following theorem is stated without proof in PPS (although we prove it later in the degree):
 
@@ -6275,7 +6338,8 @@ p(z) = a(z-r_{1})(z-r_{2})\cdots (z-r_{n+1}).\]
 Since \(P(1)\) is true, and \(P(n)\Rightarrow P(n+1)\) it follows that \(P(n)\) is true for all \(n\in\mathbb{N}\) by the principle of mathematical induction.
 \end{proof}
 
-\section{Real Polynomials}
+\section{Real Polynomials}%
+\label{realpolynomials}
 
 If we are given a {\it real polynomial}, by which we mean a polynomial $p(z)=a_{0}+\cdots + a_{n}z^{n}$ such that each $a_i \in \mathbb{R}$, then we have a bit more information about the roots:
 
@@ -6318,7 +6382,8 @@ Now we just need to solve $x^2+2x-8=0$. Using the quadratic formula, we find tha
 
 Notice how in that example, we started off just knowing one root and from that the polynomial collapsed and we could find the other 3, thus, even with partial information about the roots of a polynomial, we can use reasoning like this to solve for them all.
 
-\section{Root-Coefficient Theorem}
+\section{Root-Coefficient Theorem}%
+\label{rootcoefficienttheorem}
 
 Another useful tool is the following theorem which shows how the coefficients of a polynomial relate to the roots.
 
@@ -6400,7 +6465,8 @@ Suppose they were. Notice that by the Factorization Theorem, this polynomial has
 \]
 which is impossible. Thus, at least one of the roots is not an integer. \end{example}
 
-\section{Exercises}
+\section{Exercises}%
+\label{polynomialsexercises}
 
 \begin{exercise} Find the (complex) roots of the following polynomials:\\
 
@@ -6900,7 +6966,8 @@ Now we can repeat the process by induction using $z_{1}^2,z_{2}^2,z_{3}^2$ inste
 
 \part{Week 5: Integers}
 
-\chapter{Integers}
+\chapter{Integers}%
+\label{integers}
 
 %\epigraph{\it It is impossible to separate a cube into two cubes, or a fourth power into two fourth powers, or in general, any power higher than the second, into two like powers. I have discovered a truly marvelous proof of this, which this margin is too narrow to contain.}{Pierre de Fermat, {\it Arithmetica}, 1637...\\ Proof not found until 1994.}
 
@@ -6928,7 +6995,8 @@ x^2+y^2=z^2.\]
 
 If you like the material from this week, you might enjoy taking {\it Introduction to Number Theory} (4th year).
 
-\section{Remainders and divisibility }
+\section{Remainders and divisibility }%
+\label{remainders}
 
 The following theorem is the starting point for our studies on divisibility.
 
@@ -6983,7 +7051,8 @@ Exercise.
 %Since $a|b$, we know $b=na$ for some integer $n$, and similarly, since $b|a$, we know $a=mb$ for some integer $m$. Hence, $a=mb=mna$, and so $1=mn$. The only way this can happen is if either $m=n=1$ or $m=n=-1$.
 %\end{proof}
 
-\section{The GCD and the Euclidean Algorithm}
+\section{The GCD and the Euclidean Algorithm}%
+\label{euclideanalgo}
 
 \begin{definition}
 Let $a$ and $b$ be two nonzero integers.
@@ -7293,7 +7362,8 @@ Choosing $k$ sufficiently large, we can replace $t$ by $t-ka$ so that it is nega
 %\end{description}
 %\end{solution}
 
-\section{Corollaries of Bezout's Identity and the Linear Combination Lemma}
+\section{Corollaries of Bezout's Identity and the Linear Combination Lemma}%
+\label{bezoutcorollaries}
 
 Below we prove some useful corollaries using  \hyperref[t:lincombgcd]{ Bezout's Identity} (Theorem \ref{t:lincombgcd}) and \easylemma.
 
@@ -7369,7 +7439,8 @@ Thus, either $p=p_{r+1}$, or, by the induction hypothesis, $p=p_i$ for some $i=1
 
  \end{example}
 
-\section{The Fundamental Theorem of Arithmetic (FTA)}
+\section{The Fundamental Theorem of Arithmetic (FTA)}%
+\label{fundamentaltheoremofarithmetic}
 
 The fundamental theorem of arithmetic says that all integers have a \emph{unique} factorization as a product of powers of prime numbers.
 
@@ -7490,7 +7561,8 @@ Thus, all the {\it positive} solutions $(x,y)$ are $(46,45)$ and $(10,3)$. Thus,
 
 \end{example}
 
-\section{Finding divisors via FTA}
+\section{Finding divisors via FTA}%
+\label{findingdivisors}
 If we know the prime decompositions of two integers $m$ and $n$, it is easy to tell whether $m$ divides $n$:
 
 \begin{theorem}
@@ -7544,7 +7616,8 @@ First, we find the prime factorization of $360$: we can see that $36=4\cdot 9=2^
  \]
 \end{example}
 
-\section{LCM and GCD via prime factorizations}
+\section{LCM and GCD via prime factorizations}%
+\label{lcmandgcd}
 
 \def\lcm{\rm lcm}
 \begin{definition}
@@ -7627,7 +7700,8 @@ If $c$ and $d$ are coprime integers with $d \geq 1$, and if $r = \frac{c}{d}$, t
 %
 %
 
-\section{Powers}
+\section{Powers}%
+\label{powersofintegers}
 
 \begin{theorem}
 \label{t:perfectsquare}
@@ -7683,7 +7757,8 @@ which is a contradiction. The case that $m-n=1$ can be handled similarly. Thus, 
 
 \end{example}
 
- \section{Application: Pythagorean Triples*}
+ \section{Application: Pythagorean Triples*}%
+ \label{pythagoreantriples}
 
 In this section we will classify all Pythagorean Triples, that is, all positive integer solutions to
 
@@ -7731,7 +7806,8 @@ Thus, all positive coprime solutions with $x$ odd are of the form
 where $a,s,t$ are integers.
 \end{itemize}
 
-\section{Exercises}
+\section{Exercises}%
+\label{numbertheoryexercises}
 
 The relevant exercises in Liebeck's book are in Chapters 10 and 11.
 
@@ -8276,7 +8352,7 @@ Show that the Fermat numbers are mutually relatively prime, that is, $\gcd(F_{n}
 
 \subsection{  Challenging Exercise: A special case of Fermat's last theorem*}
 
-In this exercise we will show that $x^4 + y^4 = z^4$ (the Fermat quartic) has no {\it nontrivial solutions}, that is, no integer solutions apart from $(x,y,z)=0$. The method we will use is known as ``infinite descent": we suppose there is a solution $(x,y,z)$ with $z>0$, then we assume $(x,y,z)$ has $z$ smallest among all such solutions, then we show that we can find another solution $(u,v,w)$ with $w<z$, contradicting that $z$ was the smallest integer appearing in a solution to $x^4+y^4=z^4$. This is quite difficult and wouldn't be expected of you on a homework or exam, it's just a bit of fun.
+In this exercise we will show that $x^4 + y^4 = z^4$ (the Fermat quartic) has no {\it nontrivial solutions}, that is, no integer solutions apart from $(x,y,z)=0$. The method we will use is known as ``infinite descent'': we suppose there is a solution $(x,y,z)$ with $z>0$, then we assume $(x,y,z)$ has $z$ smallest among all such solutions, then we show that we can find another solution $(u,v,w)$ with $w<z$, contradicting that $z$ was the smallest integer appearing in a solution to $x^4+y^4=z^4$. This is quite difficult and wouldn't be expected of you on a homework or exam, it's just a bit of fun.
 \begin{itemize}
 \item Explain why it suffices to only find positive solutions?
 \item Why does it suffice to show $x^4+y^4=z^2$ has no nontrivial integer solutions?
@@ -8309,7 +8385,8 @@ for some $s>t$. Show that $4$ divides $s-t$.
 
 \chapterimage{Figures/blank.png}
 
-\chapter{Modular Arithmetic}
+\chapter{Modular Arithmetic}%
+\label{modular}
 
 %
 %\epigraph{\it And this proposition is generally true for all progressions and for all prime numbers; the proof of which I would send to you, if I were not afraid to be too long.}{Pierre de Fermat, 1640, in a letter to his friend Fr\'{e}nicle de Bessy commenting on his what later was later to be called, ironically, {\it Fermat's Little Theorem}.}
@@ -8328,7 +8405,8 @@ If you like the material from this week, you might enjoy taking the following cl
 \item Commutative Algebra, Group Theory, Galois Theory, Algebraic Geometry (4th Year)
 \end{itemize}
 
-\section{Arithmetic modulo $m$}
+\section{Arithmetic modulo $m$}%
+\label{arithmeticmodm}
 
 \begin{definition}
 \label{d:mod}
@@ -8447,7 +8525,8 @@ Thus,
 This is certainly much quicker than computing $4^6$ by hand and then doing long division!
 \end{example}
 
-\section{Solving linear equations modulo $m$}
+\section{Solving linear equations modulo $m$}%
+\label{linearequationsmodm}
 
 When can we solve $ax = b\mod m$ for $x$? Before we even start, it's good to have a test to see if there is actually a solution:
 
@@ -8507,7 +8586,8 @@ Thus $x = -40$ is a solution, and so is $8 = -40 \mod 12$.
 \end{solution}
 \end{exercise}
 
-\section{$\mathbb{Z}/m$}
+\section{$\mathbb{Z}/m$}%
+\label{Zmodm}
 
 In this section we introduce a set $\mathbb{Z}/m$ that will be important your future algebra classes.
 Just like the integers, the rationals, and the reals, it is what is called a \emph{ring}: it is equipped with addition, subtraction, and multiplication operations.
@@ -8631,7 +8711,8 @@ Thus, the unique cubed root of $2$ is $3$. \\
 
 However, not all numbers in every $\mathbb{Z}/m$ have roots! Confirm for yourself that $2\in\mathbb{Z}/{4}$ has no cubed root.
 
-\section{Fermat's Little Theorem}
+\section{Fermat's Little Theorem}%
+\label{Fermatlittle}
 
 The great thing about congruence is that arithmetic  becomes easier since you can replace big numbers with smaller numbers that are congruent. The following is a little but powerful theorem due to Fermat that allows you to eliminate large powers if you are working modulo some prime.
 
@@ -8827,7 +8908,8 @@ So there are no $z\in \{0,1,2\}$ so that $z^{4} = 2 \mod 3$.  Thus, there are no
 
 \end{example}
 
-\section{Exercises}
+\section{Exercises}%
+\label{modularexercises}
 
 The relevant exercises in Liebeck's book are in Chapters 13 and 14.
 
@@ -9085,9 +9167,11 @@ and so $7$ divides $(a^{3}-1)(a^3+1) $, and since $7$ is prime, it must divide o
 
 %\chapterimage{}
 
-\chapter{More set theory and Equivalence relations}
+\chapter{More set theory and Equivalence relations}%
+\label{moresets}
 
-\section{Cartesian products}
+\section{Cartesian products}%
+\label{cartesianproducts}
 
 When we have two mathematical objects $x$ and $y$, an ordered pair $(x,y)$ is a way of listing the objects in order, so that $(x,y) \neq (y,x)$.
 The main point is that we want $(x,y) = (u,v)$ to hold if and only if both $x =u$ and $y = v$.
@@ -9127,7 +9211,8 @@ as well as $n$-fold cartesian products:
 A_1 \times \cdots \times A_n =\{(x_1, \dots, x_n) : (\forall i \in \{1,\dots,n\})(x_i \in A_i)\}.
 \]
 
-\section{Maps}
+\section{Maps}%
+\label{maps}
 
 The real point of defining things as we have is so we can talk about \emph{maps} as soon as possible.
 Maps -- \textsc{aka} \emph{set maps}, \emph{mappings}, \emph{functions} -- are an important notion in set theory.
@@ -9202,7 +9287,8 @@ More formally, the graph $\Gamma(g\circ f)$ is given by
 \]
 It is easy enough to see that $g\circ\mathrm{id}=g$ and $\mathrm{id}\circ f=f$, and moreover composition is associative, so that $(h\circ g)\circ f=h\circ(g\circ f)$.
 
-\section{Injective and surjective}
+\section{Injective and surjective}%
+\label{injectivesurjective}
 
 \begin{definition}
 Let $f \colon X\rightarrow Y$ be a function. We say that
@@ -9314,7 +9400,8 @@ we see that $g(t) = g(f(s')) = s'$, so we have the uniqueness we sought!
 
 In this case, we say that $g$ is the \emph{inverse} of $f$, and we sometimes write $f^{-1}$ for $g$.
 
-\section{Images and preimages}
+\section{Images and preimages}%
+\label{imagesandpreimages}
 
 \begin{definition}
 If $f\colon X\rightarrow Y$ and $A\subseteq X$,  the  \emph{image of $A$} under $f$ is  the set
@@ -9350,10 +9437,11 @@ f^{-1}(A\cup B)=f^{-1}(A)\cup f^{-1}(B)
 \end{theorem}
 
 \begin{proof}
-To show the first equality, note that $x\in f^{-1}(A\cap B)$ if and only if $f(x)\in A\cap B$, that is, $f(x)\in A$ and $f(x)\in B$, which is true if and only if $x\in f^{-1}(A)$ and $x\in f^{-1}(B)$, that is, if and only if $x\in f^{-1}(A)\cap f^{-1}(B)$. Thus, $f^{-1}(A\cap B)=f^{-1}(A)\cap f^{-1}(B)$. The second equation has a similar proof (basically just change the "and's" to "or's").
+To show the first equality, note that $x\in f^{-1}(A\cap B)$ if and only if $f(x)\in A\cap B$, that is, $f(x)\in A$ and $f(x)\in B$, which is true if and only if $x\in f^{-1}(A)$ and $x\in f^{-1}(B)$, that is, if and only if $x\in f^{-1}(A)\cap f^{-1}(B)$. Thus, $f^{-1}(A\cap B)=f^{-1}(A)\cap f^{-1}(B)$. The second equation has a similar proof (basically just change the ``and's'' to ``or's'').
 \end{proof}
 
-\section{Comparing sizes of sets with functions}
+\section{Comparing sizes of sets with functions}%
+\label{sizesofsets}
 
 %\indent One of the main reasons that we wish to do so is that they give us a way of comparing sizes of sets to each other. Take for example the meaning of {\it finite}: A set $S$ is finite if we can count off the elements as $S=\{s_{1},s_{2},...,s_{n}\}$. Implicitly, the act of counting defines a function $f(j)=s_{j}$ from $\{1,2,...,n\}$ to $S$. That is, $S$ if finite because we are able to construct a function from the first $n$ integers to $S$ that pairs an element from one set with one from the other.
 
@@ -9380,9 +9468,10 @@ Since $X$ is finite, we may number the elements $\{x_{1},...,x_{n}\}$ where $n=|
 
 \end{proof}
 
-\section{Equivalence Relations}
+\section{Equivalence Relations}%
+\label{equivalencerels}
 
-In this section we will talk about relations. A relation, loosely speaking, is a way two things are connected to each other, and there are many different ways that things can be related. The relation "=" is an example, two things are related via "=" if they are actually equal. Another example is the relationship that one number is at most another, and we write $a\leq b$ when we want to say $a$ and $b$ are related in this way. A less mathematical example is the relation "daughter of," so for example "$a$ is the daughter of $b$", let's denote this relationship by $a\sim b$.
+In this section we will talk about relations. A relation, loosely speaking, is a way two things are connected to each other, and there are many different ways that things can be related. The relation ``='' is an example, two things are related via ``='' if they are actually equal. Another example is the relationship that one number is at most another, and we write $a\leq b$ when we want to say $a$ and $b$ are related in this way. A less mathematical example is the relation ``daughter of,'' so for example ``$a$ is the daughter of $b$,'' let's denote this relationship by $a\sim b$.
 
 Now we give a precise definition of a relation.
 
@@ -9411,7 +9500,7 @@ The relations we discussed earlier satisfy different combinations of these prope
 
 \begin{example}
 \item Equality is an equivalence relation. We also showed last week that $\equiv \mod m$ is an equivalence relation.
-\item $"\leq"$ is reflexive and transitive but not symmetric ($1\leq 2$ but $2\not\leq 1$).
+\item $\leq$ is reflexive and transitive but not symmetric ($1\leq 2$ but $2\not\leq 1$).
 \item The daughter-of relation $\sim$ is not symmetric: if $a$ is the daughter of $b$, then $b$ is certainly not the daughter of $a$, and it is certainly not reflexive since no one is the daughter of themselves. Also,and the daughter-of relation is not transitive (if $a$ is the daughter of $b$ and $b$ is the daughter of $c$, that does not mean $a$ is the daughter of $c$).
 \end{example}
 
@@ -9421,7 +9510,7 @@ The moral here is that a relation does not necessarily satisfy all or any of the
 {\bf Disproving properties:} Remember that to disprove a statement like $\forall x\;\; P$, you want to prove the negation, which is $\exists x\mbox{ s.t. } \bar{P}$. Hence, to disprove a property like symmetry, it suffices to just find {\it one} pair $a$ and $b$ for which $a\sim b$ but $b\not\sim a$. In the previous example, clearly $\leq  $ does not satisfy symmetry for more than just the numbers $1$ and $2$, but to verify that symmetry fails, we only need to show it fails for one pair.
 \end{protip}
 
-{\bf Why care?} Relations and equivalence relations come about when there is a collection of objects and you would like to treat many of them as really the same object. Take for example the rational numbers $\mathbb{Q}$, these are the sets of fractions $\frac{p}{q}$ where $p\in\mathbb{Z}$ and $q\in \mathbb{N}$. But notice that the notation $\frac{p}{q}$ is really just an ordered pair, we could have also just written $(p,q)$. But we know that several fractions should give the same number, that is $\frac{2}{1}=\frac{4}{2}$. Really what we're doing here is defining an equivalence relation "=" by saying $\frac{p}{q}=\frac{r}{s}$ if there is an integer $a$ so that either $(p,q)=(ar,as)$ or $(r,s)=(ap,aq)$. We will also see in the next chapter that functions are also relations. You'll see more important examples in future classes.
+{\bf Why care?} Relations and equivalence relations come about when there is a collection of objects and you would like to treat many of them as really the same object. Take for example the rational numbers $\mathbb{Q}$, these are the sets of fractions $\frac{p}{q}$ where $p\in\mathbb{Z}$ and $q\in \mathbb{N}$. But notice that the notation $\frac{p}{q}$ is really just an ordered pair, we could have also just written $(p,q)$. But we know that several fractions should give the same number, that is $\frac{2}{1}=\frac{4}{2}$. Really what we're doing here is defining an equivalence relation ``='' by saying $\frac{p}{q}=\frac{r}{s}$ if there is an integer $a$ so that either $(p,q)=(ar,as)$ or $(r,s)=(ap,aq)$. We will also see in the next chapter that functions are also relations. You'll see more important examples in future classes.
 
 \def\cl{{\rm cl}}
 
@@ -9437,7 +9526,7 @@ This set comes with a map $\cl \colon X \to X/{\sim}$.
 As long as $X \neq \varnothing$ the map $\cl$ is a surjection.
 
 \begin{example}
-Consider the relation on people that $a\sim b$ if $a$ and $b$ were born in the same country. One can check this is an equivalence relation. What if we want to describe the equivalence classes? We could just say "they are the sets $\cl(x)$ where $x$ ranges over all people" but this is not helpful in general; this says no more about the relation or what the classes look like than making the same statement about any other relation. A more natural way of describing the equivalence classes is that they are just the sets of people born in a given country, that is, they are the sets $A_x$ of people born in country $x$ as $x$ ranges over all countries.
+Consider the relation on people that $a\sim b$ if $a$ and $b$ were born in the same country. One can check this is an equivalence relation. What if we want to describe the equivalence classes? We could just say ``they are the sets $\cl(x)$ where $x$ ranges over all people'' but this is not helpful in general; this says no more about the relation or what the classes look like than making the same statement about any other relation. A more natural way of describing the equivalence classes is that they are just the sets of people born in a given country, that is, they are the sets $A_x$ of people born in country $x$ as $x$ ranges over all countries.
 \end{example}
 
 Note that in the previous example, the relation partitioned people into disjoint groups based on their country of birth. This happens with all equivalence relations.
@@ -9459,7 +9548,8 @@ Observe that $i \mapsto \cl(i)$ defines a bijection from $\Z/m = \{0,1,\dots,m\}
 In this way, we think of $\Z/m$ as the ``set of integers, modulo $m$.''
 \end{example}
 
-\section{Exercises}
+\section{Exercises}%
+\label{moresettheoryexercises}
 
 The relevant exercises in Liebeck's book are in Chapter 19.
 
@@ -9735,7 +9825,8 @@ Determine which of the following relations $\sim$ on the given set $S$ are refle
 %
 %\end{solution}
 
-\chapter{Applications: What's bigger than $\infty$?*}
+\chapter{Applications: What's bigger than $\infty$?*}%
+\label{infinitecardinals}
 
 This section is not required reading, but it is a preview into another aspect of mathematics that you will learn about later: cardinality
 
@@ -9773,7 +9864,7 @@ $\Q\sim \N$.
 \end{theorem}
 
 \begin{proof}
-The proof of this uses the so-called ``zig-zag" trick: Write all the rational numbers in an infinite array, and then start listing all the rationals by going up and down each diagonal as follows:
+The proof of this uses the so-called ``zig-zag'' trick: Write all the rational numbers in an infinite array, and then start listing all the rationals by going up and down each diagonal as follows:
 
  Let us add draw arrows in this infinite matrix as
 follows
@@ -9844,7 +9935,8 @@ Modern set theory (and mathematics in general) is based on a finite set of axiom
 
 \chapterimage{Figures/blank.png}
 
-\chapter{Counting}
+\chapter{Counting}%
+\label{counting}
 
 \epigraph{\it    Though combinatorics has been successfully applied to many branches of mathematics, these cannot be compared either in importance or in depth to the applications of analysis in number theory or algebra to topology, but I hope that time and the ingenuity of the younger generation will change this.
 }{Paul Erd\H{o}s, 1970.}
@@ -9853,7 +9945,8 @@ This week we will introduce {\it combinatorics}, which is the study of counting.
 
 If you enjoy the material this week, you may enjoy the course {\it Combinatorics and Graph Theory}.
 
-\section{The Multiplication Principle}
+\section{The Multiplication Principle}%
+\label{multiplicationprinciple}
 
 Suppose I toss a coin twice: the total number outcomes is 4, since there are 2 outcomes for what the first coin can be (heads or tails), and then 2 outcomes for what the second coin can be. Hence the overall outcomes are (T,T), (T,H), (H,T), and (H,H), of which there are 4.
 
@@ -9930,7 +10023,8 @@ Let $S$ be a set with $n$ elements and let $0\leq k\leq n$.
 \end{enumerate}
 \end{proof}
 
-\section{Correspondence and overcounting}
+\section{Correspondence and overcounting}%
+\label{correspendenceandovercounting}
 
 \indent Sometimes we may try to count the members of some set, but we accidentally count the same elements more than once. We can avoid this by trying to be more careful. However, if we are aware of how many times we overcount, we can also use this to our advantage!
 
@@ -9956,19 +10050,20 @@ In the previous example, we could match every diagonal $d$ with two ordered pair
 \end{center}
 
 \begin{example}
-How many ways are there to rearrange the letters in the words "orange" and "banana"? \\
+How many ways are there to rearrange the letters in the words ``orange'' and ``banana''? \\
 
-By the Ordering Theorem, there are $6!$ ways of rearranging the letters in "orange" since there are six {\it distinct} letters, but for "banana" we have to be careful.
+By the Ordering Theorem, there are $6!$ ways of rearranging the letters in ``orange'' since there are six {\it distinct} letters, but for ``banana'' we have to be careful.
 
-Suppose first that we treat each letter as an individual letter, that is, we look at the number of rearrangements of the word "$ba_{1}n_{1}a_{2}n_{2}a_{3}$". There are now 6 distinct characters, so there are a total of $6!$ ways of rearranging this word. This isn't the same thing as counting the number of ways of rearranging "banana", since if we change the $a_{1},a_{2},a_{3}$ in a rearrangement back into a's and the $n_{1}$ and $n_{2}$ back into n's, there are multiple ways of getting the same rearrangement of "banana." For example, "nanaba" can be obtained from "$n_{1}a_{1}n_{2}a_{3}ba_{2}$" as well as "$n_{2}a_{2}n_{1}a_{3}ba_{1}$". However, to each arrangement of "banana", there are $3!$ ways of treating the a's as distinct letters and $2!$ ways of treating the n's as distinct letters so that they return the same rearrangement, and hence there are $3!\cdot 2!$ rearrangements of "$ba_{1}n_{1}a_{2}n_{2}a_{3}$" that correspond to the same rearrangement of "banana" when we turn the $n_i$'s into $n$'s and the $a_i$'s into 'a's. Thus,  counting the number of rearrangements of "$ba_{1}n_{1}a_{2}n_{2}a_{3}$"  (which is $6!$) overcounts the number of rearrangements of "banana" by a factor of $3!\cdot 2!$. Hence, we just need to divide $6!$ by $3!\cdot 2!$ to get the number of rearrangements of "banana", which is
+Suppose first that we treat each letter as an individual letter, that is, we look at the number of rearrangements of the word ``$ba_{1}n_{1}a_{2}n_{2}a_{3}$''. There are now 6 distinct characters, so there are a total of $6!$ ways of rearranging this word. This isn't the same thing as counting the number of ways of rearranging ``banana'', since if we change the $a_{1},a_{2},a_{3}$ in a rearrangement back into a's and the $n_{1}$ and $n_{2}$ back into n's, there are multiple ways of getting the same rearrangement of ``banana.'' For example, ``nanaba'' can be obtained from ``$n_{1}a_{1}n_{2}a_{3}ba_{2}$'' as well as ``$n_{2}a_{2}n_{1}a_{3}ba_{1}$.'' However, to each arrangement of ``banana,'' there are $3!$ ways of treating the a's as distinct letters and $2!$ ways of treating the n's as distinct letters so that they return the same rearrangement, and hence there are $3!\cdot 2!$ rearrangements of ``$ba_{1}n_{1}a_{2}n_{2}a_{3}$'' that correspond to the same rearrangement of ``banana'' when we turn the $n_i$'s into $n$'s and the $a_i$'s into 'a's. Thus,  counting the number of rearrangements of ``$ba_{1}n_{1}a_{2}n_{2}a_{3}$''  (which is $6!$) overcounts the number of rearrangements of ``banana'' by a factor of $3!\cdot 2!$. Hence, we just need to divide $6!$ by $3!\cdot 2!$ to get the number of rearrangements of ``banana,'' which is
 \[
 \frac{6!}{3!\cdot 2!} = \frac{720}{12} = 60.
 \]
-(Note that the original arrangement of the letters in "orange" counts as one of the
+(Note that the original arrangement of the letters in ``orange'' counts as one of the
 $6!$ rearrangements.)
 \end{example}
 
-\section{Counting subsets}
+\section{Counting subsets}%
+\label{countingsubsets}
 
 We will now use the method of overcounting to count the number of subsets of a set $S$ with $|S|=n$ which have a given size $k$. Because this number appears over and over again, we give it a special notation:\\
 
@@ -9977,7 +10072,7 @@ Let $S$ be set with $n$ distinct members, and let $k$ be an integer such that $0
 \[
 {n \choose k}
 \]
-denote the number of subsets of $S$ which have exactly $k$ members (and the above is read "$n$ choose $k$" because it gives the number of ways we can choose $k$ members from an $n$-element set). (If $k>n$, we set ${n \choose k}=0$).
+denote the number of subsets of $S$ which have exactly $k$ members (and the above is read ``$n$ choose $k$'' because it gives the number of ways we can choose $k$ members from an $n$-element set). (If $k>n$, we set ${n \choose k}=0$).
 \end{definition}
 
 \begin{theorem}\label{t:choose}
@@ -10102,8 +10197,8 @@ Consider a sum $x+y+z=9$ with $0\leq x,y,z\leq 9$ and replace $x,y,z$ with the n
 How many ways are there to place $9$ identical red balls in three boxes? \\
 
 This is the previous example in disguise! Put the
-$9$ balls in a line, and introduce two "dividers"
-to delineate the "gaps" between the three boxes.
+$9$ balls in a line, and introduce two ``dividers''
+to delineate the ``gaps'' between the three boxes.
 So, for example
 
 $$ B\;B\;B\;B\; |\; B\; |\; B\; B\;B\;B$$
@@ -10148,7 +10243,8 @@ Use this result to show that for $2 \leq r \leq n$,
 How can you further generalise these results?
 \end{exercise}
 
-\section{Counting partitions}
+\section{Counting partitions}%
+\label{countingpartitions}
 
 The binomial coefficient ${n\choose k}$ counts the number of ways to pick a subset of size $k$ from a set of size $n$, or in other words, the number of ways of splitting a set of size $n$ into a set of size $k$ and a set of size $n-k$. What if we wanted to count the number of ways to partition a set into more than two sets?
 
@@ -10244,7 +10340,7 @@ completing the inductive step.
 Take a good look at the above proof and check that the inductive hypothesis was indeed valid at the inductive step.
 
 \begin{example}
-Let's revisit the "banana" problem. Each arrangement of "banana" corresponds to an ordered partition $(B,A,N)$ of the set $\{1,2, \dots ,6\}$ with $|B|=1,|A|=3,|N|=2$, where $i\in B$ if the $i$th letter in the rearrangement is a "b", $i\in A$ if the $i$th letter is an "a", and $i\in N$ if the $i$th letter is an $N$. Thus, the total number of rearrangements is again
+Let's revisit the ``banana'' problem. Each arrangement of ``banana'' corresponds to an ordered partition $(B,A,N)$ of the set $\{1,2, \dots ,6\}$ with $|B|=1,|A|=3,|N|=2$, where $i\in B$ if the $i$th letter in the rearrangement is a ``b'', $i\in A$ if the $i$th letter is an ``a'', and $i\in N$ if the $i$th letter is an $N$. Thus, the total number of rearrangements is again
 \[
 {6 \choose 3 , 2, 1} = \frac{6!}{3!2!1!}=60.
 \]
@@ -10262,7 +10358,8 @@ Thus, counting the number of ordered partitions overcounts the number of unorder
 
 \end{example}
 
-\section{The Binomial and Multinomial Theorems}
+\section{The Binomial and Multinomial Theorems}%
+\label{binomialmultinomial}
 
 A very natural place that binomial coefficients appear (and the reason why they are called binomial coefficients) is in the following theorem, with which you are probably already familiar from high school, and use of which we have already made in Weeks 3 and 4 of this course :
 
@@ -10344,7 +10441,8 @@ Let $a=1$, $b=x$ and $c=\frac{1}{x}$. When we expand $(a+b+c)^{5}$, the terms of
 \]
 \end{example}
 
-\section{Inclusion-Exclusion}
+\section{Inclusion-Exclusion}%
+\label{inclusionexclusion}
 
 \indent Suppose we want to count how many numbers between 1 and 100 are divisible by either 3 or 5. A first attempt might be to say, well, there are $99/3=33$ numbers divisible by $3$ and $100/5=20$ numbers that are divisible by $5$, so the numbers that are divisible by $3$ or $5$ is the sum of these two numbers, i.e. $33+20=53$. However, we again run into an {\it overcounting} problem, since some numbers are divisible both by $3$ and $5$ and thus are being counted twice. We can't just divide our answer by 2 as before, since there are plenty of numbers that are divisible by $3$ but not $5$ and vice versa. The way to overcome this is by using the {\it inclusion-exclusion principle}:
 
@@ -10393,12 +10491,14 @@ Let's return to the example of counting how many natural numbers at most 100 are
 \]
 \end{example}
 
-\section{Exercises}
+\section{Exercises}%
+\label{countingexercises}
+
 \begin{exercise}
  How many ways are there for $n$ people to stand in a circle?
 
  \begin{solution}
- Let's first count the number of ways to order people clockwise around a circle where the first person stands at a specific spot. This is just $n!$. However, we are counting the number of ways for $n$ people to stand in a circle, and so there is no first position, and for such an arrangement, there are $n$ ways to pick who should be the "first person". Thus, we overcounted by a factor $n$, so dividing $n!$ by $n$ gives the answer $(n-1)!$.
+ Let's first count the number of ways to order people clockwise around a circle where the first person stands at a specific spot. This is just $n!$. However, we are counting the number of ways for $n$ people to stand in a circle, and so there is no first position, and for such an arrangement, there are $n$ ways to pick who should be the ``first person.'' Thus, we overcounted by a factor $n$, so dividing $n!$ by $n$ gives the answer $(n-1)!$.
  \end{solution}
  \end{exercise}
 
@@ -10738,9 +10838,11 @@ See the solutions to the workshop problems.
 \chapterimage{Figures/blank.png} 
 
 
-\chapter{Permutations}
+\chapter{Permutations}%
+\label{permutations}
 
-\section{Permutations}
+\section{Permutations}%
+\label{permutationssection}
 
 This week we combine the techniques of the last two weeks to study a particular class of functions called permutations. 
 
@@ -10779,7 +10881,8 @@ Permutations in $S_{n}$ are just ways of rearranging the numbers $\{1,2,...,n\}$
 Notice that each element $f\in S_{n}$ is actually a function.
 So, we are dealing with the whole function itself, \(f\) and not just with the value of the function \(f(n)\) for some number \(n\).
 
-\section{Table Notation}
+\section{Table Notation}%
+\label{tablenotation}
 
 Here we will introduce some useful notation for denoting permutations. To represent a permutation $f\in S_n$,  we just need to remember where each integer $k\in \{1,2,...,n\}$ gets sent to under $f$ and then write out a chart using a matrix:
  $$
@@ -10812,7 +10915,8 @@ Recall that permutations are bijective, which means that every number must appea
 \end{solution}
 \end{exercise}
 
-\section{Composition and identity}
+\section{Composition and identity}%
+\label{compositionandidentity}
 
 For any two permutations $f\in\mathrm{S}_n$ and
 $g\in\mathrm{S}_n$,  the composition
@@ -10853,7 +10957,7 @@ fg = \left(\begin{matrix} %
 \]
 \end{example}
 
-We use symbol $\iota$ (the Greek letter "iota") to denote the  {\it identity permutation}
+We use symbol $\iota$ (the Greek letter ``iota'') to denote the  {\it identity permutation}
 $$
 \iota =  \left(\begin{matrix} %
 1 & 2 & 3 & 4 & \ldots & n \cr%
@@ -10985,13 +11089,14 @@ This doesn't mean we don't always have $fg\neq gf$--in particular, $fg=gf$ for a
 %
 %
 
-\section{Inverse permutations}
+\section{Inverse permutations}%
+\label{inverseofpermutation}
 
 Let $f$ be any permutation in $\mathrm{S}_n$.  Then
 $$
 1\mapsto f(1),\  2\mapsto f(2),\  3\mapsto f(3),  \ldots,\  n\mapsto f(n),%
 $$
-where all numbers $f(1), f(2), f(3),\ldots, f(n)$ are different (here $x\mapsto y$ means that $f(x)=y$, or that "$x$ is mapped to $y$ under $f$".
+where all numbers $f(1), f(2), f(3),\ldots, f(n)$ are different (here $x\mapsto y$ means that $f(x)=y$, or that ``$x$ is mapped to $y$ under $f$''.
 
 Given $f\in S_{n}$, the inverse permutation $f^{-1}$ always exists since $f$ is bijection and
 $$
@@ -11184,7 +11289,8 @@ In {\it Fundamentals of Pure Math} (FPM), you will learn more about {\it groups}
 %We won't go into group theory much in this class, but we bring it up for a few reasons: one is that some of the topics we will cover this week for permutations will be topics you will cover in more generality for general groups (like the order of an element). Secondly, $S_{n}$ (which will be called the {\it permutation group} when you study algebra) is an important example in group theory whose properties will be useful to know starting Week 1 of FPM. 
 
 
-\section{Cycles}
+\section{Cycles}%
+\label{cycles}
 
 \begin{definition} 
  Let $\{a_{1},a_{2},\ldots,a_{r}\}$ be a~non-empty subset of
@@ -11202,7 +11308,7 @@ $$
 permutation}   (of length $r$).
 \end{definition}
 
-We call these "cycles" since, if you imagine arranging the numbers $a_{1},...,a_{r}$ around a circle, $f$ just rotates these numbers. In other words, this is the permutation that sends $a_{1}$ to $a_{2}$, $a_{2}$ to $a_{3}$,..., and $a_{r}$ to $a_{1}$, and leaves everything else alone. 
+We call these ``cycles'' since, if you imagine arranging the numbers $a_{1},...,a_{r}$ around a circle, $f$ just rotates these numbers. In other words, this is the permutation that sends $a_{1}$ to $a_{2}$, $a_{2}$ to $a_{3}$,..., and $a_{r}$ to $a_{1}$, and leaves everything else alone. 
 
 Notice that if $j\in \{1,2,...n\}$, then $(j)=\iota$, so $\iota$ is a cycle of length 1.
 
@@ -11336,7 +11442,7 @@ g(k) & a_1 & a_2 & \cdots  &  a_{r-1} &  a_r & b_{2} & b_{3} & ...  & b_{s} &  b
 f(g(k)) & a_2 & a_3 & \cdots  &  a_{r} &  a_1 & b_{2} & b_{3} & ...  & b_{s} &  b_{1} & ... \\  %
 \end{array}\right)
 \]
-Above, the final numbers in "$...$" are the remaining integers $\{1,2,...,n\}$ not in either $\{a_{1},...,a_{r}\}$ or $\{b_{1},...,b_{s}\}$, and for $k$ in this range, we have $f(k)=g(k)=k$. Notice that since the $a$'s are not in  $\{b_{1},...,b_{s}\}$, $g$ fixes the numbers $a_{1},...,a_{r}$ (that is, $g(a_{i})=a_{i}$ for $i=1,...,r$) and then cycles through the $b$'s. Similarly,  since the $b$'s are not in  $\{a_{1},...,a_{r}\}$, $f$ fixes the numbers $b_{1},...,b_{s}$ (that is, $f(b_{i})=b_{i}$ for $i=1,...,s$) and then cycles through the $a$'s. Thus, we get that
+Above, the final numbers in ``$...$'' are the remaining integers $\{1,2,...,n\}$ not in either $\{a_{1},...,a_{r}\}$ or $\{b_{1},...,b_{s}\}$, and for $k$ in this range, we have $f(k)=g(k)=k$. Notice that since the $a$'s are not in  $\{b_{1},...,b_{s}\}$, $g$ fixes the numbers $a_{1},...,a_{r}$ (that is, $g(a_{i})=a_{i}$ for $i=1,...,r$) and then cycles through the $b$'s. Similarly,  since the $b$'s are not in  $\{a_{1},...,a_{r}\}$, $f$ fixes the numbers $b_{1},...,b_{s}$ (that is, $f(b_{i})=b_{i}$ for $i=1,...,s$) and then cycles through the $a$'s. Thus, we get that
 \[
 fg=  \left(\begin{array}{c|cccccccccc} %
  a_1 & a_2 & \cdots  &  a_{r-1} &  a_r & b_{1} & b_{2} & ...  & b_{r-1} &  b_{r} & ... \\  %
@@ -11348,7 +11454,8 @@ Notice that if we did the exact same computation but with $gf$ instead of $fg$, 
 \end{proof}
 
 
-\section{Cycle Notation}
+\section{Cycle Notation}%
+\label{cyclenotation}
 Of course, not every permutation is a cycle. However, we do have the following theorem.
 
 \begin{theorem}%[Proposition 20.3 in the book]  
@@ -11607,7 +11714,8 @@ is $\mathrm{lcm}(2,2,2,2)=2$.
 %
 
 
-\section{Even and Odd permutations}
+\section{Even and Odd permutations}%
+\label{evenandoddpermutations}
 
 The content of this section will be a little easier to talk about with a motivating example. Recall the {\it 9-puzzle}: this is a puzzle that involves a table with 9 numbers and a missing space in a 3 by 3 grid, like so.
 
@@ -11934,7 +12042,8 @@ and so this is an odd permutation, and this gives a contradiction. Thus, the ori
 \end{example}
 
 
-\section{Exercises}
+\section{Exercises}%
+\label{permutationexercises}
 The relevant exercises to this section are in Chapter 20 of Liebeck.
 
 
